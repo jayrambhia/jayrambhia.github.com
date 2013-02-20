@@ -1,0 +1,18 @@
+---
+category: Blog
+tag: 
+comments: true
+date: 2011-02-24 19:35:38
+layout: post
+slug: '85'
+title: Hello World
+wordpress_id: 85
+categories:
+- Daily Posts
+---
+
+I shall be sharing my experience of** life **in BITS,Pilani Goa Campus. And some other creative/drunk authors may be contributing later ! As of now have it **neat** ! As of now Go and have some PinkFloyd/The Doors ( Jim Morrison m/ ) ! Come later for more !
+
+Adios.
+
+P.S. Pandey writes a hell of [articles](http://vibhorpandey.wordpress.com) !
