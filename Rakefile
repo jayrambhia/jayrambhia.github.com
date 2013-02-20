@@ -35,7 +35,7 @@ task :post do
   puts "Creating new post: #{filename}"
   open(filename, 'w') do |post|
     post.puts "---"
-    post.puts "author: Aniket"
+    post.puts "author: Jay"
     post.puts "layout: post"
     post.puts "type: post"
     post.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M')}"

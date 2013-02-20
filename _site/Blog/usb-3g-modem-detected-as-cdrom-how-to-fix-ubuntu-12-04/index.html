@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head >
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>USB 3G Modem detected as cdrom | How to fix | Ubuntu 12.04 &mdash; Aniket Pant</title>
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="jay, rambhia, computer vision, python, trakcing, keypoints, c, c++, simplecv, opencv">
+        <meta name="viewport" content="width=device-width">
+
+        
+        
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="/assets/styles/css/style.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="header-container gw">
+            <div class="g one-whole zen-space full-width"></div>
+            <div class="wrapper">
+                <header class="g one-whole flexbox" role="banner">
+                    <h1 class="g one-third portable-one-whole flexbox__item"><a class="logo media" href="/" rel="nofollow"><img class="media__item" src="/assets/images/logo.jpg" alt="Rawrrr! Aniket here." /></a></h1>
+                    <nav class="g two-thirds portable-one-whole flexbox__item navbar">
+                        <ul class="nav nav--block portable-nav--stacked">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about-me">About Me</a></li>
+                            <li><a href="/Blog">Blog</a></li>
+                            <li><a href="/archive">Archive</a></li>
+                        </ul>
+                    </nav>
+                    <div class="g two-thirds portable-one-whole flexbox__item">
+                        <p class="islet about-me">I'm <strong>Aniket</strong>. I love to code, listen to music and I even write free-verses at times. A majority of my work is <em>writing syntax for design</em>.</p>
+                    </div>
+                    <p rel="google-authorship" class="accessibility">By Aniket Pant</p>
+                </header> <!-- header -->
+            </div>
+        </div> <!-- header-container -->
+
+        <div class="main-container gw">
+            <div class="wrapper">
+                <section class="g one-whole" role="main">
+                <div class="post usb-3g-modem-detected-as-cdrom-how-to-fix-ubuntu-12-04">
+	<header class="g one-quarter portable-one-whole post--header">
+  		<h1 class="post_title">USB 3G Modem detected as cdrom | How to fix | Ubuntu 12.04</h1>
+  		<div class="meta"><date class="date">Posted on 03 February 2013</date><br/>Under <span class="category">Blog</a></div>
+      <div class="share island">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="jayrambhia" data-related="jayrambhia">Tweet</a>
+        <div class="g-plusone" data-size="medium"></div>
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+      </div>
+      <div id="boastful"></div>
+	</header><!-- post-header -->
+	<div class="g three-quarters portable-one-whole">
+		<article class="post--content">
+	  	<p>I wanted to put this post up few days ago but couldn’t get time to write. After installing Ubuntu 12.04 with UEFI switched off, I switched GPU off. I was expecting WiFi problems but I didn’t expect any problems with USB 3G modem. I plugged it in. It showed green and blue light which meant it was intitialized but I couldn’t access it. I looked up on the net and got various solutions but none of them worked. My HUAWEI 3G USB modem was getting detected as cdrom. Weird!</p>
+
+<p>I want to keep this post short. The soultion is even shorted.</p>
+
+<p>Get your modem’s vendor and product id.
+<strong>$ lsusb</strong>
+Copy down the vendor and prodcut id.[caption id=”attachment_999” align=”aligncenter” width=”560”]<a href="http://www.jayrambhia.com/blog/wp-content/uploads/2013/02/usb.png"><img src="http://www.jayrambhia.com/blog/wp-content/uploads/2013/02/usb.png" alt="output of lsusb" /></a> output of lsusb[/caption]</p>
+
+<p>Once you get your vendor and product id, you need to add that in the driver file.
+<strong>$ sudo su
+$ echo 12d1 1436 &gt; /sys/bus/usb-serial/drivers/option1/new_id</strong></p>
+
+<p>Restart the network manager.
+<strong>$ sudo service network-manager restart</strong></p>
+
+<p>Or even reboot will work. Now replug your USB modem and wait for 20-30 seconds for it to intialize.</p>
+
+<p>If still you’re having some trouble, refer <a href="http://askubuntu.com/questions/143989/3g-usb-modem-not-working-in-12-04">this</a>.</p>
+
+<p>P.S. Conducting a Python hackathon.</p>
+  
+		</article><!-- post-content -->
+		<footer class="post--footer"></footer><!-- post-footer -->
+    <section class="meta--info island">
+      <p class="lead">
+        <br/><br/>If you liked this post, then you should definitely follow Jay on twitter too. He would be excited to know that you like his work.
+      </p>
+      <a href="https://twitter.com/jayrambhia" class="twitter-follow-button" data-show-count="false">Follow @jayrambhia</a>
+    </section>
+  </div>
+</div><!-- post -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="/assets/js/jquery.boastful.js"></script>
+<script src="/assets/js/rainbow-custom.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#boastful').boastful({
+        empty_message: '<p>Bah! Why ain\'t anyone tweeting this.</p>'  
+    });
+  });
+</script>
+                </section>
+            </div>
+        </div> <!-- main-container -->
+
+        <div class="footer-container gw">
+            <div class="wrapper">
+                <footer class="g one-whole text--center" role="contentinfo">
+                    <a href="https://plus.google.com/114828599949215633124?rel=author" class="accessibility">Google +</a>
+                    <p><a href="http://twitter.com/aniket_pant">@jayrambhia</a><span class="subtle">&nbsp;|&nbsp;Paranoid Android&nbsp;&nbsp;</span> 
+                </footer> <!-- footer -->
+            </div>
+            <div class="g one-whole zen-space full-width"></div>
+        </div> <!-- footer-container -->
+
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-23477947-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+
+        <!-- Typekit Fonts -->
+        <script type="text/javascript">
+          (function() {
+            var config = {
+              kitId: 'rsd5dqz',
+              scriptTimeout: 3000
+            };
+            var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+          })();
+
+          (function(doc, script) {
+            var js, 
+                fjs = doc.getElementsByTagName(script)[0],
+                frag = doc.createDocumentFragment(),
+                add = function(url, id) {
+                    if (doc.getElementById(id)) {return;}
+                    js = doc.createElement(script);
+                    js.src = url;
+                    id && (js.id = id);
+                    frag.appendChild( js );
+                };
+                
+              // Google+ button
+              add('http://apis.google.com/js/plusone.js');
+              // Facebook SDK
+              add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=465363156848461', 'facebook-jssdk');
+              // Twitter SDK
+              add('//platform.twitter.com/widgets.js');
+
+              fjs.parentNode.insertBefore(frag, fjs);
+          }(document, 'script'));
+        </script>
+
+    </body>
+</html>

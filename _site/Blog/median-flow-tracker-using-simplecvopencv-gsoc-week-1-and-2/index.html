@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head >
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Median Flow Tracker using SimpleCV/OpenCV - GSoC week 1 and 2 &mdash; Aniket Pant</title>
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="jay, rambhia, computer vision, python, trakcing, keypoints, c, c++, simplecv, opencv">
+        <meta name="viewport" content="width=device-width">
+
+        
+        
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="/assets/styles/css/style.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="header-container gw">
+            <div class="g one-whole zen-space full-width"></div>
+            <div class="wrapper">
+                <header class="g one-whole flexbox" role="banner">
+                    <h1 class="g one-third portable-one-whole flexbox__item"><a class="logo media" href="/" rel="nofollow"><img class="media__item" src="/assets/images/logo.jpg" alt="Rawrrr! Aniket here." /></a></h1>
+                    <nav class="g two-thirds portable-one-whole flexbox__item navbar">
+                        <ul class="nav nav--block portable-nav--stacked">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about-me">About Me</a></li>
+                            <li><a href="/Blog">Blog</a></li>
+                            <li><a href="/archive">Archive</a></li>
+                        </ul>
+                    </nav>
+                    <div class="g two-thirds portable-one-whole flexbox__item">
+                        <p class="islet about-me">I'm <strong>Aniket</strong>. I love to code, listen to music and I even write free-verses at times. A majority of my work is <em>writing syntax for design</em>.</p>
+                    </div>
+                    <p rel="google-authorship" class="accessibility">By Aniket Pant</p>
+                </header> <!-- header -->
+            </div>
+        </div> <!-- header-container -->
+
+        <div class="main-container gw">
+            <div class="wrapper">
+                <section class="g one-whole" role="main">
+                <div class="post median-flow-tracker-using-simplecvopencv-gsoc-week-1-and-2">
+	<header class="g one-quarter portable-one-whole post--header">
+  		<h1 class="post_title">Median Flow Tracker using SimpleCV/OpenCV - GSoC week 1 and 2</h1>
+  		<div class="meta"><date class="date">Posted on 04 June 2012</date><br/>Under <span class="category">Blog</a><br/>Tagged </span><span class="tags">Computer Vision</span></div>
+      <div class="share island">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="jayrambhia" data-related="jayrambhia">Tweet</a>
+        <div class="g-plusone" data-size="medium"></div>
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+      </div>
+      <div id="boastful"></div>
+	</header><!-- post-header -->
+	<div class="g three-quarters portable-one-whole">
+		<article class="post--content">
+	  	<p>Work in the first two weeks of my Google Summer of Code had been quite slow. I couldn’t find much time as I was busy with travel and some college stuff.
+I have finished making a Median Flow Tracker for OpenTLD. I am trying to port OpenTLD to python. I am working with George Nebehay’s version of OpenTLD.https://github.com/gnebehay/OpenTLD .</p>
+
+<p>Finished Tasks:</p>
+
+<ul>
+  <li>
+    <p>Get <a href="https://github.com/gnebehay/OpenTLD">https://github.com/gnebehay/OpenTLD</a> this up and running on your machine</p>
+  </li>
+  <li>
+    <p>Learn how OpenTLD works.</p>
+  </li>
+  <li>
+    <p>Make MF Tracker (needs improvement)</p>
+  </li>
+</ul>
+
+<p>I have tweaked gnebehay’s OpenTLD to version to make it compatible with OpenCV 2.3.1 and higher (only Linux, I guess) https://github.com/jayrambhia/OpenTLD</p>
+
+<p>Median Flow Tracker -&gt; https://github.com/jayrambhia/MFTracker</p>
+
+<p>[youtube=http://www.youtube.com/watch?v=z55Ew2vCV8o]
+I will add a setup.py file soon. Meanwhile, If you want to test this, try this example. https://github.com/jayrambhia/MFTracker/tree/master/mftracker/examples . I have put all the files from MF Tracker in this one file. I’ll add documentation soon.</p>
+
+<p>Task List for next week:</p>
+
+<ul>
+  <li>
+    <p>Improve MF Tracker</p>
+  </li>
+  <li>
+    <p>Learn more about “Learning” of OpenTLD</p>
+  </li>
+  <li>
+    <p>Implement “Learning” part</p>
+  </li>
+</ul>
+
+<p>P.S. Back home. Having fun with OpenCV/SimpleCV.</p>
+
+<p><strong>EDIT</strong>:</p>
+
+<p>I have added <strong>setup.py</strong> file. Now it’s a complete package. <strong><a href="https://github.com/jayrambhia/MFTracker/downloads/tarball/master">Download </a></strong></p>
+
+  
+		</article><!-- post-content -->
+		<footer class="post--footer"></footer><!-- post-footer -->
+    <section class="meta--info island">
+      <p class="lead">
+        <br/><br/>If you liked this post, then you should definitely follow Jay on twitter too. He would be excited to know that you like his work.
+      </p>
+      <a href="https://twitter.com/jayrambhia" class="twitter-follow-button" data-show-count="false">Follow @jayrambhia</a>
+    </section>
+  </div>
+</div><!-- post -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="/assets/js/jquery.boastful.js"></script>
+<script src="/assets/js/rainbow-custom.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#boastful').boastful({
+        empty_message: '<p>Bah! Why ain\'t anyone tweeting this.</p>'  
+    });
+  });
+</script>
+                </section>
+            </div>
+        </div> <!-- main-container -->
+
+        <div class="footer-container gw">
+            <div class="wrapper">
+                <footer class="g one-whole text--center" role="contentinfo">
+                    <a href="https://plus.google.com/114828599949215633124?rel=author" class="accessibility">Google +</a>
+                    <p><a href="http://twitter.com/aniket_pant">@jayrambhia</a><span class="subtle">&nbsp;|&nbsp;Paranoid Android&nbsp;&nbsp;</span> 
+                </footer> <!-- footer -->
+            </div>
+            <div class="g one-whole zen-space full-width"></div>
+        </div> <!-- footer-container -->
+
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-23477947-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+
+        <!-- Typekit Fonts -->
+        <script type="text/javascript">
+          (function() {
+            var config = {
+              kitId: 'rsd5dqz',
+              scriptTimeout: 3000
+            };
+            var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+          })();
+
+          (function(doc, script) {
+            var js, 
+                fjs = doc.getElementsByTagName(script)[0],
+                frag = doc.createDocumentFragment(),
+                add = function(url, id) {
+                    if (doc.getElementById(id)) {return;}
+                    js = doc.createElement(script);
+                    js.src = url;
+                    id && (js.id = id);
+                    frag.appendChild( js );
+                };
+                
+              // Google+ button
+              add('http://apis.google.com/js/plusone.js');
+              // Facebook SDK
+              add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=465363156848461', 'facebook-jssdk');
+              // Twitter SDK
+              add('//platform.twitter.com/widgets.js');
+
+              fjs.parentNode.insertBefore(frag, fjs);
+          }(document, 'script'));
+        </script>
+
+    </body>
+</html>

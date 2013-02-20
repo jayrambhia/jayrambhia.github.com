@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head >
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Beginning OpenCV &mdash; Aniket Pant</title>
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="jay, rambhia, computer vision, python, trakcing, keypoints, c, c++, simplecv, opencv">
+        <meta name="viewport" content="width=device-width">
+
+        
+        
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="/assets/styles/css/style.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="header-container gw">
+            <div class="g one-whole zen-space full-width"></div>
+            <div class="wrapper">
+                <header class="g one-whole flexbox" role="banner">
+                    <h1 class="g one-third portable-one-whole flexbox__item"><a class="logo media" href="/" rel="nofollow"><img class="media__item" src="/assets/images/logo.jpg" alt="Rawrrr! Aniket here." /></a></h1>
+                    <nav class="g two-thirds portable-one-whole flexbox__item navbar">
+                        <ul class="nav nav--block portable-nav--stacked">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about-me">About Me</a></li>
+                            <li><a href="/Blog">Blog</a></li>
+                            <li><a href="/archive">Archive</a></li>
+                        </ul>
+                    </nav>
+                    <div class="g two-thirds portable-one-whole flexbox__item">
+                        <p class="islet about-me">I'm <strong>Aniket</strong>. I love to code, listen to music and I even write free-verses at times. A majority of my work is <em>writing syntax for design</em>.</p>
+                    </div>
+                    <p rel="google-authorship" class="accessibility">By Aniket Pant</p>
+                </header> <!-- header -->
+            </div>
+        </div> <!-- header-container -->
+
+        <div class="main-container gw">
+            <div class="wrapper">
+                <section class="g one-whole" role="main">
+                <div class="post beginning-opencv">
+	<header class="g one-quarter portable-one-whole post--header">
+  		<h1 class="post_title">Beginning OpenCV</h1>
+  		<div class="meta"><date class="date">Posted on 08 May 2012</date><br/>Under <span class="category">Blog</a><br/>Tagged </span><span class="tags">Computer Vision</span></div>
+      <div class="share island">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="jayrambhia" data-related="jayrambhia">Tweet</a>
+        <div class="g-plusone" data-size="medium"></div>
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+      </div>
+      <div id="boastful"></div>
+	</header><!-- post-header -->
+	<div class="g three-quarters portable-one-whole">
+		<article class="post--content">
+	  	<p>I assume that you have installed OpenCV on your Linux machine. If you are having any problems installing OpenCV 2.3.1 you can view my <a href="http://jayrambhia.wordpress.com/2012/05/02/install-opencv-2-3-1-and-simplecv-in-ubuntu-12-04-precise-pangolin-arch-linux/">previous post</a> or  [http://www.marcolancini.it/other/opencv_install<em>231.php](http://www.marcolancini.it/other/opencv_install</em>231.php)</p>
+
+<p>I would recommend you to go through OpenCV documentation.</p>
+
+<h5 id="cchttpopencvwillowgaragecomdocumentation">**<a href="http://opencv.willowgarage.com/documentation">C/C++</a></h5>
+<p><a href="http://opencv.willowgarage.com/documentation/python/cookbook.html">Python</a>**</p>
+
+<h4 id="c">C</h4>
+
+<p><strong>Load images in C</strong></p>
+
+<pre><code>#include
+#include&lt;opencv2/highgui/highgui.hpp&gt;
+
+int main()
+{
+    IplImage* img = cvLoadImage("/home/jay/Pictures/python.jpg",CV_LOAD_IMAGE_COLOR);
+    cvNamedWindow("opencvtest",CV_WINDOW_AUTOSIZE);
+    cvShowImage("opencvtest",img);
+    cvWaitKey(0);
+    cvReleaseImage(&amp;img);
+    return 0;
+}
+</code></pre>
+
+<p><strong>To compile C program,
+Let’s assume the file is opencvtest.c</strong>
+<code>**
+$ gcc -ggdb </code>pkg-config –cflags opencv<code> -o </code>basename opencvtest.c .c<code> opencvtest.c </code>pkg-config –libs opencv<code>
+$ ./opencvtest
+</code>**</p>
+
+<h4 id="c-1">C++</h4>
+
+<p>Load images in C++</p>
+
+<pre><code>#include&lt;opencv2/highgui/highgui.hpp&gt;
+using namespace cv;
+
+int main()
+{
+
+    Mat img = imread("/home/jay/Pictures/python.jpg",CV_LOAD_IMAGE_COLOR);
+    imshow("opencvtest",img);
+    waitKey(0);
+
+    return 0;
+}
+</code></pre>
+
+<p><strong>To compile C++ program,
+Let’s assume the file is opencvtest.cpp</strong>
+<code>**
+$ g++ -ggdb </code>pkg-config –cflags opencv<code> -o </code>basename opencvtest.cpp .cpp<code> opencvtest.cpp </code>pkg-config –libs opencv<code>
+$ ./opencvtest
+</code>**</p>
+
+<p><strong>Note: Always include OpenCV header files in C and C++ as</strong></p>
+
+<pre><code>#include "opencv2/core/core_c.h"
+#include "opencv2/core/core.hpp"
+#include "opencv2/flann/miniflann.hpp"
+#include "opencv2/imgproc/imgproc_c.h"
+#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/video/video.hpp"
+#include "opencv2/features2d/features2d.hpp"
+#include "opencv2/objdetect/objdetect.hpp"
+#include "opencv2/calib3d/calib3d.hpp"
+#include "opencv2/ml/ml.hpp"
+#include "opencv2/highgui/highgui_c.h"
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/contrib/contrib.hpp"
+</code></pre>
+
+<p><strong>Note: Never compile a file in the following manner.
+<code>$ gcc -ggdb </code>pkg-config –cflags opencv<code> -o </code>basename opencvtest.c<code> opencvtest.c </code>pkg-config –libs opencv``
+It will make your .c file to output file.</strong></p>
+
+<p>##### </p>
+
+<p>To avoid any problems like this, I have made a bash script to compile opencv programs.
+<strong>Making a Bash Script to Compile OpenCV:</strong></p>
+
+<p>It’s kind of boring typing all this stuff. So, I created a bash file to compile OpenCV programs.
+Name it <strong>.compile_opencv.sh</strong> and keep it in your home directory.</p>
+
+<pre><code>echo "compiling $1"
+if [[ $1 == *.c ]]
+then
+    gcc -ggdb `pkg-config --cflags opencv` -o `basename $1 .c` $1 `pkg-config --libs opencv`;
+elif [[ $1 == *.cpp ]]
+then
+    g++ -ggdb `pkg-config --cflags opencv` -o `basename $1 .cpp` $1 `pkg-config --libs opencv`;
+else
+    echo "Please compile only .c or .cpp files"
+fi
+echo "Output file =&gt; ${1%.*}"
+</code></pre>
+
+<p>Add an <strong>alias</strong> in <strong>.bashrc</strong> or <strong>.bash_aliases</strong>
+<code>**
+alias opencv="~/.compile_opencv.sh"</code>**<code>****</code>
+<code>**
+$ opencv opencvtest.c
+$ ./opencvtest
+**</code></p>
+
+<p>###### </p>
+
+<h4 id="python">Python</h4>
+
+<p><strong>Loading images in Python</strong></p>
+
+<pre><code>from cv2.cv import *
+
+img = LoadImage("/home/jay/Pictures/python.jpg")
+NamedWindow("opencv")
+ShowImage("opencv",img)
+WaitKey(0)
+</code></pre>
+
+<p><code>**$ python filename.py**</code></p>
+
+<p>P.S. Finals getting over soon. Excited to go home.</p>
+  
+		</article><!-- post-content -->
+		<footer class="post--footer"></footer><!-- post-footer -->
+    <section class="meta--info island">
+      <p class="lead">
+        <br/><br/>If you liked this post, then you should definitely follow Jay on twitter too. He would be excited to know that you like his work.
+      </p>
+      <a href="https://twitter.com/jayrambhia" class="twitter-follow-button" data-show-count="false">Follow @jayrambhia</a>
+    </section>
+  </div>
+</div><!-- post -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="/assets/js/jquery.boastful.js"></script>
+<script src="/assets/js/rainbow-custom.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#boastful').boastful({
+        empty_message: '<p>Bah! Why ain\'t anyone tweeting this.</p>'  
+    });
+  });
+</script>
+                </section>
+            </div>
+        </div> <!-- main-container -->
+
+        <div class="footer-container gw">
+            <div class="wrapper">
+                <footer class="g one-whole text--center" role="contentinfo">
+                    <a href="https://plus.google.com/114828599949215633124?rel=author" class="accessibility">Google +</a>
+                    <p><a href="http://twitter.com/aniket_pant">@jayrambhia</a><span class="subtle">&nbsp;|&nbsp;Paranoid Android&nbsp;&nbsp;</span> 
+                </footer> <!-- footer -->
+            </div>
+            <div class="g one-whole zen-space full-width"></div>
+        </div> <!-- footer-container -->
+
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-23477947-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+
+        <!-- Typekit Fonts -->
+        <script type="text/javascript">
+          (function() {
+            var config = {
+              kitId: 'rsd5dqz',
+              scriptTimeout: 3000
+            };
+            var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+          })();
+
+          (function(doc, script) {
+            var js, 
+                fjs = doc.getElementsByTagName(script)[0],
+                frag = doc.createDocumentFragment(),
+                add = function(url, id) {
+                    if (doc.getElementById(id)) {return;}
+                    js = doc.createElement(script);
+                    js.src = url;
+                    id && (js.id = id);
+                    frag.appendChild( js );
+                };
+                
+              // Google+ button
+              add('http://apis.google.com/js/plusone.js');
+              // Facebook SDK
+              add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=465363156848461', 'facebook-jssdk');
+              // Twitter SDK
+              add('//platform.twitter.com/widgets.js');
+
+              fjs.parentNode.insertBefore(frag, fjs);
+          }(document, 'script'));
+        </script>
+
+    </body>
+</html>

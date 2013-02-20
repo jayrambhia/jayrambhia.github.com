@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head >
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>OpenCV with pygtk &mdash; Aniket Pant</title>
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="jay, rambhia, computer vision, python, trakcing, keypoints, c, c++, simplecv, opencv">
+        <meta name="viewport" content="width=device-width">
+
+        
+        
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="/assets/styles/css/style.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="header-container gw">
+            <div class="g one-whole zen-space full-width"></div>
+            <div class="wrapper">
+                <header class="g one-whole flexbox" role="banner">
+                    <h1 class="g one-third portable-one-whole flexbox__item"><a class="logo media" href="/" rel="nofollow"><img class="media__item" src="/assets/images/logo.jpg" alt="Rawrrr! Aniket here." /></a></h1>
+                    <nav class="g two-thirds portable-one-whole flexbox__item navbar">
+                        <ul class="nav nav--block portable-nav--stacked">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about-me">About Me</a></li>
+                            <li><a href="/Blog">Blog</a></li>
+                            <li><a href="/archive">Archive</a></li>
+                        </ul>
+                    </nav>
+                    <div class="g two-thirds portable-one-whole flexbox__item">
+                        <p class="islet about-me">I'm <strong>Aniket</strong>. I love to code, listen to music and I even write free-verses at times. A majority of my work is <em>writing syntax for design</em>.</p>
+                    </div>
+                    <p rel="google-authorship" class="accessibility">By Aniket Pant</p>
+                </header> <!-- header -->
+            </div>
+        </div> <!-- header-container -->
+
+        <div class="main-container gw">
+            <div class="wrapper">
+                <section class="g one-whole" role="main">
+                <div class="post opencv-with-pygtk">
+	<header class="g one-quarter portable-one-whole post--header">
+  		<h1 class="post_title">OpenCV with pygtk</h1>
+  		<div class="meta"><date class="date">Posted on 18 April 2012</date><br/>Under <span class="category">Blog</a><br/>Tagged </span><span class="tags">Computer Vision</span></div>
+      <div class="share island">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="jayrambhia" data-related="jayrambhia">Tweet</a>
+        <div class="g-plusone" data-size="medium"></div>
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+      </div>
+      <div id="boastful"></div>
+	</header><!-- post-header -->
+	<div class="g three-quarters portable-one-whole">
+		<article class="post--content">
+	  	<p>In my <a href="http://jayrambhia.wordpress.com/2012/04/10/integrating-opencv-with-pygtk/">previous post</a>, I have shown how to <strong>integrate OpenCV with pygtk</strong> to show images. In this post, I’ll be showing how to use OpenCV/SimpleCV with pygtk to show <strong>multiple images</strong> simultaneously, a continuous streaming of images (like a video), etc.</p>
+
+<p>I have used multi-threading to call <strong>gtk.main()</strong> because if I don’t do that, my program will be stuck untill, gtk.main() doesn’t end. It doesn’t end untill gtk.main_quit() is explicitly called.</p>
+
+<pre><code>import gtk
+from threading import Thread
+import gobject
+gtk.gdk.threads_init()
+</code></pre>
+
+<p>As I have mentioned before, <strong>gtk.gdk.threads_init()</strong> is necessary. The gtk.gdk.threads_init() function initializes PyGTK to use the Python macros that allow multiple threads to serialize access to the Python interpreter (using the <strong>Python Global Interpreter Lock (GIL)</strong>).The gtk.gdk.threads_init() function must be called before the gtk.main() function. At this point in the application the Python GIL is held by the main application thread. You can get more information about gtk.gdk.threads_init() and GIL here in <strong><a href="http://www.pygtk.org/docs/pygtk/gdk-functions.html#function-gdk--threads-init">pygtk docs</a>.</strong></p>
+
+<pre><code>class DisplayImage():
+    def __init__(self,title="SimpleCV"):
+        self.img = None
+        self.img_gtk = None
+        self.done = False
+        self.thrd = None
+        self.win = gtk.Window()
+        self.win.set_title(title)
+        self.win.connect("delete_event",self.leave_app)
+        self.image_box = gtk.EventBox()
+        self.win.add(self.image_box)
+  
+    def show_image(self,image):
+        self.img = image
+        if self.img_gtk is None:
+            self.img_flag=0
+            self.img_gtk = gtk.Image()# Create gtk.Image() only once
+            self.image_box.add(self.img_gtk)# Add Image in the box, only once
+        self.img_pixbuf = gtk.gdk.pixbuf_new_from_data(self.img.tostring(),
+                                                gtk.gdk.COLORSPACE_RGB,
+                                                False,
+                                                self.img.depth,
+                                                self.img.width,
+                                                self.img.height,
+                                                self.img.width*self.img.nChannels)
+        self.img_gtk.set_from_pixbuf(self.img_pixbuf)
+        self.img_gtk.show()
+        self.win.show_all()
+        if not self.img_flag:
+            self.thread_gtk()    # gtk.main() only once (first time)
+            self.img_flag=1      # change flag
+        
+    def thread_gtk(self):
+        # changed this function. Improved threading.
+        self.thrd = Thread(target=gtk.main, name = "GTK thread")
+        self.thrd.daemon = True
+        self.thrd.start()
+    
+    def leave_app(self,widget,data):
+        self.done = True
+        self.win.destroy()
+        gtk.main_quit()
+
+    def isDone(self):
+        return self.done
+    
+    def quit(self):
+        self.done = True
+        self.win.destroy()
+        gtk.main_quit()
+</code></pre>
+
+<p>So, here’s the complete class that I made to show images in OpenCV/SimpleCV.
+In line 26,</p>
+
+<pre><code>self.img_gtk.set_from_pixbuf(self.img_pixbuf)
+</code></pre>
+
+<p>In my previous post it was</p>
+
+<pre><code>image = gtk.image_new_from_pixbuf(img_pixbuf)
+</code></pre>
+
+<p>So, here’s the problem with it. Whenever I do <strong>gtk.image_new_from_pixbuf()</strong>, it would create a new gtk.Image object at a different address, and hence we would have to add the new object in the box every time and destroy the previous image object which was there in the box. So, instead of that I have used <strong>gtk.set_from_pixbuf()</strong>, which would not create a new gtk.Image object, but just change the image.</p>
+
+<p>Now moving on to threading part, it’s very important that you call gtk.main with a thread. And it has to be called only once during the program, otherwise there would be many threading problems. gtk.main has to be called after you have created widgets, added properties and shown.</p>
+
+<pre><code>thrd = Thread(target=gtk.main, name = "GTK thread")
+thrd.daemon = True
+thrd.start()
+</code></pre>
+
+<p>After creating the thread, <strong>thrd.daemon = True</strong> is very necessary before you start the thread, otherwise there will be too many errors and complications with gtk. Believe me, I have faced it for two days. And it was not good.</p>
+
+<p>I have added more functionalities in DisplayImage class  such as getting co-ordinates of mouse click, etc. You can find it here on my <strong><a href="https://github.com/jayrambhia/SimpleCVexamples/tree/master/pygtk_image">GitHub</a></strong>. You can also find some examples that I have worked out for SimpleCV there.</p>
+
+<p>So, now some examples.
+1. Show image in OpenCV.</p>
+
+<pre><code>from cv2.cv import *
+from pygtk_image import DisplayImage
+import time
+
+image = LoadImage("Image name")
+image_rgb = CreateImage((image.width,image.height),image.depth,image.channels)
+CvtColor(image,image_rgb,CV_BGR2RGB) # iplImage has BGR colorspace
+display = DisplayImage()
+display.show(image_rgb)
+time.sleep(3)
+display.quit()
+</code></pre>
+
+<ol>
+  <li>
+    <p>Show image in SimpleCV</p>
+
+    <p>from SimpleCV import *
+ from pygtk_image import DisplayImage
+ import time</p>
+
+    <p>image = Image(“lenna”)
+ display = DisplayImage(title=”SimpleCV”)
+ display.show(image.toRGB().getBitmap())
+ time.sleep(3)
+ display.quit()</p>
+  </li>
+  <li>
+    <p>Show multiple images simultaneously in SimpleCV</p>
+
+    <p>from SimpleCV import *
+ from pygtk_image import *</p>
+
+    <p>d1 = DisplayImage()
+ d2 = DisplayImage()
+ i1 = Image(“lenna”)</p>
+
+    <p>while not (d1.isDone() or d2.isDone()):
+     try:
+         d1.show_image(i1.toRGB().getBitmap())
+         time.sleep(0.1)
+         d2.show_image(i1.toGray().getBitmap())
+         time.sleep(0.1)
+     except KeyboardInterrupt:
+         d1.quit()
+         d2.quit()</p>
+  </li>
+  <li>
+    <p>Show images in a series in SimpleCV</p>
+
+    <p>from SimpleCV import *
+ from pygtk_image import *</p>
+
+    <p>def loadimage():
+     image = Image(“lenna”)
+     d = DisplayImage()
+     d.show_image(image.toRGB().getBitmap())
+     time.sleep(3)
+     d.show_image(Image(“simplecv”).toRGB().getBitmap())
+     time.sleep(2)
+     d.quit()</p>
+
+    <p>if <strong>name</strong> == “<strong>main</strong>”:
+     loadimage()</p>
+  </li>
+  <li>
+    <p>show captured images from camera in SimpleCV</p>
+
+    <p>from SimpleCV import *
+ from pygtk_image import *</p>
+
+    <p>cam = Camera()
+ d = DisplayImage()
+ while not d.isDone():
+     try:
+         i = cam.getImage()
+         i.drawRectangle(d.mouseX,d.mouseY,50,50,width=5)
+         d.show_image(i.applyLayers().toRGB().getBitmap())
+         time.sleep(0.1)
+     except KeyboardInterrupt:
+         d.quit()
+         break</p>
+  </li>
+</ol>
+
+<p>If you find some better way to show images using pygtk, or a better way to thread gtk.main(), let me know.</p>
+
+<p>P.S. Anxiously waiting for GSoC 2012 results. Only 2 days and 8 hours to go.</p>
+  
+		</article><!-- post-content -->
+		<footer class="post--footer"></footer><!-- post-footer -->
+    <section class="meta--info island">
+      <p class="lead">
+        <br/><br/>If you liked this post, then you should definitely follow Jay on twitter too. He would be excited to know that you like his work.
+      </p>
+      <a href="https://twitter.com/jayrambhia" class="twitter-follow-button" data-show-count="false">Follow @jayrambhia</a>
+    </section>
+  </div>
+</div><!-- post -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="/assets/js/jquery.boastful.js"></script>
+<script src="/assets/js/rainbow-custom.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#boastful').boastful({
+        empty_message: '<p>Bah! Why ain\'t anyone tweeting this.</p>'  
+    });
+  });
+</script>
+                </section>
+            </div>
+        </div> <!-- main-container -->
+
+        <div class="footer-container gw">
+            <div class="wrapper">
+                <footer class="g one-whole text--center" role="contentinfo">
+                    <a href="https://plus.google.com/114828599949215633124?rel=author" class="accessibility">Google +</a>
+                    <p><a href="http://twitter.com/aniket_pant">@jayrambhia</a><span class="subtle">&nbsp;|&nbsp;Paranoid Android&nbsp;&nbsp;</span> 
+                </footer> <!-- footer -->
+            </div>
+            <div class="g one-whole zen-space full-width"></div>
+        </div> <!-- footer-container -->
+
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-23477947-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+
+        <!-- Typekit Fonts -->
+        <script type="text/javascript">
+          (function() {
+            var config = {
+              kitId: 'rsd5dqz',
+              scriptTimeout: 3000
+            };
+            var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+          })();
+
+          (function(doc, script) {
+            var js, 
+                fjs = doc.getElementsByTagName(script)[0],
+                frag = doc.createDocumentFragment(),
+                add = function(url, id) {
+                    if (doc.getElementById(id)) {return;}
+                    js = doc.createElement(script);
+                    js.src = url;
+                    id && (js.id = id);
+                    frag.appendChild( js );
+                };
+                
+              // Google+ button
+              add('http://apis.google.com/js/plusone.js');
+              // Facebook SDK
+              add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=465363156848461', 'facebook-jssdk');
+              // Twitter SDK
+              add('//platform.twitter.com/widgets.js');
+
+              fjs.parentNode.insertBefore(frag, fjs);
+          }(document, 'script'));
+        </script>
+
+    </body>
+</html>

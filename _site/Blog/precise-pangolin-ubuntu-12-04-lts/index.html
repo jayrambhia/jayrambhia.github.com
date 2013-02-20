@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head >
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Precise Pangolin - Ubuntu 12.04 LTS &mdash; Aniket Pant</title>
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="jay, rambhia, computer vision, python, trakcing, keypoints, c, c++, simplecv, opencv">
+        <meta name="viewport" content="width=device-width">
+
+        
+        
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="/assets/styles/css/style.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="header-container gw">
+            <div class="g one-whole zen-space full-width"></div>
+            <div class="wrapper">
+                <header class="g one-whole flexbox" role="banner">
+                    <h1 class="g one-third portable-one-whole flexbox__item"><a class="logo media" href="/" rel="nofollow"><img class="media__item" src="/assets/images/logo.jpg" alt="Rawrrr! Aniket here." /></a></h1>
+                    <nav class="g two-thirds portable-one-whole flexbox__item navbar">
+                        <ul class="nav nav--block portable-nav--stacked">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about-me">About Me</a></li>
+                            <li><a href="/Blog">Blog</a></li>
+                            <li><a href="/archive">Archive</a></li>
+                        </ul>
+                    </nav>
+                    <div class="g two-thirds portable-one-whole flexbox__item">
+                        <p class="islet about-me">I'm <strong>Aniket</strong>. I love to code, listen to music and I even write free-verses at times. A majority of my work is <em>writing syntax for design</em>.</p>
+                    </div>
+                    <p rel="google-authorship" class="accessibility">By Aniket Pant</p>
+                </header> <!-- header -->
+            </div>
+        </div> <!-- header-container -->
+
+        <div class="main-container gw">
+            <div class="wrapper">
+                <section class="g one-whole" role="main">
+                <div class="post precise-pangolin-ubuntu-12-04-lts">
+	<header class="g one-quarter portable-one-whole post--header">
+  		<h1 class="post_title">Precise Pangolin - Ubuntu 12.04 LTS</h1>
+  		<div class="meta"><date class="date">Posted on 28 April 2012</date><br/>Under <span class="category">Blog</a><br/>Tagged </span><span class="tags">Python</span></div>
+      <div class="share island">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="jayrambhia" data-related="jayrambhia">Tweet</a>
+        <div class="g-plusone" data-size="medium"></div>
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+      </div>
+      <div id="boastful"></div>
+	</header><!-- post-header -->
+	<div class="g three-quarters portable-one-whole">
+		<article class="post--content">
+	  	<p><strong><a href="http://www.ubuntu.com/tour/en/">Precise Pangolin</a></strong>, the long term support(LTS) version of Ubuntu, is released. As an ubuntu fanboy, I love to upgrade to new version ASAP. Every time I have tried to upgrade to a new version, I have faced many troubles and especially with GRUB and then I have to install complete new OS. I have been working on SimpleCV for a month now and I have a lot of important stuff going on, so I was hesitant to upgrade to 12.04.</p>
+
+<p>After an hour, I started to upgrade my 11.10 to 12.04. I would like to add that I had already removed Unity from my Oneiric Ocelot. Well, let’s face it. Unity is useless. I had GNOME3, lxde, openbox, and bunch of other stuff. Upgrading process took almost 3 hours or so. Meanwhile, I had talked to the AV unit guy so that I could get unrestricted internet connection for an hour in the evening as I had a google+ hangout with SimpleCV mentors and other students who also got selected for SimpleCV in GSoC 2012.</p>
+
+<p>[caption id=”attachment_469” align=”aligncenter” width=”300” caption=”Precise Pangolin”]<a href="http://www.jayrambhia.com/blog/wp-content/uploads/2012/04/pango.jpg"><img src="http://www.jayrambhia.com/blog/wp-content/uploads/2012/04/pango.jpg?w=300" alt="" /></a>[/caption]</p>
+
+<p>Tried out everything and then removed everything except GNMOE. I didn’t know that 12.04 had upgraded my GNOME 3.1 to GNOME 3.4. In the process, OpenCV 2.1 was replaced with Opencv 2.3.1. So, no python swig OpenCV bindings anymore. I started to upgrade GNOME from local ftp server, but it only added all those useless stuff like epiphany, gwibber, sudoku, etc. And when I thought it couldn’t get worse, it changed my GRUB. After rebooting, I found out that my complete GNOME was changed for the worse. There is a close button in notifications! I don’t want that. So, I removed GNOME. Reboot. And since then I am unable to boot Ubuntu. I am getting some error which says that unable to mount some disk (with UUID). If you know how to solve it, please let me know.</p>
+
+<p>I tried using ubuntu fallback. But I think it’s the worst one. You can’t see what you are typing unless you hit return key. Network Manager was also removed, so couldn’t install GNOME. Now, I am thinking of adding network to daemon and install gnome. But I would do it later (probably after my exams).</p>
+
+<p>Panicked and anxious, I went back to Arch Linux. Installed google+ hangout plugin, OpenCV 2.3.1. And the best part is OpenCV 2.3.1 was added as a package in pacman. Just needed to isntall it. Tried python wrapper. worked. Finally some relief.</p>
+
+<p>**
+@<a href="http://twitter.com/chait_bhatt">chait_bhatt</a>: @<a href="http://twitter.com/jayrambhia">jayrambhia</a> Hahaha. Your twitter timeline must read excited, exuberated, confused and finally, screwed :-P
+**</p>
+
+<p>Had a great hangout with Katherine, Anthony, Victor, Seunghoon, Vijay(Alas! he couldn’t join). Mentors are really excited and supportive. I hope to have a great summer with SimpleCV.</p>
+
+<p>P.S. It seems that I am back on Arch Linux.</p>
+  
+		</article><!-- post-content -->
+		<footer class="post--footer"></footer><!-- post-footer -->
+    <section class="meta--info island">
+      <p class="lead">
+        <br/><br/>If you liked this post, then you should definitely follow Jay on twitter too. He would be excited to know that you like his work.
+      </p>
+      <a href="https://twitter.com/jayrambhia" class="twitter-follow-button" data-show-count="false">Follow @jayrambhia</a>
+    </section>
+  </div>
+</div><!-- post -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="/assets/js/jquery.boastful.js"></script>
+<script src="/assets/js/rainbow-custom.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#boastful').boastful({
+        empty_message: '<p>Bah! Why ain\'t anyone tweeting this.</p>'  
+    });
+  });
+</script>
+                </section>
+            </div>
+        </div> <!-- main-container -->
+
+        <div class="footer-container gw">
+            <div class="wrapper">
+                <footer class="g one-whole text--center" role="contentinfo">
+                    <a href="https://plus.google.com/114828599949215633124?rel=author" class="accessibility">Google +</a>
+                    <p><a href="http://twitter.com/aniket_pant">@jayrambhia</a><span class="subtle">&nbsp;|&nbsp;Paranoid Android&nbsp;&nbsp;</span> 
+                </footer> <!-- footer -->
+            </div>
+            <div class="g one-whole zen-space full-width"></div>
+        </div> <!-- footer-container -->
+
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-23477947-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+
+        <!-- Typekit Fonts -->
+        <script type="text/javascript">
+          (function() {
+            var config = {
+              kitId: 'rsd5dqz',
+              scriptTimeout: 3000
+            };
+            var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+          })();
+
+          (function(doc, script) {
+            var js, 
+                fjs = doc.getElementsByTagName(script)[0],
+                frag = doc.createDocumentFragment(),
+                add = function(url, id) {
+                    if (doc.getElementById(id)) {return;}
+                    js = doc.createElement(script);
+                    js.src = url;
+                    id && (js.id = id);
+                    frag.appendChild( js );
+                };
+                
+              // Google+ button
+              add('http://apis.google.com/js/plusone.js');
+              // Facebook SDK
+              add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=465363156848461', 'facebook-jssdk');
+              // Twitter SDK
+              add('//platform.twitter.com/widgets.js');
+
+              fjs.parentNode.insertBefore(frag, fjs);
+          }(document, 'script'));
+        </script>
+
+    </body>
+</html>

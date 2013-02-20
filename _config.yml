@@ -1,17 +1,17 @@
-permalink: /:categories/:title
+permalink: /:title
 auto: true
 markdown: kramdown
 exclude: Rakefile, CNAME, sass/, script/, README.md
 
-#url: http://aniketpant.com
+url: http://jayrambhia.com
 
-name: "Aniket Pant"
-tagline: "Rawrrr!"
-description: "Notes and Essays by a developer"
-about: "I'm <strong>Aniket</strong>. I love to code, listen to music and I even write free-verses at times. A majority of my work is <em>writing syntax for design</em>."
+name: "Jay Rambhia"
+tagline: "Make computers see"
+description: "Notes and codes of a paranoid android who wants track people"
+about: "I'm <strong>Jay Rambhia</strong>. I'm interested in Computer Vision and Pattern Recognition. Currenlty I'm working on visual based tracking algorithms."
 author:
- name: "Aniket Pant"
- email: "me@aniketpant.com"
- github: "aniketpant"
- twitter: "aniket_pant"
- facebook: "aniket.pant"
+ name: "Jay Rambhia"
+ email: "jayrambhia777@gmail.com"
+ github: "jayrambhia"
+ twitter: "jayrambhia"
+ facebook: "jay.rambhia"

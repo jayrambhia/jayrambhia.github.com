@@ -3,331 +3,676 @@
 	<channel>
 		<title>Aniket Pant - Rawrrr!</title>
 		<description>Notes and Essays by a developer</description>
-		<link>http://aniketpant.com</link>
-		<atom:link href="http://aniketpant.com/feed" rel="self" type="application/rss+xml" />
+		<link></link>
+		<atom:link href="/feed" rel="self" type="application/rss+xml" />
 		
     
 		
     
     
 			<item>
-				<title>Truth:Hidden</title>
-				<description>&lt;p&gt;Let’s Begin&lt;/p&gt;
+				<title>USB 3G Modem detected as cdrom | How to fix | Ubuntu 12.04</title>
+				<description>&lt;p&gt;I wanted to put this post up few days ago but couldn’t get time to write. After installing Ubuntu 12.04 with UEFI switched off, I switched GPU off. I was expecting WiFi problems but I didn’t expect any problems with USB 3G modem. I plugged it in. It showed green and blue light which meant it was intitialized but I couldn’t access it. I looked up on the net and got various solutions but none of them worked. My HUAWEI 3G USB modem was getting detected as cdrom. Weird!&lt;/p&gt;
 
-&lt;p&gt;Make a Start&lt;br /&gt;
-Find What’s Wrong&lt;/p&gt;
+&lt;p&gt;I want to keep this post short. The soultion is even shorted.&lt;/p&gt;
 
-&lt;p&gt;I am Here, there you go&lt;br /&gt;
-Leaving me here, What’s Left to do?&lt;br /&gt;
-Come back, start something else, not wars!&lt;/p&gt;
+&lt;p&gt;Get your modem’s vendor and product id.
+&lt;strong&gt;$ lsusb&lt;/strong&gt;
+Copy down the vendor and prodcut id.[caption id=”attachment_999” align=”aligncenter” width=”560”]&lt;a href=&quot;http://www.jayrambhia.com/blog/wp-content/uploads/2013/02/usb.png&quot;&gt;&lt;img src=&quot;http://www.jayrambhia.com/blog/wp-content/uploads/2013/02/usb.png&quot; alt=&quot;output of lsusb&quot; /&gt;&lt;/a&gt; output of lsusb[/caption]&lt;/p&gt;
 
-&lt;p&gt;[Chorus]
-I have been waiting for something new&lt;br /&gt;
-I have been waiting for someone to find me&lt;br /&gt;
-I can’t find you there&lt;br /&gt;
-I can’t see you there&lt;br /&gt;
-Standing all alone&lt;/p&gt;
+&lt;p&gt;Once you get your vendor and product id, you need to add that in the driver file.
+&lt;strong&gt;$ sudo su
+$ echo 12d1 1436 &amp;gt; /sys/bus/usb-serial/drivers/option1/new_id&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;I can’t just wait&lt;br /&gt;
-I can’t hold on x2&lt;/p&gt;
+&lt;p&gt;Restart the network manager.
+&lt;strong&gt;$ sudo service network-manager restart&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Let’s just go back to where we began&lt;br /&gt;
-Let’s just go back and find where it started&lt;/p&gt;
+&lt;p&gt;Or even reboot will work. Now replug your USB modem and wait for 20-30 seconds for it to intialize.&lt;/p&gt;
 
-&lt;p&gt;[Chorus]&lt;/p&gt;
+&lt;p&gt;If still you’re having some trouble, refer &lt;a href=&quot;http://askubuntu.com/questions/143989/3g-usb-modem-not-working-in-12-04&quot;&gt;this&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;It’s Killing Me&lt;br /&gt;
-Crushing&lt;br /&gt;
-things go blank&lt;br /&gt;
-Disasters&lt;br /&gt;
-Stay Back&lt;/p&gt;
-
-&lt;p&gt;(Start)
-Truth marks the start of a war that never began&lt;br /&gt;
-Leaves fall down, the wind blows&lt;/p&gt;
-
-&lt;p&gt;What have you been waiting for?&lt;br /&gt;
-Just someone to explain-&lt;br /&gt;
-Why all this pain?&lt;/p&gt;
-
-&lt;p&gt;PAIN&lt;br /&gt;
-WAR&lt;br /&gt;
-SUFFERINGS&lt;/p&gt;
+&lt;p&gt;P.S. Conducting a Python hackathon.&lt;/p&gt;
 </description>
-				<pubDate>Mon, 21 Jan 2013 21:59:00 +0530</pubDate>
-				<link>http://aniketpant.com/poetry/truthhidden</link>
-				<guid isPermaLink="true">http://aniketpant.com/poetry/truthhidden</guid>
+				<pubDate>Sun, 03 Feb 2013 07:44:44 +0530</pubDate>
+				<link>/Blog/usb-3g-modem-detected-as-cdrom-how-to-fix-ubuntu-12-04</link>
+				<guid isPermaLink="true">/Blog/usb-3g-modem-detected-as-cdrom-how-to-fix-ubuntu-12-04</guid>
 			</item>
     
 		
     
     
 			<item>
-				<title>Take Control</title>
-				<description>&lt;p&gt;Watch me drown&lt;br /&gt;
-Sink into the nothingness&lt;br /&gt;
-Everything is not lost&lt;br /&gt;
-Hope lives forever&lt;br /&gt;
-Never give up&lt;br /&gt;
-Don’t look back&lt;br /&gt;
-Don’t stare!&lt;/p&gt;
+				<title>USB 3G Modem detected as cdrom | How to fix | Ubuntu 12.04</title>
+				<description>&lt;p&gt;I wanted to put this post up few days ago but couldn’t get time to write. After installing Ubuntu 12.04 with UEFI switched off, I switched GPU off. I was expecting WiFi problems but I didn’t expect any problems with USB 3G modem. I plugged it in. It showed green and blue light which meant it was intitialized but I couldn’t access it. I looked up on the net and got various solutions but none of them worked. My HUAWEI 3G USB modem was getting detected as cdrom. Weird!&lt;/p&gt;
 
-&lt;p&gt;Find what’s lost&lt;br /&gt;
-All hope is not gone&lt;br /&gt;
-Take yourself&lt;br /&gt;
-Smoke rises up in the air&lt;br /&gt;
-Bridges burn&lt;br /&gt;
-Bodies collapse&lt;br /&gt;
-Godspeed to you&lt;/p&gt;
+&lt;p&gt;I want to keep this post short. The soultion is even shorted.&lt;/p&gt;
 
-&lt;p&gt;The fall arrives&lt;br /&gt;
-Cross them all&lt;br /&gt;
-Break everything&lt;br /&gt;
-Try Hard&lt;br /&gt;
-Don’t leave a chance&lt;br /&gt;
-For those cowards&lt;br /&gt;
-to WIN!&lt;/p&gt;
+&lt;p&gt;Get your modem’s vendor and product id.
+&lt;strong&gt;$ lsusb&lt;/strong&gt;
+Copy down the vendor and prodcut id.[caption id=”attachment_999” align=”aligncenter” width=”560”]&lt;a href=&quot;http://www.jayrambhia.com/blog/wp-content/uploads/2013/02/usb.png&quot;&gt;&lt;img src=&quot;http://www.jayrambhia.com/blog/wp-content/uploads/2013/02/usb.png&quot; alt=&quot;output of lsusb&quot; /&gt;&lt;/a&gt; output of lsusb[/caption]&lt;/p&gt;
 
-&lt;p&gt;Ride across these barren lands&lt;br /&gt;
-Fight the battle&lt;br /&gt;
-Which has not ended since eternity&lt;br /&gt;
-The battle in your mind&lt;br /&gt;
-Evoking you to lie to yourself!&lt;/p&gt;
+&lt;p&gt;Once you get your vendor and product id, you need to add that in the driver file.
+&lt;strong&gt;$ sudo su
+$ echo 12d1 1436 &amp;gt; /sys/bus/usb-serial/drivers/option1/new_id&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Don’t give up now&lt;br /&gt;
-The war is nearly won&lt;br /&gt;
-Blood flows like a river&lt;br /&gt;
-Just like words flow as a stream&lt;/p&gt;
+&lt;p&gt;Restart the network manager.
+&lt;strong&gt;$ sudo service network-manager restart&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;TAKE CONTROL&lt;/p&gt;
+&lt;p&gt;Or even reboot will work. Now replug your USB modem and wait for 20-30 seconds for it to intialize.&lt;/p&gt;
+
+&lt;p&gt;If still you’re having some trouble, refer &lt;a href=&quot;http://askubuntu.com/questions/143989/3g-usb-modem-not-working-in-12-04&quot;&gt;this&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;P.S. Conducting a Python hackathon.&lt;/p&gt;
 </description>
-				<pubDate>Mon, 21 Jan 2013 21:57:00 +0530</pubDate>
-				<link>http://aniketpant.com/poetry/take-control</link>
-				<guid isPermaLink="true">http://aniketpant.com/poetry/take-control</guid>
+				<pubDate>Sun, 03 Feb 2013 07:44:44 +0530</pubDate>
+				<link>/Blog/usb-3g-modem-detected-as-cdrom-how-to-fix-ubuntu-12-04</link>
+				<guid isPermaLink="true">/Blog/usb-3g-modem-detected-as-cdrom-how-to-fix-ubuntu-12-04</guid>
 			</item>
     
 		
     
     
 			<item>
-				<title>Over Thinking</title>
-				<description>&lt;p&gt;I just need you by my side&lt;br /&gt;
-You will always be locked inside my heart&lt;br /&gt;
-I am incomplete without your smile&lt;br /&gt;
-Don’t cry just smile for this time&lt;br /&gt;
-The cheer on your face makes my day&lt;br /&gt;
-I hope i can be with you again&lt;br /&gt;
-Just one day or maybe just for a while&lt;br /&gt;
-I have learnt many things in all this time&lt;br /&gt;
-Crying won’t help neither you nor me&lt;br /&gt;
-And what we have done won’t help anyone&lt;br /&gt;
-These days would come again&lt;br /&gt;
-But not the time we spent with each other till date&lt;br /&gt;
-Don’t cry when you read this&lt;br /&gt;
-Because I already am and I’m not fine&lt;/p&gt;
+				<title>Freehand | Design Innovation 2013 | MIT Media Lab | PESIT</title>
+				<description>&lt;p&gt;Searching for free bathroom to bathe in cold water on a cold morning in Bangalore, well, that’s how the Design Innovation workshop started for all of us who were placed at RIE. Despite of the terrible accomodation, the workshop turned out to be a marvellous event in my lifetime and the credit goes to PESIT volunteers, MIT Media Lab people, other participants and most importantly my team mates Aditi and Nikita for bearing with me and supporting all the ridiculous ideas and putting all the effort to make a successful prototype( well, you can’t prototype something in 2 days, but yes! Let’s call it a prototype). So cheers to the team &lt;strong&gt;Freak’d Outs&lt;/strong&gt;. That’s our team name. Deal with it.
+[caption id=”attachment_980” align=”aligncenter” width=”560”]&lt;a href=&quot;http://www.jayrambhia.com/blog/wp-content/uploads/2013/02/2013-01-25-18-26-43.jpg&quot;&gt;&lt;img src=&quot;http://www.jayrambhia.com/blog/wp-content/uploads/2013/02/2013-01-25-18-26-43.jpg&quot; alt=&quot;(From left) Aditi, Jay and Nikita at Design Innovation 2013&quot; /&gt;&lt;/a&gt; (From left) Aditi, Jay and Nikita at Design Innovation 2013[/caption]&lt;/p&gt;
+
+&lt;p&gt;After brainstorming for couple of days, all of our ideas were turned down by Kshitij and Anette for being too ridiculous or too broad. Finally, we got an idea. It was simple. A pen which guides you how to draw shapes. It started slowly. It took us at least an hour to understand the idea. It was dinner time already and many teams had decided to stay back and work till midnight. We were exhausted and decided that we’d start fresh. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Day 3&lt;/strong&gt;: &lt;strong&gt;Project Noname starts&lt;/strong&gt;(We hadn’t yet decided the name of the project)
+We were supposed to make a small architecture of the project and put it on a chart and show it to others. But instead we used the chart to make lines and circles for the project. Kshitij and Anette were constantly asking us to make an archtiecture, but we were too busy installing OpenCV on Nikita’s laptop (I already had it. Aditi had older version). We finished detecting and tracking the marker(pen) by lunch. After lunch, we concentrated on algorithm part to detect a straight line with small error. We even talked to Anirrudh(He was mentor for Tangible UI track) and he suggested couple of different methods which we could use. They were kind of difficult to realize, but we thought we could do it. We started working on it when Kshitij came and told us another way to do it which incidently was our primary idea. We put a marker(piece of colored paper) on top of the pen and track the center point of the marker using OpenCV and a simple camera. We finished it by dinner. It was working perfectly. Now, it was time to interface the hardware.&lt;/p&gt;
+
+&lt;p&gt;We got an Arduino Uno board, a vibrator (small motor) and bunch of wires. Fortunately Aditi had worked with Arduino before otherwise it’d have taken much more time. After writing the code and burning it on the microprocessor, she started to interface OpenCV code with the hardware using &lt;strong&gt;libserial&lt;/strong&gt;. It worked couple of times but then suddenly stopped. We checked the connections and everything seemed fine. We asked the so called Arduino expert, Priyans, about this and he asked us to solder it first. Soldering solved the problem. We stayed till midnight and finished the basic prototype and now we wanted to move on to different shapes.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Day 4&lt;/strong&gt;:&lt;strong&gt;Project finally gets a name&lt;/strong&gt;
+We started working on shapes. What’s the most basic shape that anyone can think of? &lt;strong&gt;Circle&lt;/strong&gt;. We started working on it. We finally came up with a name for the project.
+&lt;strong&gt;Freehand&lt;/strong&gt;:&lt;strong&gt;A haptic pen for blind and autistic children&lt;/strong&gt;. We also made a lame poster from some poster making website since none of us had working photoshop or anything similar. It was dinner time and we still had some problems with the circle so I started with different shapes eg. Triangle, L, Z, etc. Kshitij and Anette had been giving us some feedbacks and constantly encouraging us to push it further. Well, it worked. After midnight we had a breakthrough (A small one, though). We figured out a silly error in the code and voila! It started working. We had a sigh of relief. Kshitij told us to stop working and prepare for the “Big” speech for tomorrow. We had to prepare a one minute speech for the open showcase where we’d demonstrate our projects to the big shots of the indesutry.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Day 5&lt;/strong&gt;:&lt;strong&gt;Judgement Day&lt;/strong&gt;
+After attending INK Talks, we started setting up the project for the open showcase. I exactly knew what was going to happen. We were getting terrible illumination and since it was based on an uncalibrated simple webcam and not a kinect, we’d face huge problems. We somehow managed to overcome it with some sort of &lt;strong&gt;jugaad&lt;/strong&gt;. It was working and that too with much better efficiency. So that was an exhilarating experience that I’d never forget.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Freehand&lt;/strong&gt;:
+So what was our project about?&lt;/p&gt;
+
+&lt;p&gt;It’s a pen for blind people and autistic children to learn to write and draw shapes. Basically, it’s an assistance system which would assist blin people in writing. Whenever they are drawing some shape, writing a character or a straight line, if they go out of bounds, the pen starts to vibrate, giving a haptic feedback to the user so that the user can start again or come back to the shape. By this pen, we can eliminate the need of a human for the blinds to learn to write. This can be further extended for art and sculptures. Children can learn to draw famous cartoons. It can be used to make a perfect duplicate of the existing sculpture. This is a low cost system which requires an ordinary webcam, Arduino board, OpenCV, C++, Linux (All open source software). Even the project is an open source project. Here’s the GitHub link. &lt;a href=&quot;https://github.com/jayrambhia/freehand&quot;&gt;Freehand&lt;/a&gt;. Fork it.&lt;/p&gt;
+
+&lt;p&gt;I don’t have all the posters and stuff. We didn’t even take many pictures and I still regret not taking a small video of the project.&lt;/p&gt;
+
+&lt;p&gt;[caption id=”attachment_988” align=”aligncenter” width=”560”]&lt;a href=&quot;http://www.jayrambhia.com/blog/wp-content/uploads/2013/02/2013-01-24-15-35-09.jpg&quot;&gt;&lt;img src=&quot;http://www.jayrambhia.com/blog/wp-content/uploads/2013/02/2013-01-24-15-35-09.jpg&quot; alt=&quot;A random screenshot of our project&quot; /&gt;&lt;/a&gt; A random screenshot of our project[/caption]&lt;/p&gt;
+
+&lt;p&gt;It was an amazing week. I met a lot of people and made some friends. I learned a lot from all the gurus from MIT Media Lab. Design Innovation changed my whole perpesctive towards technology and product development. I realised that design of the product is as important as the technology and innovation behind it. It is essential that the product directly connects with the people. And the developer should be able to sell the product. If you have some kick ass product but you have a bad marketing strategy, it won’t sell. You need your one minute speech to hypnotize the person into buying the product.&lt;/p&gt;
+
+&lt;p&gt;One more thing that I learned is how to come up with an idea. My whole approach was wrong. I had technology in my mind and was looking for problems which could be solved using that technology. Instead of that, I should be looking into the problem and think of some technology or come up with a new one to approach and solve it, I hope I can sustain this thought for few more years and come up with something worthwhile.&lt;/p&gt;
+
+&lt;p&gt;P.S. I apologize for the late post. I was busy configuring Ubuntu on my new laptop. Had a short trip to home. And a big thanks to PESIT and its volunteers for making it so brilliant.&lt;/p&gt;
 </description>
-				<pubDate>Mon, 21 Jan 2013 21:57:00 +0530</pubDate>
-				<link>http://aniketpant.com/poetry/over-thinking</link>
-				<guid isPermaLink="true">http://aniketpant.com/poetry/over-thinking</guid>
+				<pubDate>Sat, 02 Feb 2013 06:12:05 +0530</pubDate>
+				<link>/Blog/freehand</link>
+				<guid isPermaLink="true">/Blog/freehand</guid>
 			</item>
     
 		
     
     
 			<item>
-				<title>Medal for a Bullet</title>
-				<description>&lt;p&gt;The train passes the last stop&lt;br /&gt;
-Watching the mountains pass by&lt;br /&gt;
-I am just another man&lt;br /&gt;
-Trying to die for something right&lt;/p&gt;
+				<title>ATI Radeon 7670M | Turn off GPU | Ubuntu 12.04</title>
+				<description>&lt;p&gt;After spending hours trying to figure out how to beat secure boot and UEFI to install Ubuntu 12.04 LTS, I made peace with it and installed (dual boot) Ubuntu 12.04 LTS. And as expected, there has to be some or other glitches with firmware and drivers. My previosu laptop (which by the way I still use) didn’t have a dedicated 2 GB GPU so there was never a problem of power consumption and heating up (in Ubuntu 12.04 LTS). A guy had posted a review on HP Envy 4 1025tx about Linux and had managed to tune GPU.&lt;/p&gt;
 
-&lt;p&gt;See the light at the tunnel’s end&lt;br /&gt;
-Beyond that lies a barren land&lt;br /&gt;
-Hear the blasts, hear the fire&lt;br /&gt;
-Don’t lose faith in yourself&lt;/p&gt;
+&lt;p&gt;Ubuntu ships fglrx (native driver for ATI Radeon GPU) which is by far the most annoying and broken driver I have seen. It broke my UI. Thankfully I had installed GNOME, as it wrecks Unity UI. &lt;a href=&quot;http://www.facebook.com/sree.simha&quot;&gt;Gemaraju Sree Teja Simha&lt;/a&gt; advised me about this. He had warned me about Catalyst (software which Ubuntu provides for AMD GPUs) that it will wreck my GUI and that’s what happened. It took me around an hour to revert back. Few fglrx packages were still present and were hindering &lt;strong&gt;vga_switcheroo&lt;/strong&gt;. I removed every bit of it using synaptic package manager.&lt;/p&gt;
 
-&lt;p&gt;You know it in your heart&lt;br /&gt;
-You know, you’re right&lt;br /&gt;
-Feel that life in yourself&lt;br /&gt;
-Behind you, lay another fallen life&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hybrid Graphics&lt;/strong&gt;:
+Ubuntu provides &lt;strong&gt;vga_switcheroo&lt;/strong&gt; which is a kernel mechanism which allows you to switch between GPUs if your machine has a hardware mux. Some laptops come with two graphics cards: one for use in applications that require a lot of computing power and other that is less powerful, but conserves energy, called the integrated GPU. The integrated GPU is often embedded in the CPU, hence the name. This concept is called Hybrid Graphics.&lt;/p&gt;
 
-&lt;p&gt;Now you have another reason to live for&lt;br /&gt;
-Do not die on him&lt;br /&gt;
-Or on that girl at home&lt;br /&gt;
-Life runs on hope&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Manually Turn OFF GPU&lt;/strong&gt;:&lt;/p&gt;
 
-&lt;p&gt;Hope is what i have&lt;br /&gt;
-I have faith in you&lt;br /&gt;
-But you need to stay strong&lt;br /&gt;
-And when you return, there won’t be a flag over your body&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo su
+echo DIS&amp;gt;/sys/kernel/debug/vgaswitcheroo/switch
+echo OFF&amp;gt;/sys/kernel/debug/vgaswitcheroo/switch
+echo IGD&amp;gt;/sys/kernel/debug/vgaswitcheroo/switch
+echo ON&amp;gt;/sys/kernel/debug/vgaswitcheroo/switch
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;I know this&lt;br /&gt;
-And i know this for sure&lt;br /&gt;
-Your return would be&lt;br /&gt;
-The time the darkness died&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;echo OFF &amp;gt; /sys/kernel/debug/vgaswitcheroo/switch&lt;/strong&gt; turns off that is currently disconnected.
+open &lt;strong&gt;/sys/kernel/debug/vgaswitcheroo/switch&lt;/strong&gt; file and check whether this has worked or not. For DIS, instead of “&lt;strong&gt;Pwr&lt;/strong&gt;”, “&lt;strong&gt;Off&lt;/strong&gt;” should appear. 
+&lt;a href=&quot;http://www.jayrambhia.com/blog/wp-content/uploads/2013/01/screenshot-from-2013-01-28-155952.png&quot;&gt;&lt;img src=&quot;http://www.jayrambhia.com/blog/wp-content/uploads/2013/01/screenshot-from-2013-01-28-155952.png?w=560&quot; alt=&quot;vga_switcheroo&quot; /&gt;&lt;/a&gt;
+This means that you have successfully turned your GPU off. Now you should restart the UI. Go to tty01 (ALT+CTRL+F1). Log in. sudo service lightdm restart. For some reasons, my laptop doesn’t go any furhter, so I reboot. And it works. GPU is turned off. Now I get to enjoy 6+ hours of battery.&lt;/p&gt;
+
+&lt;p&gt;Read more about Hybrid Graphics on &lt;a href=&quot;https://help.ubuntu.com/community/HybridGraphics&quot;&gt;Ubuntu’s Community page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;P.S. Had an amazing week at Design Innovation workshop by MIT Media Lab with PESIT. A blog post coming soon.&lt;/p&gt;
+
 </description>
-				<pubDate>Mon, 21 Jan 2013 21:56:00 +0530</pubDate>
-				<link>http://aniketpant.com/poetry/medal-for-a-bullet</link>
-				<guid isPermaLink="true">http://aniketpant.com/poetry/medal-for-a-bullet</guid>
+				<pubDate>Mon, 28 Jan 2013 21:42:07 +0530</pubDate>
+				<link>/Blog/ati-radeon-7670m-turn-off-gpu-ubuntu-12-04</link>
+				<guid isPermaLink="true">/Blog/ati-radeon-7670m-turn-off-gpu-ubuntu-12-04</guid>
 			</item>
     
 		
     
     
 			<item>
-				<title>The Crippled Truth</title>
-				<description>&lt;p&gt;Take my hand&lt;br /&gt;
-Hold me tight&lt;br /&gt;
-I will take you out of this prison&lt;/p&gt;
+				<title>UEFI, secure boot and tantrums of Windows 8</title>
+				<description>&lt;p&gt;I recently purchased a new laptop. As a HP fan, I was biased to buy some HP laptop and this piece of slim beauty caught my eye. &lt;a href=&quot;http://www.flipkart.com/hp-envy-4-1025tx-sleekbook-3rd-gen-ci5-4gb-500gb-win7-hb-2gb-graph/p/itmdafk6vtvreq3z?pid=COMDAFK3KXAKBZZD&amp;amp;ref=e4f98a62-3628-4632-96cd-8749d73c8a57&amp;amp;srno=t_1&amp;amp;otracker=from-search&amp;amp;query=hp%20envy%204-1025tx%20sleekbook%203rd%20gen%20ci5%204gb%20500gb%20win7%20hb%202gb%20graph&quot;&gt;HP Envy 4 1025tx&lt;/a&gt;. It seemed compatible with Linux so it was a plus point. But since it was out of stock and I was reluctant to buy Asus or Lenovo (Dell is out of the question), I stuck to hp and bought &lt;a href=&quot;http://www.flipkart.com/hp-envy-4-1104tx-ultrabook-3rd-gen-ci5-4gb-500gb-win8-2gb-graph/p/itmdesfqy5fbxn7f?pid=COMDESFPHP4TZVX9&amp;amp;otracker=from-search&amp;amp;srno=t_1&amp;amp;query=hp+envy+4-1104tx+ultrabook+%283rd+gen+ci5%2F+4gb%2F+500gb%2F+win8%2F+2gb+graph%29&amp;amp;ref=693de271-b319-4548-b122-eecf117d3d04&quot;&gt;HP Envy 4 1104tx&lt;/a&gt;. People ask me why I didn’t but Envy 6. I never liked big laptop with big screens. 14 inches screen is perfect. I’m not going to list the specifications and stuff.&lt;/p&gt;
 
-&lt;p&gt;These questions are meaningless&lt;br /&gt;
-You know the answers yourself&lt;br /&gt;
-The key to your freedom, lies inside you&lt;/p&gt;
+&lt;p&gt;With the new laptop came Windows 8 (preinstalled). With preinstalled Windows 8 came &lt;strong&gt;UEFI&lt;/strong&gt;, &lt;strong&gt;Secure Boot&lt;/strong&gt; and other random tatnrums of Windows 8.&lt;/p&gt;
 
-&lt;p&gt;Does it take strength to stand up?&lt;br /&gt;
-Do these thoughts eat you up?&lt;br /&gt;
-What do you think, you have become?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;UEFI&lt;/strong&gt;:&lt;/p&gt;
 
-&lt;p&gt;Well a puppet is what, resembles you&lt;br /&gt;
-Your master, lies to you&lt;br /&gt;
-So, cut these strings, And&lt;br /&gt;
-Runaway from this hell of yours  &lt;/p&gt;
+&lt;p&gt;The Unified Extensible Firmware Interface (UEFI) is a specification that defines a software interface between an operating system and platform firmware. UEFI is meant as a replacement for the Basic Input/Output System (BIOS) firmware interface, present in all IBM PC-compatible personal computers.&lt;/p&gt;
 
-&lt;p&gt;I am not your savior&lt;br /&gt;
-I am just a man&lt;br /&gt;
-Leading you to the path, out of this cage&lt;/p&gt;
+&lt;p&gt;A BIOS or Basic Input-Output System is the very first program that is executed once the system is switched on. After all the hardware has been initialized and the POST operation has completed, the BIOS executes the first boot code in the first device in the device booting list.&lt;/p&gt;
+
+&lt;p&gt;UEFI firmware does not support booting through the above mentioned method which is the only way supported by BIOS. UEFI has support for reading both the partition table as well as understanding filesystems. The commonly used UEFI firmwares support both MBR and GPT partition table.&lt;/p&gt;
+
+&lt;p&gt;Read more about UEFI.
+1. &lt;a href=&quot;http://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface&quot;&gt;Wikipedia&lt;/a&gt;
+2. &lt;a href=&quot;https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface&quot;&gt;Arch Linux wiki&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Secure Boot&lt;/strong&gt;:
+The UEFI 2.2 specification adds a protocol known as Secure boot, which can secure the boot process by preventing the loading of drivers or OS loaders that are not signed with an acceptable digital signature. My laptop came with secure boot and I could only boot Windows 8.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Windows 8&lt;/strong&gt;:
+Windows 8 comes with something called as &lt;strong&gt;fast boot&lt;/strong&gt;. This makes the boot very fast. Windows 8 doesn’t really shut down, it just hibernates and hence it starts really fast. Plus, my laptop came with some Norton antivirus thing which hogs my internet. It was kind of difficult to figure out how to use Windows 8 for a couple of days. I don’t know how that kid did it. I was using Windows 8 because I somehow couldn’t install Ubuntu and I was desparate to install it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Ubuntu with UEFI&lt;/strong&gt;:
+Latest releases of Ubuntu are shipped with UEFI support. They say Ubuntu 12.04 LTS doesn’t really support UEFI but it worked for me. Ubuntu 12.10 has better UEFI support.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Install Ubuntu 12.04 LTS&lt;/strong&gt;:
+Restart your computer. Change the boot settings. Turn secure boot OFF (Disable) and keep legacy mode disabled. Get 64 bit 12.04 iso (32 bit iso won’t work with UEFI). Use a better tool to make a LiveUSB. I tried UnetBootin 583 and it didn’t work for me (neither 12.04 nor 12.10). I was cursing Microsoft for that but it turned out that there was some problem with bootloader. Got a LiveUSB of 12.04 from a friend. Installed it with the usual procedure. Voila! Ubuntu 12.04 on my new laptop.&lt;/p&gt;
+
+&lt;p&gt;P.S. Few more posts coming on MIT Media Lab Design Innovation Workshop, USB modem, wifi firmware, etc&lt;/p&gt;
+
 </description>
-				<pubDate>Mon, 21 Jan 2013 21:55:00 +0530</pubDate>
-				<link>http://aniketpant.com/poetry/the-crippled-truth</link>
-				<guid isPermaLink="true">http://aniketpant.com/poetry/the-crippled-truth</guid>
+				<pubDate>Mon, 28 Jan 2013 20:50:57 +0530</pubDate>
+				<link>/Blog/uefi-secure-boot-and-tantrums-of-windows-8</link>
+				<guid isPermaLink="true">/Blog/uefi-secure-boot-and-tantrums-of-windows-8</guid>
 			</item>
     
 		
     
     
 			<item>
-				<title>Hope Springs Eternal</title>
-				<description>&lt;p&gt;The wind never dies&lt;br /&gt;
-These thoughts never cease&lt;br /&gt;
-Shades of black describe everything&lt;br /&gt;
-I see people clad in white&lt;br /&gt;
-Is this another aimless journey called life?&lt;/p&gt;
+				<title>SIFT Keypoint Matching using Python OpenCV</title>
+				<description>&lt;p&gt;I have been working on &lt;a href=&quot;http://jayrambhia.wordpress.com/2012/09/24/sift-based-tracker/&quot;&gt;SIFT based keypoint tracking&lt;/a&gt; algorithm and something happened on Reddit. Kat wanted this is Python so I added this feature in SimpleCV. Here’s the &lt;a href=&quot;https://github.com/ingenuitas/SimpleCV/pull/276&quot;&gt;pull request&lt;/a&gt; which got merged.&lt;/p&gt;
 
-&lt;p&gt;Walk with me&lt;br /&gt;
-Let me take you by your hand&lt;br /&gt;
-Stop living with yourself&lt;br /&gt;
-Your life is worth living&lt;br /&gt;
-Don’t let it waste by&lt;/p&gt;
+&lt;h2 id=&quot;sift-keypoints-matching-using-opencv-python&quot;&gt;&lt;strong&gt;SIFT KeyPoints Matching using OpenCV-Python&lt;/strong&gt;:&lt;/h2&gt;
 
-&lt;p&gt;These thoughts will scar your memory&lt;br /&gt;
-I am not just another somebody&lt;br /&gt;
-Do i mean anything to you?&lt;br /&gt;
-Even if you won’t say it&lt;br /&gt;
-But i still know&lt;/p&gt;
+&lt;p&gt;To match keypoints, first we need to find keypoints in the image and template. OpenCV Python version 2.4 only has SURF which can be directly used, for every other detectors and descriptors, new functions are used, i.e. &lt;strong&gt;FeatureDetector_create()&lt;/strong&gt; which creates a detector and &lt;strong&gt;DescriptorExtractor_create()&lt;/strong&gt; which creates a descriptor to extract keypoints.&lt;/p&gt;
 
-&lt;p&gt;In the wake of determination&lt;br /&gt;
-I take an oath&lt;br /&gt;
-That I’ll keep you safe&lt;br /&gt;
-No matter what storms may come&lt;br /&gt;
-And disasters dawn&lt;br /&gt;
-I will not let you feel alone&lt;br /&gt;
-As long as I’m there with you&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Import required modules&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import cv2
+import numpy as np
+import itertools
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Load Images&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;img = cv2.imread(&quot;kpimg.png&quot;)
+template = cv2.imread(&quot;kptemplate.png&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;find-keypoints&quot;&gt;&lt;strong&gt;Find Keypoints&lt;/strong&gt;:&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;detector = cv2.FeatureDetector_create(&quot;SIFT&quot;)
+descriptor = cv2.DescriptorExtractor_create(&quot;SIFT&quot;)
+
+skp = detector.detect(img)
+skp, sd = descriptor.compute(img, skp)
+
+tkp = detector.detect(template)
+tkp, td = descriptor.compute(template, tkp)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;skp is a list of all the keypoints found on the image. sd is the descriptor for the image.
+tkp is a list of all the keypoints found on the template. td is the descriptor for the template.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Properties of cv2.KeyPoint&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;pt - coordinates of the keypoint&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;size - diameter of the meaningful keypoint neighborhood&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;angle - computed orientation of the keypoint. range [0,360) degrees.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;response - the response by which the most strong keypoints have been selected. Can be used for further sorting or subsampling&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;octave - octave (pyramid layer) from which the keypoint has been extracted&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Matching Keypoints using FLANN&lt;/strong&gt;:
+It was very easy to match keypoints in C++ using FlannMatcher, but it’s a bit difficult to that in Python.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;flann_params = dict(algorithm=1, trees=4)
+flann = cv2.flann_Index(sd, flann_params)
+idx, dist = flann.knnSearch(td, 1, params={})
+del flann
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This method does a fast local approximate nearest neighbors (FLANN) calculation between two sets of feature vectors. The result are two numpy arrays the first one is a list of indexes of the matches and the second one is the match distance value. For the match indices or idx, the index values correspond to the values of td, and the value in the array is the index in td.&lt;/p&gt;
+
+&lt;p&gt;i.e. j = idx[i] is where td[i] matches sd[j]. 
+The second numpy array, at the index i is the match distance between td[i] and sd[j]. Lower distances mean better matches.&lt;/p&gt;
+
+&lt;p&gt;Perform the similar exercise on template to match keypoints of template to the image so that any erroneous keypoint match may be eliminated.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Sorting keypoint matches according to the distance&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dist = dist[:,0]/2500.0
+dist = dist.reshape(-1,).tolist()
+idx = idx.reshape(-1).tolist()
+indices = range(len(dist))
+indices.sort(key=lambda i: dist[i])
+dist = [dist[i] for i in indices]
+idx = [idx[i] for i in indices]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After sorting the keypoints according to the distance, filter keypoints by setting a cut-off limit of distance.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;skp_final = []
+for i, dis in itertools.izip(idx, dist):
+    if dis &amp;lt; distance:
+        skp_final.append(skp[i])
+    else:
+        break
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Since keypoints are already sorted according to distance, once the cut-off is surpassed, it is redundant to check for other keypoints.&lt;/p&gt;
+
+&lt;p&gt;Do this for both template and image keypoints matches.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Draw Keypoints&lt;/strong&gt;:
+Now, we have matched keypoints. We need to draw them on a new image which consist of the image and the template. First, I thought it would be too difficult to put two images side by side but I underestimated numpy arrays. Things got real easy.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;h1, w1 = img.shape[:2]
+h2, w2 = template.shape[:2]
+nWidth = w1+w2
+nHeight = max(h1, h2)
+hdif = (h1-h2)/2
+newimg = np.zeros((nHeight, nWidth, 3), np.uint8)
+newimg[hdif:hdif+h2, :w2] = template
+newimg[:h1, w2:w1+w2] = img
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After successfully creating a side by side image of template and the image, draw lines joining matched points.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tkp = tkp_final
+skp = skp_fianl
+for i in range(min(len(tkp), len(skp)))
+    pt_a = (int(tkp[i].pt[0]), int(tkp[i].pt[1]+hdif))
+    pt_b = (int(skp[i].pt[0]+w2), int(skp[i].pt[1]))
+    cv2.line(newimg, pt_a, pt_b, (255, 0, 0))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I was working on this code last night. After working on this for 3 hours and making it work, I somehow managed to copy-paste the old file on to the code and well couldn’t get back. Spent another half hour to rewrite the code. Sent a pull request to SimpleCV. It got merged.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SIFT Keypoint matching with SimpleCV&lt;/strong&gt;
+I put it in the SimpleCV and it’s now really easy to do SIFT matching in SimpleCV.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from SimpleCV import *
+i1=Image(&quot;kptemp.png&quot;)
+i=Image(&quot;kpimg.png&quot;)
+i.drawSIFTKeyPointMatch(i1,distance=50).show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The full running code is available on &lt;a href=&quot;https://github.com/jayrambhia/Vision/blob/master/OpenCV/Python/sift_matching.py&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;P.S. Going to Bangalore tomorrow to attend Design Innovation Worskhop by MIT Media Labs in collaboration with PESIT.&lt;/p&gt;
 </description>
-				<pubDate>Mon, 21 Jan 2013 21:55:00 +0530</pubDate>
-				<link>http://aniketpant.com/poetry/hope-springs-eternal</link>
-				<guid isPermaLink="true">http://aniketpant.com/poetry/hope-springs-eternal</guid>
+				<pubDate>Fri, 18 Jan 2013 22:00:12 +0530</pubDate>
+				<link>/Blog/sift-keypoint-matching-using-python-opencv</link>
+				<guid isPermaLink="true">/Blog/sift-keypoint-matching-using-python-opencv</guid>
 			</item>
     
 		
     
     
 			<item>
-				<title>Trance En Route</title>
-				<description>&lt;p&gt;Hear the silence&lt;br /&gt;
-Hear the sound&lt;br /&gt;
-Hear the screams&lt;br /&gt;
-Calling you out to me&lt;/p&gt;
+				<title>Point Cloud Library - Install and Configure - Ubuntu 12.04</title>
+				<description>&lt;p&gt;A &lt;strong&gt;Point Cloud&lt;/strong&gt; is a set of vertices in a three-dimensional coordinate system. As OpenCV is used to work with two dimensional objects(images), PCL is used to work with three dimensional objects(3D space). Vertices usually represent X, Y and Z coordinates of the external surface of an object.&lt;/p&gt;
 
-&lt;p&gt;Those eyes watch you from the sky&lt;br /&gt;
-Still why doesn’t anyone come to help you&lt;br /&gt;
-You are on your one&lt;br /&gt;
-Don’t call for help&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://pointclouds.org/&quot;&gt;Point Cloud Library&lt;/a&gt;&lt;/strong&gt; is a comprehensive BSD open source library for n-D Point Clouds and 3D geometry processing. It has great &lt;a href=&quot;http://pointclouds.org/documentation/&quot;&gt;documentation&lt;/a&gt; and &lt;a href=&quot;http://dev.pointclouds.org/projects/pcl/wiki&quot;&gt;developer support&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;This red sky is just nothing&lt;br /&gt;
-This is not the end&lt;br /&gt;
-Fight your way through the darkness&lt;br /&gt;
-I will be there waiting for you&lt;/p&gt;
+&lt;h2 id=&quot;install-pcl&quot;&gt;&lt;strong&gt;Install PCL&lt;/strong&gt;:&lt;/h2&gt;
 
-&lt;p&gt;Hold my hand&lt;br /&gt;
-Take me by the arm&lt;br /&gt;
-We both don’t know everything&lt;br /&gt;
-Let’s put this epic down into the books&lt;/p&gt;
+&lt;p&gt;I tried to install PCL using apt-get but there were some issues with it. First of all, it was 1.0.6 version(which is very old). Second, I couldn’t find any .pc file for pkg-config and last but not the least, it wasn’t included anywhere. So I asked my friend, &lt;a href=&quot;http://salilkapur.wordpress.com/&quot;&gt;Salil&lt;/a&gt;, who has worked with PCL before and he gave me the best solution.&lt;/p&gt;
 
-&lt;p&gt;Do you dream or just make false promises to yourself?&lt;br /&gt;
-Everywhere I see, I see nothing but disasters&lt;br /&gt;
-I need someone to help me&lt;br /&gt;
-Stay by my side, don’t let me fall down&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl
+sudo apt-get update
+sudo apt-get install libpcl-all
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That’s it. Add ppa and install it. Now I have the latest version of PCL and I didn’t need to worry about all the dependencies especially libboost. I somehow broke it. So moving on to configuring PCL and compiling PCL code.&lt;/p&gt;
+
+&lt;h2 id=&quot;compile-pcl&quot;&gt;&lt;strong&gt;Compile PCL&lt;/strong&gt;:&lt;/h2&gt;
+
+&lt;p&gt;I am not a big fan of cmake/make and despise it a lot. I like to compile codes using gcc or g++. &lt;/p&gt;
+
+&lt;h3 id=&quot;cmake&quot;&gt;&lt;strong&gt;Cmake&lt;/strong&gt;:&lt;/h3&gt;
+
+&lt;p&gt;If you want to write CMakeLists.txt and compile your code using cmake, here is how to do it.
+Copy the &lt;a href=&quot;http://pointclouds.org/documentation/tutorials/writing_pcd.php#writing-pcd&quot;&gt;code&lt;/a&gt; and save it as pcd_write.cpp in a folder.
+In the same folder, create a file named CmakeLists.txt and copy the following.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
+find_package(PCL 1.6 REQUIRED)
+include_directories(${PCL_INCLUDE_DIRS})
+link_directories(${PCL_LIBRARY_DIRS})
+add_definitions(${PCL_DEFINITIONS})
+add_executable(pcd_write pcd_write.cpp)
+target_link_libraries(pcd_write ${PCL_COMMON_LIBRARIES} ${PCL_IO_LIBRARIES})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now compile it using cmake.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cmake .
+make
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;$ ./pcd_write&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, moving on to my favorite part. Compiling it using gcc/g++.&lt;/p&gt;
+
+&lt;h3 id=&quot;gccg&quot;&gt;&lt;strong&gt;gcc/g++&lt;/strong&gt;:&lt;/h3&gt;
+
+&lt;p&gt;As I know how many files I need to include to compile OpenCV code, I always take precautions and use &lt;strong&gt;pkg-config&lt;/strong&gt;. It’s a life saver. Here’s my thing. I write a bash script to compile code, save it, use an alias to call it every time I want to compile a code. I have done it for OpenCV. See &lt;a href=&quot;http://jayrambhia.wordpress.com/2012/05/08/beginning-opencv/&quot;&gt;Beginning OpenCV&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I did the same for PCL. Except this time, it took me more time to find all the files as unlike OpenCV, PCL doesn’t keep all the files intact. Each module is separate. Here’s the file. Name it &lt;strong&gt;.compile_pcl.sh&lt;/strong&gt; and save it in your home directory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo &quot;compiling $1&quot;
+if [[ $1 == *.c ]]
+then
+    gcc -ggdb -I/usr/include/pcl-1.6 -I/usr/include/eigen3 -o `basename $1 .c` $1 `pkg-config --libs pcl_apps-1.6 pcl_common-1.6 pcl_features-1.6 pcl_filters-1.6 pcl_geometry-1.6 pcl_io-1.6 pcl_kdtree-1.6 pcl_keypoints-1.6 pcl_octree-1.6 pcl_registration-1.6 pcl_sample_consensus-1.6 pcl_search-1.6 pcl_segmentation-1.6 pcl_surface-1.6 pcl_tracking-1.6 pcl_visualization-1.6 flann`;
+elif [[ $1 == *.cpp ]]
+then
+    g++ -ggdb -I/usr/include/pcl-1.6 -I/usr/include/eigen3 -o `basename $1 .cpp` $1 `pkg-config --libs pcl_apps-1.6 pcl_common-1.6 pcl_features-1.6 pcl_filters-1.6 pcl_geometry-1.6 pcl_io-1.6 pcl_kdtree-1.6 pcl_keypoints-1.6 pcl_octree-1.6 pcl_registration-1.6 pcl_sample_consensus-1.6 pcl_search-1.6 pcl_segmentation-1.6 pcl_surface-1.6 pcl_tracking-1.6 pcl_visualization-1.6 flann`;
+else
+    echo &quot;Please compile only .c or .cpp files&quot;
+fi
+echo &quot;Output file =&amp;gt; ${1%.*}&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Did you get what I was saying? I had to include each package separately. 
+Give execution permission with
+&lt;strong&gt;$ chmod +x .compile_pcl.sh&lt;/strong&gt;
+Add following line in your &lt;strong&gt;.bash_aliases&lt;/strong&gt; (which will be in your home directory. If you don’t have one, make one)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;alias pcl=&quot;~/.compile_pcl.sh&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, compile that code using your new alias.
+&lt;strong&gt;$ pcl pcd_write.cpp&lt;/strong&gt;
+&lt;strong&gt;$ ./pcd_write&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If for some reasons, you get an error saying 
+&lt;strong&gt;/usr/bin/ld: cannot find -lflann_cpp-gd&lt;/strong&gt;,&lt;/p&gt;
+
+&lt;p&gt;Edit &lt;strong&gt;/usr/lib/pkgconfig/flann.pc&lt;/strong&gt; in superuser mode and remove &lt;strong&gt;-lflann_cpp-gd&lt;/strong&gt;. This will work perfectly.&lt;/p&gt;
+
+&lt;p&gt;Well, now you don’t need to write crappy CMakeLists.txt files everytime and use cmake and make and stuff. Start looking into some tutorials.&lt;/p&gt;
+
+&lt;p&gt;P.S. Diving into 3D visualization and tracking.&lt;/p&gt;
+
 </description>
-				<pubDate>Mon, 21 Jan 2013 21:21:00 +0530</pubDate>
-				<link>http://aniketpant.com/poetry/trance-en-route</link>
-				<guid isPermaLink="true">http://aniketpant.com/poetry/trance-en-route</guid>
+				<pubDate>Thu, 17 Jan 2013 08:05:12 +0530</pubDate>
+				<link>/Blog/point-cloud-library-install-and-configure-ubuntu-12-04</link>
+				<guid isPermaLink="true">/Blog/point-cloud-library-install-and-configure-ubuntu-12-04</guid>
 			</item>
+    
+		
     
 		
     
     
 			<item>
-				<title>Hope will not be here</title>
-				<description>&lt;p&gt;High above the sky&lt;br /&gt;
-Over the clouds and the moon&lt;br /&gt;
-Pure and white as snow&lt;br /&gt;
-Engulfed in beautiful solitude&lt;/p&gt;
+				<title>Python/C API: Making a Type</title>
+				<description>&lt;p&gt;This is the third post in the Python/C API series. In previous posts,
+Python/C API: #include&lt;python.h&gt; and [Python/C API: Reference Counting](http://jayrambhia.wordpress.com/2012/12/14/pythonc-api-reference-counting/), I have shown how to extend Python with C API and importance of memory management in Python. In this post, we'll be talking about declaring and making a type. This is can also be seen as a class in Python. It has it's init function, deallocating function, etc. Here's the overview.&lt;/python.h&gt;&lt;/p&gt;
 
-&lt;p&gt;Where i lie seeing the sun go&lt;br /&gt;
-Into the horizon&lt;br /&gt;
-Like a Sunday afternoon&lt;br /&gt;
-Lost in the northern lights  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Overview&lt;/strong&gt;:&lt;/p&gt;
 
-&lt;p&gt;None of us will know&lt;br /&gt;
-Of how you and me came&lt;br /&gt;
-Together for sometime&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create Structure.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Init and dealloc.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Declare Members.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Write Functions.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Declare Functions.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Make the type Ready.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Be it your amazing grace or&lt;br /&gt;
-Eternal beauty and glory&lt;/p&gt;
+&lt;p&gt;Making a type is not only about making functions, it also relates to C structures, write them in array, and use the arrays to create Python components. We’ll learn how to make a type with a simple example.&lt;/p&gt;
 
-&lt;p&gt;Holding the sword by the hilt&lt;br /&gt;
-En route to get it done&lt;br /&gt;
-Releasing the sands of time&lt;br /&gt;
-Ending the pandemonium forever&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Include Libraries&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;Python.h&amp;gt;
+#include &amp;lt;stdio.h&amp;gt;
+#include &quot;structmember.h&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;tructmember.h is a very important library which helps in declaring the members of the type.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;C Struct&lt;/strong&gt;
+The storage for the type is C struct and its filed will be type’s data. Here, I am declaring a &lt;strong&gt;“CountDict” type&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// CountDict type
+typedef struct {
+    PyObject_HEAD
+    PyObject * dict;
+    PyObject * keys;
+    PyObject * vals;
+    int count;
+    char* name;
+} CountDict;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The first thing in the struct must be PyObject_HEAD, with no semicolon. This is a macro that creates the initial fields in the structure. This is what makes your structure usable as a PyObject. The rest of the struct can be whatever data that you need for the type. PyObject* pointers are very useful for holding Python objects, but they are almost certainly &lt;strong&gt;owned references&lt;/strong&gt;. Hence you have to be very careful to acquire and release them properly.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Init and dealloc&lt;/strong&gt;:
+When writing a Python class, some special methods have special names, eg. &lt;strong&gt;init&lt;/strong&gt;. When creating a type in C, these special methods are ordinary C functions with particular signatures that will be specified as part of the type definition. These function should be named systematically for user readability, but the name really doesn’t matter. A Pointer to the function will be associated with its role.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;static int CountDict_init(CountDict *self, PyObject *args, PyObject* kwds)
+{
+    self-&amp;gt;dict = PyDict_New();
+    self-&amp;gt;keys = PyList_New(0);
+    self-&amp;gt;vals = PyList_New(0);
+    self-&amp;gt;count = 0;
+    if (!PyArg_ParseTuple(args, &quot;s&quot;, &amp;amp;self-&amp;gt;name))
+    {
+        return -1;
+    }
+    return 0;
+}
+
+static void CountDict_dealloc(CountDict *self)
+{
+    Py_XDECREF(self-&amp;gt;dict);
+    Py_XDECREF(self-&amp;gt;keys);
+    Py_XDECREF(self-&amp;gt;vals);
+    self-&amp;gt;ob_type-&amp;gt;tp_free((PyObject*)self);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Python class need not have an explicit deallocation method, but a C class has to have an explicit deallocation method. In this method, you should dispose all the owned references, and finally call the class tp_free function to clean up the type itself.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Make Data Available in Python&lt;/strong&gt;
+After declaring the type (C struct), and few important methods, you need to make all that data available to Python.
+&lt;strong&gt;Declare Members&lt;/strong&gt;:
+You can decide which of your struct’s fields to make available as Python data attributes, if any. An array of structures defines the attributes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;static PyMemberDef
+CountDict_members[] = {
+    { &quot;dict&quot;,   T_OBJECT, offsetof(CountDict, dict), 0,
+                &quot;The dictionary of value collected so far.&quot;},
+    { &quot;keys&quot;,   T_OBJECT, offsetof(CountDict, keys), 0,
+                &quot;The keys collected so far.&quot;},
+    { &quot;vals&quot;,   T_OBJECT, offsetof(CountDict, vals), 0,
+                &quot;The values collected so far.&quot;},
+    { &quot;count&quot;,  T_INT, offsetof(CountDict, count), 0,
+                &quot;The number of times set() has been called.&quot;},
+    { &quot;name&quot;,  T_STRING, offsetof(CountDict, name), 0,
+                &quot;The name of the type.&quot;},
+    {NULL}
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Each PyMemberDef structure specifies the Python attribute name, the C type of the field, the offset into the structure (with the handy offsetof macro), some flags, and a docstring for the attribute. The array will be used later in the type definition.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Write Functions&lt;/strong&gt;:
+Class methods are defined just like functions. You can write as many functions as you want.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;static PyObject* CountDict_Set(CountDict *self, PyObject* args)
+{
+    const char* key;
+    PyObject* value;
+    
+    if (!PyArg_ParseTuple(args, &quot;sO:set&quot;, &amp;amp;key, &amp;amp;value))
+    {
+        return NULL;
+    }
+    
+    if (PyDict_SetItemString(self-&amp;gt;dict, key, value) &amp;lt; 0)
+    {
+        return NULL;
+    }
+    PyList_Append(self-&amp;gt;keys, PyString_FromString(key));
+    PyList_Append(self-&amp;gt;vals, value);
+    self-&amp;gt;count ++;
+    
+    return Py_BuildValue(&quot;i&quot;, self-&amp;gt;count);
+}
+
+static PyObject* CountDict_GetKeys(CountDict *self)
+{
+    return self-&amp;gt;keys;
+}
+
+static PyObject* CountDict_GetVals(CountDict *self)
+{
+    return self-&amp;gt;vals;
+}
+
+static PyObject* CountDict_GetName(CountDict* self)
+{
+    return Py_BuildValue(&quot;s&quot;, self-&amp;gt;name);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Declare Methods&lt;/strong&gt;:
+Methods are also declared like functions, in an array of structs, providing the name, C function pointer, flags, and docstring for method.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;static PyMethodDef CountDict_methods[] = {
+    {&quot;set&quot;, (PyCFunction) CountDict_Set, 
+                METH_VARARGS, &quot;set a key and increment the count.&quot;},
+    {&quot;getKeys&quot;, (PyCFunction) CountDict_GetKeys, 
+                METH_VARARGS, &quot;get all the keys.&quot;},
+    {&quot;getVals&quot;, (PyCFunction) CountDict_GetVals,
+               METH_VARARGS, &quot;get all the values.&quot;},
+    {&quot;getName&quot;, (PyCFunction) CountDict_GetName,
+              METH_VARARGS, &quot;get name of the type&quot;},
+    {NULL}
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Declare the Type Components&lt;/strong&gt;:
+Types are defined by initializing a PyTypeObject struct. This struct has fields for each of the special functions needed to provide the behavior of a type. Where in Python we’d have specially named functions like &lt;strong&gt;init&lt;/strong&gt; and &lt;strong&gt;hash&lt;/strong&gt;, in C we have members in the PyTypeObject struct pointing to the C function implementing the functionality. Other fields in the struct get pointers to the arrays of structs defining the methods, properties, and attributes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;static PyTypeObject
+CountDictType = {
+   PyObject_HEAD_INIT(NULL)
+   0,                         /* ob_size */
+   &quot;CountDict&quot;,               /* tp_name */
+   sizeof(CountDict),         /* tp_basicsize */
+   0,                         /* tp_itemsize */
+   (destructor)CountDict_dealloc, /* tp_dealloc */
+   0,                         /* tp_print */
+   0,                         /* tp_getattr */
+   0,                         /* tp_setattr */
+   0,                         /* tp_compare */
+   0,                         /* tp_repr */
+   0,                         /* tp_as_number */
+   0,                         /* tp_as_sequence */
+   0,                         /* tp_as_mapping */
+   0,                         /* tp_hash */
+   0,                         /* tp_call */
+   0,                         /* tp_str */
+   0,                         /* tp_getattro */
+   0,                         /* tp_setattro */
+   0,                         /* tp_as_buffer */
+   Py_TPFLAGS_DEFAULT | Py_TPFLAGS_BASETYPE, /* tp_flags*/
+   &quot;CountDict object&quot;,        /* tp_doc */
+   0,                         /* tp_traverse */
+   0,                         /* tp_clear */
+   0,                         /* tp_richcompare */
+   0,                         /* tp_weaklistoffset */
+   0,                         /* tp_iter */
+   0,                         /* tp_iternext */
+   CountDict_methods,         /* tp_methods */
+   CountDict_members,         /* tp_members */
+   0,                         /* tp_getset */
+   0,                         /* tp_base */
+   0,                         /* tp_dict */
+   0,                         /* tp_descr_get */
+   0,                         /* tp_descr_set */
+   0,                         /* tp_dictoffset */
+   (initproc)CountDict_init,  /* tp_init */
+   0,                         /* tp_alloc */
+   0,                         /* tp_new */
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Make the type Ready&lt;/strong&gt;:
+Once the module is initialized, we can init some slots in the type that can’t be done with the struct initializer, then call PyType_Ready to finish up the creation of the type.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;void initccv(void)
+{
+    PyObject* mod;
+    
+    mod = Py_InitModule3(&quot;ccv&quot;, NULL, &quot;An extension with a type&quot;);
+    // ccv is the module name
+    if (mod == NULL)
+    {
+        return;
+    }
+    
+    CountDictType.tp_new = PyType_GenericNew;
+    if (PyType_Ready(&amp;amp;CountDictType) &amp;lt; 0) {
+      return;
+    }
+    
+    Py_INCREF(&amp;amp;CountDictType);
+    PyModule_AddObject(mod, &quot;CountDict&quot; , (PyObject* )&amp;amp;CountDictType);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;PyType_Ready performs bookkeeping and other initialization to prepare the type for use, including hooking up the hierarchy for inheritance, and so on. Finally, PyModule_AddObject is used to assign the type to its name in the module.&lt;/p&gt;
+
+&lt;p&gt;You can find the complete code on my &lt;a href=&quot;https://github.com/jayrambhia/PyCee/blob/master/pycee/ccv.c&quot;&gt;GitHub&lt;/a&gt;.  I’m working on making a type for SimpleCV Image class. I am planning to use numpy C api. I hope this goes well.&lt;/p&gt;
+
+&lt;p&gt;P.S. The Hobbit has by far the most amazing animation I have ever seen.&lt;/p&gt;
+
 </description>
-				<pubDate>Mon, 21 Jan 2013 21:20:00 +0530</pubDate>
-				<link>http://aniketpant.com/poetry/hope-will-not-be-here</link>
-				<guid isPermaLink="true">http://aniketpant.com/poetry/hope-will-not-be-here</guid>
-			</item>
-    
-		
-    
-    
-			<item>
-				<title>A Sonnet</title>
-				<description>&lt;p&gt;Under a starry sky&lt;br /&gt;
-The moon passes by&lt;br /&gt;
-There i lie watching the sky&lt;br /&gt;
-Thinking about the days that went by&lt;br /&gt;
-Don’t know if they were a dream&lt;br /&gt;
-But still can’t tell if they were real&lt;br /&gt;
-I am still sure of meeting you again&lt;br /&gt;
-Because even if we go on different roads&lt;br /&gt;
-I know I will meet you again&lt;br /&gt;
-Because there are no two roads that don’t meet again&lt;br /&gt;
-And then coming to a full circle&lt;br /&gt;
-I will say that I missed you&lt;br /&gt;
-We will lead a new life together&lt;br /&gt;
-And kiss you and say I will never leave you again&lt;/p&gt;
-</description>
-				<pubDate>Mon, 21 Jan 2013 21:19:00 +0530</pubDate>
-				<link>http://aniketpant.com/poetry/a-sonnet</link>
-				<guid isPermaLink="true">http://aniketpant.com/poetry/a-sonnet</guid>
+				<pubDate>Wed, 19 Dec 2012 19:04:32 +0530</pubDate>
+				<link>/Blog/pythonc-api-making-a-type</link>
+				<guid isPermaLink="true">/Blog/pythonc-api-making-a-type</guid>
 			</item>
     
 		

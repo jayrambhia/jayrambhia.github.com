@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head >
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Integrating OpenCV with pygtk &mdash; Aniket Pant</title>
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="jay, rambhia, computer vision, python, trakcing, keypoints, c, c++, simplecv, opencv">
+        <meta name="viewport" content="width=device-width">
+
+        
+        
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="/assets/styles/css/style.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="header-container gw">
+            <div class="g one-whole zen-space full-width"></div>
+            <div class="wrapper">
+                <header class="g one-whole flexbox" role="banner">
+                    <h1 class="g one-third portable-one-whole flexbox__item"><a class="logo media" href="/" rel="nofollow"><img class="media__item" src="/assets/images/logo.jpg" alt="Rawrrr! Aniket here." /></a></h1>
+                    <nav class="g two-thirds portable-one-whole flexbox__item navbar">
+                        <ul class="nav nav--block portable-nav--stacked">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about-me">About Me</a></li>
+                            <li><a href="/Blog">Blog</a></li>
+                            <li><a href="/archive">Archive</a></li>
+                        </ul>
+                    </nav>
+                    <div class="g two-thirds portable-one-whole flexbox__item">
+                        <p class="islet about-me">I'm <strong>Aniket</strong>. I love to code, listen to music and I even write free-verses at times. A majority of my work is <em>writing syntax for design</em>.</p>
+                    </div>
+                    <p rel="google-authorship" class="accessibility">By Aniket Pant</p>
+                </header> <!-- header -->
+            </div>
+        </div> <!-- header-container -->
+
+        <div class="main-container gw">
+            <div class="wrapper">
+                <section class="g one-whole" role="main">
+                <div class="post integrating-opencv-with-pygtk">
+	<header class="g one-quarter portable-one-whole post--header">
+  		<h1 class="post_title">Integrating OpenCV with pygtk</h1>
+  		<div class="meta"><date class="date">Posted on 10 April 2012</date><br/>Under <span class="category">Blog</a><br/>Tagged </span><span class="tags">Computer Vision</span></div>
+      <div class="share island">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="jayrambhia" data-related="jayrambhia">Tweet</a>
+        <div class="g-plusone" data-size="medium"></div>
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+      </div>
+      <div id="boastful"></div>
+	</header><!-- post-header -->
+	<div class="g three-quarters portable-one-whole">
+		<article class="post--content">
+	  	<p>I am currently working on an undisclosed project with a senior. It requires a GUI, and bunch of OpenCV codes. We started using pygtk, and openCV. python wrapper for openCV is literally slow and we need a much better performance than that. So, after some tests, we found out that we could use <strong>swig</strong> bindings. At first, we thought to make swig bindings ourselves, but as we started doing it, we realized it isn’t that easy to bind complete OpenCV library in swig. Hence, we started looking at some other options. os.system() seemed useless.</p>
+
+<p>After looking on the internet for couple of days, we realized that openCV 2.1 provides swig bindings for python in the package. We tried, and it worked. That gave us some relief. We still had a huge problem. We had to show two different windows, one for GUI, and one for OpenCV. I tried many things including multithreading, multiprocessing, etc, but nothing seemed to be working. We were stuck again. I once <strong>crashed</strong> my Ubuntu as I encountered an infinite loop in openCV.</p>
+
+<p>After a session of brainstorming, and testing for performance, we decided to show images in GUI itself. This was quite new for me. I had never converted an IplImage object to gtk.Image object. We had another option. We could save the image and then load it in GUI, but it seemed pointless as it took more time and memory. We badly wanted to find a way to convert IplImage object to gtk.Image object. After looking at dozens of codes, I stumbled upon a code on <a href="http://stackoverflow.com/questions/1188665/how-can-i-display-an-opencv-iplimage-in-gtk-gtkmm">stackoverflow,</a> which converted IplImage* object to gtk.Image object in C++. I tried to implement that in python. It took me some time to understand C++ code, as I have never done anything in C++.</p>
+
+<p>So here is how I implemented it. And it is working fine.</p>
+
+<pre><code>img_pixbuf = gtk.gdk.pixbuf_new_from_data(img.imageData,
+                                          gtk.gdk.COLORSPACE_RGB,
+                                          False,
+                                          img.depth,
+                                          img.width,
+                                          img.height,
+                                          img.widthStep)
+image = gtk.image_new_from_pixbuf(img_pixbuf)
+</code></pre>
+
+<p><strong>NOTE: IplImage has colorspace BGR, but there is no BGR colorspace in gtk. So you need to change colorspace of image from BGR to RGB.</strong></p>
+
+<pre><code>new_img = cvCreateImage(cvGetSize(img), img.depth, img.nChannels)
+cvCvtColor(img,new_img,CV_BGR2RGB)
+</code></pre>
+
+<p>You can find corresponding documents regarding pixbuf, gtk.gdk.pixbuf_new_from_data from <strong><a href="http://www.pygtk.org/docs/pygtk/class-gdkpixbuf.html#function-gdk--pixbuf-new-from-data">pygtk tutorial page</a>.</strong></p>
+
+<p>Using this, we have made some fine codes which use openCV and display is show on pygtk GUI.</p>
+
+<p>We have also started working on <a href="http://info.ee.surrey.ac.uk/Personal/Z.Kalal/tld.html"><strong>openTLD</strong></a>. We are trying to port it to python. We spent complete day on it. At the end, we settled on os.system() for running openTLD in C++. We can’t port it to python in 3-4 days, so os.system() seemed the best option. We have added multiprocessing, and it is working really well.</p>
+
+<p>P.S. openTLD is simply awesome.</p>
+  
+		</article><!-- post-content -->
+		<footer class="post--footer"></footer><!-- post-footer -->
+    <section class="meta--info island">
+      <p class="lead">
+        <br/><br/>If you liked this post, then you should definitely follow Jay on twitter too. He would be excited to know that you like his work.
+      </p>
+      <a href="https://twitter.com/jayrambhia" class="twitter-follow-button" data-show-count="false">Follow @jayrambhia</a>
+    </section>
+  </div>
+</div><!-- post -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="/assets/js/jquery.boastful.js"></script>
+<script src="/assets/js/rainbow-custom.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#boastful').boastful({
+        empty_message: '<p>Bah! Why ain\'t anyone tweeting this.</p>'  
+    });
+  });
+</script>
+                </section>
+            </div>
+        </div> <!-- main-container -->
+
+        <div class="footer-container gw">
+            <div class="wrapper">
+                <footer class="g one-whole text--center" role="contentinfo">
+                    <a href="https://plus.google.com/114828599949215633124?rel=author" class="accessibility">Google +</a>
+                    <p><a href="http://twitter.com/aniket_pant">@jayrambhia</a><span class="subtle">&nbsp;|&nbsp;Paranoid Android&nbsp;&nbsp;</span> 
+                </footer> <!-- footer -->
+            </div>
+            <div class="g one-whole zen-space full-width"></div>
+        </div> <!-- footer-container -->
+
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-23477947-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+
+        <!-- Typekit Fonts -->
+        <script type="text/javascript">
+          (function() {
+            var config = {
+              kitId: 'rsd5dqz',
+              scriptTimeout: 3000
+            };
+            var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+          })();
+
+          (function(doc, script) {
+            var js, 
+                fjs = doc.getElementsByTagName(script)[0],
+                frag = doc.createDocumentFragment(),
+                add = function(url, id) {
+                    if (doc.getElementById(id)) {return;}
+                    js = doc.createElement(script);
+                    js.src = url;
+                    id && (js.id = id);
+                    frag.appendChild( js );
+                };
+                
+              // Google+ button
+              add('http://apis.google.com/js/plusone.js');
+              // Facebook SDK
+              add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=465363156848461', 'facebook-jssdk');
+              // Twitter SDK
+              add('//platform.twitter.com/widgets.js');
+
+              fjs.parentNode.insertBefore(frag, fjs);
+          }(document, 'script'));
+        </script>
+
+    </body>
+</html>

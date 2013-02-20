@@ -4,25 +4,24 @@ title: Home
 slug: home
 ---
 <section class="g one-whole info-on-me text-cols--2 portable-text-cols--1 landmark" markdown="1">
-Three of my tools are Codeigniter, Laravel and WordPress. But there is another power that I have which allows me to think of great application architectural designs. Other than that I _love to speak_ at events and occasionally _write poetry_.
-
-If you wish to consult me for any project, or if you want me to [speak](/speaking) at an event, say <a href="mailto:me@aniketpant.com">hello</a>.
+Being a __paranoid android__, I believe in Open Source and have immense faith in the community. Developer of open source framework for Mahcine Vision - [SimpleCV](http://simplecv.org/).
+If you want to talk to me, or hire me, or give me a thesis opportunity, drop me a <a href="mailto:jayrambhia777@gmail.com">mail</a>.
 
 {% for post in site.posts limit:1 %}
-**Read my latest {% if post.category == "notes" %}note{% elsif post.category == "essays" %}essay{% elsif post.category == "poetry" %}poem{% elsif post.category == "talk" %}talk{% endif %} &mdash; <a href="{{ post.url }}">{{ post.title }}</a>{% endfor %}**
+**Read my latest {% if post.category == "Blog" %}Blogposts{% elsif post.category == "news" %}Articles{% elsif post.category == "poetry" %}poem{% elsif post.category == "talk" %}talk{% endif %} &mdash; <a href="{{ post.url }}">{{ post.title }}</a>{% endfor %}**
 </section>
 
 <section class="g one-half portable-one-whole links">
-	<h3>Where would you like to teleport to?</h3>
+	<h3>Where would you like to track?</h3>
 	<ul class="block-list">
 		<li><a href="/archive" class="block-list__link">The Old Archives</a></li>
-		<li><a href="http://markmyword.in" class="block-list__link">Mark My Word Conference</a></li>
+		<li><a href="http://markmyword.in" class="block-list__link">Paranoid Android's Blog</a></li>
 	</ul>
 </section>
 
 <section class="g one-half portable-one-whole">
 	<h3>What am I doing nowadays?</h3>
-	<p>Nowadays I am working full time as the Curator of <a href="http://markmyword.in">Mark My Word</a> which is India's First Content and Design Conference scheduled to happen on Feb 2, 2013.</p>
+	<p>Nowadays I am working on implementing statistical learning techniques to estimate and detect objects in visual based tracking as my project. Apart from this, I'm working as an intern at <a href="http://duceretech.com/">Ducere Technologies</a>. And obviously, playing Ultimate frisbee.</p>
 </section>
 
 <section class="g one-whole recent-posts">

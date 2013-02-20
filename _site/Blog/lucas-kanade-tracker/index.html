@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head >
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Lucas Kanade Tracker &mdash; Aniket Pant</title>
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="jay, rambhia, computer vision, python, trakcing, keypoints, c, c++, simplecv, opencv">
+        <meta name="viewport" content="width=device-width">
+
+        
+        
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="/assets/styles/css/style.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="header-container gw">
+            <div class="g one-whole zen-space full-width"></div>
+            <div class="wrapper">
+                <header class="g one-whole flexbox" role="banner">
+                    <h1 class="g one-third portable-one-whole flexbox__item"><a class="logo media" href="/" rel="nofollow"><img class="media__item" src="/assets/images/logo.jpg" alt="Rawrrr! Aniket here." /></a></h1>
+                    <nav class="g two-thirds portable-one-whole flexbox__item navbar">
+                        <ul class="nav nav--block portable-nav--stacked">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about-me">About Me</a></li>
+                            <li><a href="/Blog">Blog</a></li>
+                            <li><a href="/archive">Archive</a></li>
+                        </ul>
+                    </nav>
+                    <div class="g two-thirds portable-one-whole flexbox__item">
+                        <p class="islet about-me">I'm <strong>Aniket</strong>. I love to code, listen to music and I even write free-verses at times. A majority of my work is <em>writing syntax for design</em>.</p>
+                    </div>
+                    <p rel="google-authorship" class="accessibility">By Aniket Pant</p>
+                </header> <!-- header -->
+            </div>
+        </div> <!-- header-container -->
+
+        <div class="main-container gw">
+            <div class="wrapper">
+                <section class="g one-whole" role="main">
+                <div class="post lucas-kanade-tracker">
+	<header class="g one-quarter portable-one-whole post--header">
+  		<h1 class="post_title">Lucas Kanade Tracker</h1>
+  		<div class="meta"><date class="date">Posted on 09 August 2012</date><br/>Under <span class="category">Blog</a><br/>Tagged </span><span class="tags">Computer Vision</span></div>
+      <div class="share island">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="jayrambhia" data-related="jayrambhia">Tweet</a>
+        <div class="g-plusone" data-size="medium"></div>
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+      </div>
+      <div id="boastful"></div>
+	</header><!-- post-header -->
+	<div class="g three-quarters portable-one-whole">
+		<article class="post--content">
+	  	<p>I am working on a tracking algorithm based on <strong>Lucas-Kanade</strong> Method using <strong>Optical Flow</strong>. The Lucas–Kanade method is a widely used differential method for optical flow estimation developed by Bruce D. Lucas and Takeo Kanade. It assumes that the flow is essentially constant in a local neighbourhood of the pixel under consideration, and solves the basic optical flow equations for all the pixels in that neighbourhood, by the least squares criterion.</p>
+
+<p>This method is less sensitive to image noise. This method assumes that the displacement of the object in the image between two consecutive frames is small and approximately constant within a neighborhood of the considered point. Thus the optical flow equation can be assumed to hold for all pixels within a window centered at the considered point. I am obtaining these points by using OpenCV’s <strong>goodFeaturesToTrack</strong> function within the provided bounding box.</p>
+
+<p>After getting the points(good features to track), I am using OpenCV’s <strong>calcOpticalFlowPyrLK</strong> to get the corresponding features/points in the current frame using Lucas Kanade method based on Optical Flow using itrative pyramids. I am using Forward-Backward Error method to eliminate false positives. This is how Forward-Backward Error method works.</p>
+
+<p>I have 2 consecutive image frames. There are m tracked points in the first image. Using some method(here Lucas Kanade mehotd with using Optical Flow), I determine the tracking points in the next image. I get n number of tracked points. This implies that there are some false positives. so, now I’ll use the same method on the second image to determin the tracking poitns in the first image. I will get some k numbers of tracking points. The common points in the m and k points would give the correct corresponding tracking points in the second image.
+<a href="http://www.jayrambhia.com/blog/wp-content/uploads/2012/08/Forward-Backward-error.png"><img src="http://www.jayrambhia.com/blog/wp-content/uploads/2012/08/Forward-Backward-error-1024x640.png" alt="" /></a>
+[caption id=”attachment_841” align=”aligncenter” width=”620”]<a href="http://www.jayrambhia.com/blog/wp-content/uploads/2012/08/2012-08-08-22.43.05.jpg"><img src="http://www.jayrambhia.com/blog/wp-content/uploads/2012/08/2012-08-08-22.43.05-768x1024.jpg" alt="" /></a> Common set[/caption]</p>
+
+<p>After getting the tracked points, I am trying to predict the new bounding box in a very crude manner. I am working on it for improvements.</p>
+
+<p>So, here’s the code of the tracker in OpenCV.</p>
+
+<pre><code>import cv2
+cam = cv2.VideoCapture(0)
+_, img = cam.read()
+oldg = cv2.cvtColor(img, cv2.cv.CV_BGR2GRAY)
+</code></pre>
+
+<p><strong>Setting the parameters</strong>.</p>
+
+<pre><code>lk_params = dict( winSize  = (10, 10), 
+                  maxLevel = 5, 
+                  criteria = (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 10, 0.03))   
+
+feature_params = dict( maxCorners = 3000, 
+                       qualityLevel = 0.5,
+                       minDistance = 3,
+                       blockSize = 3)
+</code></pre>
+
+<p><strong>Get the good features to track</strong>.</p>
+
+<pre><code>_, img = cam.read()
+img1 = img[bb[0]:bb[2],bb[1]:bb[3]] # crop the bounding box area
+g = cv2.cvtColor(img1, cv2.cv.CV_BGR2GRAY) # get grayscale image
+pt = cv2.goodFeaturesToTrack(g, **feature_params)
+# pt is for cropped image. add x, y in each point.
+for i in xrange(len(pt)):
+    pt[i][0][0] = pt[i][0][0]+bb[0]
+    pt[i][0][1] = pt[i][0][1]+bb[1]
+</code></pre>
+
+<p><strong>Apply Lucas Kanade method with Optical Flow</strong></p>
+
+<pre><code>p0 = np.float32(pt).reshape(-1, 1, 2)
+newg = cv2.cvtColor(img, cv2.cv.CV_BGR2GRAY)
+p0 = np.float32(pt).reshape(-1, 1, 2)
+
+# For Forward-Backward Error method
+# using calcOpticalFlowPyrLK on both image frames
+# with corresponding tracking points
+
+p1, st, err = cv2.calcOpticalFlowPyrLK(oldg, newg, p0, 
+                                       None, **lk_params)
+p0r, st, err = cv2.calcOpticalFlowPyrLK(newg, oldg, p1, 
+                                       None, **lk_params)
+d = abs(p0-p0r).reshape(-1, 2).max(-1)
+good = d &lt; 1
+new_pts = []
+for pts, val in itertools.izip(p1, good):
+    if val:
+        # points using forward-backward error
+        new_pts.append([pts[0][0], pts[0][1]])
+</code></pre>
+
+<p>After getting the tracking points, you might predict the new bounding box using some algorithm.</p>
+
+<p>Here’s the video of the Lucas Kanade Tracker that I implemented in SimpleCV using OpenCV (The above code).</p>
+
+<p>[youtube=”http://www.youtube.com/watch?v=Yw7IcttYRuY”]</p>
+
+<p>Here’s the complete <a href="https://github.com/jayrambhia/Vision/blob/master/OpenCV/LKTracker.py">LK-OpenCV code</a>.</p>
+
+<p>P.S. GSoC is about to end and I’m back to the campus.</p>
+
+  
+		</article><!-- post-content -->
+		<footer class="post--footer"></footer><!-- post-footer -->
+    <section class="meta--info island">
+      <p class="lead">
+        <br/><br/>If you liked this post, then you should definitely follow Jay on twitter too. He would be excited to know that you like his work.
+      </p>
+      <a href="https://twitter.com/jayrambhia" class="twitter-follow-button" data-show-count="false">Follow @jayrambhia</a>
+    </section>
+  </div>
+</div><!-- post -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="/assets/js/jquery.boastful.js"></script>
+<script src="/assets/js/rainbow-custom.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#boastful').boastful({
+        empty_message: '<p>Bah! Why ain\'t anyone tweeting this.</p>'  
+    });
+  });
+</script>
+                </section>
+            </div>
+        </div> <!-- main-container -->
+
+        <div class="footer-container gw">
+            <div class="wrapper">
+                <footer class="g one-whole text--center" role="contentinfo">
+                    <a href="https://plus.google.com/114828599949215633124?rel=author" class="accessibility">Google +</a>
+                    <p><a href="http://twitter.com/aniket_pant">@jayrambhia</a><span class="subtle">&nbsp;|&nbsp;Paranoid Android&nbsp;&nbsp;</span> 
+                </footer> <!-- footer -->
+            </div>
+            <div class="g one-whole zen-space full-width"></div>
+        </div> <!-- footer-container -->
+
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-23477947-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+
+        <!-- Typekit Fonts -->
+        <script type="text/javascript">
+          (function() {
+            var config = {
+              kitId: 'rsd5dqz',
+              scriptTimeout: 3000
+            };
+            var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+          })();
+
+          (function(doc, script) {
+            var js, 
+                fjs = doc.getElementsByTagName(script)[0],
+                frag = doc.createDocumentFragment(),
+                add = function(url, id) {
+                    if (doc.getElementById(id)) {return;}
+                    js = doc.createElement(script);
+                    js.src = url;
+                    id && (js.id = id);
+                    frag.appendChild( js );
+                };
+                
+              // Google+ button
+              add('http://apis.google.com/js/plusone.js');
+              // Facebook SDK
+              add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=465363156848461', 'facebook-jssdk');
+              // Twitter SDK
+              add('//platform.twitter.com/widgets.js');
+
+              fjs.parentNode.insertBefore(frag, fjs);
+          }(document, 'script'));
+        </script>
+
+    </body>
+</html>

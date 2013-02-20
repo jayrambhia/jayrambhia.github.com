@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head >
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Monitoring HDD Temperature using python &mdash; Aniket Pant</title>
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="jay, rambhia, computer vision, python, trakcing, keypoints, c, c++, simplecv, opencv">
+        <meta name="viewport" content="width=device-width">
+
+        
+        
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="/assets/styles/css/style.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="header-container gw">
+            <div class="g one-whole zen-space full-width"></div>
+            <div class="wrapper">
+                <header class="g one-whole flexbox" role="banner">
+                    <h1 class="g one-third portable-one-whole flexbox__item"><a class="logo media" href="/" rel="nofollow"><img class="media__item" src="/assets/images/logo.jpg" alt="Rawrrr! Aniket here." /></a></h1>
+                    <nav class="g two-thirds portable-one-whole flexbox__item navbar">
+                        <ul class="nav nav--block portable-nav--stacked">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about-me">About Me</a></li>
+                            <li><a href="/Blog">Blog</a></li>
+                            <li><a href="/archive">Archive</a></li>
+                        </ul>
+                    </nav>
+                    <div class="g two-thirds portable-one-whole flexbox__item">
+                        <p class="islet about-me">I'm <strong>Aniket</strong>. I love to code, listen to music and I even write free-verses at times. A majority of my work is <em>writing syntax for design</em>.</p>
+                    </div>
+                    <p rel="google-authorship" class="accessibility">By Aniket Pant</p>
+                </header> <!-- header -->
+            </div>
+        </div> <!-- header-container -->
+
+        <div class="main-container gw">
+            <div class="wrapper">
+                <section class="g one-whole" role="main">
+                <div class="post monitoring-hdd-temperature-using-python">
+	<header class="g one-quarter portable-one-whole post--header">
+  		<h1 class="post_title">Monitoring HDD Temperature using python</h1>
+  		<div class="meta"><date class="date">Posted on 10 May 2012</date><br/>Under <span class="category">Blog</a></div>
+      <div class="share island">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="jayrambhia" data-related="jayrambhia">Tweet</a>
+        <div class="g-plusone" data-size="medium"></div>
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+      </div>
+      <div id="boastful"></div>
+	</header><!-- post-header -->
+	<div class="g three-quarters portable-one-whole">
+		<article class="post--content">
+	  	<p>I have an HP laptop. And if you have ever used an HP laptop, you must understand my situation. HP heats up a lot. There’s no proper ventilation and heat sink. Despite of using a cooling pad, sometimes my laptop’s core temperature reaches critical temperature value and shuts down. I think it’s quite harmful. To avoid such situation, I always wanted something to measure the core temperature. One of my friends suggested me to use <strong>lm-sensors</strong>. It’s not bad but it gives me temperature value only when do
+<code>$ sensors</code>
+It’s kind of irritating to do it constantly to check whether temperature is within range or not.</p>
+
+<p>##### </p>
+
+<p>I wanted to make a python script which would check temperature every minute and warn me if it goes beyond acceptable limit. os.system() would never work. So, I kept looking for something which would give me temperature data. I found this page. <strong>https://bitbucket.org/tlynn/trypy/src/7796d8f4a8c1/munin-hddtemp.py</strong>
+It uses <strong>hddtemp</strong>. hddtemp sends data via socket <strong>7643</strong>(default) to <strong>localhost</strong>(default).
+So, here’s how I have worked it out.</p>
+
+<pre><code>import socket
+import time
+import os
+
+port = 7634
+host = 'localhost'
+temp = 45
+
+os.system("notify-send "+"'checking hdd temp'")
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect((host,port))
+while True:
+	try:
+		data = s.recv(4096)
+		temp = int(data.split('|')[3])
+		if temp &gt; 90:
+			notify_string = "'Critical Temp over 90 C."
+			os.system('notify-send '+notify_string)
+			time.sleep(60)
+		time.sleep(90)
+	except KeyboardInterrupt:
+		s.close()
+		break
+</code></pre>
+
+<p><strong>hddtemp</strong>is a requirement. While configuring hddtemp, set it’s port to 7634, which is default, or you can set it to anything you want. change it accordingly. And add it to the daemon. So that it starts at boot.</p>
+
+<p>P.S. Screwed this sem’s GPA.</p>
+
+<h4 id="edit">Edit</h4>
+
+<p>I can’t believe it that I never came across <strong>popen2</strong>. I feel so stupid now. Had I known earlier about popen2, I would have used it in many of my scripts. Anyway, better late than never.
+So I found out about popen2. It’s a good way to pipe the output of the command. Now, I can easily access the temperature without hddtemp. I pipe the output of lm-sensors to get temperature value.</p>
+
+<p>#### </p>
+
+<pre><code>import popen2
+files = popen2.popen2("sensors")
+r = files[0].readlines()
+temp = int(r.split()[-4][1:3])            # unable to split using ""
+print temp
+</code></pre>
+
+<p>Read more about popen2 http://docs.python.org/library/popen2.html</p>
+
+<p>P.S. I am so embarrassed. How could I not know about popen !</p>
+
+<h4 id="edit-1">Edit</h4>
+
+<p><a href="http://ubuntuincident.wordpress.com/">@JabbaLaci</a> just told me that popen2 has been deprecated since python 2.6 and suggested me to use subprocess. And also that there are some problems with output of hddtemp. I have changed it.
+Using <strong>subprocess</strong>:</p>
+
+<pre><code>import subprocess
+
+process = subprocess.Popen(["sensors"],shell=False,stdout=subprocess.PIPE)
+data = process.communicate()    # returns tuple
+temp = int(data[0].split()[5][1:3])
+print temp
+</code></pre>
+
+<p>Read more about subprocess and Popen http://docs.python.org/library/subprocess.html</p>
+
+<p>P.S. TIL about TIL and subprocess with pipe.</p>
+  
+		</article><!-- post-content -->
+		<footer class="post--footer"></footer><!-- post-footer -->
+    <section class="meta--info island">
+      <p class="lead">
+        <br/><br/>If you liked this post, then you should definitely follow Jay on twitter too. He would be excited to know that you like his work.
+      </p>
+      <a href="https://twitter.com/jayrambhia" class="twitter-follow-button" data-show-count="false">Follow @jayrambhia</a>
+    </section>
+  </div>
+</div><!-- post -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="/assets/js/jquery.boastful.js"></script>
+<script src="/assets/js/rainbow-custom.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#boastful').boastful({
+        empty_message: '<p>Bah! Why ain\'t anyone tweeting this.</p>'  
+    });
+  });
+</script>
+                </section>
+            </div>
+        </div> <!-- main-container -->
+
+        <div class="footer-container gw">
+            <div class="wrapper">
+                <footer class="g one-whole text--center" role="contentinfo">
+                    <a href="https://plus.google.com/114828599949215633124?rel=author" class="accessibility">Google +</a>
+                    <p><a href="http://twitter.com/aniket_pant">@jayrambhia</a><span class="subtle">&nbsp;|&nbsp;Paranoid Android&nbsp;&nbsp;</span> 
+                </footer> <!-- footer -->
+            </div>
+            <div class="g one-whole zen-space full-width"></div>
+        </div> <!-- footer-container -->
+
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-23477947-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+
+        <!-- Typekit Fonts -->
+        <script type="text/javascript">
+          (function() {
+            var config = {
+              kitId: 'rsd5dqz',
+              scriptTimeout: 3000
+            };
+            var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+          })();
+
+          (function(doc, script) {
+            var js, 
+                fjs = doc.getElementsByTagName(script)[0],
+                frag = doc.createDocumentFragment(),
+                add = function(url, id) {
+                    if (doc.getElementById(id)) {return;}
+                    js = doc.createElement(script);
+                    js.src = url;
+                    id && (js.id = id);
+                    frag.appendChild( js );
+                };
+                
+              // Google+ button
+              add('http://apis.google.com/js/plusone.js');
+              // Facebook SDK
+              add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=465363156848461', 'facebook-jssdk');
+              // Twitter SDK
+              add('//platform.twitter.com/widgets.js');
+
+              fjs.parentNode.insertBefore(frag, fjs);
+          }(document, 'script'));
+        </script>
+
+    </body>
+</html>
