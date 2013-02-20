@@ -15,7 +15,7 @@ If you want to talk to me, or hire me, or give me a thesis opportunity, drop me 
 	<h3>Where would you like to track?</h3>
 	<ul class="block-list">
 		<li><a href="/archive" class="block-list__link">The Old Archives</a></li>
-		<li><a href="http://markmyword.in" class="block-list__link">Paranoid Android's Blog</a></li>
+		<li><a href="http://jayrambhia.wordpress.com/" class="block-list__link">Paranoid Android's Blog</a></li>
 	</ul>
 </section>
 

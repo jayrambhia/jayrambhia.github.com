@@ -1,0 +1,75 @@
+---
+category: Blog
+tag: Computer Vision
+comments: true
+date: 2012-05-02 15:35:28
+layout: post
+slug: install-opencv-2-3-1-and-simplecv-in-ubuntu-12-04-precise-pangolin-arch-linux
+title: Install OpenCV 2.3.1 and SimpleCV in Ubuntu 12.04 Precise Pangolin, Arch Linux
+---
+
+After screwing up my Ubuntu [see previous post](http://jayrambhia.wordpress.com/2012/04/27/precise-pangolin-ubuntu-12-04-lts/) and also my Arch Linux, I installed Ubuntu 11.10 and upgraded to 12.04.
+
+[![](http://www.jayrambhia.com/blog/wp-content/uploads/2012/05/simplecv-on-ubuntu12-04-precise-pangolin.png)](http://www.jayrambhia.com/blog/wp-content/uploads/2012/05/simplecv-on-ubuntu12-04-precise-pangolin.png)
+
+
+
+### **Ubuntu 12.04 LTS - Precise Pangolin**
+
+
+**Install OpenCV 2.3.1**
+
+
+> sudo apt-get install libopencv-*
+sudo apt-get isntall python-opencv
+sudo apt-get install python-numpy
+
+
+That's it! OpenCV 2.3.1 is installed completely in Ubuntu 12.04 (Thanks for the package).
+
+**Install SimpleCV**.
+
+
+> sudo apt-get install python-pygame
+sudo apt-get install python-setuptools
+sudo apt-get install ipython ipython-netbook # Not a necessity
+
+
+**[Download the latest SimpleCV version from GitHub](https://github.com/ingenuitas/SimpleCV/downloads)**.
+Extract it and change the directroy.
+
+
+> sudo python setup.py install
+
+
+
+
+
+
+### **Arch Linux**
+
+
+**Install OpenCV 2.3.1**
+
+
+> pacman -S python2-numpy
+pacman -S opencv 2.3.1_a-4
+
+
+**Install SimpleCV**.
+
+
+> pacman -S python-pygame
+pacman -S python2-setuptools
+pacman -S ipython2 # Not a necessity
+
+
+**[Download the latest SimpleCV version from GitHub](https://github.com/ingenuitas/SimpleCV/downloads)**.
+Extract it and change the directroy.
+
+
+> sudo python2 setup.py install
+
+
+
+P.S. GNOME shell 3.4 is quite neat.
