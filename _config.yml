@@ -3,7 +3,7 @@ auto: true
 markdown: kramdown
 exclude: Rakefile, CNAME, sass/, script/, README.md
 
-url: http://jayrambhia.com
+#url: http://jayrambhia.com
 
 name: "Jay Rambhia"
 tagline: "Make computers see"
