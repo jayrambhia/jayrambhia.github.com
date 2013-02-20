@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Simple Pricing Table &mdash; Aniket Pant</title>
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="aniket, pant, rawrrr, weblog, css, php, html, codeigniter, laravel, jekyll">
+        <meta name="viewport" content="width=device-width">
+
+        
+        
+        
+        <!-- twitter cards -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:url" content="http://aniketpant.com/notes/simple-pricing-table">
+        <meta name="twitter:site" content="@aniket_pant">
+        <meta name="twitter:creator" content="@aniket_pant">
+        <meta name="twitter:title" content="Simple Pricing Table">
+        <meta name="twitter:description" content="Yesterday I was browsing through [Design Curate][1] and I found [this][2].
+
+It looked pretty nice, so I thought that I could replicate it and make a working demo. Here’s what I made ([the fiddle]...">
+
+        <!-- open graph tags -->
+        <meta property="fb:app_id" content="465363156848461" /> 
+        <meta property="og:type"   content="article" /> 
+        <meta property="og:url"    content="http://aniketpant.com/notes/simple-pricing-table" /> 
+        <meta property="og:title"  content="Simple Pricing Table" /> 
+        <meta property="og:image"  content="http://aniketpant.com/assets/images/logo-200x200.jpg" />
+        
+        
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="/assets/styles/css/style.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="header-container gw">
+            <div class="g one-whole zen-space full-width"></div>
+            <div class="wrapper">
+                <header class="g one-whole flexbox" role="banner">
+                    <h1 class="g one-third portable-one-whole flexbox__item"><a class="logo media" href="/" rel="nofollow"><img class="media__item" src="/assets/images/logo.jpg" alt="Rawrrr! Aniket here." /></a></h1>
+                    <nav class="g two-thirds portable-one-whole flexbox__item navbar">
+                        <ul class="nav nav--block portable-nav--stacked">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about-me">About Me</a></li>
+                            <li><a href="/speaking">Speaking</a></li>
+                            <li><a href="/archive">Archive</a></li>
+                        </ul>
+                    </nav>
+                    <div class="g two-thirds portable-one-whole flexbox__item">
+                        <p class="islet about-me">I'm <strong>Aniket</strong>. I love to code, listen to music and I even write free-verses at times. A majority of my work is <em>writing syntax for design</em>.</p>
+                    </div>
+                    <p rel="google-authorship" class="accessibility">By Aniket Pant</p>
+                </header> <!-- header -->
+            </div>
+        </div> <!-- header-container -->
+
+        <div class="main-container gw">
+            <div class="wrapper">
+                <section class="g one-whole" role="main">
+                <div class="post ">
+	<header class="g one-quarter portable-one-whole post--header">
+  		<h1 class="post_title">Simple Pricing Table</h1>
+  		<div class="meta"><date class="date">Posted on 29 January 2012</date><br/>Under <span class="category">notes</a><br/>Tagged </span><span class="tags">Demo and Pricing Tables</span></div>
+      <div class="share island">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="aniket_pant" data-related="aniket_pant">Tweet</a>
+        <div class="g-plusone" data-size="medium"></div>
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+      </div>
+      <div id="boastful"></div>
+	</header><!-- post-header -->
+	<div class="g three-quarters portable-one-whole">
+		<article class="post--content">
+	  	<p>Yesterday I was browsing through <a href="http://designcurate.com" title="Design Curate">Design Curate</a> and I found <a href="http://designcurate.com/resource/pricing-tables" title="Design Curate - Pricing Tables">this</a>.</p>
+
+<p>It looked pretty nice, so I thought that I could replicate it and make a working demo. Here’s what I made (<a href="http://jsfiddle.net/aniketpant/FGct5/" title="jsFiddle - Pricing Tables">the fiddle</a>).</p>
+
+<p>The markup is like this.</p>
+
+<h2 id="html">HTML</h2>
+
+<pre><code>&lt;ul class="pricing-table"&gt;
+    &lt;li class="plan"&gt;
+        &lt;h1&gt;Basic&lt;/h1&gt;
+        &lt;div class="content"&gt;
+            &lt;ul class="features"&gt;
+                &lt;li&gt;&lt;strong&gt;Full&lt;/strong&gt; Email Support&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;25GB&lt;/strong&gt; of Storage&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;5&lt;/strong&gt; Domains&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;10&lt;/strong&gt; Email Addresses&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;hr&gt;
+            &lt;p class="price"&gt;25&lt;/p&gt;
+            &lt;p class="footnote"&gt;per month&lt;/p&gt;
+            &lt;a href="#" class="button"&gt;Sign Up&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class="plan"&gt;
+        &lt;h1&gt;Pro&lt;/h1&gt;
+        &lt;div class="content"&gt;
+            &lt;ul class="features"&gt;
+                &lt;li&gt;&lt;strong&gt;Full&lt;/strong&gt; Email Support&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;50GB&lt;/strong&gt; of Storage&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;10&lt;/strong&gt; Domains&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;20&lt;/strong&gt; Email Addresses&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;hr&gt;
+            &lt;p class="price"&gt;49&lt;/p&gt;
+            &lt;p class="footnote"&gt;per month&lt;/p&gt;
+            &lt;a href="#" class="button"&gt;Sign Up&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class="plan"&gt;
+        &lt;h1&gt;Premium&lt;/h1&gt;
+        &lt;div class="content"&gt;
+            &lt;ul class="features"&gt;
+                &lt;li&gt;&lt;strong&gt;Full&lt;/strong&gt; Email Support&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;Unlimited&lt;/strong&gt; Storage&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;Unlimited&lt;/strong&gt; Domains&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;50&lt;/strong&gt; Email Addresses&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;hr&gt;
+            &lt;p class="price"&gt;79&lt;/p&gt;
+            &lt;p class="footnote"&gt;per month&lt;/p&gt;
+            &lt;a href="#" class="button"&gt;Sign Up&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<h2 id="css">CSS</h2>
+
+<pre><code>@import url(http://fonts.googleapis.com/css?family=Rokkitt:400,700);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+body {
+    min-height: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+    background-image: repeating-linear-gradient(135deg, transparent, transparent 5px, rgba(0, 0, 0, 0.25) 5px, rgba(0, 0, 0, 0.25) 10px);
+}
+ul.pricing-table {
+    width: 800px;
+    margin: 50px auto;
+}
+ ul.pricing-table li.plan {
+     box-shadow: 0 0 10px #999;
+     transition: all 250ms linear;
+     border-radius: 10px 10px 0 0;
+     width: 33%;
+     float: left;
+ }
+ ul.pricing-table li.plan:nth-of-type(2n) { transform: scale(1.1) }
+  ul.pricing-table li.plan:nth-of-type(2n) h1:after {
+      background: #9EB550;
+      line-height: 1em;
+      text-transform: uppercase;
+      top: 7px;
+      width: 60px;
+      right: -5px;
+      content: "Best Value!";
+      padding: 2px 0;
+      position: absolute;
+      font-size: 0.65em;
+  }
+ ul.pricing-table li.plan div.content {
+     background: #fff;
+     font-family: 'Droid Sans', sans-serif;
+     color: #222;
+     padding: 10px 20px;
+ }
+  ul.pricing-table li.plan div.content ul.features {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  }
+   ul.pricing-table li.plan div.content ul.features li {
+       margin: 5px 0;
+       padding: 0;
+   }
+  ul.pricing-table li.plan div.content p.footnote {
+      text-align: center;
+      color: #999;
+      font-size: 0.75em;
+  }
+  ul.pricing-table li.plan div.content a.button {
+      background: linear-gradient(90deg, #A0B853, #A0CC53);
+      text-align: center;
+      box-shadow: 0 0 2px #666;
+      transition: all 250ms linear;
+      font-family: 'Rokkitt', serif;
+      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.25), 0 -1px 1px rgba(0, 0, 0, 0.25);
+      border-radius: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      width: 100px;
+      color: #fff;
+      margin: 20px auto;
+      display: block;
+      padding: 5px 10px;
+  }
+  ul.pricing-table li.plan div.content a.button:hover { background: linear-gradient(90deg, #A0CC53, #A0B853) }
+  ul.pricing-table li.plan div.content p.price {
+      text-align: center;
+      font-weight: 700;
+      font-size: 3em;
+  }
+  ul.pricing-table li.plan div.content p.price:before {
+      top: -10px;
+      left: -5px;
+      content: "$";
+      position: relative;
+      font-size: 0.75em;
+  }
+  ul.pricing-table li.plan div.content strong { font-weight: 700 }
+  ul.pricing-table li.plan div.content hr { color: #eee }
+ ul.pricing-table li.plan h1 {
+     text-align: center;
+     background: #222;
+     font-family: 'Rokkitt', serif;
+     text-shadow: 0 1px 0 #fff, 0 -1px 0 #000;
+     font-weight: 700;
+     border-radius: 10px 10px 0 0;
+     color: #fff;
+     padding: 10px 0;
+     font-size: 1.25rem;
+ }
+</code></pre>
+
+  
+		</article><!-- post-content -->
+		<footer class="post--footer"></footer><!-- post-footer -->
+    <section class="meta--info island">
+      <p class="lead">
+        Hey, you just went through <em><span class="highlight">447</span></em> words written by Aniket.<br/><br/>If you liked them, then you should definitely follow him on twitter too. He would be excited to know that you like his work.
+      </p>
+      <a href="https://twitter.com/aniket_pant" class="twitter-follow-button" data-show-count="false">Follow @aniket_pant</a>
+    </section>
+  </div>
+</div><!-- post -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="/assets/js/jquery.boastful.js"></script>
+<script src="/assets/js/rainbow-custom.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#boastful').boastful({
+        empty_message: '<p>Bah! Why ain\'t anyone tweeting this.</p>'  
+    });
+  });
+</script>
+                </section>
+            </div>
+        </div> <!-- main-container -->
+
+        <div class="footer-container gw">
+            <div class="wrapper">
+                <footer class="g one-whole text--center" role="contentinfo">
+                    <a href="https://plus.google.com/114828599949215633124?rel=author" class="accessibility">Google +</a>
+                    <p><a href="http://twitter.com/aniket_pant">@aniket_pant</a><span class="subtle">&nbsp;/&nbsp;Since 2010&nbsp;/&nbsp;</span><a href="/colophon">Colophon</a></p>
+                </footer> <!-- footer -->
+            </div>
+            <div class="g one-whole zen-space full-width"></div>
+        </div> <!-- footer-container -->
+
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-23477947-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+
+        <!-- Typekit Fonts -->
+        <script type="text/javascript">
+          (function() {
+            var config = {
+              kitId: 'rsd5dqz',
+              scriptTimeout: 3000
+            };
+            var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+          })();
+
+          (function(doc, script) {
+            var js, 
+                fjs = doc.getElementsByTagName(script)[0],
+                frag = doc.createDocumentFragment(),
+                add = function(url, id) {
+                    if (doc.getElementById(id)) {return;}
+                    js = doc.createElement(script);
+                    js.src = url;
+                    id && (js.id = id);
+                    frag.appendChild( js );
+                };
+                
+              // Google+ button
+              add('http://apis.google.com/js/plusone.js');
+              // Facebook SDK
+              add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=465363156848461', 'facebook-jssdk');
+              // Twitter SDK
+              add('//platform.twitter.com/widgets.js');
+
+              fjs.parentNode.insertBefore(frag, fjs);
+          }(document, 'script'));
+        </script>
+
+    </body>
+</html>

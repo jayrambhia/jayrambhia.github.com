@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>A Nav Bar Concept &mdash; Aniket Pant</title>
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="aniket, pant, rawrrr, weblog, css, php, html, codeigniter, laravel, jekyll">
+        <meta name="viewport" content="width=device-width">
+
+        
+        
+        
+        <!-- twitter cards -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:url" content="http://aniketpant.com/essays/a-nav-bar-concept">
+        <meta name="twitter:site" content="@aniket_pant">
+        <meta name="twitter:creator" content="@aniket_pant">
+        <meta name="twitter:title" content="A Nav Bar Concept">
+        <meta name="twitter:description" content="I guess I saw this thing somewhere before but finally I am bringing it to life.
+
+This is the starting point. Let’s just put out the HTML markup we will use to create this demo.
+
+    
+    
+   ...">
+
+        <!-- open graph tags -->
+        <meta property="fb:app_id" content="465363156848461" /> 
+        <meta property="og:type"   content="article" /> 
+        <meta property="og:url"    content="http://aniketpant.com/essays/a-nav-bar-concept" /> 
+        <meta property="og:title"  content="A Nav Bar Concept" /> 
+        <meta property="og:image"  content="http://aniketpant.com/assets/images/logo-200x200.jpg" />
+        
+        
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="/assets/styles/css/style.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="header-container gw">
+            <div class="g one-whole zen-space full-width"></div>
+            <div class="wrapper">
+                <header class="g one-whole flexbox" role="banner">
+                    <h1 class="g one-third portable-one-whole flexbox__item"><a class="logo media" href="/" rel="nofollow"><img class="media__item" src="/assets/images/logo.jpg" alt="Rawrrr! Aniket here." /></a></h1>
+                    <nav class="g two-thirds portable-one-whole flexbox__item navbar">
+                        <ul class="nav nav--block portable-nav--stacked">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about-me">About Me</a></li>
+                            <li><a href="/speaking">Speaking</a></li>
+                            <li><a href="/archive">Archive</a></li>
+                        </ul>
+                    </nav>
+                    <div class="g two-thirds portable-one-whole flexbox__item">
+                        <p class="islet about-me">I'm <strong>Aniket</strong>. I love to code, listen to music and I even write free-verses at times. A majority of my work is <em>writing syntax for design</em>.</p>
+                    </div>
+                    <p rel="google-authorship" class="accessibility">By Aniket Pant</p>
+                </header> <!-- header -->
+            </div>
+        </div> <!-- header-container -->
+
+        <div class="main-container gw">
+            <div class="wrapper">
+                <section class="g one-whole" role="main">
+                <div class="post ">
+	<header class="g one-quarter portable-one-whole post--header">
+  		<h1 class="post_title">A Nav Bar Concept</h1>
+  		<div class="meta"><date class="date">Posted on 04 July 2012</date><br/>Under <span class="category">essays</a><br/>Tagged </span><span class="tags">Animation and CSS3</span></div>
+      <div class="share island">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="aniket_pant" data-related="aniket_pant">Tweet</a>
+        <div class="g-plusone" data-size="medium"></div>
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+      </div>
+      <div id="boastful"></div>
+	</header><!-- post-header -->
+	<div class="g three-quarters portable-one-whole">
+		<article class="post--content">
+	  	<p>I guess I saw this thing somewhere before but finally I am bringing it to life.</p>
+
+<p>This is the starting point. Let’s just put out the HTML markup we will use to create this demo.</p>
+
+<pre data-language="html"><code>&lt;!-- The nav element starts here --&gt;
+&lt;nav&gt;
+  &lt;!-- This list of links begin here --&gt;
+  &lt;ul class='nav'&gt;
+    &lt;li&gt;&lt;a href='#'&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#'&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#'&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#'&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;!-- List of links end here --&gt;
+&lt;/nav&gt;
+&lt;!-- End of the nav element --&gt;
+</code></pre>
+
+<p>So, let’s begin with the CSS code.</p>
+
+<p>We will import, <em>Squada One</em>, the font we are going to use from the Google Webfonts API.<br />
+And then we will create the basic look of the nav element.</p>
+
+<pre data-language="css"><code>/* Importing the font family */
+@import url(http://fonts.googleapis.com/css?family=Squada+One);
+
+/* The Nav Element */
+nav {
+  display: block;
+  margin: 20px 0;
+  background: #d23515;
+  box-shadow: inset 0 0 0 2px #b32d12;
+  border-top: 20px solid #c33113;
+  border-bottom: 20px solid #c33113;
+}
+</code></pre>
+
+<p>Then we will put together the styling for the list of links.</p>
+
+<pre data-language="css"><code>/* Styling the list of links */
+.nav {
+  margin: 0.333em 2em;
+  padding: 0;
+}
+
+/* The li element which contains the links */
+.nav li {
+  display: inline-block;
+  transform: skew(-10deg);
+}
+</code></pre>
+
+<p>And now it’s time to style the links.</p>
+
+<pre data-language="css"><code>/* This is how the link will be done */
+.nav a {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Squada One', sans-serif;
+  font-size: 2em;
+  color: #fff;
+  background: #e94220;
+  padding: 1em;
+  box-shadow: 1px 1px 1px #b32d12;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
+  transition: all 100ms linear; /* Transitions set for each state */
+}
+
+/* So, let's change it on hover */
+.nav a:hover {
+  background: #b32d12;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* And here's how it will look on clicking */
+.nav a:active {
+  background: #222;
+  transition: all 250ms linear; /* Increased the duration */
+}
+</code></pre>
+
+<p>And now we are going to put in the finish touches with the most important part. <strong>The animation.</strong></p>
+
+<p>The keyframes look like this.</p>
+
+<pre data-language="css"><code>@-keyframes flicker {
+  0% {
+    background: #e94220;
+  }
+  50% {
+    background: #b32d12;
+  }
+  100% {
+    background: #b32d12;
+  }
+}
+</code></pre>
+
+<p>And let’s complete the whole act by fitting in the keyframes to the links.</p>
+
+<pre data-language="css"><code>/* Animation queued in */
+.nav li a {
+  animation: flicker 1 500ms linear;
+}
+
+/* A little delay for the first link */
+.nav li:nth-of-type(n) a {
+  animation-delay: 500ms;
+}
+
+/* A little more for the second one */
+.nav li:nth-of-type(2n) a {
+  animation-delay: 1000ms;
+}
+
+/* Some more coming in for the third link */
+.nav li:nth-of-type(3n) a {
+  animation-delay: 1500ms;
+}
+
+/* And the last one comes last */
+.nav li:nth-of-type(4n) a {
+  animation-delay: 2000ms;
+}
+</code></pre>
+
+<p>If you liked my post, then it would be great if you <a href="http://news.ycombinator.com/item?id=4200316">upvote it on HN</a>.And we’re done. Our little demo is ready.</p>
+
+<p>If you’re looking for the complete code for it, <a href="https://gist.github.com/3048534" title="Gist: Funky Nav Bar">take a look at the gist</a>.</p>
+
+<p><a href="http://codepen.io/aniketpant/details/4/4">View Demo</a></p>
+
+  
+		</article><!-- post-content -->
+		<footer class="post--footer"></footer><!-- post-footer -->
+    <section class="meta--info island">
+      <p class="lead">
+        Hey, you just went through <em><span class="highlight">515</span></em> words written by Aniket.<br/><br/>If you liked them, then you should definitely follow him on twitter too. He would be excited to know that you like his work.
+      </p>
+      <a href="https://twitter.com/aniket_pant" class="twitter-follow-button" data-show-count="false">Follow @aniket_pant</a>
+    </section>
+  </div>
+</div><!-- post -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="/assets/js/jquery.boastful.js"></script>
+<script src="/assets/js/rainbow-custom.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#boastful').boastful({
+        empty_message: '<p>Bah! Why ain\'t anyone tweeting this.</p>'  
+    });
+  });
+</script>
+                </section>
+            </div>
+        </div> <!-- main-container -->
+
+        <div class="footer-container gw">
+            <div class="wrapper">
+                <footer class="g one-whole text--center" role="contentinfo">
+                    <a href="https://plus.google.com/114828599949215633124?rel=author" class="accessibility">Google +</a>
+                    <p><a href="http://twitter.com/aniket_pant">@aniket_pant</a><span class="subtle">&nbsp;/&nbsp;Since 2010&nbsp;/&nbsp;</span><a href="/colophon">Colophon</a></p>
+                </footer> <!-- footer -->
+            </div>
+            <div class="g one-whole zen-space full-width"></div>
+        </div> <!-- footer-container -->
+
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-23477947-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+
+        <!-- Typekit Fonts -->
+        <script type="text/javascript">
+          (function() {
+            var config = {
+              kitId: 'rsd5dqz',
+              scriptTimeout: 3000
+            };
+            var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+          })();
+
+          (function(doc, script) {
+            var js, 
+                fjs = doc.getElementsByTagName(script)[0],
+                frag = doc.createDocumentFragment(),
+                add = function(url, id) {
+                    if (doc.getElementById(id)) {return;}
+                    js = doc.createElement(script);
+                    js.src = url;
+                    id && (js.id = id);
+                    frag.appendChild( js );
+                };
+                
+              // Google+ button
+              add('http://apis.google.com/js/plusone.js');
+              // Facebook SDK
+              add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=465363156848461', 'facebook-jssdk');
+              // Twitter SDK
+              add('//platform.twitter.com/widgets.js');
+
+              fjs.parentNode.insertBefore(frag, fjs);
+          }(document, 'script'));
+        </script>
+
+    </body>
+</html>

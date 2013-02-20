@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Dabbling with gists &mdash; Aniket Pant</title>
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="aniket, pant, rawrrr, weblog, css, php, html, codeigniter, laravel, jekyll">
+        <meta name="viewport" content="width=device-width">
+
+        
+        
+        
+        <!-- twitter cards -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:url" content="http://aniketpant.com/notes/dabbling-with-gists">
+        <meta name="twitter:site" content="@aniket_pant">
+        <meta name="twitter:creator" content="@aniket_pant">
+        <meta name="twitter:title" content="Dabbling with gists">
+        <meta name="twitter:description" content="For the last 3-4 days I have made a couple of gists using dabblet and to my surprise I have learnt a lot of things. Even though the things I have worked on are very basic but have helped me underst...">
+
+        <!-- open graph tags -->
+        <meta property="fb:app_id" content="465363156848461" /> 
+        <meta property="og:type"   content="article" /> 
+        <meta property="og:url"    content="http://aniketpant.com/notes/dabbling-with-gists" /> 
+        <meta property="og:title"  content="Dabbling with gists" /> 
+        <meta property="og:image"  content="http://aniketpant.com/assets/images/logo-200x200.jpg" />
+        
+        
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="/assets/styles/css/style.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="header-container gw">
+            <div class="g one-whole zen-space full-width"></div>
+            <div class="wrapper">
+                <header class="g one-whole flexbox" role="banner">
+                    <h1 class="g one-third portable-one-whole flexbox__item"><a class="logo media" href="/" rel="nofollow"><img class="media__item" src="/assets/images/logo.jpg" alt="Rawrrr! Aniket here." /></a></h1>
+                    <nav class="g two-thirds portable-one-whole flexbox__item navbar">
+                        <ul class="nav nav--block portable-nav--stacked">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about-me">About Me</a></li>
+                            <li><a href="/speaking">Speaking</a></li>
+                            <li><a href="/archive">Archive</a></li>
+                        </ul>
+                    </nav>
+                    <div class="g two-thirds portable-one-whole flexbox__item">
+                        <p class="islet about-me">I'm <strong>Aniket</strong>. I love to code, listen to music and I even write free-verses at times. A majority of my work is <em>writing syntax for design</em>.</p>
+                    </div>
+                    <p rel="google-authorship" class="accessibility">By Aniket Pant</p>
+                </header> <!-- header -->
+            </div>
+        </div> <!-- header-container -->
+
+        <div class="main-container gw">
+            <div class="wrapper">
+                <section class="g one-whole" role="main">
+                <div class="post ">
+	<header class="g one-quarter portable-one-whole post--header">
+  		<h1 class="post_title">Dabbling with gists</h1>
+  		<div class="meta"><date class="date">Posted on 22 January 2012</date><br/>Under <span class="category">notes</a><br/>Tagged </span><span class="tags">dabblet and patterns</span></div>
+      <div class="share island">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="aniket_pant" data-related="aniket_pant">Tweet</a>
+        <div class="g-plusone" data-size="medium"></div>
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+      </div>
+      <div id="boastful"></div>
+	</header><!-- post-header -->
+	<div class="g three-quarters portable-one-whole">
+		<article class="post--content">
+	  	<p>For the last 3-4 days I have made a couple of gists using dabblet and to my surprise I have learnt a lot of things. Even though the things I have worked on are very basic but have helped me understand a couple of techniques.</p>
+
+<h2 id="background-patterns">Background Patterns</h2>
+
+<p>The first thing I tried my hand at was CSS background patterns and I have been quite successful with working with them. Here’s are a few samples of what all I tried. I know they are not that impressive but are decent attempts.</p>
+
+<p><em>image missing</em></p>
+
+<p>What you see above was my first attempt and it turned out to be pretty decent. The code for it is really easy. Take a look at it.</p>
+
+<pre><code>background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,4,80,.5) 10px, rgba(255,4,80,.5) 20px),
+repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(255,4,80,.5) 10px, rgba(255,4,80,.5) 20px) #000;
+</code></pre>
+
+<p>Here is the <a href="http://dabblet.com/gist/1614813" title="Very basic CSS pattern">dabblet</a>.</p>
+
+<p><em>image missing</em></p>
+
+<p>This one is a little more intricate than the previous one, but easy to understand.</p>
+
+<pre><code>background-color: #000;
+background-image: repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(255, 127, 0, 0.25) 50px, rgba(255, 127, 0, 0.25) 56px, transparent 56px, transparent 63px, rgba(255, 127, 0, 0.25) 63px, rgba(255, 127, 0, 0.25) 69px, transparent 69px, transparent 116px, rgba(255, 206, 0, 0.25) 116px, rgba(255, 206, 0, 0.25) 166px),
+repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255, 127, 0, 0.25) 50px, rgba(255, 127, 0, 0.25) 56px, transparent 56px, transparent 63px, rgba(255, 127, 0, 0.25) 63px, rgba(255, 127, 0, 0.25) 69px, transparent 69px, transparent 116px, rgba(255, 206, 0, 0.25) 116px, rgba(255, 206, 0, 0.25) 166px),
+repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(143, 77, 63, 0.25) 5px, rgba(143, 77, 63, 0.25) 10px),
+repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(143, 77, 63, 0.25) 5px, rgba(143, 77, 63, 0.25) 10px);
+</code></pre>
+
+<p><a href="http://dabblet.com/gist/1615419" title="Checked CSS pattern">Link</a>to the dabblet.</p>
+
+<h3 id="the-trick-to-understand-background-patterns">The trick to understand background patterns</h3>
+
+<p>According to my understanding of background patterns from what I made and how I did it, it is an easy task. You start with repeating linear gradient and then you mention the angle of the gradient. After that you writing your gradients, whatever way you want to make them. In the checked pattern above I start with a blank strip (basically transparent) with a width of 50px. Then I give another color starting from 50px and end it at 56px. So, actually it’s a strip with width 6px. Then again a transparent strip and so on. This way we create multiple lines and then we replicate this in another direction.</p>
+
+<h2 id="smashing-magazine-like-menu">Smashing Magazine like menu</h2>
+
+<p><em>image missing</em></p>
+
+<p>Checkout this <a href="http://dabblet.com/gist/1614434" title="Smashing Magazine like menu">demo</a> I made replicating the new Smashing Magazine’s side menu.</p>
+
+<p>The HTML goes like this.</p>
+
+<pre><code>&lt;ul class="mainlist"&gt;
+    &lt;li class="list"&gt;
+        &lt;a href="#" class="title"&gt;Title 1&lt;/a&gt;
+        &lt;ul class="sublist"&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+        &lt;!--&lt;span class="hiddenSpellError" pre=""--&gt;ul&gt;
+    &lt;/li&gt;
+    &lt;li class="list"&gt;
+        &lt;a href="#" class="title"&gt;Title 2&lt;/a&gt;
+        &lt;ul class="sublist"&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class="list"&gt;
+        &lt;a href="#" class="title"&gt;Title 3&lt;/a&gt;
+        &lt;ul class="sublist"&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p>And the CSS for it.</p>
+
+<pre><code>@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+a {
+    display: block;
+    text-decoration: none;
+}
+ul.mainlist {
+width: 300px;
+margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    list-style: none;
+}
+ul.mainlist li.list {
+margin: 0 0 20px;
+}
+ul.mainlist li a {
+    margin: 0 30px 0;
+    padding: 5px 50px;
+    transition: all 250ms ease-in-out;
+}
+ul.mainlist li a:hover {
+    background: rgba(255,255,102,1);
+}
+ul.mainlist li:hover a.title {
+border-color: rgba(229, 59, 44, 1);
+}
+ul.mainlist li a.title {
+    color: #0af;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    transition: all 250ms linear;
+}
+ul.mainlist li a.title:hover {
+color: #222;
+}
+ul.mainlist li ul.sublist {
+    list-style: none;
+    display: block;
+    padding: 0;
+}
+ul.mainlist li ul.sublist li a {
+    color: #666;
+    display: block;
+    transition: all 250ms ease-in-out;
+}
+ul.mainlist li ul.sublist li a:hover {
+color: #222;
+}
+</code></pre>
+
+<p>I am very pleased with the result of these menus and there are very high chances of me going for a similar design in some new project of mine.</p>
+
+<h2 id="buttons-with-3-states">Buttons with 3 states</h2>
+
+<p>2 days back I made these <a href="http://dabblet.com/gist/1651486" title="Buttons with 3 states">buttons</a>. The palletes are from <a href="http://design-seeds.com/" title="Design Seeds">design-seeds.com</a>. I love the palletes over there and the colors are inspired from their website.</p>
+
+<p>Along with making the buttons and adding a little animation to them, I incorporated another background pattern to the demo.<br />
+Now, I plan to learn a little bit about radial patterns.</p>
+
+<p><em>image missing</em></p>
+
+<h2 id="animation-with-chrome-icon">Animation with Chrome Icon</h2>
+
+<p>And the last thing I tried yesterday was a little <a href="http://dabblet.com/gist/1653014" title="Animation with Chrome Icon">animation</a> with the chrome icon inspired by <a href="http://html5-demos.appspot.com/static/html5-therealbleedingedge/template/index.html" title="HTML5 - The Real Bleeding Edge">HTML5 – The Real Bleeding Edge</a>.</p>
+
+<p><em>image missing</em></p>
+
+<p>The HTML markup for it.</p>
+
+<pre><code>&lt;img class="chrome" src="http://www.wowpedia.org/images/8/89/Chrome.png" /&gt;
+</code></pre>
+
+<p>And the simple animation.</p>
+
+<pre><code>@-moz-keyframes rotate {
+0% { transform: rotate(0deg) }
+100% { transform: rotate(360deg) }
+}
+img.chrome {
+width: 10%;
+-moz-animation: rotate infinite 1s linear;
+}
+img.chrome:hover {
+-moz-animation: rotate infinite 0.5s linear;
+}
+</code></pre>
+
+<p>Even you can try out these simple tricks and learn a great deal from them.<br />
+Keep dabbling like crazy.</p>
+
+  
+		</article><!-- post-content -->
+		<footer class="post--footer"></footer><!-- post-footer -->
+    <section class="meta--info island">
+      <p class="lead">
+        Hey, you just went through <em><span class="highlight">850</span></em> words written by Aniket.<br/><br/>If you liked them, then you should definitely follow him on twitter too. He would be excited to know that you like his work.
+      </p>
+      <a href="https://twitter.com/aniket_pant" class="twitter-follow-button" data-show-count="false">Follow @aniket_pant</a>
+    </section>
+  </div>
+</div><!-- post -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="/assets/js/jquery.boastful.js"></script>
+<script src="/assets/js/rainbow-custom.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#boastful').boastful({
+        empty_message: '<p>Bah! Why ain\'t anyone tweeting this.</p>'  
+    });
+  });
+</script>
+                </section>
+            </div>
+        </div> <!-- main-container -->
+
+        <div class="footer-container gw">
+            <div class="wrapper">
+                <footer class="g one-whole text--center" role="contentinfo">
+                    <a href="https://plus.google.com/114828599949215633124?rel=author" class="accessibility">Google +</a>
+                    <p><a href="http://twitter.com/aniket_pant">@aniket_pant</a><span class="subtle">&nbsp;/&nbsp;Since 2010&nbsp;/&nbsp;</span><a href="/colophon">Colophon</a></p>
+                </footer> <!-- footer -->
+            </div>
+            <div class="g one-whole zen-space full-width"></div>
+        </div> <!-- footer-container -->
+
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-23477947-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+
+        <!-- Typekit Fonts -->
+        <script type="text/javascript">
+          (function() {
+            var config = {
+              kitId: 'rsd5dqz',
+              scriptTimeout: 3000
+            };
+            var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+          })();
+
+          (function(doc, script) {
+            var js, 
+                fjs = doc.getElementsByTagName(script)[0],
+                frag = doc.createDocumentFragment(),
+                add = function(url, id) {
+                    if (doc.getElementById(id)) {return;}
+                    js = doc.createElement(script);
+                    js.src = url;
+                    id && (js.id = id);
+                    frag.appendChild( js );
+                };
+                
+              // Google+ button
+              add('http://apis.google.com/js/plusone.js');
+              // Facebook SDK
+              add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=465363156848461', 'facebook-jssdk');
+              // Twitter SDK
+              add('//platform.twitter.com/widgets.js');
+
+              fjs.parentNode.insertBefore(frag, fjs);
+          }(document, 'script'));
+        </script>
+
+    </body>
+</html>

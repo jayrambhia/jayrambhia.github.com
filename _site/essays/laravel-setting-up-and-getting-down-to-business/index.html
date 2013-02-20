@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Laravel : Setting up and getting down to business &mdash; Aniket Pant</title>
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="aniket, pant, rawrrr, weblog, css, php, html, codeigniter, laravel, jekyll">
+        <meta name="viewport" content="width=device-width">
+
+        
+        
+        
+        <!-- twitter cards -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:url" content="http://aniketpant.com/essays/laravel-setting-up-and-getting-down-to-business">
+        <meta name="twitter:site" content="@aniket_pant">
+        <meta name="twitter:creator" content="@aniket_pant">
+        <meta name="twitter:title" content="Laravel : Setting up and getting down to business">
+        <meta name="twitter:description" content="After three days of tinkering with Laravel, I finally have it set up and ready to work.
+
+Coming from a Codeigniter background, it did take me some time to understand how it is functioning.  
+Let me...">
+
+        <!-- open graph tags -->
+        <meta property="fb:app_id" content="465363156848461" /> 
+        <meta property="og:type"   content="article" /> 
+        <meta property="og:url"    content="http://aniketpant.com/essays/laravel-setting-up-and-getting-down-to-business" /> 
+        <meta property="og:title"  content="Laravel : Setting up and getting down to business" /> 
+        <meta property="og:image"  content="http://aniketpant.com/assets/images/logo-200x200.jpg" />
+        
+        
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="/assets/styles/css/style.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="header-container gw">
+            <div class="g one-whole zen-space full-width"></div>
+            <div class="wrapper">
+                <header class="g one-whole flexbox" role="banner">
+                    <h1 class="g one-third portable-one-whole flexbox__item"><a class="logo media" href="/" rel="nofollow"><img class="media__item" src="/assets/images/logo.jpg" alt="Rawrrr! Aniket here." /></a></h1>
+                    <nav class="g two-thirds portable-one-whole flexbox__item navbar">
+                        <ul class="nav nav--block portable-nav--stacked">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about-me">About Me</a></li>
+                            <li><a href="/speaking">Speaking</a></li>
+                            <li><a href="/archive">Archive</a></li>
+                        </ul>
+                    </nav>
+                    <div class="g two-thirds portable-one-whole flexbox__item">
+                        <p class="islet about-me">I'm <strong>Aniket</strong>. I love to code, listen to music and I even write free-verses at times. A majority of my work is <em>writing syntax for design</em>.</p>
+                    </div>
+                    <p rel="google-authorship" class="accessibility">By Aniket Pant</p>
+                </header> <!-- header -->
+            </div>
+        </div> <!-- header-container -->
+
+        <div class="main-container gw">
+            <div class="wrapper">
+                <section class="g one-whole" role="main">
+                <div class="post ">
+	<header class="g one-quarter portable-one-whole post--header">
+  		<h1 class="post_title">Laravel : Setting up and getting down to business</h1>
+  		<div class="meta"><date class="date">Posted on 31 May 2012</date><br/>Under <span class="category">essays</a><br/>Tagged </span><span class="tags">Codeigniter and Laravel</span></div>
+      <div class="share island">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="aniket_pant" data-related="aniket_pant">Tweet</a>
+        <div class="g-plusone" data-size="medium"></div>
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+      </div>
+      <div id="boastful"></div>
+	</header><!-- post-header -->
+	<div class="g three-quarters portable-one-whole">
+		<article class="post--content">
+	  	<p>After three days of tinkering with Laravel, I finally have it set up and ready to work.</p>
+
+<p>Coming from a Codeigniter background, it did take me some time to understand how it is functioning.<br />
+Let me describe my three days with <strong>Laravel</strong>.</p>
+
+<h2 id="day-1">Day 1</h2>
+
+<blockquote>
+  <p>Laravel is so cool. The documentation is superb and so many amazing features to work on. Let’s give it a shot.</p>
+</blockquote>
+
+<p>This was my first reaction when I saw the documentation and I immediately installed it.</p>
+
+<p>For the first half an hour, I didn’t understand why I was able to see the directory listing on the opening it on my server. That shouldn’t have been the case.<br />
+I had followed all the instructions given in the documentation and it should have been working.</p>
+
+<h3 id="the-tale-of-the-splash-page">The tale of the splash page</h3>
+
+<p>The first thing I didn’t get was that their was no index.php and yet it said that if I have mod_rewrite enabled along with the apt .htaccess file, it should show me the <strong>beautiful splash page</strong>.</p>
+
+<p>I checked application/routes.php and thought that <em>I am so cool</em>, I can figure it out all by myself. I made a change and went ahead.</p>
+
+<p>Sadly, no splash page came and all I got was a directory listing. Then I started opening the folders and when I opened public, I got errors.<br />
+After a while, I reverted back to the original routes.php file and on refreshing, the page showed up.</p>
+
+<p>Hurray!</p>
+
+<p>I started reading the beautifully laid out offline documentation and understood how to register <strong>routes &amp; controllers</strong>.</p>
+
+<h4 id="takeaways">Takeaways</h4>
+
+<ul>
+  <li>Controllers</li>
+  <li>Routes</li>
+  <li>Validation</li>
+</ul>
+
+<h2 id="day-2">Day 2</h2>
+
+<p>Day 2 started off really well. I start creating my views and learnt how to route requests.<br />
+I made two controllers in total and their required views. Used the awesome <strong>blade</strong> templating engine.</p>
+
+<p>Feeling invincible, I moved on to create the <strong>models</strong>. But, no. I still had to try out some other things which I wanted to do from before but with Codeigniter it was difficult.</p>
+
+<h3 id="the-amazing-artisan">The Amazing Artisan</h3>
+
+<p>We have something called as <strong>artisan</strong> in Laravel.</p>
+
+<p>Artisan provides us with a <strong>Command Line Interface (CLI)</strong>. Just write a simple line in English and you have database migrations set up. Run tasks and install bundles. It’s amazing.</p>
+
+<p>I thought of setting up an administrator account and do the basic configuration by making a task. The task was easy to write. It would call up a model and use the functions. Sounds simple.</p>
+
+<h3 id="models-wreaking-havoc">Models Wreaking Havoc</h3>
+
+<p>I was now required to make models. From my Codeigniter experience, models are placed in application/models. Even here it’s all the same. So, I made my two files and wrote all the functions.</p>
+
+<p>Codeigniter uses an <strong>active query</strong> method to interact with databases.<br />
+Laravel provides us with two methods to do it:</p>
+
+<ol>
+  <li><strong>Fluent Query Builder</strong></li>
+  <li><strong>Eloquent ORM</strong></li>
+</ol>
+
+<p>Like an idiot I read Eloquent ORM and opened Fluent Query Builder. This was my first mistake (you will understand what implications it has soon).</p>
+
+<p>I wrote my models with the Fluent Query Builder and tried to run the tasks using artisan. One task ran and the other failed.<br />
+Made some changes but it didn’t budge. So, I left it for Day 3.</p>
+
+<h4 id="takeaways-1">Takeaways</h4>
+
+<ul>
+  <li>Templating</li>
+  <li>Artisan</li>
+  <li>Database Interaction</li>
+</ul>
+
+<h2 id="day-3">Day 3</h2>
+
+<p>I was very confident that I would nail it today.<br />
+The first thing I did was to make a separate branch on the git repo and start working on a new way to do it.</p>
+
+<p>I read about Eloquent ORM. It required me to make a model for each of my tables. My application has seven tables, so that makes it seven models.<br />
+Sounds fine.</p>
+
+<p>So, I made the tables on my database. But soon I saw what <strong>migrations</strong> could do.</p>
+
+<h3 id="migrations">Migrations</h3>
+
+<p>Migrations are a powerful tool in Laravel.<br />
+Use artisan to create a migration and then code your table schemas in it. This will help you create tables easily and in times of distress, you can rollback the changes.</p>
+
+<p>From the documentation, I coded my migrations and ran it. In one line of code, my tables were ready. I thought of taking them down. One command and my database was like a new-born baby.</p>
+
+<p>Having understood migrations, now it was time to code the models.</p>
+
+<h3 id="eloquent-orm">Eloquent ORM</h3>
+
+<p>I started building the models and they were ready in no time. But on running the tasks, they didn’t seem to work. I couldn’t understand why.<br />
+Then I remembered about the naming conventions of Laravel and the way I had named the models, it was all incorrect.</p>
+
+<p>My models were named like this: abc_def_ghi.<br />
+For these models to work, I need to make them like this: abc/def/ghi.</p>
+
+<p>And the job was done!</p>
+
+<h4 id="takeaways-2">Takeaways</h4>
+
+<ul>
+  <li>Migrations</li>
+  <li>Eloquent ORM</li>
+  <li>Invincibility</li>
+</ul>
+
+<h2 id="finale">Finale</h2>
+
+<p>Everything was working now.<br />
+Now, was the time to feel invincible and I did feel that way.</p>
+
+<p>It was a great experience to tackle these problems. Sometimes, new methods give you a hard time but all you need to do is <strong>tame them</strong>.</p>
+  
+		</article><!-- post-content -->
+		<footer class="post--footer"></footer><!-- post-footer -->
+    <section class="meta--info island">
+      <p class="lead">
+        Hey, you just went through <em><span class="highlight">846</span></em> words written by Aniket.<br/><br/>If you liked them, then you should definitely follow him on twitter too. He would be excited to know that you like his work.
+      </p>
+      <a href="https://twitter.com/aniket_pant" class="twitter-follow-button" data-show-count="false">Follow @aniket_pant</a>
+    </section>
+  </div>
+</div><!-- post -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="/assets/js/jquery.boastful.js"></script>
+<script src="/assets/js/rainbow-custom.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#boastful').boastful({
+        empty_message: '<p>Bah! Why ain\'t anyone tweeting this.</p>'  
+    });
+  });
+</script>
+                </section>
+            </div>
+        </div> <!-- main-container -->
+
+        <div class="footer-container gw">
+            <div class="wrapper">
+                <footer class="g one-whole text--center" role="contentinfo">
+                    <a href="https://plus.google.com/114828599949215633124?rel=author" class="accessibility">Google +</a>
+                    <p><a href="http://twitter.com/aniket_pant">@aniket_pant</a><span class="subtle">&nbsp;/&nbsp;Since 2010&nbsp;/&nbsp;</span><a href="/colophon">Colophon</a></p>
+                </footer> <!-- footer -->
+            </div>
+            <div class="g one-whole zen-space full-width"></div>
+        </div> <!-- footer-container -->
+
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-23477947-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+
+        <!-- Typekit Fonts -->
+        <script type="text/javascript">
+          (function() {
+            var config = {
+              kitId: 'rsd5dqz',
+              scriptTimeout: 3000
+            };
+            var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+          })();
+
+          (function(doc, script) {
+            var js, 
+                fjs = doc.getElementsByTagName(script)[0],
+                frag = doc.createDocumentFragment(),
+                add = function(url, id) {
+                    if (doc.getElementById(id)) {return;}
+                    js = doc.createElement(script);
+                    js.src = url;
+                    id && (js.id = id);
+                    frag.appendChild( js );
+                };
+                
+              // Google+ button
+              add('http://apis.google.com/js/plusone.js');
+              // Facebook SDK
+              add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=465363156848461', 'facebook-jssdk');
+              // Twitter SDK
+              add('//platform.twitter.com/widgets.js');
+
+              fjs.parentNode.insertBefore(frag, fjs);
+          }(document, 'script'));
+        </script>
+
+    </body>
+</html>

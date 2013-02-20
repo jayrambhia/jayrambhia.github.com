@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Lessons learnt from building TEDxBITSGoa 2012 &mdash; Aniket Pant</title>
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="aniket, pant, rawrrr, weblog, css, php, html, codeigniter, laravel, jekyll">
+        <meta name="viewport" content="width=device-width">
+
+        
+        
+        
+        <!-- twitter cards -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:url" content="http://aniketpant.com/essays/lessons-learnt-from-building-tedxbitsgoa-2012">
+        <meta name="twitter:site" content="@aniket_pant">
+        <meta name="twitter:creator" content="@aniket_pant">
+        <meta name="twitter:title" content="Lessons learnt from building TEDxBITSGoa 2012">
+        <meta name="twitter:description" content="## How it all began?
+
+It all started with a call. Nearly two months have passed when I was called by one of my college seniors and told about making the website for [TEDxBITSGoa 2012][1]. The momen...">
+
+        <!-- open graph tags -->
+        <meta property="fb:app_id" content="465363156848461" /> 
+        <meta property="og:type"   content="article" /> 
+        <meta property="og:url"    content="http://aniketpant.com/essays/lessons-learnt-from-building-tedxbitsgoa-2012" /> 
+        <meta property="og:title"  content="Lessons learnt from building TEDxBITSGoa 2012" /> 
+        <meta property="og:image"  content="http://aniketpant.com/assets/images/logo-200x200.jpg" />
+        
+        
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="/assets/styles/css/style.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="header-container gw">
+            <div class="g one-whole zen-space full-width"></div>
+            <div class="wrapper">
+                <header class="g one-whole flexbox" role="banner">
+                    <h1 class="g one-third portable-one-whole flexbox__item"><a class="logo media" href="/" rel="nofollow"><img class="media__item" src="/assets/images/logo.jpg" alt="Rawrrr! Aniket here." /></a></h1>
+                    <nav class="g two-thirds portable-one-whole flexbox__item navbar">
+                        <ul class="nav nav--block portable-nav--stacked">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about-me">About Me</a></li>
+                            <li><a href="/speaking">Speaking</a></li>
+                            <li><a href="/archive">Archive</a></li>
+                        </ul>
+                    </nav>
+                    <div class="g two-thirds portable-one-whole flexbox__item">
+                        <p class="islet about-me">I'm <strong>Aniket</strong>. I love to code, listen to music and I even write free-verses at times. A majority of my work is <em>writing syntax for design</em>.</p>
+                    </div>
+                    <p rel="google-authorship" class="accessibility">By Aniket Pant</p>
+                </header> <!-- header -->
+            </div>
+        </div> <!-- header-container -->
+
+        <div class="main-container gw">
+            <div class="wrapper">
+                <section class="g one-whole" role="main">
+                <div class="post ">
+	<header class="g one-quarter portable-one-whole post--header">
+  		<h1 class="post_title">Lessons learnt from building TEDxBITSGoa 2012</h1>
+  		<div class="meta"><date class="date">Posted on 17 January 2012</date><br/>Under <span class="category">essays</a><br/>Tagged </span><span class="tags">TEDxBITSGoa</span></div>
+      <div class="share island">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="aniket_pant" data-related="aniket_pant">Tweet</a>
+        <div class="g-plusone" data-size="medium"></div>
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+      </div>
+      <div id="boastful"></div>
+	</header><!-- post-header -->
+	<div class="g three-quarters portable-one-whole">
+		<article class="post--content">
+	  	<h2 id="how-it-all-began">How it all began?</h2>
+
+<p>It all started with a call. Nearly two months have passed when I was called by one of my college seniors and told about making the website for <a href="http://tedxbitsgoa.com/2012/" title="TEDxBITSGoa 2012">TEDxBITSGoa 2012</a>. The moment I heard it, ideas filled me up and soon we were discussing how the site should look.</p>
+
+<p>A month passed and it was November then. I was done with the site and it was done using static HTML pages.</p>
+
+<h2 id="the-perilous-path">The perilous path</h2>
+
+<p>The problem which kept bugging me was that I had to post multiple speaker profiles and each speaker had one page. There were two ways to proceed on. One was to use CodeIgniter and make a custom CMS for it. And the other one was using WordPress, customizing it to my needs and get done with the work.</p>
+
+<p>I ditched both of the ideas and planned that I would think of something when I will have to make those pages, because till then we needed only 4 static pages.</p>
+
+<p>Soon, November was gone and late December, during my college’s winter vacation, I was asked to create a blog too.<br />
+Being short of time, I was left with only one way. I had to build the website using WordPress.</p>
+
+<h2 id="work-in-progress">Work in progress</h2>
+
+<p>It took me two days (or was it three) to make up my mind about what all I would do.</p>
+
+<p>Soon I had started and asked one of my friends about Custom Pages. I had seen the term so many times, had seen people using it but never bothered to learn it.<br />
+It wasn’t a tough thing, and turned out to be identical to making a simple web page. I created a blank template for all my pages. And I made a post type for speaker which I would use to put in the data for each one of them. Next thing in line was a custom archive page. Made that and my website was ready.</p>
+
+<h2 id="the-challenge">The challenge</h2>
+
+<p>The website was good to go by then but there were still some problems with it. I was using <a href="http://themble.com/bones/" title="Bones Framework">Bones</a> as my framework (it’s my favorite).<br />
+There were two major differences in the blank template I was using and what bones uses.</p>
+
+<p>My template used 960.gs and reset.css. And Bones uses a custom version of 960.gs and normalize.css.<br />
+These two things were enough to make me go wonky for a couple of days. Initially I left them as they were and went ahead with some other styling and layout changes. But I was sure of one thing, that one day I will have to make everything clean and similar.</p>
+
+<p>A couple of days later, I sat down, decided what was required and started with the changes. To be frank they were not that difficult and in the end, I was done with 2 files and was left with using Bones the way it was. Earlier I had made my new theme devoid of Bones even though my theme was a child theme and I felt more and more guilt with each passing day. It was because I had committed a grave sin, by removing the existence of my parent theme.</p>
+
+<p>Soon, everything was normal. But this normal part was like <em>the calm before the storm</em>.<br />
+The biggest problem came then and I had to put an image slideshow. On hearing it I began testing multiple plugins. The first one which went under my scanner was NextGen. It is supposed to be one complete package for all such needs of yours, but to my disappointment, it didn’t work. Next was Orbit and it failed too.</p>
+
+<p>After about 15 tires or so, I gave up and ended up using <a href="http://wordpress.org/extend/plugins/simple-slideshow/" title="Simple Slideshow - Plugin for WP">Simple Slideshow</a> on my dad’s suggestion. It worked perfectly and integrated well. I am happy with it as of now. But I would be really glad to know the reason for the failure of Next Gen.</p>
+
+<h2 id="the-lessons-learnt">The lessons learnt</h2>
+
+<ol>
+  <li>Never try destroying a parent theme.</li>
+  <li>Create things which are reusable.</li>
+  <li>Check for compatibility issues.</li>
+  <li>Some things are sometimes hyped.</li>
+  <li>Simplicity matters.</li>
+</ol>
+
+<blockquote>
+  <p>I had a great time building the website. Learnt a lot of things that I have started including in my new projects.</p>
+</blockquote>
+
+<p>On a brief note, there were quite a lot of new CSS tricks that I used.<br />
+I am using <strong>Web Symbols</strong> font for the twitter and facebook icons on the left and using CSS animations on the right (that one is not working on webkit somehow)</p>
+
+<p>If you like my post, please upvote on HN. Here’s the <a href="http://news.ycombinator.com/item?id=3475526" title="HN Discussion: Lessons learnt from building TEDxBITSGoa 2012">link</a> to the discussion.</p>
+
+  
+		</article><!-- post-content -->
+		<footer class="post--footer"></footer><!-- post-footer -->
+    <section class="meta--info island">
+      <p class="lead">
+        Hey, you just went through <em><span class="highlight">795</span></em> words written by Aniket.<br/><br/>If you liked them, then you should definitely follow him on twitter too. He would be excited to know that you like his work.
+      </p>
+      <a href="https://twitter.com/aniket_pant" class="twitter-follow-button" data-show-count="false">Follow @aniket_pant</a>
+    </section>
+  </div>
+</div><!-- post -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="/assets/js/jquery.boastful.js"></script>
+<script src="/assets/js/rainbow-custom.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#boastful').boastful({
+        empty_message: '<p>Bah! Why ain\'t anyone tweeting this.</p>'  
+    });
+  });
+</script>
+                </section>
+            </div>
+        </div> <!-- main-container -->
+
+        <div class="footer-container gw">
+            <div class="wrapper">
+                <footer class="g one-whole text--center" role="contentinfo">
+                    <a href="https://plus.google.com/114828599949215633124?rel=author" class="accessibility">Google +</a>
+                    <p><a href="http://twitter.com/aniket_pant">@aniket_pant</a><span class="subtle">&nbsp;/&nbsp;Since 2010&nbsp;/&nbsp;</span><a href="/colophon">Colophon</a></p>
+                </footer> <!-- footer -->
+            </div>
+            <div class="g one-whole zen-space full-width"></div>
+        </div> <!-- footer-container -->
+
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-23477947-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+
+        <!-- Typekit Fonts -->
+        <script type="text/javascript">
+          (function() {
+            var config = {
+              kitId: 'rsd5dqz',
+              scriptTimeout: 3000
+            };
+            var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+          })();
+
+          (function(doc, script) {
+            var js, 
+                fjs = doc.getElementsByTagName(script)[0],
+                frag = doc.createDocumentFragment(),
+                add = function(url, id) {
+                    if (doc.getElementById(id)) {return;}
+                    js = doc.createElement(script);
+                    js.src = url;
+                    id && (js.id = id);
+                    frag.appendChild( js );
+                };
+                
+              // Google+ button
+              add('http://apis.google.com/js/plusone.js');
+              // Facebook SDK
+              add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=465363156848461', 'facebook-jssdk');
+              // Twitter SDK
+              add('//platform.twitter.com/widgets.js');
+
+              fjs.parentNode.insertBefore(frag, fjs);
+          }(document, 'script'));
+        </script>
+
+    </body>
+</html>

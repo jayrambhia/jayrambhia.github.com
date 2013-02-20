@@ -1,0 +1,21 @@
+---
+layout: base
+---
+<div class="page {{page.slug}}">
+	{% if page.slug != 'home' %}
+	<header class="g one-whole">
+		<h1 class="page_title">{{ page.title }}</h1>
+	</header>
+	{% endif %}
+	{% if page.slug == 'about-me' or page.slug == 'home' %}
+	<div class="accessibility" itemscope itemtype="http://schema.org/Person">
+		<span itemprop="name">Aniket Pant</span>
+		<img src="../assets/images/thats-me.jpg" itemprop="image" />
+		<a href="mailto:me@aniketpant.com" itemprop="email">me@aniketpant.com</a>
+    <a href="http://www.aniketpant.com" itemprop="url">aniketpant.com</a>
+	</div>
+	{% endif %}
+	<article role="main">
+	{{ content }}  
+	</article>
+</div><!-- page -->

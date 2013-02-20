@@ -1,0 +1,1 @@
+sass --update --style compressed --load-path vendor/inuit.css assets/styles/sass/style.scss:assets/styles/css/style.min.css

@@ -1,0 +1,23 @@
+---
+layout: base
+---
+<div class="page {{page.slug}}" itemscope itemtype="http://schema.org/Event">
+	<header class="g one-third portable-one-whole">
+		<h1 class="page_title" itemprop="name"><a href="{{ page.link }}"  itemprop="url">{{ page.title }}</a></h1>
+		<div class="meta">
+      <p class="gamma highlight">{{ page.topic }}</p>
+		  <p><meta itemprop="startDate" content="{{ page.date | date_to_xmlschema }}"><date class="date">{{ page.date | date_to_long_string }}</date></p>
+    </div>
+	</header>
+  <div class="g two-thirds portable-one-whole">
+    <article>
+    {{ content }}  
+    </article>
+    <section class="meta--info island">
+      <p class="lead">
+        If you liked the slides, then you should definitely follow him on twitter too. He would be excited to know that you likes his work.
+      </p>
+      <a href="https://twitter.com/aniket_pant" class="twitter-follow-button" data-show-count="false">Follow @aniket_pant</a>
+    </section>
+  </div>
+</div><!-- talk -->
