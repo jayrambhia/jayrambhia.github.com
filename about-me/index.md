@@ -6,16 +6,6 @@ slug: about-me
 <div class="g one-whole full-bleed">
 
 <div class="g one-quarter portable-one-whole">
-	<h2>That's me</h2>
-</div>
-
-<div class="g three-quarters portable-one-whole">
-	<div class="islet">
-		<img class="img--center img--small" src="/assets/images/grav2.jpg" />
-	</div>
-</div>
-
-<div class="g one-quarter portable-one-whole">
 	<h2>Howdy!</h2>
 </div>
 
@@ -46,5 +36,13 @@ Along with all this, I also have a nag for design. I had been selected for MIT M
 <div class="g three-quarters portable-one-whole">
   <p>Just go ahead and <a href="http://twitter.com/jayrambhia">follow me on Twitter</a>.Don't worry I won't try to track you on Twitter. If you're afraid of that, then you can <a href="mailto:jayrambhia777@gmail.com" class="highlight">drop me a mail</a>. If you're looking for my codes, then you can <a href="https://github.com/jayrambhia">fork my repositories on Github</a>.</p>
 </div>
+</div>
+<div class="g one-quarter portable-one-whole">
+    <h2>That's me</h2>
+</div>
 
+<div class="g three-quarters portable-one-whole">
+    <div class="islet">
+        <img class="img--center img--small" src="/assets/images/grav2.jpg" />
+    </div>
 </div>
