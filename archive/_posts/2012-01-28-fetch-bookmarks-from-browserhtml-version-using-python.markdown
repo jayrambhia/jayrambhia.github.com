@@ -1,6 +1,6 @@
 ---
 category: Blog
-tag: 
+tag: python
 comments: true
 date: 2012-01-28 02:45:39
 layout: post

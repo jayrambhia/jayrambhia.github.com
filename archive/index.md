@@ -20,7 +20,7 @@ slug: archive
 <dl class="split">
 {% endif %}
 {% endunless %}
-<dt class="split__title"><a href="{{ post.url }}" class="link-complex"><span class="link-complex__target">{{ post.title }}</span> <span class="highlight">[{% if post.category == "Blog" %}Blogpost{% elsif post.category == "News" %}Recent Events{% elsif post.category == "poetry" %}Poem{% elsif post.category == "talk" %}Talk{% endif %}]</span></a></dt>
+<dt class="split__title"><a href="{{ post.url }}" class="link-complex"><span class="link-complex__target">{{ post.title }}</span> <span class="highlight">[{{post.category}}]</span></a></dt>
 <dd class="split__detail"><em>{{ post.date | date:"%d %b" }}</em></dd>
 {% endfor %}
 </dl>
