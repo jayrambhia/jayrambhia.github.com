@@ -1,43 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>Aniket Pant - Rawrrr!</title>
-		<description>Notes and Essays by a developer</description>
-		<link></link>
-		<atom:link href="/feed" rel="self" type="application/rss+xml" />
-		
-    
-		
-    
-    
-			<item>
-				<title>USB 3G Modem detected as cdrom | How to fix | Ubuntu 12.04</title>
-				<description>&lt;p&gt;I wanted to put this post up few days ago but couldn’t get time to write. After installing Ubuntu 12.04 with UEFI switched off, I switched GPU off. I was expecting WiFi problems but I didn’t expect any problems with USB 3G modem. I plugged it in. It showed green and blue light which meant it was intitialized but I couldn’t access it. I looked up on the net and got various solutions but none of them worked. My HUAWEI 3G USB modem was getting detected as cdrom. Weird!&lt;/p&gt;
-
-&lt;p&gt;I want to keep this post short. The soultion is even shorted.&lt;/p&gt;
-
-&lt;p&gt;Get your modem’s vendor and product id.
-&lt;strong&gt;$ lsusb&lt;/strong&gt;
-Copy down the vendor and prodcut id.[caption id=”attachment_999” align=”aligncenter” width=”560”]&lt;a href=&quot;http://www.jayrambhia.com/blog/wp-content/uploads/2013/02/usb.png&quot;&gt;&lt;img src=&quot;http://www.jayrambhia.com/blog/wp-content/uploads/2013/02/usb.png&quot; alt=&quot;output of lsusb&quot; /&gt;&lt;/a&gt; output of lsusb[/caption]&lt;/p&gt;
-
-&lt;p&gt;Once you get your vendor and product id, you need to add that in the driver file.
-&lt;strong&gt;$ sudo su
-$ echo 12d1 1436 &amp;gt; /sys/bus/usb-serial/drivers/option1/new_id&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Restart the network manager.
-&lt;strong&gt;$ sudo service network-manager restart&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Or even reboot will work. Now replug your USB modem and wait for 20-30 seconds for it to intialize.&lt;/p&gt;
-
-&lt;p&gt;If still you’re having some trouble, refer &lt;a href=&quot;http://askubuntu.com/questions/143989/3g-usb-modem-not-working-in-12-04&quot;&gt;this&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;P.S. Conducting a Python hackathon.&lt;/p&gt;
-</description>
-				<pubDate>Sun, 03 Feb 2013 07:44:44 +0530</pubDate>
-				<link>/Blog/usb-3g-modem-detected-as-cdrom-how-to-fix-ubuntu-12-04</link>
-				<guid isPermaLink="true">/Blog/usb-3g-modem-detected-as-cdrom-how-to-fix-ubuntu-12-04</guid>
-			</item>
-    
+		<title>Jay Rambhia - Make computers see</title>
+		<description>Notes and codes of a paranoid android who wants track people</description>
+		<link>http://jayrambhia.com</link>
+		<atom:link href="http://jayrambhia.com/feed" rel="self" type="application/rss+xml" />
 		
     
     
@@ -65,8 +32,8 @@ $ echo 12d1 1436 &amp;gt; /sys/bus/usb-serial/drivers/option1/new_id&lt;/strong&
 &lt;p&gt;P.S. Conducting a Python hackathon.&lt;/p&gt;
 </description>
 				<pubDate>Sun, 03 Feb 2013 07:44:44 +0530</pubDate>
-				<link>/Blog/usb-3g-modem-detected-as-cdrom-how-to-fix-ubuntu-12-04</link>
-				<guid isPermaLink="true">/Blog/usb-3g-modem-detected-as-cdrom-how-to-fix-ubuntu-12-04</guid>
+				<link>http://jayrambhia.com/usb-3g-modem-detected-as-cdrom-how-to-fix-ubuntu-12-04</link>
+				<guid isPermaLink="true">http://jayrambhia.com/usb-3g-modem-detected-as-cdrom-how-to-fix-ubuntu-12-04</guid>
 			</item>
     
 		
@@ -107,8 +74,8 @@ So what was our project about?&lt;/p&gt;
 &lt;p&gt;P.S. I apologize for the late post. I was busy configuring Ubuntu on my new laptop. Had a short trip to home. And a big thanks to PESIT and its volunteers for making it so brilliant.&lt;/p&gt;
 </description>
 				<pubDate>Sat, 02 Feb 2013 06:12:05 +0530</pubDate>
-				<link>/Blog/freehand</link>
-				<guid isPermaLink="true">/Blog/freehand</guid>
+				<link>http://jayrambhia.com/freehand</link>
+				<guid isPermaLink="true">http://jayrambhia.com/freehand</guid>
 			</item>
     
 		
@@ -143,8 +110,8 @@ This means that you have successfully turned your GPU off. Now you should restar
 
 </description>
 				<pubDate>Mon, 28 Jan 2013 21:42:07 +0530</pubDate>
-				<link>/Blog/ati-radeon-7670m-turn-off-gpu-ubuntu-12-04</link>
-				<guid isPermaLink="true">/Blog/ati-radeon-7670m-turn-off-gpu-ubuntu-12-04</guid>
+				<link>http://jayrambhia.com/ati-radeon-7670m-turn-off-gpu-ubuntu-12-04</link>
+				<guid isPermaLink="true">http://jayrambhia.com/ati-radeon-7670m-turn-off-gpu-ubuntu-12-04</guid>
 			</item>
     
 		
@@ -184,8 +151,8 @@ Restart your computer. Change the boot settings. Turn secure boot OFF (Disable) 
 
 </description>
 				<pubDate>Mon, 28 Jan 2013 20:50:57 +0530</pubDate>
-				<link>/Blog/uefi-secure-boot-and-tantrums-of-windows-8</link>
-				<guid isPermaLink="true">/Blog/uefi-secure-boot-and-tantrums-of-windows-8</guid>
+				<link>http://jayrambhia.com/uefi-secure-boot-and-tantrums-of-windows-8</link>
+				<guid isPermaLink="true">http://jayrambhia.com/uefi-secure-boot-and-tantrums-of-windows-8</guid>
 			</item>
     
 		
@@ -327,8 +294,8 @@ i.drawSIFTKeyPointMatch(i1,distance=50).show()
 &lt;p&gt;P.S. Going to Bangalore tomorrow to attend Design Innovation Worskhop by MIT Media Labs in collaboration with PESIT.&lt;/p&gt;
 </description>
 				<pubDate>Fri, 18 Jan 2013 22:00:12 +0530</pubDate>
-				<link>/Blog/sift-keypoint-matching-using-python-opencv</link>
-				<guid isPermaLink="true">/Blog/sift-keypoint-matching-using-python-opencv</guid>
+				<link>http://jayrambhia.com/sift-keypoint-matching-using-python-opencv</link>
+				<guid isPermaLink="true">http://jayrambhia.com/sift-keypoint-matching-using-python-opencv</guid>
 			</item>
     
 		
@@ -422,11 +389,9 @@ Add following line in your &lt;strong&gt;.bash_aliases&lt;/strong&gt; (which wil
 
 </description>
 				<pubDate>Thu, 17 Jan 2013 08:05:12 +0530</pubDate>
-				<link>/Blog/point-cloud-library-install-and-configure-ubuntu-12-04</link>
-				<guid isPermaLink="true">/Blog/point-cloud-library-install-and-configure-ubuntu-12-04</guid>
+				<link>http://jayrambhia.com/point-cloud-library-install-and-configure-ubuntu-12-04</link>
+				<guid isPermaLink="true">http://jayrambhia.com/point-cloud-library-install-and-configure-ubuntu-12-04</guid>
 			</item>
-    
-		
     
 		
     
@@ -671,8 +636,510 @@ Once the module is initialized, we can init some slots in the type that can’t 
 
 </description>
 				<pubDate>Wed, 19 Dec 2012 19:04:32 +0530</pubDate>
-				<link>/Blog/pythonc-api-making-a-type</link>
-				<guid isPermaLink="true">/Blog/pythonc-api-making-a-type</guid>
+				<link>http://jayrambhia.com/pythonc-api-making-a-type</link>
+				<guid isPermaLink="true">http://jayrambhia.com/pythonc-api-making-a-type</guid>
+			</item>
+    
+		
+    
+    
+			<item>
+				<title>Python/C API: Reference Counting</title>
+				<description>&lt;p&gt;5th semester is finally over and let’s just say I have been to the dark side. Moving on. The most important aspect of Python is memory management. As mentioned in the earlier post of this series, PyObject* is a pointer to a weird data type representing an arbitrary Python object. All Python objects have a “type” and a &lt;strong&gt;“reference count”&lt;/strong&gt; and they live on heap so you don’t screw with them and only pointer variables cab be declared. I had skipped the part of referencing. In this post, I’ll talk about Memory Management in Python and Reference Counts.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;So What is Reference Counting?&lt;/strong&gt;
+Python’s memory management is based on reference counting. Every Python object has a count of the number of references to the object. When the count becomes zero, the object can be destroyed and its memory reclaimed. Reference counts are always manipulated explicitly using macros &lt;strong&gt;Py_INCREF()&lt;/strong&gt; to increment the reference count and &lt;strong&gt;Py_DECREF&lt;/strong&gt; to decrement it by one. The decref macro is considerably more complex than the incref one, since it must check whether the reference count becomes zero and then cause the object’s deallocator, which is a function pointer contained in the object’s type structure.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Background&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;PyObject&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Python objects are structures allocated on the heap.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Accessed through pointers of type PyObject*&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;An object has a reference count that is increased or decreased when a pointer to the object is copied or deleted.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When the reference count reaches zero there are no references to the object left and it can be removed from the heap.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Py_INCREF() and Py_DECREF()&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The macros Py_INCREF(op) and Py_DECREF(op) are used to increment or decrement reference counts.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Py_DECREF() also calls the object’s deallocator function; for objects that don’t contain references to other objects or heap memory this can be the standard function free()&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The argument shouldn’t be a NIL pointer.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To prevent Memory Leaks, corresponding to each call to Py_INCREF(), there must be a call to Py_DECREF().&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Owned vs Borrowed&lt;/strong&gt;:
+Every PyObject pointer is either owned or borrowed. An owned reference means you are responsible for correctly disposing of the reference. Objects are not owned, they are all shared. It’s the references to the objects that are owned or borrowed.&lt;/p&gt;
+
+&lt;p&gt;A borrowed reference implies that some other piece of code(function) owns the the reference, because the code’s interest started before yours, and will end before yours. So you must not deallocate the pointer or decrease the reference. Otherwise, &lt;strong&gt;crash!&lt;/strong&gt; A caller must have a reference to the arguments it passes into a called function, so arguments are almost always borrowed.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Acquiring Owned References&lt;/strong&gt;:
+There are two ways to get an owned reference:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Accept a return value from a C function that returns a PyObject&lt;em&gt;. Most C API functions that return PyObject&lt;/em&gt; return a new reference, but &lt;strong&gt;not all&lt;/strong&gt;. Some return the borrowed reference. Read the docs carefully. &lt;a href=&quot;http://stackoverflow.com/questions/10247779/python-c-api-functions-that-borrow-and-steal-references&quot;&gt;Python/C API functions that borrow references - StackOverflow&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Use Py_INCREF on a borrowed PyObject pointer you already have. This increments the reference count on the object, and obligates you to dispose of it properly.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Discarding Owned References&lt;/strong&gt;:
+Once you have an owned reference, you have to discard it properly. There are three ways.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Return it to the caller of your function. This transfers the ownership from you to your caller. Now they have an owned reference.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Use Py_DECREF() to decrement the reference count.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Store it with PyTuple_SetItem() or PyList_SetItem(), which are unusual among C API functions: they steal ownership of their item argument. &lt;a href=&quot;http://stackoverflow.com/questions/10247779/python-c-api-functions-that-borrow-and-steal-references&quot;&gt;Python/C API functions that steal reference - StackOverflow&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Code Example&lt;/strong&gt;:
+So I have been working on my pointer skills and created a simple selection sort to sort a list of integers.
+Here’s the code.
+&lt;strong&gt;Include Libraries&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;Python.h&amp;gt;
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;stdlib.h&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;C Function&lt;/strong&gt;:
+PyArg_ParseTuple works like scanf and returns 1 if successful. So, here I’m trying to check whether the passed argument(one argument only) is a PyObject (list) or not and similar to scanf, storing the value of the argument in list (PyObject*).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PyObject* py_selectionSort(PyObject* self, PyObject* args)
+{
+    PyObject* list;
+
+    if (!PyArg_ParseTuple(args, &quot;O&quot;, &amp;amp;list))
+    {
+        printf(&quot;Not a listn&quot;);
+        return NULL;
+    }
+// continued
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; list is an object we pull out of the args with PyArg_ParseTuple. Since args is borrowed, we can borrow value out of it, so list is also borrowed.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Create array from list&lt;/strong&gt;:
+I am creating an integer array from the Python list. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PyObject* py_selectionSort(PyObject* self, PyObject* args)
+{
+    // continued..
+    PyObject* list_item;
+    Py_ssize_t i, len;
+
+    len = PyList_Size(list);
+    long* list_array = (long*) malloc(len*(sizeof(long)));
+
+    /* create array from list */
+    for(i=0; i&amp;lt;len; i++)
+    {
+        list_item = PyList_GetItem(list, i);
+        if PyInt_Check(list_item)
+        {
+            *list_array = PyInt_AsLong(list_item);
+            list_array++;
+        }
+        // Py_DECREF(list_item); No need to decrease the reference count
+        // as PyList_GetItem returns a borrowed reference.
+    }
+    list_array-=len;
+
+  // continued..
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;@franksmit](http://twitter.com/franksmit) pointed out the mistake with borrowed reference.&lt;/p&gt;
+
+&lt;p&gt;Here list_item is an owned reference, so it is your responsibility to discard it properly using Py_DECREF.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Sorting&lt;/strong&gt;:
+This is just C part. You can skip this part if you know how to sort stuff.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PyObject* py_selectionSort(PyObject* self, PyObject* args)
+{
+    // continued..
+
+    int min = *list_array;
+    int index = 0;
+    int l;
+    int min_element, temp_element;
+    for (j=0; j&amp;lt;len; j++)
+    {
+        list_array+=j;
+        min = *list_array;
+        index = j;
+        for (k=j; k&amp;lt;len; k++)
+        {
+            if (*list_array &amp;lt; min)
+            {
+                min = *list_array;
+                index = k;
+            }
+            list_array++;
+        }
+        list_array = list_array - len;
+        if (index != j)
+        {
+            temp_element = *(list_array + j);
+            *(list_array + j) = *(list_array+ index);
+            *(list_array + index) = temp_element;
+        }
+    }
+
+   // continued ..
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Create list from the sorted array&lt;/strong&gt;:
+After sorting the integer array, I want a list (PyObject*) which I can return.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PyObject* py_selectionSort(PyObject* self, PyObject* args)
+{
+    // continued..
+    /* create list from sorted array */
+    PyObject* flist = PyList_New(len);
+    for (i=0; i&amp;lt;len; i++)
+    {
+        list_item = PyInt_FromLong(*list_array);
+        PyList_SetItem(flist, i, list_item);
+        list_array++;
+        //Py_DECREF(list_item); /* PyList_SetItem steals the reference */
+    }
+    list_array-=len;
+    
+    // continued ..
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;Here we’re not to use Py_DECREF to decrement the reference count of list_item because PyList_SetItems() steals the reference.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Cleaning Up and Return&lt;/strong&gt;:
+Memory management is very important in any Python program hence you need to clean up to avoid memory leaks and crashes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PyObject* py_selectionSort(PyObject* self, PyObject* args)
+{
+    // continued ..
+    /* make sure that list_array points to the first allocated block of the array
+     * else, free() will cause a segmentation fault.
+     */
+    free(list_array);
+    
+    /* list is an object we pull out of the args with PyArg_ParseTuple. 
+     * Since args is borrowed, we can borrow value out of it, 
+     * so list is also borrowed. */
+    //Py_DECREF(list);
+
+    return flist;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: list is an object we pull out of the args with PyArg_ParseTuple. Since args is borrowed, we can borrow value out of it, so list is also borrowed. list_array must point to the first allocated block of the array while using free() to deallocate it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Afterpart&lt;/strong&gt;:
+Declare PyMethodDef and the module.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PyMethodDef methods[] = {
+  {&quot;selectionSort&quot;,(PyCFunction)py_selectionSort, METH_VARARGS, NULL},
+  {NULL, NULL,0,NULL},
+};
+
+PyMODINIT_FUNC initselectionSort(void)
+{
+    Py_InitModule3(&quot;selectionSort&quot;, methods,
+                   &quot;Extension module example!&quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can find/fork code on my &lt;a href=&quot;https://github.com/jayrambhia/PyCee/&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;References&lt;/strong&gt;:
+&lt;a href=&quot;http://docs.python.org/2/c-api/&quot;&gt;Python/C API docs&lt;/a&gt;
+&lt;a href=&quot;http://nedbatchelder.com/text/whirlext.html&quot;&gt;A Whirlwind Excursion through Python C Extensions - Ned Batchelder&lt;/a&gt;
+&lt;a href=&quot;http://edcjones.tripod.com/refcount.html&quot;&gt;Ed’s Eclectic Science Page&lt;/a&gt;
+Numerous StackOverlfow questions.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;P.S. Winter break is on. I need to speed things up and start with Mahotas and other Computer Vision work. I have to make some notes, presentation slides and gather all my CV work for the next semester.&lt;/strong&gt;&lt;/p&gt;
+</description>
+				<pubDate>Fri, 14 Dec 2012 18:51:57 +0530</pubDate>
+				<link>http://jayrambhia.com/pythonc-api-reference-counting</link>
+				<guid isPermaLink="true">http://jayrambhia.com/pythonc-api-reference-counting</guid>
+			</item>
+    
+		
+    
+    
+			<item>
+				<title>Python/C API: #include</title>
+				<description>&lt;p&gt;People are strange when you are stranger. So stop being stranger and start writing emails. You’d get replies.&lt;/p&gt;
+
+&lt;p&gt;I came across this amazing computer vision library for Python - &lt;strong&gt;&lt;a href=&quot;https://github.com/luispedro/mahotas&quot;&gt;Mahots&lt;/a&gt;&lt;/strong&gt;. It has great support for Image Processing and the most important thing is it has its own C++ bindings. I was awestruck when I first saw the source code and it is efficiently planned and brilliantly executed library. &lt;strong&gt;&lt;a href=&quot;http://luispedro.org/&quot;&gt;Luis Pedro&lt;/a&gt;&lt;/strong&gt; has produced a bunch of beautiful codes. I have decided to contribute to Mahotas as it’d help me learn Python C++ bindings, create efficient algorithms, and feel powerful again (see previous post for the context: )&lt;/p&gt;
+
+&lt;p&gt;I had tried Python/C API once before but couldn’t get the hold of it. It was too confusing. Tried swig, cython and boost, but all in dumpster. Too many complications. But after looking at Mahotas’ bindings and how they are used as &lt;strong&gt;extension modules&lt;/strong&gt;, I am giving it a shot. And so far, it’s been good. To understand basics, I went through the reference manual on Python website but it was all too complicated and direct. So I directly opened one of the C++ bindings of mahotas and started understanding it. But still went through few topics of Python/C API. To summarize,&lt;/p&gt;
+
+&lt;p&gt;All function, type and macro definitions are included in &lt;strong&gt;Python.h&lt;/strong&gt;. It must be included.&lt;/p&gt;
+
+&lt;p&gt;Nothing should be defined that starts with &lt;strong&gt;Py&lt;/strong&gt; or &lt;strong&gt;_Py&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;*PyObject&lt;/em&gt; ** is is a pointer to a weird data type representing an arbitrary Python object. All  Python objects have a “type” and a “reference count” and they live on heap so you don’t screw with them and only pointer variables cab be declared.&lt;/p&gt;
+
+&lt;p&gt;Then there is all this stuff about referencing and dereferencing the Python object. Reference count keeps a count of how many different places there are that have a reference to an object. When an object’s reference count is zero, it is deallocated. Reference counts are manipulated manually. Read more about Py_INCREF(), Py_DECREF() &lt;a href=&quot;http://docs.python.org/2/c-api/intro.html#reference-count-details&quot;&gt;here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;More complicated stuff is explained after that. Exceptions, and Exception Handling. I read that, but skipped the implementation. I also skipped Reference Counting, and now I think, I shouldn’t have. Anyway, moving on to embedding Python.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-header&quot;&gt;&lt;strong&gt;The Header&lt;/strong&gt;:&lt;/h3&gt;
+
+&lt;p&gt;Include Python.h header file as it gives you access to the internal Python API. Add other necessary headers.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;Python.h&amp;gt;
+#include &amp;lt;stdio.h&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;the-c-functions&quot;&gt;&lt;strong&gt;The C Functions&lt;/strong&gt;:&lt;/h3&gt;
+
+&lt;p&gt;Every function returns a Python object. There’s no void here. Return Py_RETURN_NONE to return Python’s None value.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PyObject* foo(PyObject* self, PyObject *args)
+{
+    //something goes here
+    return Py_RETURN_NONE;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;the-method-mapping-table&quot;&gt;&lt;strong&gt;The Method Mapping Table&lt;/strong&gt;:&lt;/h3&gt;
+
+&lt;p&gt;Structure used to describe a method of an extension type.  PyMethodDef contains an entry for every function that you are making available to Python.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;struct PyMethodDef {
+   char *ml_name;
+   PyCFunction ml_meth;
+   int ml_flags;
+   char *ml_doc;
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;ml_name&lt;/strong&gt; - the name of the function as the Python interpreter will present it.
+&lt;strong&gt;ml_meth&lt;/strong&gt; -pointer to the C implementation.
+&lt;strong&gt;ml_flags&lt;/strong&gt; - flag bits indicating how the call should be constructed. Read about flags &lt;a href=&quot;http://docs.python.org/2/c-api/structures.html#METH_KEYWORDS&quot;&gt;here&lt;/a&gt;.
+&lt;strong&gt;ml_doc&lt;/strong&gt; - points to the contents of the docstring.&lt;/p&gt;
+
+&lt;p&gt;Map the above defined function&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PyMethodDef methods[] = {
+  {&quot;foo&quot;,(PyCFunction)foo, METH_VARARGS, NULL},
+  {NULL, NULL,0,NULL},
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;the-initialization-function&quot;&gt;&lt;strong&gt;The Initialization Function&lt;/strong&gt;:&lt;/h3&gt;
+
+&lt;p&gt;This function is called by the Python interpreter when the module is loaded. It’s required that the function be named &lt;strong&gt;initModule&lt;/strong&gt;, where Module is the name of the module. This is a very crucial part. I forgot about this and wandered on the interent  for almost an hour. If you don’t add this, you’ll get an import error in the Python interpreter.&lt;/p&gt;
+
+&lt;p&gt;ImportError: dynamic module does not define init function (initfoo)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;void initModule(void) {
+   Py_InitModule3(func, module_methods, &quot;docstring...&quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;func&lt;/strong&gt;: This is the function to be exported.
+&lt;strong&gt;module_methods&lt;/strong&gt;: This is the mapping table name defined above.
+&lt;strong&gt;docstring&lt;/strong&gt;: This is the comment you want to give in your extension&lt;/p&gt;
+
+&lt;p&gt;Initialize the above given module&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;void initfoo(void)
+{
+    Py_InitModule3(&quot;foo&quot;, methods, &quot;Extension module example!&quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now onto the final and most exciting part.&lt;/p&gt;
+
+&lt;h3 id=&quot;building-and-installing-extensions&quot;&gt;**Building and Installing Extensions:&lt;/h3&gt;
+
+&lt;p&gt;**
+All hail the &lt;strong&gt;distutils package&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Create a &lt;strong&gt;setup.py&lt;/strong&gt; file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from distutils.core import setup, Extension
+
+setup(name=&quot;foo&quot;, version=&quot;0.1&quot;,
+           ext_modules=[Extension(&quot;foo&quot;,[&quot;foo.c&quot;])])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And install.
+**$ sudo python setup.py install **&lt;/p&gt;
+
+&lt;p&gt;Usage:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import foo
+foo.foo()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;example&quot;&gt;&lt;strong&gt;Example&lt;/strong&gt;:&lt;/h3&gt;
+
+&lt;p&gt;Return the reversed string.&lt;/p&gt;
+
+&lt;h5 id=&quot;c-file&quot;&gt;&lt;strong&gt;C File&lt;/strong&gt;:&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;stdlib.h&amp;gt;
+#include &amp;lt;string.h&amp;gt;
+#include &amp;lt;Python.h&amp;gt;
+
+PyObject* pyrev(PyObject* self, PyObject* str1)
+{
+    char* str2;
+    if (!PyArg_ParseTuple(str1, &quot;s&quot;,  &amp;amp;str2))
+    {
+        return NULL;
+    }
+   // Yes, I could have used strlen() to get the length.
+    int len;
+    for (len=0; *str2!=NULL; str2++)
+    {
+        len+=1;
+    }
+    str2-=len;
+    
+    char* str3 = (char *)malloc((len+1)*sizeof(char));
+    str3+=len;
+    *str3 = NULL;
+    str3--;
+    
+    for (;*str2!=NULL; ++str2, str3--)
+    {
+        *str3 = *str2;
+    }
+    str3++;
+    
+    return Py_BuildValue(&quot;s&quot;, str3);
+}
+
+PyMethodDef methods[] = {
+  {&quot;pyrev&quot;,(PyCFunction)pyrev, METH_VARARGS, NULL},
+  {NULL, NULL,0,NULL},
+};
+
+void initpyrev(void)
+{
+    Py_InitModule3(&quot;pyrev&quot;, methods,
+                   &quot;Reverse the string!&quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Some of the points that you should note&lt;/strong&gt;
+&lt;strong&gt;PyArg_ParseTuple()&lt;/strong&gt; parses the tuple in data types.
+int PyArg_ParseTuple(PyObject* tuple, char* format,…)&lt;/p&gt;
+
+&lt;p&gt;Let’s assume, I’m passing 3 arguments to the function. one int, one double, and one string.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PyObject* bar(PyObject* self, PyObject* args)
+{
+    int i1;
+    double d1;
+    char* s1;
+
+    PyArg_ParseTuple(args, &quot;ids&quot;, &amp;amp;i1, &amp;amp;d1, &amp;amp;s1);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the above code, I’m using PyArg_ParseTuple() to check whether I’m getting string or not and also to assign the string value.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Py_BuildValue&lt;/strong&gt;: Py_BuildValue are used to get PyObject from string or int or other data types. I’m returning PyObject of str3.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;PyObject* Py_BuildValue(char* format,…)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;PyString_AsString()&lt;/strong&gt;: As the documentation says,&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The pointer refers to the internal buffer of string, not a copy. The data must not be modified in any way, unless the string was just created using PyString_FromStringAndSize(NULL, size). It must not be deallocated.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Please ensure you do not deallocate this buffer.
+&lt;a href=&quot;http://stackoverflow.com/questions/8749842/sporadic-segfault-in-c-python-extension&quot;&gt;Refer this.&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;PyString_AsString returns a pointer to the internal buffer of the python string. If you want to be able to free() it (or indeed have it exist for beyond the lifetime of the associated python string), you need to malloc() memory and strcpy() the data. If the strings contain binary data, you should be using PyString_AsStringAndSize.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://docs.python.org/api/stringObjects.html&quot;&gt;Refer this.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This thing got me into a lot of trouble. Only Segmentation faults for hours. Searched everything, tried everything, but couldn’t use it. I still have to study about reference counts and implement them to make code better. No memory problems.&lt;/p&gt;
+
+&lt;p&gt;Few helpful links:
+&lt;a href=&quot;http://www.tutorialspoint.com/python/python_further_extensions.htm&quot;&gt; http://www.tutorialspoint.com/python/python_further_extensions.htm&lt;/a&gt;
+http://bytes.com/topic/python/answers/578916-cpoying-pylist-c-string-array
+&lt;a href=&quot;http://docs.python.org/2/c-api/string.html&quot;&gt;http://docs.python.org/2/c-api/string.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I guess this should get you going. I have made a repository for all my Python/C API work and stuff. You can find it on GitHub and fork it. Suggestions and additions are welcome. &lt;strong&gt;&lt;a href=&quot;https://github.com/jayrambhia/PyCee&quot;&gt;PyCee&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;P.S. May the Open Source embed you.&lt;/strong&gt;&lt;/p&gt;
+</description>
+				<pubDate>Sun, 09 Dec 2012 09:00:37 +0530</pubDate>
+				<link>http://jayrambhia.com/pythonc-api-includepython-h</link>
+				<guid isPermaLink="true">http://jayrambhia.com/pythonc-api-includepython-h</guid>
+			</item>
+    
+		
+    
+    
+			<item>
+				<title>A Momentary Lapse of Reason and Celebration of The Lizard King</title>
+				<description>&lt;p&gt;It’s been a few months that I have written something. Well, to write something substantial, I need work which I haven’t done in quite a long time. No commits, no contribution, no projects, no research, nothing! Procrastination all day long. I don’t even remember how I spent my last three months. Probably, listening to some of the best rock bands ever, partying, sleeping, watching movies about the best rock bands, playing Ultimate. No clue. I am the king of people who take bad decisions and no one can beat me at that. Turned down couple of internship opportunities, few projects, Robocon, and the list goes on and the last thing that I really don’t want to add is academics. Had a little tumble down the road. Basking in the glory, I forgot to return back to the ground. I tried to fly. So I threw myself at ground, but couldn’t miss the ground. Probably, I was trying to miss the ground. It turns out this has to happen accidentally.&lt;/p&gt;
+
+&lt;p&gt;Since I could not miss the ground, it hit me so hard. I finally met myself coming down an up staircase and the encounter was crushing.&lt;/p&gt;
+
+&lt;p&gt;The realization of not doing anything and still able to tweet about it is an achievement in itself. Well, I guess I still haven’t realized it. After reading few dozens of PhD comics, watching PhD movie, reading stuff up on Quora, reading about other masters program students, and all the post docs that I’m stalking for a 6 months thesis, I have come to a simple conclusion that everyone digs your work. And yeah, Masters programs are kind of overrated and yes, obviously, IITs. So enough of cribbing, it’s time to celebrate and plan the future.&lt;/p&gt;
+
+&lt;p&gt;As my finals are going on, I get enough time to think about further projects, goals and something.. something.. something.. The next semester is going to be very exciting. Couple of projects are already lined up, and given that I don’t repeat this semester. I’m going to teach Computer Vision to a class of 40 students - “Introduction to Computer Vision” which will include practical applications of Computer Vision with some theory and math. We’re going to use OpenCV and/or SimpleCV. Open Source is the right path. After getting crappy grades in Probability and Statistics, Linear Algebra, I have decided to take up a project in Statistical Learning - &lt;strong&gt;“Implementation of Statistical Learning Techniques to Estimate and Detect Objects in Computer Vision based Tracking”&lt;/strong&gt;. I’m not planning to take up any of the coursera courses as I don’t go beyond three weeks and keep getting bunch of emails every week.&lt;/p&gt;
+
+&lt;p&gt;Recently, I have started looking into &lt;a href=&quot;https://github.com/luispedro/mahotas/&quot;&gt;Mahotas&lt;/a&gt;. &lt;a href=&quot;http://luispedro.org/&quot;&gt;Luis Pedro&lt;/a&gt; maintains it. It’s an Image Processing/ Computer Vision library for Python. It does not use OpenCV. It has its own C++ bindings. I have started learning Python/C API. All the referencing, and pointers are giving me goosebumps. After using Python for a year, it feels so powerful to go back to pointers and getting segmentation faults.&lt;/p&gt;
+
+&lt;p&gt;Simultaneously, I’m working on object segmentation and haven’t had a breakthrough there. I have to start looking into statistical learning and start my project early as I need to make a tracker that can match the accuracy and agility of &lt;a href=&quot;http://www.micc.unifi.it/pernici/&quot;&gt;ALIEN&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Taking up all the work to cover for three months is going to kill me. Anyway, I have started learning Python/C API and the first post will be up soon with some warnings about certain unnecessary things that took me 8 hours to figure out. Memory allocation, dereferencing pointers, and segmentation faults will elude me.&lt;/p&gt;
+
+&lt;p&gt;Ooh great creator of being 
+Grant us one more hour, 
+To perform our art 
+And perfect our lives.&lt;/p&gt;
+
+&lt;p&gt;P.S. I’m The Lizard King. I can do anything.&lt;/p&gt;
+</description>
+				<pubDate>Sun, 09 Dec 2012 07:00:14 +0530</pubDate>
+				<link>http://jayrambhia.com/a-momentary-lapse-of-reason-and-celebration-of-the-lizard-king</link>
+				<guid isPermaLink="true">http://jayrambhia.com/a-momentary-lapse-of-reason-and-celebration-of-the-lizard-king</guid>
 			</item>
     
 		
