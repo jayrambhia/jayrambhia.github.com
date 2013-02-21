@@ -1,6 +1,6 @@
 ---
 category: Blog
-tag: 
+tag: Linux
 comments: true
 date: 2012-05-09 20:42:56
 layout: post
@@ -9,14 +9,12 @@ title: Monitoring HDD Temperature using python
 ---
 
 I have an HP laptop. And if you have ever used an HP laptop, you must understand my situation. HP heats up a lot. There's no proper ventilation and heat sink. Despite of using a cooling pad, sometimes my laptop's core temperature reaches critical temperature value and shuts down. I think it's quite harmful. To avoid such situation, I always wanted something to measure the core temperature. One of my friends suggested me to use **lm-sensors**. It's not bad but it gives me temperature value only when do
-`$ sensors`
+
+    $ sensors
+
 It's kind of irritating to do it constantly to check whether temperature is within range or not.
 
-
-##### 
-
-
-I wanted to make a python script which would check temperature every minute and warn me if it goes beyond acceptable limit. os.system() would never work. So, I kept looking for something which would give me temperature data. I found this page. **https://bitbucket.org/tlynn/trypy/src/7796d8f4a8c1/munin-hddtemp.py**
+I wanted to make a python script which would check temperature every minute and warn me if it goes beyond acceptable limit. os.system() would never work. So, I kept looking for something which would give me temperature data. I found this [page.](https://bitbucket.org/tlynn/trypy/src/7796d8f4a8c1/munin-hddtemp.py)
 It uses **hddtemp**. hddtemp sends data via socket **7643**(default) to **localhost**(default).
 So, here's how I have worked it out.
     
@@ -59,10 +57,6 @@ P.S. Screwed this sem's GPA.
 I can't believe it that I never came across **popen2**. I feel so stupid now. Had I known earlier about popen2, I would have used it in many of my scripts. Anyway, better late than never.
 So I found out about popen2. It's a good way to pipe the output of the command. Now, I can easily access the temperature without hddtemp. I pipe the output of lm-sensors to get temperature value.
 
-
-#### 
-
-
     
     import popen2
     files = popen2.popen2("sensors")
@@ -70,14 +64,9 @@ So I found out about popen2. It's a good way to pipe the output of the command. 
     temp = int(r.split()[-4][1:3])            # unable to split using ""
     print temp
 
-
-
-
 Read more about popen2 http://docs.python.org/library/popen2.html
 
 P.S. I am so embarrassed. How could I not know about popen !
-
-
 
 #### Edit
 
@@ -91,9 +80,6 @@ Using **subprocess**:
     data = process.communicate()    # returns tuple
     temp = int(data[0].split()[5][1:3])
     print temp
-
-
-
 
 Read more about subprocess and Popen http://docs.python.org/library/subprocess.html
 

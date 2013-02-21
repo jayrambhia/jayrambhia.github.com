@@ -175,9 +175,10 @@ And this is how it looks,
 I'm still weak in this part. My prediction algorithm is really stupid and doesn't work well. I need to learn math. So if you have a good prediction algorithm to predict new ROI/BB using keypoints difference or something, you can make an efficient SIFT based tracker.
 
 Other Important Links:
-1. SIFT - [http://www.cs.ubc.ca/~lowe/keypoints/](http://blogs.oregonstate.edu/hess/code/sift/)
-2. SIFT code - [http://blogs.oregonstate.edu/hess/code/sift/](http://blogs.oregonstate.edu/hess/code/sift/)
-3. FLANN - [http://mloss.org/software/view/143/](http://mloss.org/software/view/143/)
+
+- SIFT - [http://www.cs.ubc.ca/~lowe/keypoints/](http://blogs.oregonstate.edu/hess/code/sift/)
+- SIFT code - [http://blogs.oregonstate.edu/hess/code/sift/](http://blogs.oregonstate.edu/hess/code/sift/)
+- FLANN - [http://mloss.org/software/view/143/](http://mloss.org/software/view/143/)
 
 You can find the complete source code of the SIFT based tracker on [GitHub](https://github.com/jayrambhia/Vision/blob/master/OpenCV/C%2B%2B/sift_tracker.cpp).
 

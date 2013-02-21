@@ -9,23 +9,10 @@ title: Capture Images and Video from Camera in OpenCV 2.3.1
 ---
 
 OpenCV 2.3.1 python bindings have **ctypes** and no longer support swig bindings. OpenCV 2.3.1 python bindings are quite stable and much faster than OpenCV 2.1 swig bindings. Although OpenCV 2.3.1 has many new features, it still supports some of OpenCV 2.1's functions. Moving on to capturing images from camera.
-[![](http://www.jayrambhia.com/blog/wp-content/uploads/2012/05/captured_from_camera_opencv.png)](http://www.jayrambhia.com/blog/wp-content/uploads/2012/05/captured_from_camera_opencv.png)
 
+### **CaptureFromCAM**
 
-#### 
-
-
-****
-**
-
-#### CaptureFromCAM
-
-**
-
-
-##### Capturing a single frame:
-
-
+#### **Capturing a single frame**:
     
     from cv2.cv import *
     # Initialize the camera
@@ -38,21 +25,13 @@ OpenCV 2.3.1 python bindings have **ctypes** and no longer support swig bindings
            WaitKey(0)
     DestroyWindow("cam-test")
 
-
-
-
 To capture video, capture frames in a loop with appropriate waitkey. This method of capturing frames is similar to that of OpenCV 2.1
 
 
 
-#### **VideoCapture**
+### **VideoCapture**
 
-
-
-
-##### Capturing a single frame:
-
-
+##### **Capturing a single frame**:
     
     from cv2 import *
     # initialize the camera
@@ -63,9 +42,6 @@ To capture video, capture frames in a loop with appropriate waitkey. This method
         imshow("cam-test",img)
         waitKey(0)
         destroyWindow("cam-test")
-
-
-
 
 This method is most extensively used to capture frames in OpenCV 2.3.1.
 

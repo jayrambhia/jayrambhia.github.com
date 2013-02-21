@@ -1,5 +1,5 @@
 ---
-category: Blog
+category: Event
 tag: Computer Vision
 comments: true
 date: 2012-08-23 03:12:25
@@ -8,14 +8,9 @@ slug: the-end-google-summer-of-code-2012
 title: 'The End: Google Summer of Code 2012'
 ---
 
-**
+**This is the end, beautiful friend**
 
-This is the end, beautiful friend
-
-
-
-
--The End by The Doors**
+**-The End by The Doors**
 
 
 [Katherine Scott](http://www.kscottz.com/), [Anthony Oliver](http://www.anthonyoliver.net/), [Victor](http://www.notvictor.com/) and [Vijay](http://genericpointer.tumblr.com/), it has been a pleasure working with you guys. So after exactly three months, Google Summer of Code 2012 has come to an end. It has been a wonderful summer spent in surreal universe of Computer Vision.
@@ -33,66 +28,76 @@ Coding period was a month away. Meanwhile, I started learning few things about C
 Here are the blog posts that I added during my summer.
 
 
-  * [Install OpenCV 2.3.1 and SimpleCV in Ubuntu 12.04 Precise Pangolin, Arch Linux](http://www.jayrambhia.com/blog/2012/05/02/install-opencv-2-3-1-and-simplecv-in-ubuntu-12-04-precise-pangolin-arch-linux/)
+  * [Install OpenCV 2.3.1 and SimpleCV in Ubuntu 12.04 Precise Pangolin, Arch Linux](/blog/install-opencv-2-3-1-and-simplecv-in-ubuntu-12-04-precise-pangolin-arch-linux/)
 
 
-  * [Beginning OpenCV](http://www.jayrambhia.com/blog/2012/05/08/beginning-opencv/)
+  * [Beginning OpenCV](/blog/beginning-opencv/)
 
 
-  * [Capture Images and Video from Camera in OpenCV 2.3.1](http://www.jayrambhia.com/blog/2012/05/10/capture-images-and-video-from-camera-in-opencv-2-3-1/)
+  * [Capture Images and Video from Camera in OpenCV 2.3.1](/blog/capture-images-and-video-from-camera-in-opencv-2-3-1/)
 
 
-  * [GSoC 2012 Package Arrived](http://www.jayrambhia.com/blog/2012/05/18/gsoc-2012-package-arrived/)
+  * [GSoC 2012 Package Arrived](/blog/gsoc-2012-package-arrived/)
 
 
-  * [OpenTLD – Georg Nebehay’s version of OpenTLD in OpenCV 2.3.1 and Towel Day](http://www.jayrambhia.com/blog/2012/05/25/opentld-georg-nebehays-version-of-opentld-in-opencv-2-3-1-and-towel-day/)
+  * [OpenTLD – Georg Nebehay’s version of OpenTLD in OpenCV 2.3.1 and Towel Day](/blog/opentld-georg-nebehays-version-of-opentld-in-opencv-2-3-1-and-towel-day/)
 
 
-  * [Median Flow Tracker using SimpleCV/OpenCV – GSoC week 1 and 2](http://www.jayrambhia.com/blog/2012/06/03/median-flow-tracker-using-simplecvopencv-gsoc-week-1-and-2/)
+  * [Median Flow Tracker using SimpleCV/OpenCV – GSoC week 1 and 2](/blog/median-flow-tracker-using-simplecvopencv-gsoc-week-1-and-2/)
 
 
-  * [Tracking in OpenTLD aka Predator](http://www.jayrambhia.com/blog/2012/06/05/tracking-in-opentld-aka-predator/)
+  * [Tracking in OpenTLD aka Predator](/blog/tracking-in-opentld-aka-predator/)
 
 
-  * [Install OpenCV 2.4.* in Ubuntu 12.04 Precise Pangolin](http://www.jayrambhia.com/blog/2012/06/20/install-opencv-2-4-in-ubuntu-12-04-precise-pangolin/)
+  * [Install OpenCV 2.4.* in Ubuntu 12.04 Precise Pangolin](/blog/install-opencv-2-4-in-ubuntu-12-04-precise-pangolin/)
 
 
-  * [Get data from Mat / cv::Mat in OpenCV](http://www.jayrambhia.com/blog/2012/06/23/get-data-from-mat-cvmat-in-opencv/)
+  * [Get data from Mat / cv::Mat in OpenCV](/blog/get-data-from-mat-cvmat-in-opencv/)
 
 
-  * [Configuring Boost::Python and Hello Boost](http://www.jayrambhia.com/blog/2012/06/25/configuring-boostpython-and-hello-boost/)
+  * [Configuring Boost::Python and Hello Boost](/blog/configuring-boostpython-and-hello-boost/)
 
 
-  * [Boost::Python with OpenCV](http://www.jayrambhia.com/blog/2012/06/27/boostpython-with-opencv/)
+  * [Boost::Python with OpenCV](/blog/boostpython-with-opencv/)
 
 
-  * [Sobel Operator](http://www.jayrambhia.com/blog/2012/07/11/sobel-operator/)
+  * [Sobel Operator](/blog/sobel-operator/)
 
 
-  * [Face Tracking with CAMShift using OpenCV/SimpleCV](http://www.jayrambhia.com/blog/2012/07/11/face-tracking-with-camshift-using-opencvsimplecv/)
+  * [Face Tracking with CAMShift using OpenCV/SimpleCV](/blog/face-tracking-with-camshift-using-opencvsimplecv/)
 
 
-  * [CAMShift with SimpleCV](http://www.jayrambhia.com/blog/2012/07/13/camshift-with-simplecv/)
+  * [CAMShift with SimpleCV](/blog/camshift-with-simplecv/)
 
 
-  * [Kalman Filter](http://www.jayrambhia.com/blog/2012/07/26/kalman-filter/)
+  * [Kalman Filter](/blog/kalman-filter/)
 
 
-  * [Lucas Kanade Tracker](http://www.jayrambhia.com/blog/2012/08/08/lucas-kanade-tracker/)
+  * [Lucas Kanade Tracker](/blog/lucas-kanade-tracker/)
 
 And here are few videos that I uploaded.
 **OpenTLD on Towel Day**
-[youtube="http://www.youtube.com/watch?v=ylKg8klW_L8"]
-**Face Tracking with CAMShift**
-[youtube="http://www.youtube.com/watch?v=QnwT9QQPQow"]
-**CAMShift Tracking of two objects**
-[youtube="http://www.youtube.com/watch?v=rl8C4yxtJD4"]
-[youtube="http://www.youtube.com/watch?v=eG585vx2cig"]
-**Kalman Filter Prediction**
-[youtube=http://www.youtube.com/watch?v=ZGhGeKQMyVA"]
-**Lucas Kanade Tracker**
-[youtube="http://www.youtube.com/watch?v=Yw7IcttYRuY"]
 
+<iframe width="420" height="315" src="http://www.youtube.com/embed/ylKg8klW_L8" frameborder="0" allowfullscreen></iframe>
+
+**Face Tracking with CAMShift**
+
+<iframe width="420" height="315" src="http://www.youtube.com/embed/QnwT9QQPQow" frameborder="0" allowfullscreen></iframe>
+
+**CAMShift Tracking of two objects**
+
+<iframe width="420" height="315" src="http://www.youtube.com/embed/rl8C4yxtJD4" frameborder="0" allowfullscreen></iframe>
+
+**Kalman Filter Prediction**
+
+<iframe width="420" height="315" src="http://www.youtube.com/embed/eG585vx2cig" frameborder="0" allowfullscreen></iframe>
+
+
+<iframe width="420" height="315" src="http://www.youtube.com/embed/ZGhGeKQMyVA" frameborder="0" allowfullscreen></iframe>
+
+**Lucas Kanade Tracker**
+
+<iframe width="420" height="315" src="http://www.youtube.com/embed/Yw7IcttYRuY" frameborder="0" allowfullscreen></iframe>
 
 
 This sums up almost all my work. So the journey ends here.

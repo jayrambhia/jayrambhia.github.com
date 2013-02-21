@@ -1,6 +1,6 @@
 ---
 category: Blog
-tag: Computer Vision
+tag: python
 comments: true
 date: 2012-04-18 15:35:28
 layout: post
@@ -17,9 +17,6 @@ I have used multi-threading to call **gtk.main()** because if I don't do that, m
     from threading import Thread
     import gobject
     gtk.gdk.threads_init()
-
-
-
 
 As I have mentioned before, **gtk.gdk.threads_init()** is necessary. The gtk.gdk.threads_init() function initializes PyGTK to use the Python macros that allow multiple threads to serialize access to the Python interpreter (using the **Python Global Interpreter Lock (GIL)**).The gtk.gdk.threads_init() function must be called before the gtk.main() function. At this point in the application the Python GIL is held by the main application thread. You can get more information about gtk.gdk.threads_init() and GIL here in **[pygtk docs](http://www.pygtk.org/docs/pygtk/gdk-functions.html#function-gdk--threads-init).**
 
@@ -76,26 +73,16 @@ As I have mentioned before, **gtk.gdk.threads_init()** is necessary. The gtk.gdk
             gtk.main_quit()
     
 
-
-
-
 So, here's the complete class that I made to show images in OpenCV/SimpleCV.
 In line 26,
 
     
     self.img_gtk.set_from_pixbuf(self.img_pixbuf)
 
-
-
-
-
 In my previous post it was
 
     
     image = gtk.image_new_from_pixbuf(img_pixbuf)
-
-
-
 
 
 So, here's the problem with it. Whenever I do **gtk.image_new_from_pixbuf()**, it would create a new gtk.Image object at a different address, and hence we would have to add the new object in the box every time and destroy the previous image object which was there in the box. So, instead of that I have used **gtk.set_from_pixbuf()**, which would not create a new gtk.Image object, but just change the image.
@@ -107,21 +94,16 @@ Now moving on to threading part, it's very important that you call gtk.main with
     thrd.daemon = True
     thrd.start()
 
-
-
-
 After creating the thread, **thrd.daemon = True** is very necessary before you start the thread, otherwise there will be too many errors and complications with gtk. Believe me, I have faced it for two days. And it was not good.
 
 I have added more functionalities in DisplayImage class  such as getting co-ordinates of mouse click, etc. You can find it here on my **[GitHub](https://github.com/jayrambhia/SimpleCVexamples/tree/master/pygtk_image)**. You can also find some examples that I have worked out for SimpleCV there.
 
 So, now some examples.
-1. Show image in OpenCV.
+Show image in OpenCV.
 
-    
     from cv2.cv import *
     from pygtk_image import DisplayImage
     import time
-    
     image = LoadImage("Image name")
     image_rgb = CreateImage((image.width,image.height),image.depth,image.channels)
     CvtColor(image,image_rgb,CV_BGR2RGB) # iplImage has BGR colorspace
@@ -130,10 +112,7 @@ So, now some examples.
     time.sleep(3)
     display.quit()
 
-
-
-
-2. Show image in SimpleCV
+Show image in SimpleCV
 
     
     from SimpleCV import *
@@ -146,10 +125,7 @@ So, now some examples.
     time.sleep(3)
     display.quit()
 
-
-
-
-3. Show multiple images simultaneously in SimpleCV
+Show multiple images simultaneously in SimpleCV
     
     from SimpleCV import *
     from pygtk_image import *
@@ -168,10 +144,7 @@ So, now some examples.
             d1.quit()
             d2.quit()
 
-
-
-
-4. Show images in a series in SimpleCV
+Show images in a series in SimpleCV
     
     from SimpleCV import *
     from pygtk_image import *
@@ -188,10 +161,7 @@ So, now some examples.
     if __name__ == "__main__":
         loadimage()
 
-
-
-
-5. show captured images from camera in SimpleCV
+show captured images from camera in SimpleCV
     
     from SimpleCV import *
     from pygtk_image import *
@@ -207,9 +177,6 @@ So, now some examples.
         except KeyboardInterrupt:
             d.quit()
             break
-
-
-
 
 If you find some better way to show images using pygtk, or a better way to thread gtk.main(), let me know.
 

@@ -11,12 +11,11 @@ title: CAMShift with SimpleCV
 GSoC 2012 Mid-Term evaluations are over and I passed. As usual we had a meeting on Wednesday 11:30 am EST on IRC where I and Kat discussed the tracking scenario of SimpleCV and how to implement different tracking algorithms with efficiency. She advised me that the tracking object should live in FeatureSet so that the tracked path can be stored in Features. So, it looks like this
 
 
-> 
-fs = img0.track(boundingbox)
-fs = img1.track(fs)
-.
-.
-fs = imgN.track(fs)
+    fs = img0.track(boundingbox)
+    fs = img1.track(fs)
+    .
+    .
+    fs = imgN.track(fs)
 
 
 
@@ -24,35 +23,31 @@ where fs is a FeatureSet. FeatureSet is basically a superset of **list**. Each e
 
 I added this logic in SimpleCV with CAMShift as TrackSet (I will soon change this) and then there was this:
 
-[youtube=http://www.youtube.com/watch?v=rl8C4yxtJD4]
+<iframe width="420" height="315" src="http://www.youtube.com/embed/rl8C4yxtJD4" frameborder="0" allowfullscreen></iframe>
 
 Kat had told me to do tracking of two balls simultaneously. I had to put some thoughts into this since even in OpenTLD, we can't track more than one object. Something very funny and easy idea occurred to me. I thought of creating two different FeatureSets which come from the same image but with different bounding box. So, here's what I did.
 
 
-> 
-fs1 = img0.track(bb1)
-fs2 = img0.track(bb2)
-fs1 = img1.track(fs1) # fs1 will have object corresponding to bb1
-fs2 = img1.track(fs2) # fs2 will have object corresponding to bb2
-.
-.
-fs1 = imgN.track(fs1)
-fs2 = imgN.track(fs2)
+    fs1 = img0.track(bb1)
+    fs2 = img0.track(bb2)
+    fs1 = img1.track(fs1) # fs1 will have object corresponding to bb1
+    fs2 = img1.track(fs2) # fs2 will have object corresponding to bb2
+    .
+    .
+    fs1 = imgN.track(fs1)
+    fs2 = imgN.track(fs2)
 
 
 
 And then there was this:
 
-[youtube=http://www.youtube.com/watch?v=eG585vx2cig]
+<iframe width="420" height="315" src="http://www.youtube.com/embed/eG585vx2cig" frameborder="0" allowfullscreen></iframe>
 
 
 I have added a function in FeatureSet(which I'll be moving to TrackSet) which draws the complete path of the object.
 
 
-> 
-fs.drawAll()
-
-
+    fs.drawAll()
 
 will draw the complete path of the object on the current image frame.
 

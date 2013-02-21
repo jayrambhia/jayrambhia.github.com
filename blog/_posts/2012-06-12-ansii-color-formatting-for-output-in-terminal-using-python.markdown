@@ -22,6 +22,6 @@ Using termcolor, one can easily set ANSII Color formatting for output in Termina
 
 
 
-[![ANSII color formatting for output in terminal](http://www.jayrambhia.com/blog/wp-content/uploads/2012/06/colortext.jpg)](http://www.jayrambhia.com/blog/wp-content/uploads/2012/06/colortext.jpg)
+![ANSII color formatting for output in terminal](/assets/images/termcolor-1.jpg)
 
 P.S. Excited about tomorrow's Google Summer of Code - Mumbai meet.

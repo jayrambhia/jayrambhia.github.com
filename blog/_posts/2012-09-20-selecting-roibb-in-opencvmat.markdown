@@ -118,7 +118,7 @@ Main function
 
 
 So, basically it looks something like this
-[![](http://www.jayrambhia.com/blog/wp-content/uploads/2012/09/Screenshot-from-2012-09-20-162138-1024x640.png)](http://www.jayrambhia.com/blog/wp-content/uploads/2012/09/Screenshot-from-2012-09-20-162138.png)
+![ROI-BB1](/assets/images/roiBB-1.png "ROI selection")
 
 I am also working on Lucas Kanade Tracker. I am porting the Python code to C++. And the fps that I'm getting is really incredible. I'll write another post about Lucas Kanade Tracker with OpenCV C++ in few days.
 

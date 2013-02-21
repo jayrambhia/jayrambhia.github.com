@@ -11,12 +11,9 @@ title: Fetch Movie Details from IMDB using Python (with Proxy)
 
 ### [IMDB-py Gist](https://gist.github.com/1678382)
 
-
-<UPDATE>**I have added a new and a bit better python script to fetch movie details from IMDB has been updated on my gits. visit imdb gist or go to the bottom of the post.** <UPDATE>
-
 Lately I have started working on Social Data Mining and probably Machine Learning (will start shortly).
 So, for social data mining I am taking data from Twitter. To know how **BeautifulSoup** works, I was told to make something up which would parse html/xml (well, That's what BeautifulSoup does!). An app was in my mind which would take the name of the movie and search it on the IMDB and provide all the details about it.
-I always thought that the sites like IMDB would be having some kind of script (javascript/php)! and as I don't know either of them, I gave up the idea. But then one day, [Abhinav Gupta](https://twitter.com/TheMarwariJew) told me about the IMDB website, and when I looked the source code up, I was shocked! No backend script! Pure HTML! and then there was BeautifulSoup!
+I always thought that the sites like IMDB would be having some kind of script (javascript/php)! and as I don't know either of them, I gave up the idea. But then one day, [Abhinav Gupta](https://twitter.com/MeGupsta) told me about the IMDB website, and when I looked the source code up, I was shocked! No backend script! Pure HTML! and then there was BeautifulSoup!
 
 So it's really easy to get all the required information once you get to the movie page. BeautifulSoup will do the rest for you!
 **Importing modules**
@@ -25,13 +22,6 @@ So it's really easy to get all the required information once you get to the movi
     from BeautifulSoup import BeautifulSoup
     from mechanize import Browser
     import re
-
-
-
-
-<!-- more -->
-
-
 
 First, search the movie on IMDB! The movie is The Dark Knight
 The IMDB search URL looks like this "http://www.imdb.com/find?q=The+Dark+Knight&s=all"
@@ -43,8 +33,6 @@ The IMDB search URL looks like this "http://www.imdb.com/find?q=The+Dark+Knight&
     movie_search = '+'.join(movie.split())
     base_url = 'http://www.imdb.com/find?q='
     url = base_url+movie_search+'&s=all'
-
-
 
 
 I had made this app purely with urllib2. But then Abhinav told me to make it using mechanize.Browser as it's faster.
@@ -59,8 +47,6 @@ Now, I'm in BITS, Pilani - Goa! And one thing you can be sure of is that there w
                    'https':'https://username:password@proxy:port'})
 
 
-
-
 Proxy settings done! Now, open url and parse html!
 
 Every movie on IMDB is given a particular id! and the movie page URL is "http://www.imdb.com/tt/id"
@@ -71,9 +57,6 @@ So we search the id of the corresponding movie on the search page and move to th
     br.open(url)
     link = br.find_link(url_regex = re.compile(r'/title/tt.*'))
     res = br.follow_link(link)
-
-
-
 
 The movie webpage has been accessed. Now move aside and let **BeautifulSoup** do the work!
 **Parsing with **BeautifulSoup****
@@ -110,14 +93,11 @@ The movie webpage has been accessed. Now move aside and let **BeautifulSoup** do
       genre[i] = genre[i].split('/')[-1]
 
 
-
-
 Ok. This will give you all the information that you require! Now just print everything!
 And now access IMDB with Python!
 Cheers!
 P.S. O! BeautifulSoup thou art beautiful!
 
-<UPDATE>
 New script:
 
     
@@ -201,7 +181,3 @@ New script:
     
     if __name__ == '__main__':
         main()
-    
-
-
-

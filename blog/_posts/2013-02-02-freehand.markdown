@@ -9,7 +9,8 @@ title: Freehand | Design Innovation 2013 | MIT Media Lab | PESIT
 ---
 
 Searching for free bathroom to bathe in cold water on a cold morning in Bangalore, well, that's how the Design Innovation workshop started for all of us who were placed at RIE. Despite of the terrible accomodation, the workshop turned out to be a marvellous event in my lifetime and the credit goes to PESIT volunteers, MIT Media Lab people, other participants and most importantly my team mates Aditi and Nikita for bearing with me and supporting all the ridiculous ideas and putting all the effort to make a successful prototype( well, you can't prototype something in 2 days, but yes! Let's call it a prototype). So cheers to the team **Freak'd Outs**. That's our team name. Deal with it.
-[caption id="attachment_980" align="aligncenter" width="560"][![(From left) Aditi, Jay and Nikita at Design Innovation 2013](http://www.jayrambhia.com/blog/wp-content/uploads/2013/02/2013-01-25-18-26-43.jpg)](http://www.jayrambhia.com/blog/wp-content/uploads/2013/02/2013-01-25-18-26-43.jpg) (From left) Aditi, Jay and Nikita at Design Innovation 2013[/caption]
+{:.center}
+![Image-1](/assets/images/MITDI-1.jpg "(From left) Aditi, Jay and Nikita at Design Innovation 2013")(From left) Aditi, Jay and Nikita at Design Innovation 2013
 
 After brainstorming for couple of days, all of our ideas were turned down by Kshitij and Anette for being too ridiculous or too broad. Finally, we got an idea. It was simple. A pen which guides you how to draw shapes. It started slowly. It took us at least an hour to understand the idea. It was dinner time already and many teams had decided to stay back and work till midnight. We were exhausted and decided that we'd start fresh. 
 
@@ -32,7 +33,9 @@ It's a pen for blind people and autistic children to learn to write and draw sha
 
 I don't have all the posters and stuff. We didn't even take many pictures and I still regret not taking a small video of the project.
 
-[caption id="attachment_988" align="aligncenter" width="560"][![A random screenshot of our project](http://www.jayrambhia.com/blog/wp-content/uploads/2013/02/2013-01-24-15-35-09.jpg)](http://www.jayrambhia.com/blog/wp-content/uploads/2013/02/2013-01-24-15-35-09.jpg) A random screenshot of our project[/caption]
+![A random screenshot of our project](/assets/images/MITDI-2.jpg "With Anette") 
+
+A random screenshot of our project.
 
 It was an amazing week. I met a lot of people and made some friends. I learned a lot from all the gurus from MIT Media Lab. Design Innovation changed my whole perpesctive towards technology and product development. I realised that design of the product is as important as the technology and innovation behind it. It is essential that the product directly connects with the people. And the developer should be able to sell the product. If you have some kick ass product but you have a bad marketing strategy, it won't sell. You need your one minute speech to hypnotize the person into buying the product.
 

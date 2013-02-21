@@ -8,7 +8,7 @@ slug: boostpython-with-opencv
 title: Boost::Python with OpenCV
 ---
 
-In my previous post [Configuring Boost::Python and Hello Boost](http://jayrambhia.wordpress.com/2012/06/25/configuring-boostpython-and-hello-boost/), I have shown how to configure **Boost::Python**. I have managed to use OpenCV C++ with Python, using Boost::Python. I have been able to load and show an image successfully.
+In my previous post [Configuring Boost::Python and Hello Boost](/blog/configuring-boostpython-and-hello-boost/), I have shown how to configure **Boost::Python**. I have managed to use OpenCV C++ with Python, using Boost::Python. I have been able to load and show an image successfully.
 
 
 

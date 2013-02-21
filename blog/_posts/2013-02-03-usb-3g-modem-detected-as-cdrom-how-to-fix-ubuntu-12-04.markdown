@@ -1,6 +1,6 @@
 ---
 category: Blog
-tag: 
+tag: Linux
 comments: true
 date: 2013-02-03 02:14:44
 layout: post
@@ -13,15 +13,21 @@ I wanted to put this post up few days ago but couldn't get time to write. After 
 I want to keep this post short. The soultion is even shorted.
 
 Get your modem's vendor and product id.
-**$ lsusb**
-Copy down the vendor and prodcut id.[caption id="attachment_999" align="aligncenter" width="560"][![output of lsusb](http://www.jayrambhia.com/blog/wp-content/uploads/2013/02/usb.png)](http://www.jayrambhia.com/blog/wp-content/uploads/2013/02/usb.png) output of lsusb[/caption]
+
+    $ lsusb
+
+Copy down the vendor and prodcut id. 
+
+![output of lsusb](/assets/images/usb)
 
 Once you get your vendor and product id, you need to add that in the driver file.
-**$ sudo su
-$ echo 12d1 1436 > /sys/bus/usb-serial/drivers/option1/new_id**
+
+    $ sudo su
+    $ echo 12d1 1436 > /sys/bus/usb-serial/drivers/option1/new_id
 
 Restart the network manager.
-**$ sudo service network-manager restart**
+
+    $ sudo service network-manager restart
 
 Or even reboot will work. Now replug your USB modem and wait for 20-30 seconds for it to intialize.
 

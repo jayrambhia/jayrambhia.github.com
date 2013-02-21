@@ -10,8 +10,6 @@ title: DeskWid 0.1
 
 # [DeskWid](https://github.com/jayrambhia/DeskWid)
 
-
-****
 **DeskWid**! Yeah, I couldn't find any other name and it doesn't matter that much. From the name only, I guess you can recognize what it means. Desktop Widget. It's not exactly a widget, but more kind of an application.
 So, I had a program to fetch movie details from **IMDb**, a program to **tweet**, a program to get **timeline**, a program for **sticky notes**! After wasting time on internet to get a good sticky note application, I made one myself in python. I had to open all of them separately and three different windows would open. And it's a buzzkill if your taskbar if full. Hence I combined all of them together and made a GUI.
 In the beginning, I thought of making separate boxes for imdb and timeline, but then again it where would I put all of it individually. So, I combined and made only two textviews. One for timelines, imdb, etc and other for notes.
@@ -22,12 +20,12 @@ It was going good until tweeting and fetching timeline was concerned. But I coul
 
 Okay. Basic GUI and operations done! Now due to slow connectivity of BITS net, sometimes it took long time to fetch timelines, movie details, and tweets. And sometimes, I don't know why but twitter doesn't respond on BITS net. Hence, I needed something to show whether timeline is being fetched or not or there is some error and for that I added a label, and since most of my fetches are done in different threads, I have to add **gobject.idle_add()**, which would as I have mentioned in the previous post add a function (specified by callback) to be called whenever there are no higher priority events pending to the default main loop.
 
-[![](http://www.jayrambhia.com/blog/wp-content/uploads/2012/02/deskwid.png?w=300)](http://www.jayrambhia.com/blog/wp-content/uploads/2012/02/deskwid.png)
-
 And then there was the biggest buzzkill! Manually adding proxy and all the api keys in the code. So my first priority was to make another window to add that, but it was 4 in the morning, and I was half asleep and then making boxes, adding labels, adding entries felt kind of redundant. I added that facility in the command prompt.
-**--proxy http://jayrambhia:jayrambhia@10.1.9.36:8080**
-**--consumer_key "consumer key here"**
-For all the information, you must read **[README](https://github.com/jayrambhia/DeskWid#readme)!**
+
+    --proxy http://jayrambhia:jayrambhia@10.1.9.36:8080**
+    --consumer_key "consumer key here"
+    
+For all the information, you must read [README](https://github.com/jayrambhia/DeskWid#readme)!
 
 Made few changes in the morning(afternoon actually) and added on **GitHub**. And gave it to couple of friends for testing.
 I have always been curious about open source and open source licensing. And I wanted to copyright DeskWid with some open source license. Read about open source license. Didn't understand much. Licensed it with **MIT license**. Hope it's good!

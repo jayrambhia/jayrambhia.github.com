@@ -8,13 +8,7 @@ slug: fetch-bookmarks-from-browser-using-python
 title: Fetch bookmarks from Browser using Python
 ---
 
-**Tags**: **Python**, **json**, **bookmark**, **browser**, **firefox**, **tags**
-
-
-# [bookmark_json.py gist](https://gist.github.com/1693109)
-
-
-
+### [bookmark_json.py gist](https://gist.github.com/1693109)
 
 So, after making a python script for fetching bookmarks from the exported HTML files, I was wondering how to make it work automatically so that I don't need to give the HTML file every time. I started looking in firefox directory for some bookmark files which I could use. I found out that firefox keeps bookmark backups and they are encoded in json. I learned few things about json and started to write the script.
 **Importing Modules**
@@ -23,10 +17,7 @@ So, after making a python script for fetching bookmarks from the exported HTML f
     import json
     import os
 
-
-
-
-Locate the directory in which the browser stores the bookmarks backup.<!-- more -->
+Locate the directory in which the browser stores the bookmarks backup.
 
     
     directory = '/home/jay/.mozilla/firefox/qyrgphtu.default/bookmarkbackups' # bookmark backup directory
@@ -43,15 +34,16 @@ Locate the directory in which the browser stores the bookmarks backup.<!-- more 
     con = json.load(f) # Decode the file with json
     f.close()
 
-
-
-
 It was all easy till here. No trouble getting the file. The next part was really time consuming.
 It was difficult to find out how the bookmarks were stored in the file.
 The main content had 4 children.
+
 1. Bookmarks Menu
+
 2. Bookmarks Toolbar
+
 3. Tags
+
 4. Unsorted Bookmarks
 
 Bookmarks Menu has tags 'Mozilla Firefox', 'Ubuntu and Free Software links', and all the Unsorted bookmarks.
@@ -98,9 +90,8 @@ Unsorted Bookmarks has all the unsorted bookmarks as it's children.
               lastModified = tags['lastModified']
               modified_date = lastModified/1000000
 
-
-
-
 Now, all the required information about bookmarks have been fetched. Now you can store it in database if you need. So using this script I can save all my bookmarks anytime!
+
 Download the gist for complete code : **[bookmarks_json](https://gist.github.com/1693109)**
+
 P.S. Yes! things are getting prettier and easier with Python!

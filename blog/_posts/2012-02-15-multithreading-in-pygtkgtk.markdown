@@ -19,9 +19,7 @@ Yeah, So, I found out that <del>gtk and multithreading don't go together!</del>
 gtk and multithreading is the correct way.
 So, After reading couple of blogs about gtk and multithreading, I made this GUI for application which I call "**twitterBox**" is working fine. Had some problems in the beginning, but now I'm quite comfortable with it.
 **[Misconceptions about Multithreading and gtk](http://blogs.operationaldynamics.com/andrew/software/gnome-desktop/gtk-thread-awareness)**
-<CONT>
 
-<!-- more -->
 From this blog, I found out that **all GTK calls must be made from main thread or to put it more appropriately all GTK calls must be made from the main Lock.**
 And I was trying to make a different process and make GTK calls. Yeah! I'm insane. I know.
 I learned a great deal of multithreading with pygtk/gtk+ from this blog
@@ -38,8 +36,6 @@ After reading all these things, I finally made something which could do this. I 
     from threading import Thread
     import gobject
     gtk.gdk.threads_init()
-
-
 
 
 Let's assume there is gtk.Window object and couple of gtk.HBox and gtk.VBox objects in it. And there is a gtk.TextView object
@@ -64,9 +60,6 @@ here, vbox is just a gtk.VBox object (A vertical box) and I'm packing my event b
     self.tweetview.show()
     self.sw.add(self.tweetview)
 
-
-
-
 wherer sw is gtk.ScrolledWindow object. A scrollbar.
 
 The eventbox in connected to show_tweet.
@@ -77,9 +70,6 @@ The eventbox in connected to show_tweet.
     
     def get_tweet_thread(self):
     	Thread(target=self.get_tweet).start()
-
-
-
 
 so, get_tweet_thread() will create a new thread to execute get_tweet()
 
@@ -93,16 +83,12 @@ After getting tweets, to set text in tweetview, we need to use gobject.idle_add(
         gobject.idle_add(self.set_tweetview, tweet_str)
 
 
-
-
 Now, gobject.idle_add() will add set_tweetview() function in the main loop and widget properties now can be changed.
 
     
     	def set_tweetview(self,text):
     		self.tweetbuffer.set_text(text)
     		return
-
-
 
 
 Yeah, so, using something like this I made twitterBox. You can check it out on my github repo : [TwitterBox](https://github.com/jayrambhia/TwitterBox)

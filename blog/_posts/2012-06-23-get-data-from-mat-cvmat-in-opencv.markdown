@@ -12,50 +12,17 @@ I have been working on George Nebehay's OpenTLD version to port it to python and
 
 So, moving on to OpenCV. After getting a good amount of exposure to OpenCV C++, I would like to add a series of blog posts which would be based on my basic OpenCV knowledge. I have already written couple of posts about beginning OpenCV.
 
+- [Install OpenCV 2.3.1 and SimpleCV in Ubuntu 12.04 Precise Pangolin, Arch Linux ](/blog/install-opencv-2-3-1-and-simplecv-in-ubuntu-12-04-precise-pangolin-arch-linux/)
 
+- [Install OpenCV 2.4 in Ubuntu 12.04 Precise Pangolin ](/blog/install-opencv-2-4-in-ubuntu-12-04-precise-pangolin/)
 
-	
-  * 
+- [Beginning OpenCV ](/blog/beginning-opencv/)
 
-
-#### [Install OpenCV 2.3.1 and SimpleCV in Ubuntu 12.04 Precise Pangolin, Arch Linux ](http://jayrambhia.com/blog/2012/05/02/install-opencv-2-3-1-and-simplecv-in-ubuntu-12-04-precise-pangolin-arch-linux/)
-
-
-
-
-	
-  * 
-
-
-#### [Install OpenCV 2.4 in Ubuntu 12.04 Precise Pangolin ](http://jayrambhia.com/blog/2012/06/20/install-opencv-2-4-in-ubuntu-12-04-precise-pangolin/)
-
-
-
-
-	
-  * 
-
-
-#### [Beginning OpenCV ](http://jayrambhia.com/blog/2012/05/08/beginning-opencv/)
-
-
-
-
-	
-  * 
-
-
-#### [Capture Images and Video from Camera in OpenCV 2.3.1 ](http://jayrambhia.com/blog/2012/05/10/capture-images-and-video-from-camera-in-opencv-2-3-1/)
-
-
-
-
+- [Capture Images and Video from Camera in OpenCV 2.3.1 ](/blog/capture-images-and-video-from-camera-in-opencv-2-3-1/)
 
 Today, I found this question on stackoverflow http://stackoverflow.com/questions/11166760/how-to-improve-sorting-pixels-in-cvmat/11167045 . The guy was asking about how to access image pixels and sort them quickly. He was using **cvGetReal2D**. So, the problem here is **cvGetReal2D** is very slow and I found that out when I was making filters in Python OpenCV. Those filters are used to add or remove noise from the image and to make image sharp or smooth. So, back to accessing pixel values from the image in OpenCV. Few points you should always remember.
 
 
-
-	
   * **cvGetReal2D is slow**
 
 	
@@ -100,10 +67,12 @@ Let's assume we have an image of size 512x512 pixels. Pixel in first row and fir
 
 
 To get pixel values of nth row and mth cloumn,
-**b = input[img.step * m + n ]
-g = input[img.step * m + n + 1]
-r = input[img.step * m + n + 2]
-**
+**b = input[img.step * m + n ]**
+
+**g = input[img.step * m + n + 1]**
+
+**r = input[img.step * m + n + 2]**
+
 So, to sum it all
 
     

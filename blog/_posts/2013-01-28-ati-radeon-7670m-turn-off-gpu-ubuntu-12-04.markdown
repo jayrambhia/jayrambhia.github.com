@@ -1,6 +1,6 @@
 ---
 category: Blog
-tag: 
+tag: Linux
 comments: true
 date: 2013-01-28 16:12:07
 layout: post
@@ -28,7 +28,9 @@ Ubuntu provides **vga_switcheroo** which is a kernel mechanism which allows you 
 
 **echo OFF > /sys/kernel/debug/vgaswitcheroo/switch** turns off that is currently disconnected.
 open **/sys/kernel/debug/vgaswitcheroo/switch** file and check whether this has worked or not. For DIS, instead of "**Pwr**", "**Off**" should appear. 
-[![vga_switcheroo](http://www.jayrambhia.com/blog/wp-content/uploads/2013/01/screenshot-from-2013-01-28-155952.png?w=560)](http://www.jayrambhia.com/blog/wp-content/uploads/2013/01/screenshot-from-2013-01-28-155952.png)
+
+![vga_switcheroo](/assets/images/GPU-1.png)
+
 This means that you have successfully turned your GPU off. Now you should restart the UI. Go to tty01 (ALT+CTRL+F1). Log in. sudo service lightdm restart. For some reasons, my laptop doesn't go any furhter, so I reboot. And it works. GPU is turned off. Now I get to enjoy 6+ hours of battery.
 
 Read more about Hybrid Graphics on [Ubuntu's Community page](https://help.ubuntu.com/community/HybridGraphics).

@@ -4,8 +4,8 @@ tag: Python
 comments: true
 date: 2012-12-09 03:30:37
 layout: post
-slug: pythonc-api-includepython-h
-title: 'Python/C API: #include'
+slug: pythonc-api-1
+title: 'Python/C API: #include "Python.h"'
 ---
 
 People are strange when you are stranger. So stop being stranger and start writing emails. You'd get replies.
@@ -123,9 +123,8 @@ Now onto the final and most exciting part.
 
 
 
-### **Building and Installing Extensions:
+### **Building and Installing Extensions:**
 
-**
 All hail the **distutils package**
 
 Create a **setup.py** file.
@@ -256,9 +255,10 @@ Please ensure you do not deallocate this buffer.
 This thing got me into a lot of trouble. Only Segmentation faults for hours. Searched everything, tried everything, but couldn't use it. I still have to study about reference counts and implement them to make code better. No memory problems.
 
 Few helpful links:
-[ http://www.tutorialspoint.com/python/python_further_extensions.htm](http://www.tutorialspoint.com/python/python_further_extensions.htm)
-http://bytes.com/topic/python/answers/578916-cpoying-pylist-c-string-array
-[http://docs.python.org/2/c-api/string.html](http://docs.python.org/2/c-api/string.html)
+
+- [http://www.tutorialspoint.com/python/python_further_extensions.htm](http://www.tutorialspoint.com/python/python_further_extensions.htm)
+- [http://bytes.com/topic/python/answers/578916-cpoying-pylist-c-string-array](http://bytes.com/topic/python/answers/578916-cpoying-pylist-c-string-array)
+- [http://docs.python.org/2/c-api/string.html](http://docs.python.org/2/c-api/string.html)
 
 I guess this should get you going. I have made a repository for all my Python/C API work and stuff. You can find it on GitHub and fork it. Suggestions and additions are welcome. **[PyCee](https://github.com/jayrambhia/PyCee)**.
 

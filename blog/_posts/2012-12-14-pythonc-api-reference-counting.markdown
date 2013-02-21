@@ -143,7 +143,7 @@ I am creating an integer array from the Python list.
       // continued..
     }
 
-@franksmit](http://twitter.com/franksmit) pointed out the mistake with borrowed reference.
+[@franksmit](http://twitter.com/franksmit) pointed out the mistake with borrowed reference.
 
 Here list_item is an owned reference, so it is your responsibility to discard it properly using Py_DECREF.
 

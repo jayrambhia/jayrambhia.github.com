@@ -1,6 +1,6 @@
 ---
 category: Blog
-tag: 
+tag: Linux
 comments: true
 date: 2012-03-04 00:28:32
 layout: post
@@ -18,9 +18,8 @@ So there I was! A usb stick with arch linux iso mounted, bootable, and ready to 
 So within few seconds, got first error. Couldn't start tty. Job turned off. And sent me to a recovery terminal. Spent too much time on that error.
 
 Solution :
-`
-**# ln -sf /dev/sdb1 /dev/disk/by-label/ARCH_201108**
-`
+
+    # ln -sf /dev/sdb1 /dev/disk/by-label/ARCH_201108**
 
 And yes, If you are looking for solutions regarding arch linux installation. I would highly recommend you go visit **[Beginner's Guide](https://wiki.archlinux.org/index.php/Beginners%27_Guide)**
 
@@ -35,10 +34,10 @@ So network problem was settled. Unaware of all the problems ahead, I started fol
 I encountered problems regarding multilib repositories. How DUMB of me! I am using 32 bit Arch. Hence I wasn't supposed to add multilib. Took me couple of hours to figure that out. Next thing was gpg key. It was just a result of not following the guide properly. Forgot to generate gpg key **pacman-key --init** after upgrading to pacman 4.
 During pacman-key --init, it shows computer needs more random bytes. Do something else meanwhile to generate some entropy. I mean what the heck is that about! But humorous though.
 installed x11. Installed gnome3. Got couple of errors.
-**
-udev: /lib/initcpio/hooks/udev exists in filesystem
-uedv: /lib/initcpio/install/udev exists in filesystem
-**
+
+    udev: /lib/initcpio/hooks/udev exists in filesystem
+    uedv: /lib/initcpio/install/udev exists in filesystem
+
 So what do I do! Instead of upgrading, I deleted both files. Installed gnome. Worked properly. And Yay moment.
 And then, I rebooted.
 **BAM**
@@ -47,7 +46,7 @@ Yeah! So remember never ever delete any files, if you don't know it's significan
 
 I re-installed Arch Linux.
 Did everything as given in the guide.
-Took a lot of help from IRC. #archlinux
+Took a lot of help from IRC. #archlinux.
 Got myself a nice gnome desktop environment running successfully and also an lxde environment for other user.
 The key part for successful installation was **pacman -Syy** and upgrading stuffs.
 

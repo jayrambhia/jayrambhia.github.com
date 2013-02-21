@@ -1,6 +1,6 @@
 ---
 category: Blog
-tag: Computer Vision
+tag: python
 comments: true
 date: 2012-04-10 01:56:24
 layout: post

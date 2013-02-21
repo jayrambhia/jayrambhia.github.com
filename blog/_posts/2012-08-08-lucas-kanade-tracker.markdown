@@ -15,8 +15,8 @@ This method is less sensitive to image noise. This method assumes that the displ
 After getting the points(good features to track), I am using OpenCV's **calcOpticalFlowPyrLK** to get the corresponding features/points in the current frame using Lucas Kanade method based on Optical Flow using itrative pyramids. I am using Forward-Backward Error method to eliminate false positives. This is how Forward-Backward Error method works.
 
 I have 2 consecutive image frames. There are m tracked points in the first image. Using some method(here Lucas Kanade mehotd with using Optical Flow), I determine the tracking points in the next image. I get n number of tracked points. This implies that there are some false positives. so, now I'll use the same method on the second image to determin the tracking poitns in the first image. I will get some k numbers of tracking points. The common points in the m and k points would give the correct corresponding tracking points in the second image.
-[![](http://www.jayrambhia.com/blog/wp-content/uploads/2012/08/Forward-Backward-error-1024x640.png)](http://www.jayrambhia.com/blog/wp-content/uploads/2012/08/Forward-Backward-error.png)
-[caption id="attachment_841" align="aligncenter" width="620"][![](http://www.jayrambhia.com/blog/wp-content/uploads/2012/08/2012-08-08-22.43.05-768x1024.jpg)](http://www.jayrambhia.com/blog/wp-content/uploads/2012/08/2012-08-08-22.43.05.jpg) Common set[/caption]
+![Forward-Backward Error](/assets/images/LK-1.png "Forward-Backward Error")
+![Common set](/assets/images/LK-2.jpg "Common set")
 
 After getting the tracked points, I am trying to predict the new bounding box in a very crude manner. I am working on it for improvements.
 
@@ -88,7 +88,9 @@ After getting the tracking points, you might predict the new bounding box using 
 
 Here's the video of the Lucas Kanade Tracker that I implemented in SimpleCV using OpenCV (The above code).
 
-[youtube="http://www.youtube.com/watch?v=Yw7IcttYRuY"]
+<iframe width="420" height="315" src="http://www.youtube.com/embed/Yw7IcttYRuY" frameborder="0" allowfullscreen></iframe>
+
+<iframe src="http://player.vimeo.com/video/47386269" width="500" height="405" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href="http://vimeo.com/47386269">Lucas Kanade Tracker on MotoGP implemented using OpenCV and SimpleCV</a> from <a href="http://vimeo.com/jayrambhia">Jay Rambhia</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
 
 Here's the complete [LK-OpenCV code](https://github.com/jayrambhia/Vision/blob/master/OpenCV/LKTracker.py).
 

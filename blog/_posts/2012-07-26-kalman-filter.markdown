@@ -1,6 +1,6 @@
 ---
 category: Blog
-tag: Python
+tag: Computer Vision
 comments: true
 date: 2012-07-26 19:28:20
 layout: post
@@ -91,18 +91,19 @@ Kalman filter is now ready to be used.
 
 
 **Pseudo Code**
-`Create Kalman Filter
-Start Tracking
-While (some condition)
-x, y = track()
-Set Kalman Filter
-Change Kalman Measurements
-Predict Kalman
-Kalman Correction
-Update the center of the object
-`
 
-[youtube=http://www.youtube.com/watch?v=ZGhGeKQMyVA]
+    Create Kalman Filter
+    Start Tracking
+    While (some condition)
+    x, y = track()
+    Set Kalman Filter
+    Change Kalman Measurements
+    Predict Kalman
+    Kalman Correction
+    Update the center of the object
+
+
+<iframe width="420" height="315" src="http://www.youtube.com/embed/ZGhGeKQMyVA" frameborder="0" allowfullscreen></iframe>
 
 This was the video where I use Kalman Filter to predict the center of the objects. I am not using Kalman Correction as of now. I have implemented Kalman Filter in SimpleCV Tracking Feature. You can find my GitHub SimpleCV Kalman branch [here](https://github.com/jayrambhia/SimpleCV/tree/kalman_filter).
 

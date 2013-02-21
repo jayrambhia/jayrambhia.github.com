@@ -20,7 +20,7 @@ Mathematically, the operator uses two 3×3 kernels which are convolved with the 
 
 
 This is an image of Lenna with Sobel Operator applied on it.
-![](http://i.imgur.com/JF8UH.png)
+![Lenna](http://i.imgur.com/JF8UH.png)
 
 OpenCV code:
     
@@ -40,8 +40,6 @@ OpenCV code:
     cv2.waitKey(0)
 
 
-
-
 In **SimpleCV**,
     
     from SimpleCV import Image
@@ -50,8 +48,6 @@ In **SimpleCV**,
     sobel_img = img.sobel(doGray=False) #sobel applied on color image
     sobel_gray_img.show()
     sobel_img.show()
-
-
 
 
 In **cv2.Sobel**,

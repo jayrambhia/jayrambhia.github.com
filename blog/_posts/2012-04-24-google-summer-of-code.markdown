@@ -1,6 +1,6 @@
 ---
-category: Blog
-tag: 
+category: Event
+tag: gsoc
 comments: true
 date: 2012-04-24 02:35:26
 layout: post

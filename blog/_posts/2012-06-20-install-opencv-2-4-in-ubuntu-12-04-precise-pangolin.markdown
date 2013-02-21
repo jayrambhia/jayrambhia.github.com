@@ -8,10 +8,13 @@ slug: install-opencv-2-4-in-ubuntu-12-04-precise-pangolin
 title: Install OpenCV 2.4.* in Ubuntu 12.04 Precise Pangolin
 ---
 
-**[Install OpenCV 2.4.0](https://github.com/jayrambhia/Install-OpenCV/blob/master/Ubuntu/2.4/opencv2_4_0.sh)
+[Install OpenCV 2.4.0](https://github.com/jayrambhia/Install-OpenCV/blob/master/Ubuntu/2.4/opencv2_4_0.sh)
+
 [Install OpenCV 2.4.1](https://github.com/jayrambhia/Install-OpenCV/blob/master/Ubuntu/2.4/opencv2_4_1.sh)
+
 [Install OpenCV 2.4.2](https://github.com/jayrambhia/Install-OpenCV/blob/master/Ubuntu/2.4/opencv2_4_2.sh)
-[Install OpenCV 2.4.3](https://github.com/jayrambhia/Install-OpenCV/blob/master/Ubuntu/2.4/opencv2_4_3.sh)**
+
+[Install OpenCV 2.4.3](https://github.com/jayrambhia/Install-OpenCV/blob/master/Ubuntu/2.4/opencv2_4_3.sh)
 
 Remove any installed versions of ffmpeg and x264.
 
@@ -98,10 +101,13 @@ Download the latest image of v4l from [v4l-utils](http://www.linuxtv.org/downloa
 
 
 
-**[Download OpenCV 2.4.0](http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.0/OpenCV-2.4.0.tar.bz2/download)**
-**[Download OpenCV 2.4.1](http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.1/OpenCV-2.4.1.tar.bz2/download)**
-**[Download OpenCV 2.4.2](http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.2/OpenCV-2.4.2.tar.bz2/download)**
-**[Download OpenCV 2.4.3](http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.2/OpenCV-2.4.3.tar.bz2/download)**
+[Download OpenCV 2.4.0](http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.0/OpenCV-2.4.0.tar.bz2/download)
+
+[Download OpenCV 2.4.1](http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.1/OpenCV-2.4.1.tar.bz2/download)
+
+[Download OpenCV 2.4.2](http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.2/OpenCV-2.4.2.tar.bz2/download)
+
+[Download OpenCV 2.4.3](http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.2/OpenCV-2.4.3.tar.bz2/download)
 
 After downloading OpenCV 2.4.* package, untar it and make.
 
@@ -147,6 +153,6 @@ Execute the script. It will make all the files. select any output file and run i
 
 
 
-Your OpenCV 2.4.* is installed and libraries are properly linked. If you don't have much experience with OpenCV, I would suggest you to go through this post. **http://jayrambhia.com/2012/05/08/beginning-opencv/**. It shows how to make a script so that you don't need to add everything while compiling opencv codes.
+Your OpenCV 2.4.* is installed and libraries are properly linked. If you don't have much experience with OpenCV, I would suggest you to go through this post. [Beginning OpenCV](/blog/beginning-opencv/). It shows how to make a script so that you don't need to add everything while compiling opencv codes.
 
 P.S. My Python port of George Nebehay's OpenTLD Version is almost ready.

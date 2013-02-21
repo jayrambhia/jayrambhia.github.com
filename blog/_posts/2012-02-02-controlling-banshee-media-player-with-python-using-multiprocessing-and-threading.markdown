@@ -10,17 +10,16 @@ title: Controlling Banshee Media player with Python using multiprocessing and th
 
 # [banshee-control gist](https://gist.github.com/1719217)
 
-
-
-
 Whenever I have tried to control **Banshee** Media Player using terminal, I always had to use two terminals! One for the main process and other for sub process such as **'banshee --pause'**,etc.
 So, I always wanted to make something which would control banshee with one terminal.
 I thought I could use **threading**, but sometimes it's difficult to end a thread and also my last experience with multithreading was not that good as I tried to implement it in my **gmail-GUI**, and it did not work well.
 So, I moved on to **multiprocess**. Python docs for multithreading and multiprocessing are not as neat as some of the other lib docs. I looked it up on google and found this **IBM** webpage about multiprocessing using Python. It was not the first time I had gone to this webpage. I stumbled upon this page when I was making my gmail-GUI and needless to say multiprocessing didn't work well either.
 
-I tried multithreading and it was working fine, but there was just one problem. I could not terminate the main thread and had to kill it using ^d. I browsed many pages, many stackoverflow questions but none of them showed any significant results. I could not end the main banshee process. I tried to terminate the thread with os.system('kill '+thread._Thread__ident) but since it was thread and not a process, _Thread__ident gave me some id which was not process id! ob! I also tried **thread.exit()**, **._Thread__stop** . But nothing worked.
+I tried multithreading and it was working fine, but there was just one problem. I could not terminate the main thread and had to kill it using ctrl^d. I browsed many pages, many stackoverflow questions but none of them showed any significant results. I could not end the main banshee process. I tried to terminate the thread with 
+    
+    os.system('kill '+thread._Thread__ident) 
 
-<!-- more -->
+but since it was thread and not a process, _Thread__ident gave me some id which was not process id! ob! I also tried **thread.exit()**, **._Thread__stop** . But nothing worked.
 
 I looked for multiprocessing using Python and somehow found that I could terminate a process using Process.terminate(). I thought this is it and tried it out on banshee! It worked! **sigh**!
 

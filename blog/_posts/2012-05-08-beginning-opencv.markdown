@@ -8,19 +8,14 @@ slug: beginning-opencv
 title: Beginning OpenCV
 ---
 
-I assume that you have installed OpenCV on your Linux machine. If you are having any problems installing OpenCV 2.3.1 you can view my [previous post](http://jayrambhia.wordpress.com/2012/05/02/install-opencv-2-3-1-and-simplecv-in-ubuntu-12-04-precise-pangolin-arch-linux/) or  [http://www.marcolancini.it/other/opencv_install_231.php](http://www.marcolancini.it/other/opencv_install_231.php)
+I assume that you have installed OpenCV on your Linux machine. If you are having any problems installing OpenCV 2.3.1 you can view my [previous post](/blog/install-opencv-2-3-1-and-simplecv-in-ubuntu-12-04-precise-pangolin-arch-linux/) or  [this](http://www.marcolancini.it/other/opencv_install_231.php).
 
 I would recommend you to go through OpenCV documentation.
 
+- [C/C++](http://opencv.willowgarage.com/documentation)
+- [Python](http://opencv.willowgarage.com/documentation/python/cookbook.html)
 
-##### **[C/C++](http://opencv.willowgarage.com/documentation)
-[Python](http://opencv.willowgarage.com/documentation/python/cookbook.html)**
-
-
-
-
-#### C
-
+### C
 
 **Load images in C**
 
@@ -41,20 +36,20 @@ I would recommend you to go through OpenCV documentation.
 
 
 
-**To compile C program,
-Let's assume the file is opencvtest.c**
-`**
-$ gcc -ggdb `pkg-config --cflags opencv` -o `basename opencvtest.c .c` opencvtest.c `pkg-config --libs opencv`
-$ ./opencvtest
-`**
+To compile C program,
+Let's assume the file is opencvtest.c
+
+    gcc -ggdb `pkg-config --cflags opencv` -o `basename opencvtest.c .c` opencvtest.c `pkg-config --libs opencv`
+
+    ./opencvtest
 
 
-#### C++
+
+### C++
 
 
-Load images in C++
+**Load images in C++**
 
-    
     #include<opencv2/highgui/highgui.hpp>
     using namespace cv;
     
@@ -69,14 +64,12 @@ Load images in C++
     }
 
 
+To compile C++ program,
+Let's assume the file is opencvtest.cpp
 
+    $ g++ -ggdb `pkg-config --cflags opencv` -o `basename opencvtest.cpp .cpp` opencvtest.cpp `pkg-config --libs opencv`
 
-**To compile C++ program,
-Let's assume the file is opencvtest.cpp**
-`**
-$ g++ -ggdb `pkg-config --cflags opencv` -o `basename opencvtest.cpp .cpp` opencvtest.cpp `pkg-config --libs opencv`
-$ ./opencvtest
-`**
+    $ ./opencvtest
 
 **Note: Always include OpenCV header files in C and C++ as**
 
@@ -99,11 +92,9 @@ $ ./opencvtest
 
 
 **Note: Never compile a file in the following manner.
-`$ gcc -ggdb `pkg-config --cflags opencv` -o `basename opencvtest.c` opencvtest.c `pkg-config --libs opencv``
-It will make your .c file to output file.**
 
-
-##### 
+    $ gcc -ggdb `pkg-config --cflags opencv` -o `basename opencvtest.c` opencvtest.c `pkg-config --libs opencv``
+It will make your .c file to output file.
 
 
 To avoid any problems like this, I have made a bash script to compile opencv programs.
@@ -129,20 +120,15 @@ Name it **.compile_opencv.sh** and keep it in your home directory.
 
 
 Add an **alias** in **.bashrc** or **.bash_aliases**
-`**
-alias opencv="~/.compile_opencv.sh"`**`****`
-`**
-$ opencv opencvtest.c
-$ ./opencvtest
-**`
 
+    alias opencv="~/.compile_opencv.sh"`**`****`
 
-###### 
+Open new terminal.
 
+    $ opencv opencvtest.c
+    $ ./opencvtest
 
-
-
-#### Python
+### Python
 
 
 **Loading images in Python**
@@ -155,9 +141,8 @@ $ ./opencvtest
     ShowImage("opencv",img)
     WaitKey(0)
 
+Run the program.
 
-
-
-`**$ python filename.py**`
+    $ python filename.py
 
 P.S. Finals getting over soon. Excited to go home.

@@ -1,6 +1,6 @@
 ---
 category: Blog
-tag: 
+tag: Linux
 comments: true
 date: 2013-01-28 15:20:57
 layout: post
@@ -21,7 +21,9 @@ A BIOS or Basic Input-Output System is the very first program that is executed o
 UEFI firmware does not support booting through the above mentioned method which is the only way supported by BIOS. UEFI has support for reading both the partition table as well as understanding filesystems. The commonly used UEFI firmwares support both MBR and GPT partition table.
 
 Read more about UEFI.
+
 1. [Wikipedia](http://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface)
+
 2. [Arch Linux wiki](https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface)
 
 **Secure Boot**:

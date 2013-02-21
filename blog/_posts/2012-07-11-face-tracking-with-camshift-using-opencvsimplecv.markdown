@@ -5,12 +5,13 @@ comments: true
 date: 2012-07-11 16:20:51
 layout: post
 slug: face-tracking-with-camshift-using-opencvsimplecv
-title: Face Tracking with CAMShift using OpenCV/SimpleCV
+title: Face Tracking with CAMShift
 ---
 
 **CAMShift** stands for **C**ontinuously **A**daptive **M**ean Shift. It is the basis for the **face-tracking** algorithm in OpenCV. It combines the basic **Mean Shift** algorithm with an adaptive region-sizing step. The kernel is a simple step function applied to a skin-probability map. The skin probability of each image pixel is based on color using a method called **histogram backprojection**. Color is represented as Hue from the HSV color model.
 
-[youtube=http://www.youtube.com/watch?v=QnwT9QQPQow]
+<iframe width="420" height="315" src="http://www.youtube.com/embed/QnwT9QQPQow" frameborder="0" allowfullscreen></iframe>
+
 **Face Tracking with CAMShift**
     
     import cv2
@@ -61,9 +62,6 @@ In **SimpleCV**,
     bb = (100,200,100,100) # get Bounding Box from some method
     new_bb = img1.track(img,"camshift",bb)
     # do this in loop.
-
-
-
 
 It seems that CAMShift is quite efficient and fast. I'll add Lucas Kanede Tracker, Median Flow Tracker, Forward-Backward Error Tracker soon. And to top it all, I will add OpenTLD to SimpleCV.
 
