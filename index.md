@@ -4,7 +4,7 @@ title: Home
 slug: home
 ---
 <section class="g one-whole info-on-me text-cols--1 portable-text-cols--1 landmark" markdown="1">
-Being a __paranoid android__, I believe in Open Source and have immense faith in the community. Developer of open source framework for Mahcine Vision - [SimpleCV](http://simplecv.org/).
+Being a __paranoid android__, I believe in Open Source and have immense faith in the community. Developer of open source framework for Machine Vision - [SimpleCV](http://simplecv.org/).
 If you want to talk to me, or hire me, or give me a thesis opportunity, drop me a <a href="mailto:jayrambhia777@gmail.com">mail</a>.
 
 </section>
