@@ -1,5 +1,5 @@
 ---
-category: Blog
+category: Event
 tag: Computer Vision
 comments: true
 date: 2013-02-02 00:42:05
