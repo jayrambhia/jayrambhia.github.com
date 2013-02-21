@@ -1,17 +1,24 @@
 ---
 layout: page
-title: 4OH4
+title: 4O4
 slug: 404
 ---
 
 <section class="g one-whole landmark" markdown="1">
 
-<p class="highlight slab lead text-center">I got somethin' and it goes thumpin' like this<br/>All you need is my Uhn Tiss Uhn Tiss Uhn Tiss<br/>I got somethin' and it goes thumpin' like this<br/>All you need is my Uhn Tiss Uhn Tiss Uhn Tiss</p>
+<p class="highlight slab lead text-center" markdown="1">
+![Dont Panic](/assets/images/logo.jpg)
+<br/>
+</p>
+<p class="highlight slab lead text-center" markdown="1">
+You'd better be prepared for the jump into hyperspace. It's unpleasently like being drunk. 
+<br/>
+Go [Here](/).
 
-I wonder why you wanted the 4OH4. But now you got it.
+</p>
+</section>
 
-Since, you have stumbled here, you **cannot** follow me on twitter now.
-
-<a href="https://twitter.com/aniket_pant" class="twitter-follow-button" data-show-count="false">Follow @aniket_pant</a>
+<section class="g one-whole landmark" markdown="1">
+Oh I so wanted to add a fancy 404 pages like [Github](https://github.com/404/). [More 404 designs?](http://www.quora.com/Web-Design/What-are-the-cutest-Error-404-pages)
 
 </section>

@@ -12,7 +12,6 @@ slug: notes
         <li>
             <a href="{{ post.url }}" class="link-complex">
                 <span class="gamma">{{ post.title }}</span><br/>
-                <span class="topic beta highlight link-complex__target">{{ post.topic }}</span><br/>
                 <date class="date">{{ post.date | date_to_long_string }}</date> // <span class="tags">{{ post.tag }}</span>
             </a>
         </li>
