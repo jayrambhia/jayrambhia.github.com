@@ -1,4 +1,4 @@
-permalink: /:title
+permalink: /blog/:title
 auto: true
 markdown: kramdown
 exclude: Rakefile, CNAME, sass/, script/, README.md

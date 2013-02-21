@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Blog
-slug: Blog
+slug: blog
 ---
 
 <div class="g one-whole" markdown="1">
