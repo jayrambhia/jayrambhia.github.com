@@ -36,8 +36,9 @@ So to manage every point lying on a particular line, you just need two parameter
 
 Consider a point which lies on an edge in the image. Let that point be ( x1 , y1 ) in xy plane. This point would represent something in mc plane. Infinite lines can pass through a point. So for every line passing throug that point, there would be a unique set of slope and intercept represnting the line in mc plane.
 
-- `y1 = mx1 + c`
-- `c = -x1m + y1`
+**y<sub>1</sub> = mx<sub>1</sub> + c**
+
+**c = -x<sub>1</sub>m + y<sub>1</sub>**
 
 So, a point in xy plane is equivalent to a line in mc space.
 
@@ -61,18 +62,26 @@ After converting each point in xy plane to a line mc plane, we would want to fin
 
 So we create a 2D array for m and c represntation. This is array is called as accumulator. It has mxn number of bins each representing a particular (m, Θ) The horizontal axis represents slope and the vertical axis represents intercept of the line. For a point in xy plane, you create a line in mc plane. Now, you vary the value of m, and obtain different values of Θ. For each value of (m, Θ) you add a vote in the bin of (m, Θ). You do this for every line in your mc plane and at the end you'll get something like this.
 
-    --------------------------------
-    |   Points     | No. of Votes  |
-    --------------------------------
-    |  (m11, c81)  |       50      |
-    --------------------------------
-    |  (m29, c36)  |       80      |
-    --------------------------------
-    |  (m30, c70)  |       06      |
-    --------------------------------
+<table BORDER="5"    WIDTH="50%"   CELLPADDING="4" CELLSPACING="3" ALIGN="middle">
+    <tr align="center">
+        <td>Points</td>
+        <td>No. of Votes</td>
+    </tr>
+    <tr>
+        <td>(m<sub>11</sub>, c<sub>81</sub>)</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>(m<sub>29</sub>, c<sub>36</sub>)</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td>(m<sub>30</sub>, c<sub>70</sub>)</td>
+        <td>06</td>
+    </tr>
+</table>
 
-
-So this represents that line with slope (m11, c81) passes through 50 number of edge points. And similary, for other points.
+So this represents that line with slope (m<sub>11</sub>, c<sub>81</sub>) passes through 50 number of edge points. And similary, for other points.
 
 #### So what's the error here?
 
@@ -85,7 +94,7 @@ To avoid this, you need to come up with a different parameter where the paramete
 
 What is the polar representation of a line?
 
-r = x1cos(Θ)+y1sin(Θ) 
+r = x<sub>1</sub>cos(Θ)+y<sub>1</sub>sin(Θ) 
 
 where Θ is the angle that normal from the origin to the line makes with the x-axis and `r` is the perpendicular distance of the line from the origin.
 
@@ -114,17 +123,26 @@ You perform this for every sinusoidal in r-Θ space.
 
 Similar to mc plane, each (Θ, r) point will have some number of votes and depending on the number of votes, we will obtain the line which will be the best fit for a certain set of points. 
 
-    ---------------------------------
-    |    Points    |  No. of Votes  |
-    ---------------------------------
-    |  (Θ51, r83)  |       100      |
-    ---------------------------------
-    |  (Θ29, r46)  |       80       |
-    ---------------------------------
-    |  (Θ30, r70)  |       60       |
-    ---------------------------------
+<table BORDER="5"    WIDTH="50%"   CELLPADDING="4" CELLSPACING="3" ALIGN="middle">
+    <tr align="center">
+        <td>Points</td>
+        <td>No. of Votes</td>
+    </tr>
+    <tr>
+        <td>(Θ<sub>51</sub>, r<sub>83</sub>)</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>(Θ<sub>29</sub>, r<sub>46</sub>)</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td>(Θ<sub>30</sub>, r<sub>70</sub>)</td>
+        <td>60</td>
+    </tr>
+</table>
 
-(Θ51, r83) gives a line which passes through 100 edge poitns in the image. So it means that a lot of points voted for that spot. 
+(Θ<sub>51</sub>, r<sub>83</sub>) gives a line which passes through 100 edge poitns in the image. So it means that a lot of points voted for that spot. 
 
 Now, depending on a threshold you can select which line to draw. Let's suppose you keep threshold as 75. So each value of (Θ, r) which got less than 75 votes will be discounted and only the sets which got more than 75 votes will be counted as lines.
 
