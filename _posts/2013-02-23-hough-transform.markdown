@@ -94,11 +94,11 @@ Range of parameters:
 1. Θ varies from -90 to +90.
 2. r varies from 0 to the diagonal length of the image.
 
-With this new representation, we have a new transition from xy plane to Hough plane. A line in the xy space still represents a point in Hough space (pΘ plane here). But a point in xy space represents a sinusoid in p-Θ space.
+With this new representation, we have a new transition from xy plane to Hough plane. A line in the xy space still represents a point in Hough space (pΘ plane here). But a point in xy space represents a sinusoid in r-Θ space.
 
 #### Sinusoid representation
 
-Similar to line representation in mc space, a sinusoid in p-Θ space represents a point in xy space. So each point in xy space is converted to a sinusoid in p-Θ space. And we let each point in p-Θ space to vote.
+Similar to line representation in mc space, a sinusoid in r-Θ space represents a point in xy space. So each point in xy space is converted to a sinusoid in r-Θ space. And we let each point in r-Θ space to vote.
 
 ![Sinusoid hough representation](/assets/images/hough2.png)
 
@@ -108,7 +108,7 @@ A 2D accumulator is created which accumulates votes of each point represented by
 
 You choose a sinusoidal and vary Θ to get different r. You take the value of Θ and obtain corresponding value of r and cast a vote in the particular (Θ, r) accumulator cell. By voting, you increase the value of the cell by 1. After voting, you choose another value of Θ and vote in corresonding accumulator cell by Θ and r. Continue doing this from Θ=-90 to Θ=+90. And for every such calculation, you add vote in the accumulator.
 
-You perform this for every sinusoidal in p-Θ space.
+You perform this for every sinusoidal in r-Θ space.
 
 ### Detecting Lines
 
