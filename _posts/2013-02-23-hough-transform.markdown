@@ -98,7 +98,7 @@ With this new representation, we have a new transition from xy plane to Hough pl
 
 #### Sinusoid representation
 
-Similar to line representation in mc space, a sinusoid in r-Θ space represents a point in xy space. So each point in xy space is converted to a sinusoid in r-Θ space. And we let each point in r-Θ space to vote.
+Similar to line representation in mc space, a sinusoid in r-Θ space represents a point in xy space. So each point in xy space is converted to a sinusoid in r-Θ space. And we let each point in r-Θ space vote.
 
 ![Sinusoid hough representation](/assets/images/hough2.png)
 
