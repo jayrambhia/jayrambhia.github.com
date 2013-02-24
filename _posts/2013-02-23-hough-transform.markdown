@@ -5,7 +5,7 @@ comments: true
 date: 2013-02-24 03:00:00
 layout: post
 slug: hough-transform
-title: 'Hough Trasform'
+title: 'Hough Transform'
 ---
 
 Let's say you take a snapshot of a window. You used Canny/Soble edge detector and found a nice boundary of the window and you want to figure out representation of the window's edge, size, etc. How would you do it? Right now it's just some 200 odd pixels in near vicinity and representing the shape of a line.
