@@ -34,18 +34,20 @@ So to manage every point lying on a particular line, you just need two parameter
 
 #### Representation of a point in Hough Space
 
-Consider a point which lies on an edge in the image. Let that point be ( x~1~ , y~1~ ) in xy plane. This point would represent something in mc plane. Infinite lines can pass through a point. So for every line passing throug that point, there would be a unique set of slope and intercept represnting the line in mc plane.
+Consider a point which lies on an edge in the image. Let that point be ( x1 , y1 ) in xy plane. This point would represent something in mc plane. Infinite lines can pass through a point. So for every line passing throug that point, there would be a unique set of slope and intercept represnting the line in mc plane.
 
-- y~1~ = mx~1~ + c
-- c = -x~1~m + y~1~
+- `y1 = mx1 + c`
+- `c = -x1m + y1`
 
 So, a point in xy plane is equivalent to a line in mc space.
 
 ### What do lines in Hough Space signify?
 
-You have a edge detected image and for every white pixel you draw a line in mc plane. Now, some lines will intersect. These intersection points are the parameters of line which passes through those points.
+You have a edge detected image and for every white pixel you draw a line in mc plane. Now, some lines will intersect. These intersection points are the parameters of line which passes through those points. Each point represents as various lines in the mc space. 
 
-Each point represents as various lines in the mc space. Now, if we observe each intersection point, then we can easily that intersection point of **line 1** and **line 2** represents the slope and intercept of the line passing through **point 1** and **point 2**. Similary, intersection point of **line 3** and **line 4** represents the slope and the intercept of the line passing through **point 3** and **point 4**. The interesction point of **line 1**, **line 2** and **line 3** represents the slope and the intercept of the line passing through **point 1**, **point 2** and **point 3**.
+![Hough Space Representation](/assets/images/hough1.jpg)
+
+Now, if we observe each intersection point, then we can easily see that intersection point of **line 1** and **line 2** represents the slope and intercept of the line passing through **point 1** and **point 2**. Similary, intersection point of **line 3** and **line 4** represents the slope and the intercept of the line passing through **point 3** and **point 4**. The interesction point of **line 1**, **line 2** and **line 3** represents the slope and the intercept of the line passing through **point 1**, **point 2** and **point 3**.
 
 So we can see that the point which is the common interception of more number of lines will represent the slope and intercept of the line passing through more number of points. And similary, if a point has only one passing through line in mc space will represent a line which passes through only one edge point.
 
@@ -57,21 +59,20 @@ To detect lines in the image, you'd need to find lines which are best fit for gr
 
 After converting each point in xy plane to a line mc plane, we would want to find which points represent strong lines. So the idea is to let each point **vote**.
 
-So we create a 2D array for m and c represntation. This is array is called as accumulator. It has mxn number of bins each representing a particular (m, theta) The horizontal axis represents slope and the vertical axis represents intercept of the line. For a point in xy plane, you create a line in mc plane. Now, you vary the value of m, and obtain different values of theta. For each value of (m, theta) you add a vote in the bin of (m, theta). You do this for every line in your mc plane and at the end you'll get something like this.
+So we create a 2D array for m and c represntation. This is array is called as accumulator. It has mxn number of bins each representing a particular (m, Θ) The horizontal axis represents slope and the vertical axis represents intercept of the line. For a point in xy plane, you create a line in mc plane. Now, you vary the value of m, and obtain different values of Θ. For each value of (m, Θ) you add a vote in the bin of (m, Θ). You do this for every line in your mc plane and at the end you'll get something like this.
 
-    ------------------------------------
+    --------------------------------
+    |   Points     | No. of Votes  |
+    --------------------------------
+    |  (m11, c81)  |       50      |
+    --------------------------------
+    |  (m29, c36)  |       80      |
+    --------------------------------
+    |  (m30, c70)  |       06      |
+    --------------------------------
 
-    |     Points       | No. of Votes  |
 
-    |  (m~11~, c~81~)  |       50      |
-
-    |  (m~29~, c~36~)  |       80      |
-
-    |  (m~30~, c~70~)  |       06      |
-
-    ------------------------------------
-
-So this represents that line with slope (m~11~, c~81~) passes through 50 number of edge points. And similary, for other points.
+So this represents that line with slope (m11, c81) passes through 50 number of edge points. And similary, for other points.
 
 #### So what's the error here?
 
@@ -84,52 +85,52 @@ To avoid this, you need to come up with a different parameter where the paramete
 
 What is the polar representation of a line?
 
-r = x~1~cos(theta)+y~1~sin(theta) 
+r = x1cos(Θ)+y1sin(Θ) 
 
-where theta is the angle that normal from the origin to the line makes with the x-axis and `r` is the perpendicular distance of the line from the origin.
+where Θ is the angle that normal from the origin to the line makes with the x-axis and `r` is the perpendicular distance of the line from the origin.
 
 Range of parameters:
 
-1. theta varies from -90 to +90.
+1. Θ varies from -90 to +90.
 2. r varies from 0 to the diagonal length of the image.
 
-With this new representation, we have a new transition from xy plane to Hough plane. A line in the xy space still represents a point in Hough space (ptheta plane here). But a point in xy space represents a sinusoid in p-theta space.
+With this new representation, we have a new transition from xy plane to Hough plane. A line in the xy space still represents a point in Hough space (pΘ plane here). But a point in xy space represents a sinusoid in p-Θ space.
 
 #### Sinusoid representation
 
-Similar to line representation in mc space, a sinusoid in p-theta space represents a point in xy space. So each point in xy space is converted to a sinusoid in p-theta space. And we let each point in p-theta space to vote.
+Similar to line representation in mc space, a sinusoid in p-Θ space represents a point in xy space. So each point in xy space is converted to a sinusoid in p-Θ space. And we let each point in p-Θ space to vote.
+
+![Sinusoid hough representation](/assets/images/hough2.png)
 
 ### Implementation
 
 A 2D accumulator is created which accumulates votes of each point represented by each cell of the accumulator.
 
-You choose a sinusoidal and vary theta to get different r. You take the value of theta and obtain corresponding value of r and cast a vote in the particular (theta, r) accumulator cell. By voting, you increase the value of the cell by 1. After voting, you choose another value of theta and vote in corresonding accumulator cell by theta and r. Continue doing this from theta=-90 to theta=+90. And for every such calculation, you add vote in the accumulator.
+You choose a sinusoidal and vary Θ to get different r. You take the value of Θ and obtain corresponding value of r and cast a vote in the particular (Θ, r) accumulator cell. By voting, you increase the value of the cell by 1. After voting, you choose another value of Θ and vote in corresonding accumulator cell by Θ and r. Continue doing this from Θ=-90 to Θ=+90. And for every such calculation, you add vote in the accumulator.
 
-You perform this for every sinusoidal in p-theta space.
+You perform this for every sinusoidal in p-Θ space.
 
 ### Detecting Lines
 
-Similar to mc plane, each (theta, r) point will have some number of votes and depending on the number of votes, we will obtain the line which will be the best fit for a certain set of points. 
+Similar to mc plane, each (Θ, r) point will have some number of votes and depending on the number of votes, we will obtain the line which will be the best fit for a certain set of points. 
 
-    -----------------------------------------
+    ---------------------------------
+    |    Points    |  No. of Votes  |
+    ---------------------------------
+    |  (Θ51, r83)  |       100      |
+    ---------------------------------
+    |  (Θ29, r46)  |       80       |
+    ---------------------------------
+    |  (Θ30, r70)  |       60       |
+    ---------------------------------
 
-    |        Points        |  No. of Votes  |
+(Θ51, r83) gives a line which passes through 100 edge poitns in the image. So it means that a lot of points voted for that spot. 
 
-    |  (theta~51~, r~83~)  |       100      |
-
-    |  (theta~29~, r~46~)  |       80       |
-
-    |  (theta~30~, r~70~)  |       60       |
-
-    -----------------------------------------
-
-(theta~51~, r~83~) gives a line which passes through 100 edge poitns in the image. So it means that a lot of points voted for that spot. 
-
-Now, depending on a threshold you can select which line to draw. Let's suppose you keep threshold as 75. So each value of (theta, r) which got less than 75 votes will be discounted and only the sets which got more than 75 votes will be counted as lines.
+Now, depending on a threshold you can select which line to draw. Let's suppose you keep threshold as 75. So each value of (Θ, r) which got less than 75 votes will be discounted and only the sets which got more than 75 votes will be counted as lines.
 
 ### Accuracy
 
-The accuracy will depend on the number of accumulator cells (directly related to number of thetas you take). So more the number of theta values better the accuracy of the Hough transform. 
+The accuracy will depend on the number of accumulator cells (directly related to number of Θs you take). So more the number of Θ values better the accuracy of the Hough transform. 
 
 The accuracy also depends on the thresholding value. If you keep low threshold, you'd get some lines which pass through very less number of point. So you'll get more number of lines but innacurate. If you keep very high threshold, you'd get lines which pass through large number of points. This line will be very accurate but you'd get less number of lines.
 
