@@ -12,13 +12,11 @@ If you want to talk to me, or hire me, or give me a thesis opportunity, drop me 
 <section class="g one-half portable-one-whole" markdown="1">
 **Read about my latest Events{% for post in site.posts limit:20 %}{% if post.category == "Event"%}<br> <a href="{{ post.url }}">{{ post.title }}</a>{% endif %}{% endfor %}**
 </section>
-
 <section class="g one-half portable-one-whole" markdown="1">
 **Read my latest Articles{% for post in site.posts limit:10 %}{% if post.category == "Blog"%}{% if post.tag == "Computer Vision"%}<br> <a href="{{ post.url }}">{{ post.title }}</a>{% endif %}{% endif %}{% endfor %}**
 </section>
-
 <section class="g one-half portable-one-whole" markdown="1">
-**Read my latest Notes{% for post in site.posts limit:20 %}{% if post.category == "Notes"%}<br> <a href="{{ post.url }}">{{ post.title }}</a>{% endif %}{% endfor %}**
+**Read about my latest Projects{% for post in site.posts limit:20 %}{% if post.category == "project"%}<br> <a href="{{ post.url }}">{{ post.title }}</a>{% endif %}{% endfor %}**
 </section>
 
 <section class="g one-half portable-one-whole links">
