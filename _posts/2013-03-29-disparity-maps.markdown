@@ -126,4 +126,5 @@ You can find Python code [here](https://github.com/jayrambhia/Vision/blob/master
 Other useful links. 
 [http://davidpritchard.org/graphics/msc_thesis/4_Disparity_Map.html](http://davidpritchard.org/graphics/msc_thesis/4_Disparity_Map.html)
 [https://sites.google.com/site/5kk73gpu2010/assignments/stereo-vision#TOC-Update-Disparity-Map](https://sites.google.com/site/5kk73gpu2010/assignments/stereo-vision#TOC-Update-Disparity-Map)
+
 P.S. Also working on Depth images. Wait for upcoming posts.
