@@ -178,4 +178,4 @@ Take out your Android phone and plug it in USB debugging mode. Load the applicat
 
 P.S. Made an android application that generates disparity map using two images. Here's a video you can check out. I have improved the disparity map quality a lot. 
 
-<iframe width="420" height="315" src="http://www.youtube.com/embed/JYExOcmBgIE" frameborder="0" allowfullscreen></iframe>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/JYExOcmBgIE" frameborder="0" allowfullscreen></iframe>
