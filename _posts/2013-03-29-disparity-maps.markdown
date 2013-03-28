@@ -8,7 +8,7 @@ slug: disparity-mpas
 title: 'Disparity Map'
 ---
 
-As I had mentioned in earlied posts that I was working on Stereo Images, disparity and depth images, I will elaborate about disparit maps and show how to compute it using OpenCV.
+As I had mentioned in earlier posts that I was working on Stereo Images, disparity and depth images, I will elaborate about disparity maps and show how to compute it using OpenCV.
 
 ### What is Disparity Map?
 
@@ -108,7 +108,7 @@ In a similar manner, StereoSGBM can be used to compute Disparity.
     sgbm.P1 = 216;
     sgbm.P2 = 864;
 
-Notice there are few parameters different from StereoBM. Compute Disparity and normalize.
+Notice there are few parameters different from StereoBM. Compute Disparity and normalize. You should look at [OpenCV documentation](http://docs.opencv.org/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html?highlight=disparity#StereoSGBM::StereoSGBM%28int%20minDisparity,%20int%20numDisparities,%20int%20SADWindowSize,%20int%20P1,%20int%20P2,%20int%20disp12MaxDiff,%20int%20preFilterCap,%20int%20uniquenessRatio,%20int%20speckleWindowSize,%20int%20speckleRange,%20bool%20fullDP%29) for detailed information.
 
     sgbm(g1, g2, disp);
     normalize(disp, disp8, 0, 255, CV_MINMAX, CV_8U);
@@ -123,5 +123,7 @@ Here's the image where I have used StereoSGBM.
 ![Disparity_Image](/assets/images/disp1.jpg)
 
 You can find Python code [here](https://github.com/jayrambhia/Vision/blob/master/OpenCV/Python/disparity.py) and C++ code [here](https://github.com/jayrambhia/Vision/blob/master/OpenCV/C%2B%2B/disparity.cpp).
-
+Other useful links. 
+[http://davidpritchard.org/graphics/msc_thesis/4_Disparity_Map.html](http://davidpritchard.org/graphics/msc_thesis/4_Disparity_Map.html)
+[https://sites.google.com/site/5kk73gpu2010/assignments/stereo-vision#TOC-Update-Disparity-Map](https://sites.google.com/site/5kk73gpu2010/assignments/stereo-vision#TOC-Update-Disparity-Map)
 P.S. Also working on Depth images. Wait for upcoming posts.
