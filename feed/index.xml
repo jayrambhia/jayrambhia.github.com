@@ -10,7 +10,7 @@ layout: none
 		<link>{{ site.url }}</link>
 		<atom:link href="{{ site.url }}/feed" rel="self" type="application/rss+xml" />
 		{% for post in site.posts limit:10 %}
-    {% if post.category != 'Blog' %}
+    {% if post.category == 'Blog' %}
     
 			<item>
 				<title>{{ post.title }}</title>
