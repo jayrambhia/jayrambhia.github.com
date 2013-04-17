@@ -20,7 +20,7 @@ The term disparity was originally used to describe the 2D vector between the pos
 
 ### Calculating Disparity Map
 
-The images are padded with a "frame" of zero pixels to facilitate the window operation (SSD/SAD) at the boarder.
+The images are padded with a "frame" of zero pixels to facilitate the window operation (SSD/SAD) at the border.
 
 SSD - Sum of Squared Differences
 SAD - Sum of Absolute Differences
@@ -77,7 +77,7 @@ You can set parameters for StereoBM.
 
 
 - minDisparity – Minimum possible disparity value.
-- numDisparities – Maximum disparity minus minimum disparity. Thisparameter must be divisible by 16.
+- numDisparities – Maximum disparity minus minimum disparity. This parameter must be divisible by 16.
 - SADWindowSize – Matched block size. It must be an odd number >=1 . 
 - disp12MaxDiff – Maximum allowed difference (in integer pixel units) in the left-right disparity check.
 - preFilterCap – Truncation value for the prefiltered image pixels.
@@ -93,20 +93,20 @@ And compute Disparity. Since Disparity will be either `CV_16S` or `CV_32F`, it n
 
 **Stereo SGBM**
 
-In a similar manner, StereoSGBM can be used to compute Disparity.
+In a similar manner, StereoSGBM can be used to compute Disparity. [Siddharth]() has been working on SGBM parameters and he came up with a set of parameters which can be used in all the scenarios to get a good disparity map. So I'm updating those values here.
 
     StereoSGBM sgbm;
-    sgbm.SADWindowSize = 3;
-    sgbm.numberOfDisparities = 144;
-    sgbm.preFilterCap = 63;
-    sgbm.minDisparity = -39;
-    sgbm.uniquenessRatio = 10;
-    sgbm.speckleWindowSize = 100;
-    sgbm.speckleRange = 32;
-    sgbm.disp12MaxDiff = 1;
+    sgbm.SADWindowSize = 5;
+    sgbm.numberOfDisparities = 192;
+    sgbm.preFilterCap = 4;
+    sgbm.minDisparity = -64;
+    sgbm.uniquenessRatio = 1;
+    sgbm.speckleWindowSize = 150;
+    sgbm.speckleRange = 2;
+    sgbm.disp12MaxDiff = 10;
     sgbm.fullDP = false;
-    sgbm.P1 = 216;
-    sgbm.P2 = 864;
+    sgbm.P1 = 600;
+    sgbm.P2 = 2400;
 
 Notice there are few parameters different from StereoBM. Compute Disparity and normalize. You should look at [OpenCV documentation](http://docs.opencv.org/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html?highlight=disparity#StereoSGBM::StereoSGBM%28int%20minDisparity,%20int%20numDisparities,%20int%20SADWindowSize,%20int%20P1,%20int%20P2,%20int%20disp12MaxDiff,%20int%20preFilterCap,%20int%20uniquenessRatio,%20int%20speckleWindowSize,%20int%20speckleRange,%20bool%20fullDP%29) for detailed information.
 
