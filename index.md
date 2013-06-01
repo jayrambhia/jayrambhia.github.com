@@ -16,7 +16,7 @@ If you want to talk to me, or hire me, or give me a thesis opportunity, drop me 
 **Read my latest Articles{% for post in site.posts limit:10 %}{% if post.category == "Blog"%}{% if post.tag == "Computer Vision"%}<br> <a href="{{ post.url }}">{{ post.title }}</a>{% endif %}{% endif %}{% endfor %}**
 </section>
 <section class="g one-half portable-one-whole" markdown="1">
-**Read about my latest Projects{% for post in site.posts limit:20 %}{% if post.category == "project"%}<br> <a href="{{ post.url }}">{{ post.title }}</a>{% endif %}{% endfor %}**
+**Read about my recent Projects{% for post in site.posts limit:20 %}{% if post.category == "Project"%}<br> <a href="{{ post.url }}">{{ post.title }}</a>{% endif %}{% endfor %}**
 </section>
 
 <section class="g one-half portable-one-whole links">
@@ -28,7 +28,7 @@ If you want to talk to me, or hire me, or give me a thesis opportunity, drop me 
 	</ul>
 </section>
 
-<section class="g one-half portable-one-whole">
+<section class="g one-whole info-on-me text-cols--1 portable-text-cols--1 landmark">
 	<h3>What am I doing nowadays?</h3>
-	<p>I am working on implementing statistical learning techniques to estimate and detect objects in visual based tracking as my project. Apart from this, I'm working as an intern at <a href="http://duceretech.com/">Ducere Technologies</a>. And obviously, playing Ultimate frisbee.</p>
+	<p>I am working on object and pattern recognition to identify the speceis of flora and fauna. I'm working on 3D gesture recognition at <a href="http://duceretech.com/">Ducere Technologies</a> as a computer vision intern. And obviously, playing Ultimate frisbee.</p>
 </section>
