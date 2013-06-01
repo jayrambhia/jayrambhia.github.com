@@ -1,0 +1,9 @@
+---
+category: Project
+tag: Computer Vision
+comments: true
+date: 2013-06-01 15:30:58
+layout: post
+slug: pokedex
+title: Pokedex
+---

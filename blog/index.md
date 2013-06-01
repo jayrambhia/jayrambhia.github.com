@@ -6,7 +6,7 @@ slug: blog
 
 <div class="g one-whole" markdown="1">
 
-<ul class="block-list text--center">
+<ul class="block-list text--left">
     {% assign t = 1 %}
     {% for post in site.posts %} 
         {% if post.category == 'Blog' %}
@@ -16,7 +16,7 @@ slug: blog
 				<span class="gamma">{{ post.title }}</span><br/>
 				<date class="date">{{ post.date | date_to_long_string }}</date> // <span class="tags">{{ post.tag }}</span>
 			     </a>
-                <span>{{post.content | truncatewords:100}} <a href="{{post.url}}" class="link-complex">Read More</a></span><br/>
+                <span>{{post.content | truncatewords:90}} <a href="{{post.url}}" class="link-complex"> Read More</a></span><br/>
                 </li>
             {% else %}
                 <li>
