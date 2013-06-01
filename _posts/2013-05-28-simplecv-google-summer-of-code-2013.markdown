@@ -1,6 +1,6 @@
 ---
 category: Event
-tag: gsoc
+tag: Computer Vision
 comments: true
 date: 2013-05-28 16:23:58
 layout: post
