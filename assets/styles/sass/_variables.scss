@@ -1,16 +1,17 @@
-/**
- * Fonts
- */
-$slab:    "adelle", "Segoe UI", Ubuntu, Helvetica, Arial, sans-serif;
-$sans:    "source-sans-pro", "Segoe UI", Ubuntu, Helvetica, Arial, sans-serif;
+// Font
+$sans:              'Ubuntu', Helvetica, Arial, sans-serif;
 
-/**
- * Base Colors
- */
-$color-1: #EE2B43;
-$color-2: #037F8C;
-$color-3: #BF2C47;
-$color-4: #F23535;
+// Colors
+$color1:            #276a76;
+$color2:            #2e8d9e;
+$color3:            #32b2c9;
 
-$white:   #FAFAFA;
-$gray:    #222;
+$white:             #FAFAFA;
+$gray:              #1f1f1f;
+
+// Overrides
+$brand-color:       $color2;
+$brand-face:        $sans;
+
+$use-grids:         true;
+$use-block-list:    true;

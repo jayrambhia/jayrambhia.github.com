@@ -1,7 +1,6 @@
 permalink: /blog/:title
-auto: true
 markdown: kramdown
-exclude: Rakefile, CNAME, sass/, script/, README.md
+exclude: ['Rakefile', 'CNAME', 'sass/', 'script/', 'README.md']
 
 url: http://jayrambhia.com
 

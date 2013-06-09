@@ -5,7 +5,7 @@ comments: true
 date: 2013-01-28 16:12:07
 layout: post
 slug: ati-radeon-7670m-turn-off-gpu-ubuntu-12-04
-title: ATI Radeon 7670M | Turn off GPU | Ubuntu 12.04
+title: ATI Radeon 7670M, Turn off GPU, Ubuntu 12.04
 ---
 
 After spending hours trying to figure out how to beat secure boot and UEFI to install Ubuntu 12.04 LTS, I made peace with it and installed (dual boot) Ubuntu 12.04 LTS. And as expected, there has to be some or other glitches with firmware and drivers. My previosu laptop (which by the way I still use) didn't have a dedicated 2 GB GPU so there was never a problem of power consumption and heating up (in Ubuntu 12.04 LTS). A guy had posted a review on HP Envy 4 1025tx about Linux and had managed to tune GPU.
@@ -16,7 +16,7 @@ Ubuntu ships fglrx (native driver for ATI Radeon GPU) which is by far the most a
 Ubuntu provides **vga_switcheroo** which is a kernel mechanism which allows you to switch between GPUs if your machine has a hardware mux. Some laptops come with two graphics cards: one for use in applications that require a lot of computing power and other that is less powerful, but conserves energy, called the integrated GPU. The integrated GPU is often embedded in the CPU, hence the name. This concept is called Hybrid Graphics.
 
 **Manually Turn OFF GPU**:
-    
+
     sudo su
     echo DIS>/sys/kernel/debug/vgaswitcheroo/switch
     echo OFF>/sys/kernel/debug/vgaswitcheroo/switch
@@ -27,7 +27,7 @@ Ubuntu provides **vga_switcheroo** which is a kernel mechanism which allows you 
 
 
 **echo OFF > /sys/kernel/debug/vgaswitcheroo/switch** turns off that is currently disconnected.
-open **/sys/kernel/debug/vgaswitcheroo/switch** file and check whether this has worked or not. For DIS, instead of "**Pwr**", "**Off**" should appear. 
+open **/sys/kernel/debug/vgaswitcheroo/switch** file and check whether this has worked or not. For DIS, instead of "**Pwr**", "**Off**" should appear.
 
 ![vga_switcheroo](/assets/images/GPU-1.png)
 

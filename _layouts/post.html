@@ -2,26 +2,23 @@
 layout: base
 ---
 <div class="post {{page.slug}}">
-	<header class="g one-quarter portable-one-whole post--header">
+	<header>
   		<h1 class="post_title">{{ page.title }}</h1>
   		<div class="meta"><date class="date">Posted on {{ page.date | date_to_long_string }}</date><br/>Under <span class="category">{{ page.category }}</a>{% if page.tags != empty %}<br/>Tagged </span><span class="tags">{{ page.tags | array_to_sentence_string }}</span>{% endif %}</div>
       <div class="share island">
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="jayrambhia" data-related="jayrambhia">Tweet</a>
-        <div class="g-plusone" data-size="medium"></div>
+        <div class="grid__item-plusone" data-size="medium"></div>
         <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
         <script type="text/javascript" src="http://www.reddit.com/static/button/button1.js"></script>
       </div>
-
-      <div id="boastful"></div>
 	</header><!-- post-header -->
-	<div class="g three-quarters portable-one-whole">
+	<div>
 		<article class="post--content">
-	  	{{ content }}  
+	  	{{ content }}
 		</article><!-- post-content -->
 
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    
 
 		<footer class="post--footer"></footer><!-- post-footer -->
 
@@ -46,15 +43,3 @@ layout: base
     </section>
   </div>
 </div><!-- post -->
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-<script src="/assets/js/jquery.boastful.js"></script>
-<script src="/assets/js/rainbow-custom.min.js"></script>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('#boastful').boastful({
-        empty_message: '<p>Bah! Why ain\'t anyone tweeting this.</p>'  
-    });
-  });
-</script>
