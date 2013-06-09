@@ -3,19 +3,18 @@ layout: base
 ---
 <div class="page {{page.slug}}">
 	{% if page.slug != 'home' %}
-	<header class="g one-whole">
+	<header>
 		<h1 class="page_title">{{ page.title }}</h1>
 	</header>
 	{% endif %}
-	{% if page.slug == 'about-me' or page.slug == 'home' %}
+	{% if page.slug == 'me' or page.slug == 'home' %}
 	<div class="accessibility" itemscope itemtype="http://schema.org/Person">
 		<span itemprop="name">Jay Rambhia</span>
-		<img src="../assets/images/thats-me.jpg" itemprop="image" />
 		<a href="mailto:jayrambhia777@gmail.com" itemprop="email">jayrambhia777@gmail.com</a>
     <a href="http://www.jayrambhia.com" itemprop="url">jayrambhia.com</a>
 	</div>
 	{% endif %}
 	<article role="main">
-	{{ content }}  
+	{{ content }}
 	</article>
 </div><!-- page -->
