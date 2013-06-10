@@ -13,5 +13,5 @@ slug: archive
 ### {{ post.date | date: '%Y' }}
 {% endif %}
 {% endunless %}
-- [{{ post.title }}]({{ post.url }})<!-- -->
+- ##### [{{ post.title }}]({{ post.url }}) [{{ post.category }}]
 {% endfor %}
