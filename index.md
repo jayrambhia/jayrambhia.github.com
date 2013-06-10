@@ -9,7 +9,7 @@ If you want to talk to me, or hire me, or give me a thesis opportunity, drop me 
 Events
 {% for post in site.posts limit:5 %}
 {% if post.category == "Event"%}
-- [{{ post.title }}]({{ post.url }})<!-- -->
+- **[{{ post.title }}]({{ post.url }})**<!-- -->
 {% endif %}
 {% endfor %}
 
@@ -17,7 +17,7 @@ Articles
 {% for post in site.posts limit:5 %}
 {% if post.category == "Blog"%}
 {% if post.tag == "Computer Vision"%}
-- [{{ post.title }}]({{ post.url }})<!-- -->
+- **[{{ post.title }}]({{ post.url }})**<!-- -->
 {% endif %}
 {% endif %}
 {% endfor %}
@@ -25,15 +25,15 @@ Articles
 Recent Projects
 {% for post in site.posts limit:5 %}
 {% if post.category == "Project"%}
-- [{{ post.title }}]({{ post.url }})<!-- -->
+- **[{{ post.title }}]({{ post.url }})**<!-- -->
 {% endif %}
 {% endfor %}
 
 ### What would you like to track?
 
-- [The Old Archives](/archive)
-- [Paranoid Android's Blog](/blog/)
-- [Me](/me)
+- [**The Old Archives**](/archive)
+- [**Paranoid Android's Blog**](/blog/)
+- [**Me**](/me)
 
 ### What am I doing nowadays?
 
