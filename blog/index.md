@@ -9,7 +9,7 @@ slug: blog
 {% if post.category == 'Blog' %}
 <li>
 <a href="{{ post.url }}" class="block-list__link">
-    <h2>{{ post.title }}</h2>
+    <h3>{{ post.title }}</h3>
     <date class="date">{{ post.date | date_to_long_string }}</date> // <span class="tags">{{ post.tag }}</span>
 </a>
 {% if t <= 3 %}
