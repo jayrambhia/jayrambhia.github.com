@@ -16,6 +16,10 @@ title: Install OpenCV 2.4.* in Ubuntu 12.04 Precise Pangolin
 
 [Install OpenCV 2.4.3](https://github.com/jayrambhia/Install-OpenCV/blob/master/Ubuntu/2.4/opencv2_4_3.sh)
 
+[Install OpenCV 2.4.4](https://github.com/jayrambhia/Install-OpenCV/blob/master/Ubuntu/2.4/opencv2_4_4.sh)
+
+[Install OpenCV 2.4.5](https://github.com/jayrambhia/Install-OpenCV/blob/master/Ubuntu/2.4/opencv2_4_5.sh)
+
 Remove any installed versions of ffmpeg and x264.
 
 
@@ -108,6 +112,10 @@ Download the latest image of v4l from [v4l-utils](http://www.linuxtv.org/downloa
 [Download OpenCV 2.4.2](http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.2/OpenCV-2.4.2.tar.bz2/download)
 
 [Download OpenCV 2.4.3](http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.2/OpenCV-2.4.3.tar.bz2/download)
+
+[Download OpenCV 2.4.4](http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.5/opencv-2.4.5.tar.gz/download)
+
+[Download OpenCV 2.4.5](http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.5/opencv-2.4.5.tar.gz/download)
 
 After downloading OpenCV 2.4.* package, untar it and make.
 
