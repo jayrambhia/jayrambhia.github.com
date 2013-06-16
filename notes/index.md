@@ -8,7 +8,7 @@ slug: notes
   {% if post.category == 'Notes' %}
   <li>
     <a href="{{ post.url }}" class="link-complex">
-      <h2>{{ post.title }}</h2>
+      <h3>{{ post.title }}</h3>
       <date class="date">{{ post.date | date_to_long_string }}</date> // <span class="tags">{{ post.tag }}</span>
     </a>
   </li>

@@ -2,7 +2,7 @@
 category: Notes
 tag: Python
 comments: true
-date: 2013-06-15 00:14:25
+date: 2013-06-15 14:14:25
 layout: post
 slug: numpy-tricks
 title: 'Numpy Tips and Tricks'
