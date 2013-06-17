@@ -8,9 +8,9 @@ slug: fingertips-kinect
 title: Fingertips detection using Kinect
 ---
 
-In my previous **[post]({% post_url 2013-05-30-kinect-opencv %})**, I have shown how to use Kinect with OpenCV using Freenect library. I and Siddharth have been working on Kinect for gesture recognition and so far we are able to detect fingertips using contours and hull.
+In my previous **[post]({% post_url 2013-05-30-kinect-opencv %})**, I have shown how to use Kinect with OpenCV using Freenect library.Siddharth and I have been working on Kinect for gesture recognition and so far we are able to detect fingertips using contours and hull.
 
-First thing that you would want to do is segment out hands in the frame. [Siddharth](http://algorithmicthoughts.wordpress.com/) has worked out a depth based adaptive threshold algorithm which enables us to segment out the object which is a bit ahead of the whole body. The algorithm works on depth of the object and segements out object based on its relative depth from other objects. So here's how he has done it.
+First thing that you would want to do is segment out hands in the frame. [Siddharth](http://algorithmicthoughts.wordpress.com/) has worked out a depth based adaptive threshold algorithm which enables us to segment out the object which is a bit ahead of the whole body. The algorithm works on depth of the object and segments out object based on its relative depth from other objects. So here's how he has done it.
 
 ### Thresholding
 
@@ -44,6 +44,3 @@ When we tried this we got a lot of points on one finger tips and we filtered the
 So this is an inaccurate algorithm which we implemented to extract fingertips from the frame using Kinect and OpenCV and now we're going to work on gesture recognition.
 
 P.S. Google Summer of Code's coding period starts from Monday. Look out for a lot of posts.
-
-
-
