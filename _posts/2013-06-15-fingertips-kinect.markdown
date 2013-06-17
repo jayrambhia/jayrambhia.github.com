@@ -18,6 +18,8 @@ First thing that you would want to do is segment out hands in the frame. [Siddha
 
 This will give you the segmented hands and now you need to get contours of the hand.
 
+![threshold](/assets/images/fingertips1.jpg)
+
 ### Get Contours
 
 {% gist 5788734 contours.cpp %}
@@ -36,6 +38,8 @@ What we did is we took contour points near both the sides of the hull and made t
 When we tried this we got a lot of points on one finger tips and we filtered them out using a simple algorithm which would check if any points exist in the vicinity of certain hull point and eliminate those points.
 
 {% gist 5788734 filterhull.cpp %}
+
+![fingertips](/assets/images/fingertips2.jpg)
 
 So this is an inaccurate algorithm which we implemented to extract fingertips from the frame using Kinect and OpenCV and now we're going to work on gesture recognition.
 
