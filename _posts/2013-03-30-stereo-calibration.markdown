@@ -46,6 +46,7 @@ One standard procedure to calibrate camera is to use a chessboard pattern. It is
 OpenCV has a great support for calibration and there's is a very convinient way to do it.
 
 Include necessary libraries
+{% highlight cpp %}
 
     #include <opencv2/core/core.hpp>
     #include <opencv2/calib3d/calib3d.hpp>
@@ -56,8 +57,9 @@ Include necessary libraries
     using namespace cv;
     using namespace std;
 
-Main function.
-
+{% endhighlight %}
+**Main function**
+{% highlight cpp %}
     int numBoards; // number of different poses
     int board_w;   // number of horizontal corners
     int board_h;   // number of vertical corners
@@ -68,6 +70,7 @@ Main function.
     vector<vector<Point3f> > objectPoints;
     vector<vector<Point2f> > imagePoints;
     vector<Point2f> corners;
+{% endhighlight %}
 
 `imagePoints` represent location of the detected corners in the image.
 

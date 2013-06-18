@@ -16,17 +16,18 @@ I rebuilt OpenCV with OpenNI support but was facing the same problem. I spent a 
     sudo apt-get install libfreenect-dev freenect python-freenect
 
 I wrote a qucik three line code in SimpleCV shell.
-
-    k = Kinect()
-    k.getImage().show()
-    Image(k.getDepthMatrix(), cv2image=True).show()
+{% highlight python %}
+k = Kinect()
+k.getImage().show()
+Image(k.getDepthMatrix(), cv2image=True).show()
+{% endhighlight %}
 
 And it worked. Here's a demo video that I made using SimpleCV.
 
 <iframe width="560" height="315" src="http://www.youtube.com/embed/sknRKhPaxCs" frameborder="0" allowfullscreen></iframe>
 
 Here's the code.
-
+{% highlight python %}
     from SimpleCV import *
 
     k = Kinect()
@@ -38,6 +39,7 @@ Here's the code.
             time.sleep(0.2)
         except KeyboardInterrupt:
             break
+{% endhighlight %}
 
 This was really positive and motivated me to use freenect with OpenCV. I looked it up on Google and found few links.
 

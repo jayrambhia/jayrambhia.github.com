@@ -17,49 +17,49 @@ So, I used it as the base of my code. Tried it and switced off the 2D view. So f
 There's a [similar question](http://stackoverflow.com/questions/12966858/how-to-split-the-left-and-right-camera-images-htc-evo-3d-in-the-camera-preview) on stackoverflow which proved to be very useful. Using the code provided to capture images and store it in bytes, I used OpenCV Mat's put instance to store the data in OpenCV Mat. Plus, I edited the HTC code a bit for my own use so that I could use both cameras and store the image data in bytes.
 
 Whenevr I pressed on text/button, using `onTouchEvent`, I'd use  `addCallbackBuffer` and `setPreviewCallbackWithBuffer` to get the raw image data in bytes.
+{% highlight java %}
+@Override
+public boolean onTouchEvent(MotionEvent event) {
+    switch (event.getAction()) {
+    case MotionEvent.ACTION_DOWN:
+    //  toggle();
+        // Intent cameraIntent = new Intent( android.provider.MediaStore.ACTION_IMAGE_CAPTURE ); 
+        // startActivityForResult(cameraIntent, 1337);
+        int bufferSize = width * height * 3;
+        byte[] mPreviewBuffer = null;
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()) {
-        case MotionEvent.ACTION_DOWN:
-        //  toggle();
-            //Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE); 
-            //startActivityForResult(cameraIntent, 1337);
-            int bufferSize = width * height * 3;
-            byte[] mPreviewBuffer = null;
+        // New preview buffer.
+        mPreviewBuffer = new byte[bufferSize + 4096];
 
-            // New preview buffer.
-            mPreviewBuffer = new byte[bufferSize + 4096];
-
-            // with buffer requires addbuffer.
-            camera.addCallbackBuffer(mPreviewBuffer);
-            camera.setPreviewCallbackWithBuffer(mCameraCallback);
-            break;
-        default:
-            break;
-        }
-        return true;
+        // with buffer requires addbuffer.
+        camera.addCallbackBuffer(mPreviewBuffer);
+        camera.setPreviewCallbackWithBuffer(mCameraCallback);
+        break;
+    default:
+        break;
     }
+    return true;
+}
+{% endhighlight %}
 
 Now, the function where I'd store the bytes data in OpenCV Mat.
-
-    private final Camera.PreviewCallback mCameraCallback = new Camera.PreviewCallback() {
-    public void onPreviewFrame(byte[] data, Camera c) {
-        Log.d(TAG, "ON Preview frame");
-        img = new Mat(height, width, CvType.CV_8UC1);
-        gray = new Mat(height, width, CvType.CV_8UC1);
-        img.put(0, 0, data);        
-        
-        
-        
-        Imgproc.cvtColor(img, gray, Imgproc.COLOR_YUV420sp2GRAY);
-        String pixvalue = String.valueOf(gray.get(300, 400)[0]);
-        String pixval1 = String.valueOf(gray.get(300, 400+width/2)[0]);
-        Log.d(TAG, pixvalue);
-        Log.d(TAG, pixval1);
-            // to do the camera image split processing using "data"
-        }
-    };
+{% highlight java %}
+private final Camera.PreviewCallback mCameraCallback = new Camera.PreviewCallback() {
+public void onPreviewFrame(byte[] data, Camera c) {
+    Log.d(TAG, "ON Preview frame");
+    img = new Mat(height, width, CvType.CV_8UC1);
+    gray = new Mat(height, width, CvType.CV_8UC1);
+    img.put(0, 0, data);        
+      
+    Imgproc.cvtColor(img, gray, Imgproc.COLOR_YUV420sp2GRAY);
+    String pixvalue = String.valueOf(gray.get(300, 400)[0]);
+    String pixval1 = String.valueOf(gray.get(300, 400+width/2)[0]);
+    Log.d(TAG, pixvalue);
+    Log.d(TAG, pixval1);
+        // to do the camera image split processing using "data"
+    }
+};
+{% endhighlight %}
 
 The image that we get from Android SDK Camera is in `YUV420s` Colorspace and we wanted it in BGRA/Grayscale corolspace. So we tried converting it, but we were getting only 0.0 as the data, so we figured there was some problem with YUV420s colorspace format. We looked up on the google and realized that OpenCV requires only 1 channel (not 4 or 3 channel) Mat to store YUV420S colorspace image. So, now we have both the images stored in Mat. Both images are places side by side. We can use both the images by splitting the Mat in half.
 
