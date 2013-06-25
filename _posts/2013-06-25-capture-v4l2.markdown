@@ -1,0 +1,14 @@
+---
+category: Blog
+tag: Open Source
+comments: true
+date: 2013-06-25 20:30:58
+layout: post
+slug: capture-v4l2
+title: Capture images using V4L2 on Linux
+---
+
+I have always been using OpenCV's `VideoCapture` API to capture images from webcam or USB cameras. OpenCV supports `V4L2` and I wanted to use something other than OpenCV's VideoCapture API so I started digging up about v4l2 and got few links using and few examples using which I successfully wrote a small code to grab an image using **V4L2** and convert it to OpenCV's Mat structure and display the image.
+
+### What is V4L2?
+V4L2 is the second version of Video For Linux which is a video capturing API for Linux. [Here](http://linuxtv.org/downloads/v4l-dvb-apis/) you can find amazing documentation about the API.

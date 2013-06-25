@@ -23,7 +23,7 @@ Once you create a new android project, you need to add OpenCV 2.4.4 library in i
 In your `MainActivity.java`, you need to add some imports, which I guess, you'll figure it out using Eclipse.
 
 Since we are using OpenCV's camera functionality, we need to use **CvCameraViewListener2**. So before calling any methods or callback, we would like to define our variables that we are going to use.
-
+{% highlight java %}
     public class MainActivity extends Activity implements CvCameraViewListener2 {
     
         private static final String TAG = "OCVSample::Activity";
@@ -33,9 +33,10 @@ Since we are using OpenCV's camera functionality, we need to use **CvCameraViewL
 
         // some other stuff shown below
     }
+{% endhighlight %}
 
 Now, we'd like to add callback method which would start the Android Application and show display on the screen.
-
+{% highlight java %}
     public class MainActivity extends Activity implements CvCameraViewListener2 {
 
         // some stuff before this
@@ -48,7 +49,7 @@ Now, we'd like to add callback method which would start the Android Application 
                     {
                         Log.i(TAG, "OpenCV loaded successfully");
                         mOpenCvCameraView.enableView();
-                        mOpenCvCameraView.setOnTouchListener(MainActivity.this);
+                        mOpenCvCameraView.setOnTouchListener( MainActivity.this );
                     } break;
                     default:
                     {
@@ -60,11 +61,12 @@ Now, we'd like to add callback method which would start the Android Application 
 
     // some more stuff here
     }
+{% endhighlight %}
     
 Log.i basically helps in debugging as it shows messages in the emulator Log Cat.
 
 Instantiate Main Activity.
-
+{% highlight java %}
     public class MainActivity extends Activity implements CvCameraViewListener2 {
 
         // some stuff here
@@ -75,21 +77,22 @@ Instantiate Main Activity.
 
     // some more stuff here
    }
+{% endhighlight %}
 
 Now, we need to configure how the application will behave when it's started, paused and resumed.
-
+{% highlight java %}
     public class MainActivity extends Activity implements CvCameraViewListener2 {
 
         // some stuff here
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             Log.i(TAG, "called onCreate");
-            super.onCreate(savedInstanceState);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+            super.onCreate( savedInstanceState );
+            getWindow().addFlags( WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON );
             setContentView(R.layout.tutorial1_surface_view);
-            mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.tutorial1_activity_java_surface_view);
+            mOpenCvCameraView = (CameraBridgeViewBase) findViewById ( R.id.tutorial1_activity_java_surface_view );
 
-            mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
+            mOpenCvCameraView.setVisibility( SurfaceView.VISIBLE );
             mOpenCvCameraView.setCvCameraViewListener(this);
         }
 
@@ -117,12 +120,13 @@ Now, we need to configure how the application will behave when it's started, pau
         
         // some more stuff here
     }
+{% endhighlight %}
 
 You might be wondering why there is `R.id.tutorial1_activity_java_surface_view`. The short answer is I am lazy and just copied it.
 
 Now, we need to implement camera methods in order to use it.
 `onCameraViewStarted()`, `onCameraViewStopped()` and `onCameraFrame()` must be implemented in order to create a working application. (Anyway, it will give errors if you don't add all three methods).
-
+{% highlight java %}
     public class MainActivity extends Activity implements CvCameraViewListener2 {
         // some stuff here
 
@@ -142,11 +146,12 @@ Now, we need to implement camera methods in order to use it.
 
     // no stuff here. It ends here, unless you want to add something more.
     }
+{% endhighlight %}
 
 So your `MainActivity.java` is done. Now, you need to add `tutorial1_surface_view` layout. You can add it in `Main_surface_view` also which is by default, but remember to change `tutorial1_surface_view` to `Main_surface_view` in the code. Create a file named **tutorial1_surface_view.xml** in your project's `/res/layout` folder.
 
 Copy the following xml in it.
-
+{% highlight xml %}
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:opencv="http://schemas.android.com/apk/res-auto"
@@ -169,6 +174,7 @@ Copy the following xml in it.
             opencv:show_fps="true"
             opencv:camera_id="any" />
     </LinearLayout>
+{% endhighlight %}
 
 You also need to add some permissions in **AndroidManifest.xml** Copy and change necessary information. Get the file [here](https://gist.github.com/jayrambhia/5265868).
 

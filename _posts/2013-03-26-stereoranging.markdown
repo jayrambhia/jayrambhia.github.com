@@ -35,20 +35,22 @@ The disparity of a feature is the difference in its horizontal position as obser
 ![Disparity](/assets/images/ranging1.jpg)
 
 #### Calculating Sensor Pixel Density
-
+{% highlight cpp %}
     sensors_pixels_per_mm = focal_length_pixels / focal_length_mm
+{% endhighlight %}
 
 After getting the required data, you can feed this into your program as constants and find the depth of the object easily.
 
 #### Calculating Depth
-
+{% highlight cpp %}
     focal_length_pixels = focal_length_mm * sensor_pixels_per_mm
     distance_mm = baseline_mm * focal_length_pixels / disparity_pixels
+{% endhighlight %}
 
 **distance_mm** is the depth of the object from the camera.
 
 I have kept an object at around 150 mm distance from the camera. Using the two images, I have disparity in pixel = 300 pixels. My cameras have focal length 2.5 mm
-
+{% highlight cpp %}
     disparity_pixel = 300
     focal_length_mm = 2.5
     focal_length_pixels = distance_mm * disparity_pixels / basline_mm
@@ -58,9 +60,10 @@ I have kept an object at around 150 mm distance from the camera. Using the two i
     sensors_pixels_per_mm = focal_length_pixels / focal_length_mm
                           = 625/2.5
                           = 250
+{% endhighlight %}
 
 Now, you have the necessary data to proceed. Just to double check, as you can see a poster box in the left of the images, I will try to figure out depth of the end part of it.
-
+{% highlight cpp %}
     distance_mm = baseline_mm * focal_length_pixels / disparity_pixels
 
     disparity_pixels = 60
@@ -68,6 +71,7 @@ Now, you have the necessary data to proceed. Just to double check, as you can se
     focal_length_pixels = 625
 
     distance_mm = 750
+{% endhighlight %}
 
 Distnace calculated is 70 cm and actual distance is 80 cm so that is a bit erroneous but we can work with that as this is the fastest and easiest way to do it.
 
