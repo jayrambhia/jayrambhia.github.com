@@ -11,4 +11,149 @@ title: Capture images using V4L2 on Linux
 I have always been using OpenCV's `VideoCapture` API to capture images from webcam or USB cameras. OpenCV supports `V4L2` and I wanted to use something other than OpenCV's VideoCapture API so I started digging up about v4l2 and got few links using and few examples using which I successfully wrote a small code to grab an image using **V4L2** and convert it to OpenCV's Mat structure and display the image.
 
 ### What is V4L2?
-V4L2 is the second version of Video For Linux which is a video capturing API for Linux. [Here](http://linuxtv.org/downloads/v4l-dvb-apis/) you can find amazing documentation about the API.
+V4L2 is the second version of Video For Linux which is a video capturing API for Linux. [Here](http://linuxtv.org/downloads/v4l-dvb-apis/) you can find amazing documentation about the API. So it gives you a very easy inteface to use it with C, C++ and Python. I haven't tried Python bindings yet.
+
+### How To Use V4L2 API?
+I started reading documentation but didn't really understand much until I found [this example](https://gist.github.com/Circuitsoft/1126411). The code had some issues and wasn't working properly. But I just copied it and tried understanding it. So this is my understanding of the code.
+
+#### Step 1: Open the Capture Device.
+In Linux, default capture devide is generally `/dev/video0`, but if you're using USB webcams, the index will vary accordingly.
+{% highlight c %}
+int fd;
+fd = open("/dev/video0", O_RDWR);
+if (fd == -1)
+{
+    // couldn't find capture device
+    perror("Opening Video device");
+    return 1;
+}
+{% endhighlight %}
+
+#### Step 2: Query the Capture
+So, basically you check if the capture is available or not. V4L2 doesn't support some cameras so it would throw an error here. We need to use `v4l2_capability` structure and `VIDIOC_QUERYCAP` to query the capture. Read More [here](http://linuxtv.org/downloads/v4l-dvb-apis/vidioc-querycap.html#v4l2-capability).
+
+{% highlight c %}
+struct v4l2_capability caps = {0};
+if (-1 == xioctl(fd, VIDIOC_QUERYCAP, &caps))
+{
+    perror("Querying Capabilites");
+    return 1;
+}
+{% endhighlight %}
+
+Here `xioctl` is a wrapper function over `ioctl`. **ioctl()** is a function to manipulate device parameters of special files. Read more [here](http://man7.org/linux/man-pages/man2/ioctl.2.html).
+
+{% highlight c %}
+#include <sys/ioctl.h>
+
+static int xioctl(int fd, int request, void *arg)
+{
+    int r;
+        do r = ioctl (fd, request, arg);
+        while (-1 == r && EINTR == errno);
+        return r;
+}
+{% endhighlight %}
+
+#### Step 3: Image Format
+V4L2 provides an easy interface to check the image formats and colorspace that your webcam supports and provide. `v4l2_format` sturcture is to be used to change image format.
+
+{% highlight c %}
+struct v4l2_format fmt = {0};
+fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+fmt.fmt.pix.width = 320;
+fmt.fmt.pix.height = 240;
+fmt.fmt.pix.pixelformat = V4L2_PIX_FMT_MJPEG;
+fmt.fmt.pix.field = V4L2_FIELD_NONE;
+
+if (-1 == xioctl(fd, VIDIOC_S_FMT, &fmt))
+{
+    perror("Setting Pixel Format");
+    return 1;
+}
+{% endhighlight %}
+
+I have set image width and height to be 320 and 240 respectively. You should check out the format that your camera supports. My Camera supports MJPEG and YUV and hence I have set image format to MJPEG.
+
+#### Step 4: Request Buffers
+A buffer contains data exchanged by application and driver using Streaming I/O methods. `v4l2_requestbuffers` is used to allocate device buffers. Read more [here](http://linuxtv.org/downloads/v4l-dvb-apis/vidioc-reqbufs.html#v4l2-requestbuffers).
+
+{% highlight c %}
+struct v4l2_requestbuffers req = {0};
+req.count = 1;
+req.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+req.memory = V4L2_MEMORY_MMAP;
+ 
+if (-1 == xioctl(fd, VIDIOC_REQBUFS, &req))
+{
+    perror("Requesting Buffer");
+    return 1;
+}
+{% endhighlight %}
+
+The ioctl is used to initialize `memory mapped`(mmap), user pointer based I/O.
+
+#### Step 5: Query Buffer
+After requesting buffer from the device, we need to query the buffer in order to get raw data. Read more [here](http://linuxtv.org/downloads/v4l-dvb-apis/vidioc-querybuf.html)
+
+{% highlight c %}
+struct v4l2_buffer buf = {0};
+buf.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+buf.memory = V4L2_MEMORY_MMAP;
+buf.index = bufferindex;
+if(-1 == xioctl(fd, VIDIOC_QUERYBUF, &buf))
+{
+    perror("Querying Buffer");
+    return 1;
+}
+
+buffer = mmap (NULL, buf.length, PROT_READ | PROT_WRITE, MAP_SHARED, fd, buf.m.offset);
+{% endhighlight %}
+
+The **mmap()** function asks to map length bytes starting at offset in the memory of the device specified by fd into the application address space, preferably at address start. Read more [here](http://linuxtv.org/downloads/v4l-dvb-apis/func-mmap.html)
+
+#### Step 6: Capture Image
+
+After querying the buffer, the only thing left is capturing the frame and saving it in the buffer.
+
+{% highlight c %}
+if(-1 == xioctl(fd, VIDIOC_STREAMON, &buf.type))
+{
+    perror("Start Capture");
+    return 1;
+}
+ 
+fd_set fds;
+FD_ZERO(&fds);
+FD_SET(fd, &fds);
+struct timeval tv = {0};
+tv.tv_sec = 2;
+int r = select(fd+1, &fds, NULL, NULL, &tv);
+if(-1 == r)
+{
+    perror("Waiting for Frame");
+    return 1;
+}
+ 
+if(-1 == xioctl(fd, VIDIOC_DQBUF, &buf))
+{
+    perror("Retrieving Frame");
+    return 1;
+}
+{% endhighlight %}
+
+#### Step 7: Store data in OpenCV datatype
+
+I wanted to stored the retrieved data in OpenCV image structure. It took me few hours to figure out the perfect way. So here's how I did it.
+
+{% highlight c %}
+CvMat cvmat = cvMat(480, 640, CV_8UC3, (void*)buffer);
+IplImage * img;
+img = cvDecodeImage(&cvmat, 1);
+{% endhighlight %}
+
+So this how I captured frames from my webcam and stored in OpenCV Image data structure.
+
+You can find the complete code [here on my GitHub](https://gist.github.com/jayrambhia/5866483)
+
+P.S. Coding period for gsoc has started and I have to start working.
