@@ -37,4 +37,4 @@ Recent Projects
 
 ### What am I doing nowadays?
 
-I am working on object and pattern recognition to identify the speceis of flora and fauna. I'm working on 3D gesture recognition at <a href="http://duceretech.com/">Ducere Technologies</a> as a computer vision intern. And obviously, playing Ultimate frisbee.
+I am working on object and pattern recognition to identify the speceis of flora and fauna. I'm also working on 3D Depth based image segmentation. And obviously, playing Ultimate frisbee.
