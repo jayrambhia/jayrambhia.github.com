@@ -5,7 +5,7 @@ comments: true
 date: 2013-08-25 13:00:00
 layout: post
 slug: superpixels-slic
-title: Superpixels using SLIC
+title: SLIC based Superpixel Segmentation
 ---
 
 It's been two months since I have written about my work. Well, to be honest, I didn't do that much work which could be put up on a blog. I am working on a 3D application which is based on Android and when I get a chance, I'll post about it. Meanwhile, I am also working with SimpleCV as part of my Google Summer of Code 2013 prgoram. For the mid term, I was working on porting it to cv2 and cleaning up the legacy code. I need to write a post about all the updates and new features that it will have. One of the features that I am planning to add is Superpixels based on SLIC algorithm.
