@@ -4,7 +4,7 @@ title: Home
 slug: home
 ---
 Being a __paranoid android__, I believe in Open Source and have immense faith in the community. Developer of open source framework for Machine Vision - [SimpleCV](http://simplecv.org/).
-If you want to talk to me, or hire me, or give me a thesis opportunity, drop me a <a href="mailto:jayrambhia777@gmail.com">mail</a>.
+If you want to get in touch, <a href="mailto:jayrambhia777@gmail.com">say Hi!</a>.
 
 Events
 {% for post in site.posts limit:5 %}
