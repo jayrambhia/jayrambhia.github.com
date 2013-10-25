@@ -49,4 +49,8 @@ In RHT the storage requirements are greatly reduced and only one accumulator is 
 
 SHT splits parameter space into descrete space and limits the resolution. The resolution can be increased at the cost of computation. RHT can support high resolution without affecting performance.
 
+### Referencs
+
+ - [Probabilistic Hough Transform](http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/AV1011/macdonald.pdf)
+
 P.S. Added Disqus for comments.
