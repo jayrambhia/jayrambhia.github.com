@@ -141,7 +141,8 @@ Now, the application is ready to deploy on the phone!
 
 ### Final Application
 
-I have made a sample application based on this which you can refer to. You can fork it. 
+I have made a sample application based on this which you can refer to. You can fork it.
+
 ## [nativecodeGray](https://github.com/jayrambhia/nativecodeGray). 
 
 If you are trying this code, make sure that you set appropriate paths.
