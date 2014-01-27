@@ -1,4 +1,4 @@
-permalink: /blog/:title
+permalink: /:categories/:title
 markdown: kramdown
 exclude: ['Rakefile', 'CNAME', 'sass/', 'script/', 'README.md']
 
