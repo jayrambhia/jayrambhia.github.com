@@ -92,7 +92,7 @@ Here's the video of the Lucas Kanade Tracker that I implemented in SimpleCV usin
 
 <iframe src="http://player.vimeo.com/video/47386269" width="500" height="405" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href="http://vimeo.com/47386269">Lucas Kanade Tracker on MotoGP implemented using OpenCV and SimpleCV</a> from <a href="http://vimeo.com/jayrambhia">Jay Rambhia</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
 
-Here's the complete [LK-OpenCV code](https://github.com/jayrambhia/Vision/blob/master/OpenCV/LKTracker.py).
+Here's the complete [LK-OpenCV code](https://github.com/jayrambhia/Vision/blob/master/OpenCV/Python/LKTracker.py).
 
 P.S. GSoC is about to end and I'm back to the campus.
 
