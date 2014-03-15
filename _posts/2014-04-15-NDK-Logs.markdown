@@ -1,0 +1,45 @@
+---
+category: Notes
+tag: Android
+comments: true
+date: 2014-03-15 16:00:00
+layout: post
+slug: NDK-Logs
+title: Adding Logs in JNI Code
+---
+
+I am working with NDK and Android so sometimes I need to debug the native code to see if it's working properly or not. I wanted something similar to Android's `Log` function.
+
+So here's how to use `log` in Native code.
+
+{% highlight cpp %}
+
+#include <android/log.h>
+
+#define APPNAME "module_name jni"
+#define LOGD(TAG) __android_log_print(ANDROID_LOG_DEBUG , APPNAME,TAG);
+
+{% endhighlight %}
+
+To use this in some function, just use it as following.
+
+{% highlight cpp %}
+
+    LOGD("some content here");
+
+{% endhighlight %}
+
+To check value of some variable
+
+{% highlight cpp %}
+
+    int rows = 512;
+
+    char rowStr[10];
+    char rStr[] = "Rows = ";
+
+    sprintf(rowStr, "%d", rows);
+    strcat(rowStr, rStr);
+    LOGD(rowStr); // prints Rows = 512
+
+{% endhighlight %}
