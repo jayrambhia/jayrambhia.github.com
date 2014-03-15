@@ -43,3 +43,5 @@ To check value of some variable
     LOGD(rowStr); // prints Rows = 512
 
 {% endhighlight %}
+
+P.S. Write OpenCV C++ and use it with NDK. Things are so good.
