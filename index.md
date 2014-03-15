@@ -16,9 +16,7 @@ Events
 Articles
 {% for post in site.posts limit:5 %}
 {% if post.category == "Blog"%}
-{% if post.tag == "Computer Vision"%}
 - **[{{ post.title }}]({{ post.url }})**<!-- -->
-{% endif %}
 {% endif %}
 {% endfor %}
 
@@ -37,4 +35,4 @@ Recent Projects
 
 ### What am I doing nowadays?
 
-I am working on object and pattern recognition to identify the speceis of flora and fauna. I'm also working on 3D Depth based image segmentation. And obviously, playing Ultimate frisbee.
+Working at a Computer Vision based startup [Tesseract](http://tesseract.in/) as technology head and co-founder. Making Computer Vision based real-world applications. And obviously, playing Ultimate frisbee.
