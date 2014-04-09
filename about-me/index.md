@@ -6,11 +6,11 @@ slug: about-me
 
 ## Hey!
 
-I am an undergraduate student interested in making applications based on Computer Vision to solve real world problems. Visual tracking and object recognition being my major interests.
+I am an undergraduate student who lives on computer vision based applications for real world. I like to implement theories to solve real world problems. I work with Python, C++ and Android to bring it all togehter.
 
 ## What do I like to do?
 
-I love to code. I write various applications using Python and C++, especially Computer Vision based applications. I have participated in Google Summer of Code 2012 with SimpleCV. My project has been accepted for Google Summer of Code 2013 with SimpleCV. I believe in open source and I'm an active developer of [SimpleCV](http://simplecv.org/). You can fork my work on [GitHub](https://github.com/jayrambhia).
+I love to code. I write various applications using Python and C++, especially Computer Vision based applications. I have participated in Google Summer of Code 2012 and 2013 with SimpleCV. I'm an active developer of [SimpleCV](http://simplecv.org/). I like to bring projects into reality and make it user friendly. Recently, I have been working with Android to put Computer Vision applications on mobile devices. You can fork my work on [GitHub](https://github.com/jayrambhia). Apart from that, I love to play Ultimate frisbee.
 
 ## How to Contact Me
 
