@@ -24,7 +24,6 @@ A friend was working on a project for data visualization using **D3.js** and I d
                           .idVal("#bar-chart-d3")
                           .showXText(true)
                           .showLegend(true)
-                          .autoUpdateWidth(true)
                           .plot();
 {% endhighlight %}
 
@@ -85,7 +84,7 @@ Here data is raw data. A 2 dimensional array. I'm generating random data and plo
 
     //var data = generateData(10, 2);
     var data = [["Fruit","Prices"],["Apple",100],["Orange", 150], ["Peach", 85], ["Grapes", 65], ["Mango", 225]];
-    var chart = barChart().width(600).height(300).barWidth(20).separation(3).showAxis(true).showXText(true).showLegend(true).autoUpdateWidth(true).load(data).idVal("#bar-chart-d3").plot();
+    var chart = barChart().width(400).height(300).barWidth(20).separation(3).showAxis(true).showXText(true).showLegend(true).load(data).idVal("#bar-chart-d3").plot();
 </script>
 
 Till now, I have created these charts.
