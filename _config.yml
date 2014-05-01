@@ -5,9 +5,9 @@ exclude: ['Rakefile', 'CNAME', 'sass/', 'script/', 'README.md']
 url: http://jayrambhia.com
 
 name: "Jay Rambhia"
-tagline: "Make computers see"
-description: "Notes and codes of a paranoid android who wants to make applications to solve real world problems"
-about: "I'm <strong>Jay Rambhia</strong>. I'm currently working in the field of Computer Vision. I also like to spend time creating applications."
+tagline: "Don't Panic!"
+description: "Notes and codes of a paranoid android"
+about: "I'm <strong>Jay Rambhia</strong>. I'm currently working in the field of Computer Vision. I like to develop applications to solve real world problems."
 author:
  name: "Jay Rambhia"
  email: "jayrambhia777@gmail.com"
