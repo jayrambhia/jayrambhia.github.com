@@ -32,12 +32,6 @@ Recent Projects
 {% endfor %}
 -->
 
-### What would you like to track?
-
-- [**The Old Archives**](/archive)
-- [**Paranoid Android's Blog**](/blog/)
-- [**Me**](/me)
-
 ### What am I doing nowadays?
 
 Working at a Computer Vision based startup [Tesseract](http://tesseract.in/) as technology head and co-founder. Making Computer Vision based real-world applications. And obviously, playing Ultimate frisbee.
