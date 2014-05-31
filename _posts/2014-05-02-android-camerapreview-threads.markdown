@@ -22,7 +22,7 @@ AsyncTask enables proper and easy use of the UI thread. This class allows to per
 Some important aspects of AsyncTask.
 
 <ul>
-    <li> It must be subclassed to be used.</li>
+    <li>It must be subclassed to be used.</li>
     <li>The subclass will override at least one of the methods of AsyncTask. <strong> doInBackground(Params...) </strong> is the most important one of them. This where you would want to do your processing. This runs in a background thread. </li>
     <li> <strong> onPostExecute(Result) </strong> allows you to peform necessary functions after the background processing is completed. If you want to do some changes in UI (render bitmap, change labels, etc), this where you should do it. </li>
     <li> <strong> onPreExecute() </strong> is invoked on the UI thread before executing the task. You can do necessary set up for the task here (show a progress bar etc) </li>
