@@ -20,6 +20,7 @@ Things to remember:
 
  - Check if face detection is supported by the device or not using Camara.Parameters
  - When calling **Camera.startFaceDetection()** function, check if face detection is not already running.
+ - **Android.Hardware.Camera** gives face coordinates based on its sensor values which range from (-1000, -1000) to (1000, 1000). First one being top left corner and the latter one being bottom right corner. So now you must resample those coordinates based on your preview size or canvas size.
 
 A class that implements Camera.PreviewCallback
 
