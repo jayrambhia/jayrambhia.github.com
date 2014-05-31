@@ -8,7 +8,7 @@ slug: android-camerapreview-threads
 title: Android CameraPreview with PreviewCallback and Processing Frames using Threads
 ---
 
-Recentl, I have started working with Android extensively. It's been not easy. I had to figure out a lot of stuff simultaneously. How UI works, how threads run, how to process frames, etc. In [my previous post](/blog/android-camerapreview-opencv), I have shown how to process each frame **onPreviewFrame** callback. In this post, I am going to write about using asynchronous threads to do image processing so that workload of ui thread reduces.
+Recently, I have started working with Android extensively. It hasn't been easy. I had to figure out a lot of stuff and that too simultaneously. How UI works, how threads run, how to process frames, etc. In [my previous post](/blog/android-camerapreview-opencv), I have shown how to process each frame **onPreviewFrame** callback. In this post, I am going to write about using asynchronous threads to do image processing so that workload of ui thread reduces.
 
 ## AsyncTask
 
