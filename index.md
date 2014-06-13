@@ -23,14 +23,14 @@ Events
 {% endif %}
 {% endfor %}
 
-<!--
-Recent Projects
+
+### Projects
 {% for post in site.posts limit:5 %}
 {% if post.category == "Project"%}
 - **[{{ post.title }}]({{ post.url }})**
 {% endif %}
 {% endfor %}
--->
+
 
 ### What am I doing nowadays?
 

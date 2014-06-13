@@ -1,0 +1,39 @@
+---
+category: Project
+tag: Android
+comments: true
+date: 2014-06-13 13:00:00
+layout: post
+slug: lenx
+title: LenX - Long Exposure Photography for Android
+---
+
+So, finally, after 2 months of grappling with Android development and studying optimization of image processing on phones & photography concepts, me & my friends have finally bought our idea to fruition. 
+
+Today we’ve released a new & improved version of our first Android app - LenX, on Google Play. LenX is a clean, simple interface to help you generate long exposure photography effects using your smartphone camera. You can use it for generating DSLR-like effects like a pro - and it’s as easy as shooting a video! In beta testing, we’ve seen it used for shooting quality motion blurs, light painting and even of water in motion. But the only limit to it is your creativity.
+
+A lucid first-time user experience (FTUE) will guide you about using the app. We’ve tried to add as many features as possible without cluttering the app up too much. All the basic camera capabilities (zoom, autofocus, color balance etc.) function within the app. We’ve also added a timer setting to minimize the possibility of affecting the output due to hand movement while starting and stopping the shot.
+
+![lenx](/assets/images/lenx-0.jpg)
+
+Having tested it extensively myself, here are some of my experiences to start you off on the right foot 
+
+ - Keep Steady: I would suggest using a support to steady your hand while using LenX or securing your smartphone to a tripod, if you are indulgent enough to have one for your phone photography pursuits, for best results.
+ - Be patient with it: The initial outputs are going to be blurry and might seem quantized rather than the continuous outputs from high-end cameras. It takes a little getting used to and being accommodative. 
+
+Remember, this is your smartphone - even the oldest of the widely adopted ones are in their tweens and haven’t yet realized their full hardware potential. Like tweens, they too have messed up priorities and keep allocating processing power to banal background processes, giving you lower frame rate. And since Android is touchy about offering control on the shutter hardware, we have to process full frames - which slows it down further.
+
+That being said, we’re working on clever optimizations for popular applications like light painting and will release them soon to take the output closer to the DSLR goal. So, please show us some support, go download the app from Play Store and stay tuned for updates!
+
+Get LenX on [Google Play Store](https://play.google.com/store/apps/details?id=com.fenchtose.lenx)
+
+P.S. The app’s already become quite popular, having been featured on [Drippler](http://drippler.com/updates/share/lenx-take-long-exposure-shots-adjust-exposure-level-android) and Top 10 hottest apps on [AppBrain](http://www.appbrain.com/app/lenx/com.fenchtose.lenx). It’s also been covered in various online app reviews, check them out here
+
+  - [Vinangre Asesino](http://www.vinagreasesino.com/articulos/lenx-para-tomar-fotografias-con-larga-exposicion-en-android.php)
+  - [Addictve Tips](http://www.addictivetips.com/android/take-long-exposure-shots-adjust-exposure-level/)
+  - [Android pit](http://www.androidpit.com/en/android/market/apps/app/com.fenchtose.lenx/lenx)
+  - [Android Jefe](http://www.androidjefe.com/lenx-exposicion/)
+  - [Verified Tricks](http://verifiedtricks.in/take-long-exposure-shots-from-your-android-using-lens-x/)
+  - [Programosy](http://www.programosy.pl/program,android-lenx.html)
+  - [I Love Free Apps](http://www.programosy.pl/program,android-lenx.html)
+
