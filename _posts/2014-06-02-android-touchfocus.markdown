@@ -154,6 +154,8 @@ Once this is done, we need to show the focus indication else users don't think a
 
 ### DrawingView
 
+{% highlight java %}
+
 public class DrawingView extends View {
     private boolean haveTouch = false;
     private Rect touchArea;
@@ -182,6 +184,8 @@ public class DrawingView extends View {
         }
     }   
 }
+
+{% endhighlight %}
 
 So, this was how I put Touch to Focus in LenX. The project code is up on GitHub. You can fork it from [here](https://github.com/jayrambhia/Touch2Focus).
 
