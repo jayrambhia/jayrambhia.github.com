@@ -28,4 +28,4 @@ After getting the cursor, we would extract the metadata and create new instances
 
 To show all these audio files, we were using custom `ArrayAdapter` and `ListView`.
 
-P.S. The app is turning out be really cool.
+P.S. The app is turning out to be really cool.
