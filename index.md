@@ -30,8 +30,5 @@ Events
 - **[{{ post.title }}]({{ post.url }})**
 {% endif %}
 {% endfor %}
-
-
-### What am I doing nowadays?
-
-Working at a Computer Vision based startup [Tesseract](http://tesseract.in/) as technology head and co-founder. Making Computer Vision based real-world applications. And obviously, playing Ultimate frisbee.
+- **[Lenx](http://lenxapp.com/)**
+- **[Waeo](http://getwaeo.com/)**
