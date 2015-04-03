@@ -26,19 +26,21 @@ I created a custom EditText with easy approach to add and remove TextWatcher. I 
  
  - If you change something in the edittext with state `STATE_OTHER`, nothing much happens. You just have to take care of all the views' state while adding or removing new views.
  
- ### Screenshot
+### Screenshot
  
  Here's a sample screenshot of the app.
  
  ![Screenshot](https://github.com/jayrambhia/ChecklistDemo/raw/master/images/screenshot_1.jpg)
+
+As you can see I have just implemented the part where users can add checklists. Checking an entry and adding to other layout is the next thing on the checklist. Bad pun.
  
- ### Code
+### Code
  
  Here's the main class which takes care of states.
  
  {% gist jayrambhia/d855ce46f8d4add0ebc1 CheckListItemArrayList.java %}
  
- ### Demo Application
+### Demo Application
  
  I have started to learn `MVP` pattern for Android. Model-View-Presenter. Activity/Fragment is treated as view. Most of the logic is implemented in Model and Presenter. Presenter is the communication link between Model and View. You can fork the project here - **[CheckListDemo](https://github.com/jayrambhia/ChecklistDemo)**
  
