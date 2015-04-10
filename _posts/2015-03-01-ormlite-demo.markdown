@@ -73,7 +73,6 @@ public class NoteRepository {
 ### Add Note To Database
 
 {% highlight java %}
-
     Note note = new Note();
     note.title = "Test note";
     note.message = "This is a test note";
@@ -89,6 +88,7 @@ public class NoteRepository {
 I have uploaded this code on GitHub with some functionality so that app is responsive. You can fork it **[here](https://github.com/jayrambhia/ORMLiteDemo)**.
 
 Here's an updated screenshot of the app.
+
 ![screenshot](https://github.com/jayrambhia/ORMLiteDemo/blob/master/screenshot/Screenshot_2015-04-08-18-26-06.png)
 
 P.S. I have strated to work with RxJava and it has been a joyride!
