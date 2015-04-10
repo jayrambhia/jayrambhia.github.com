@@ -91,7 +91,7 @@ I have uploaded this code on GitHub with some functionality so that app is respo
 
 Here's an updated screenshot of the app.
 
-![](https://github.com/jayrambhia/ORMLiteDemo/blob/master/screenshot/Screenshot_2015-04-08-18-26-06.png)
+![screenshot](https://raw.githubusercontent.com/jayrambhia/ORMLiteDemo/master/screenshot/Screenshot_2015-04-08-18-26-06.png)
 
 [screenshot](https://github.com/jayrambhia/ORMLiteDemo/blob/master/screenshot/Screenshot_2015-04-08-18-26-06.png)
 
