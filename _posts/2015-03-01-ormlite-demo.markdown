@@ -91,6 +91,8 @@ I have uploaded this code on GitHub with some functionality so that app is respo
 
 Here's an updated screenshot of the app.
 
-![screenshot](https://github.com/jayrambhia/ORMLiteDemo/blob/master/screenshot/Screenshot_2015-04-08-18-26-06.png)
+![](https://github.com/jayrambhia/ORMLiteDemo/blob/master/screenshot/Screenshot_2015-04-08-18-26-06.png)
+
+[screenshot](https://github.com/jayrambhia/ORMLiteDemo/blob/master/screenshot/Screenshot_2015-04-08-18-26-06.png)
 
 P.S. I have strated to work with RxJava and it has been a joyride!
