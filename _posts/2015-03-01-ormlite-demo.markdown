@@ -74,12 +74,14 @@ public class NoteRepository {
 
 {% highlight java %}
     Note note = new Note();
-    note.title = "Test note";
-    note.message = "This is a test note";
-    note.created_ts = new Date();
+    note.setTitle("Test note");
+    note.setMessage("This is a test note");
+    note.setCreated_ts(new Date());
     
     NoteRepository noteRepository = new NoteRepositroy(context);
     noteReposiory.create(note);
+    
+    Log.i(TAG, "note id: " + note.id);
 
 {% endhighlight %}
 
