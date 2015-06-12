@@ -97,7 +97,7 @@ This is it. You don't have to do anything else. Just set your layout properly, a
  
 Here's a cool Youtube demo that I have put.
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=DlVTRMte4qU" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DlVTRMte4qU" frameborder="0" allowfullscreen></iframe>
 
 I have added some dumb and some meaningful code to it to show fragments, adapters, etc. I have also tried to retain states and instances of fragments so all of that code is also added. You can fork the GitHub Repository - [ContactsDemo](https://github.com/jayrambhia/contactsdemo)
 
