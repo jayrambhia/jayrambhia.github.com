@@ -64,6 +64,8 @@ We need the view to enter as soon as upward scroll is detected. But we do not wa
 
 We need the view to enter as soon as upward scroll is detected.
 
+NOTE : All of these definitions are taken from Android Developers blog.
+
 #### Toolbar
 
 scrollFlags - `scroll`, `enterAlways`
