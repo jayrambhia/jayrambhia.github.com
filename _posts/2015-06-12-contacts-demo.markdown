@@ -45,10 +45,63 @@ Let's get started with the layout.
 
 ### Layout
 
-{% gist jayrambhia/ab3029a9ece2be50ced4  activity_contacts_layout.xml %}
+{% gist jayrambhia/ab3029a9ece2be50ced4 activity_contacts_layout.xml %}
 
 
 #### CollapsingToolbarLayout : 
 
-scrollFlags - `scroll` | `enterAlwaysCollapsed` | `enterAlwyas`
+scrollFlags - `scroll`, `enterAlwaysCollapsed`, `enterAlwyas`
+
+`scroll` - this flag should be set for all views that want to scroll off the screen - for views that do not use this flag, they’ll remain pinned to the top of the screen.
+
+We need the view to scroll off the screen as the scrolling view scrolls up.
+
+`enterAlwaysCollapsed` - When your view has declared a minHeight and you use this flag, your View will only enter at its minimum height (i.e., ‘collapsed’), only re-expanding to its full height when the scrolling view has reached it’s top.
+
+We need the view to enter as soon as upward scroll is detected. But we do not want it to be completely re-expanded.
+
+`enterAlways` - this flag ensures that any downward scroll will cause this view to become visible, enabling the ‘quick return’ pattern
+
+We need the view to enter as soon as upward scroll is detected.
+
+#### Toolbar
+
+scrollFlags - `scroll`, `enterAlways`
+
+We need Toolbar to scroll off the screen and quickly return back if upward scroll is detected.
+
+#### CardView - View that gets collapsed.
+
+collapseMode - `pin`
+
+`pin` ensures that the view itself stays pinned and gets cut out as its parent `CollapsingToolbar` is being collapsed.
+
+#### LinearLayout - Layout that holds TabLayout and ViewPager
+
+layout_behavior - `@string/appbar_scrolling_view_behavior` - This sets the behavior of the view with its siblings.
+
+#### TabLayout
+
+scrollFlags - `scroll`
+
+We need the TabLayout to scroll up as scrolling view scrolls.
+
+### Conclusion
+
+This is it. You don't have to do anything else. Just set your layout properly, and everything is taken care of. Although there are few glitches that I noticed.
+
+ - Even if the RecyclerView is empty, views still scroll.
+ - If ViewPager is not initialized with Fragments, weird things happen and TabLayout shows at the bottom.
+ 
+Here's a cool Youtube demo that I have put.
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=DlVTRMte4qU" frameborder="0" allowfullscreen></iframe>
+
+I have added some dumb and some meaningful code to it to show fragments, adapters, etc. I have also tried to retain states and instances of fragments so all of that code is also added. You can fork the GitHub Repository - [ContactsDemo](https://github.com/jayrambhia/contactsdemo)
+
+### Credits
+
+ - [CheeseSquare](https://github.com/chrisbanes/cheesesquare)
+ - [AndroidTool](https://github.com/mortenjust/androidtool-mac) for Video and GIF.
+
 
