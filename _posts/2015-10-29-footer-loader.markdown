@@ -2,7 +2,7 @@
 category: Blog
 tag: Android
 comments: true
-date: 2015-10-29 03:00:00
+date: 2015-10-29 01:00:00
 layout: post
 slug: footer-loader
 title: Footer Loader for infinite scrolling
@@ -33,7 +33,7 @@ Well, there's no catch. It's just pretty simple. All you have to do is,
 
 Here's a simple demo:
 
-![demo gif](https://github.com/jayrambhia/FooterLoaderAdapterDemo/blob/master/demo.gif)
+![demo gif](https://github.com/jayrambhia/FooterLoaderAdapterDemo/blob/master/demo1.gif)
 
 ### Show me the Code
 
