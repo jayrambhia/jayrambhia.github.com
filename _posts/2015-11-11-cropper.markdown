@@ -16,7 +16,7 @@ Users at [Elanic](http://elanic.in/) have been asking us to let them add uncropp
 
 Here's a Youtube video
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=OoYSt2vtdNs" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OoYSt2vtdNs" frameborder="0" allowfullscreen></iframe>
 
 
 ### Sqaure Cropper - No Cropper
