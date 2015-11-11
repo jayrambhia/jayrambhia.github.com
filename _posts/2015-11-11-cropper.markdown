@@ -14,6 +14,8 @@ Users at [Elanic](http://elanic.in/) have been asking us to let them add uncropp
 
 ![cropper_demo](https://raw.githubusercontent.com/jayrambhia/CropperNoCropper/master/art/demo1.gif)
 
+Here's a Youtube video
+
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=OoYSt2vtdNs" frameborder="0" allowfullscreen></iframe>
 
 
