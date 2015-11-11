@@ -1,0 +1,41 @@
+---
+category: Blog
+tag: Android
+comments: true
+date: 2015-11-11 16:00:00
+layout: post
+slug: instagram-cropper
+title: Instagram like Image Cropper
+---
+
+Instagram recently released a new feature which allows users to upload non-square images. They implemented a new cropper for that which crops the image if it fits in the square. It also has an option where users can use rectangle images with appropriate cropping. It's really a handy feature to have.
+
+Users at [Elanic](http://elanic.in/) have been asking us to let them add uncropped images of their products. Currently, we just allow users to upload square cropped images. If the users need to add a full image, they'd be required to use some other app which adds padding and makes it a square. We realized that the new instagram cropper does this so effectively and elegantly. So we tried to replicate the same and here's what we have.
+
+![cropper_demo](https://raw.githubusercontent.com/jayrambhia/CropperNoCropper/master/art/demo1.gif)
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=OoYSt2vtdNs" frameborder="0" allowfullscreen></iframe>
+
+
+### Sqaure Cropper - No Cropper
+
+The cropper that we made only support Square cropping and if the user decides to use the full un-cropped image, we add padding to make it square. The cropper has some basic logic.
+
+### What's the Logic
+
+ - `Crop To Center` - If the image is not square, set image in the imageview such that it crops to center (centerCrop).
+ - `Fit To Center` - Image needs to be fit to the center. It should not be cropped and must be stuck to the edges. Landscape image should be stuck to lef and right edges.
+ - User overdrags the image -> it needs to be adjusted so that no padding is required. eg. image is overdragged to the left, it should be adjusted and stuck to the left edge.
+ - User zooms out so that padding shows up at the sides -> the image needs to be centered. eg. Portrait image is zoomed out so it needs to be centered in left and right direction.
+ - User zooms out beyond a certain limit -> the image needs to be set to min zoom and centered.
+ - User zooms in beyond a certain limit -> the image needs to be set to max zoom and adjusted to the sides.
+
+This is the basic logic behind the cropper. I was initially very confused regarding how to implement this. First thing that I did was make the image center crop. For this I used `ImageMatrix` functionality of ImageView. After that, I tried to overdrag it to left and try to make it stick to the left egde. This gave me some idea reagarding how to use Matrix and its functinality such as `postTranslate`. After this, I tried to do simple zooming. I thought recognizing pinch zoom would be a difficult task but `ScaleDetector` and `GestureDetector` helped a lot.
+
+Once the basic functionality was implemented, I added miscellaneous things such as a grid to show on top when the user uses some gesture. It was still lacking something. Instagram cropper had smooth animation when it was trying to adjust the image automatically. I also added some animation later but it's not as smooth as Instagram's but I think a decent effort for the first try.
+
+### Show Me Code
+
+Well, the code is a bit complex and involves a big file. So here's the [GitHub Repo](https://github.com/jayrambhia/CropperNoCropper)
+
+P.S. Do try the [Elanic App](https://play.google.com/store/apps/details?id=in.elanic.app). We are adding some great features.
