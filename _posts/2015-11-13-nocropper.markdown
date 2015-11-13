@@ -50,7 +50,7 @@ Following repositories can be added
         jcenter()
     }
 
-** Code **
+**Code**
 
 ### Java
 
@@ -58,25 +58,27 @@ Following repositories can be added
     
     CropperImageView cropperView = (CropperView)findViewById(R.id.cropper_view);
     
-    # Set Bitmap
+    // Set Bitmap
     cropperView.setImageBitmap(bitmap);
     
-    # Set Max and Min Cropping
+    // Set Max and Min Cropping
     cropperView.setMaxZoom(1.5f);
     cropperView.setMinZoom(0.8f);
     
-    # set centerCrop
+    // set centerCrop
     cropperView.cropToCenter();
     
-    # Fit image to center
+    // Fit image to center
     cropperView.fitToCenter();
     
-    # Get Cropped Bitmap
+    // Get Cropped Bitmap
     Bitmap croppedBitmap = cropperView.getCroppedBitmap();
     
 {% endhighlight %}
 
 ### XML Layout
+
+{% highlight xml %}
 
     <?xml version="1.0" encoding="utf-8"?>
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -96,6 +98,8 @@ Following repositories can be added
             app:padding_color="#ff282828"/>
             
     </RelativeLayout>        
+
+{% endhighlight %}
 
 Here's a **[sample](https://github.com/jayrambhia/CropperNoCropper/tree/master/sample)**
 
