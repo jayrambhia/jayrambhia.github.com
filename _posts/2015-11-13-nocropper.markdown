@@ -26,7 +26,7 @@ Here's a poorly made gif and YouTube video for you.
 
 Here's the GitHub Repo - https://github.com/jayrambhia/CropperNoCropper
 
-### How To Use In My Android Project
+### How To Use In Your Android Project
 
 Just add the following dependency in your `build.gradle` file.
 
@@ -50,6 +50,55 @@ Following repositories can be added
         jcenter()
     }
 
+** Code **
+
+### Java
+
+{% highlight java %}
+    
+    CropperImageView cropperView = (CropperView)findViewById(R.id.cropper_view);
+    
+    # Set Bitmap
+    cropperView.setImageBitmap(bitmap);
+    
+    # Set Max and Min Cropping
+    cropperView.setMaxZoom(1.5f);
+    cropperView.setMinZoom(0.8f);
+    
+    # set centerCrop
+    cropperView.cropToCenter();
+    
+    # Fit image to center
+    cropperView.fitToCenter();
+    
+    # Get Cropped Bitmap
+    Bitmap croppedBitmap = cropperView.getCroppedBitmap();
+    
+{% endhighlight %}
+
+### XML Layout
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+        
+        <com.fenchtose.nocropper.CropperView
+            android:background="#ff282828"
+            android:id="@+id/cropper_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:grid_opacity="0.8"
+            app:grid_thickness="0.8dp"
+            app:grid_color="@color/colorAccent"
+            app:padding_color="#ff282828"/>
+            
+    </RelativeLayout>        
+
+Here's a **[sample](https://github.com/jayrambhia/CropperNoCropper/tree/master/sample)**
+
 **Check GitHub for the latest version of the library**
 
-P.S. This is quite exciting for me.
+P.S. This is quite exciting for me. Here's a [blogpost](http://www.jayrambhia.com/blog/cropper/) about it.
