@@ -24,14 +24,14 @@ Here's a poorly made gif and YouTube video for you.
 
 ### GitHub Repo
 
-Here's the GitHub Repo - https://github.com/jayrambhia/CropperNoCropper
+Here's the [GitHub Repo](https://github.com/jayrambhia/CropperNoCropper)
 
 ### How To Use In Your Android Project
 
 Just add the following dependency in your `build.gradle` file.
 
     dependencies {
-        compile 'com.fenchtose.nocropper:nocropper:0.1.1'
+        compile 'com.fenchtose.nocropper:nocropper:0.1.2'
     }
 
 Following repositories can be added
