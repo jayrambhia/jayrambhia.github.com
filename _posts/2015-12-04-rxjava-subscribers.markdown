@@ -16,7 +16,7 @@ Once the Observable has called Subscriber's `Observer.onCompleted()`, subscriber
 
 If I understand this correctly, each Subscriber (which implements Observer<T> and Subscription) has a list of Subscriptions. We'll refer to this list as `SubscriptionList` from now. When we call `add`, we add the subscription to subscriber's SubscriptionList. I explored the source code a bit more and found out that when `unsubscribe()` is called for the subscriber, it first unsubscribes self and then calls `unsubscribe()` on the subscription list (it implements Subscription). In its implementation of unsubscribe, it calls unsubscribe over all its elements. Once I got to know about this, it felt like finding the last piece.
 
-{% hightlight java %}
+{% highlight java %}
 Subscriber subscriber = new Subscriber {
     @Override
     public void onCompleted() {
