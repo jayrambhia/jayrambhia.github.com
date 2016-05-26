@@ -19,7 +19,7 @@ Events
 ### Articles
 {% for post in site.posts limit:5 %}
 {% if post.category == "Blog"%}
-- **[{{ post.title }}]({{ post.url }})**
+- **[{{ post.title }}]({{ post.url }})**<!-- -->
 {% endif %}
 {% endfor %}
 
@@ -37,4 +37,5 @@ Events
 - **[{{ post.title }}]({{ post.url }})**
 {% endif %}
 {% endfor %}
-
+- **[Lenx](http://lenxapp.com/)**
+- **[Waeo](http://getwaeo.com/)**
