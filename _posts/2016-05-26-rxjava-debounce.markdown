@@ -48,4 +48,6 @@ This is a bit confusing, so I am assuming that the last item will always be emit
 
 Whoa, this new found knowledge helped me a lot in making my Rx form validator and yeah, `debounce` it pretty kickass.
 
+I have written a post about the form validation using RxJava which you can read here - **[RxJava for Form Validation](/blog/rx-form-validations)**
+
 P.S. One operator at a time and soon I'll be there, drowning in the lava of RxJava.
