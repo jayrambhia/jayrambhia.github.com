@@ -2,7 +2,7 @@
 category: Blog
 tag: Android
 comments: true
-date: 2016-05-26 01:00:00
+date: 2016-05-26 23:00:00
 layout: post
 slug: rx-form-validations
 title: RxJava for Form Validations
@@ -91,7 +91,7 @@ A bit messy and less RxJava-ish I suppose. We now have one PublishSubject for Ed
 
 Combining subjects for final UI change
 
-{% gits jayrambhia/52c65afbb74e204a14de1c32b3fcefac combineAPIValidationSubjects.java %}
+{% gist jayrambhia/52c65afbb74e204a14de1c32b3fcefac combineAPIValidationSubjects.java %}
 
 Subject is Observer as well as Observable so we can use them together in combineLatest.
 
