@@ -37,7 +37,7 @@ Here, I have used `PublishSubject` to emit EditText's field value whenever it is
 
 We have an Observable which will emit data as the user changes the value. Before going into validations, I just want to check how I can easily combine all my observables so I don't have to keep checking values each time to enable/disable the button.
 
-2. Use `combineLatest` to combine my observables.
+ 2. Use `combineLatest` to combine my observables.
 
 {% gist jayrambhia/52c65afbb74e204a14de1c32b3fcefac setup1.java %}
 
@@ -49,7 +49,7 @@ I ran my code and I noticed something weird. I had just entered username (didn't
 
 We have hooked observables to edittexts and getting one boolean using combineLatest. It's time to add some pattern validations.
 
-3. Use `debounce` to get the latest change in the editText and put it through our validator and combine results of validators to enable/disable submit button.
+ 3. Use `debounce` to get the latest change in the editText and put it through our validator and combine results of validators to enable/disable submit button.
 
 {% gist jayrambhia/52c65afbb74e204a14de1c32b3fcefac validationWithDebounce.java %}
 <br/>
