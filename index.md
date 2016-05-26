@@ -24,13 +24,6 @@ Events
 {% endfor %}
 
 
-### Notes
-{% for post in site.posts limit:5 %}
-{% if post.category == "Notes"%}
-- **[{{ post.title }}]({{ post.url }})**
-{% endif %}
-{% endfor %}
-
 ### Projects
 {% for post in site.posts limit:5 %}
 {% if post.category == "Project"%}
