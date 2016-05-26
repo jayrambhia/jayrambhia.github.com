@@ -2,7 +2,7 @@
 category: Notes
 tag: RxJava
 comments: true
-date: 2015-05-25 15:30:00
+date: 2016-05-25 15:30:00
 layout: post
 slug: rxjava-debounce
 title: A Note About RxJava Debounce Operator

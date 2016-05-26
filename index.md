@@ -19,10 +19,17 @@ Events
 ### Articles
 {% for post in site.posts limit:5 %}
 {% if post.category == "Blog"%}
-- **[{{ post.title }}]({{ post.url }})**<!-- -->
+- **[{{ post.title }}]({{ post.url }})**
 {% endif %}
 {% endfor %}
 
+
+### Notes
+{% for post in site.posts limit:5 %}
+{% if post.category == "Note"%}
+- **[{{ post.title }}]({{ post.url }})**
+{% endif %}
+{% endfor %}
 
 ### Projects
 {% for post in site.posts limit:5 %}
@@ -30,5 +37,5 @@ Events
 - **[{{ post.title }}]({{ post.url }})**
 {% endif %}
 {% endfor %}
-- **[Lenx](http://lenxapp.com/)**
-- **[Waeo](http://getwaeo.com/)**
+<!-- - **[Lenx](http://lenxapp.com/)**
+- **[Waeo](http://getwaeo.com/)** -->
