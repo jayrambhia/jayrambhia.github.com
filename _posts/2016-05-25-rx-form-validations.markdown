@@ -2,7 +2,7 @@
 category: Blog
 tag: Android
 comments: true
-date: 2016-05-26 23:00:00
+date: 2016-05-25 23:00:00
 layout: post
 slug: rx-form-validations
 title: RxJava for Form Validations
