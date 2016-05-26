@@ -37,5 +37,4 @@ Events
 - **[{{ post.title }}]({{ post.url }})**
 {% endif %}
 {% endfor %}
-<!-- - **[Lenx](http://lenxapp.com/)**
-- **[Waeo](http://getwaeo.com/)** -->
+
