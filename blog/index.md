@@ -15,8 +15,8 @@ slug: blog
 {% if t <= 3 %}
 <p>{{post.content | truncatewords:90}} <a href="{{post.url}}" class="go"> Read More</a><p/>
 {% endif %}
-</li>
 {% assign t = t | plus:1 %}
+</li>
 {% endif %}
 {% endfor %}
 </ul>
