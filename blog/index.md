@@ -13,7 +13,7 @@ slug: blog
     <date class="date">{{ post.date | date_to_long_string }}</date> // <span class="tags">{{ post.tag }}</span>
 </a>
 {% if t <= 3 %}
-<p>{{post.content | truncatewords:90}} <a href="{{post.url}}" class="go"> Read More</a></span><p/>
+<p>{{post.content | truncatewords:90}} <a href="{{post.url}}" class="go"> Read More</a><p/>
 {% endif %}
 </li>
 {% assign t = t | plus:1 %}
