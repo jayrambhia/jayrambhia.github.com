@@ -8,7 +8,9 @@ slug: android-background-blur
 title: Background Blur in Android
 ---
 
-![Background Blur](/assets/images/android_blur_img1.png)
+<p align="center">
+	<img src="/assets/images/android_blur_img1.png"/>
+</p>
 
 We have all seen the background blurring effects of iOS and have always wondered it does look great, it should be in Android also. I was wondering there could be an easier way to do this without actually blurring the image. Have you ever looked from blurred lens? You see blurry images. Well, that was it! I thought if I could get a good blurry black and white image and I could just use it as an overlay and reduce opacity, it would work. I looked for images of gaussian filters in fourier space. It looked ideal for this. It sort of gave the background some gradient and vignette effect but not the blur. Frosted glass! That's what was on the list next. Found a nice image and applied it as overlay with 70% opacity. The screen just looked dirty. No blur effect. I was wrong to begin with. Frosted glass and blurry lens product blurry images because they actually deflect light at different angles. So unless, there was some problem with my phone screen or glasses, this approach was not going to work.
 
@@ -38,12 +40,8 @@ You can set the blurred bitmap to an ImageView or to a view's background via Bit
 
 Here's the program in action.
 
-## Before
-
-![Before](/assets/images/android_blur_img3.png)
-
-## After
-
-![After](/assets/images/android_blur_img2.png)
+Original                   |  Blurred
+:-------------------------:|:-------------------------:
+![Original](/assets/images/android_blur_img3.png)  |  ![Blurred](/assets/images/android_blur_img2.png)
 
 P.S. A blogpost coming up about the cards viewpager in the image.
