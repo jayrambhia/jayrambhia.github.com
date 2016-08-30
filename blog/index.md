@@ -7,6 +7,7 @@ slug: blog
 {% assign t = 1 %}
 {% for post in site.posts %}
 {% if post.category == 'Blog' %}
+<li>
 <a href="{{ post.url }}" class="block-list__link">
     <h3>{{ post.title }}</h3>
     <date class="date">{{ post.date | date_to_long_string }}</date> // <span class="tags">{{ post.tag }}</span>
