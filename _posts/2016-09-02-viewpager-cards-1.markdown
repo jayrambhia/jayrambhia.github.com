@@ -5,7 +5,7 @@ comments: true
 date: 2016-09-02 23:00:00
 layout: post
 slug: android-viewpager-cards-1
-title: ViewPager cards inspired by "viewpager class inspired by Duolingo"
+title: ViewPager cards inspired by "ViewPager class inspired by Duolingo"
 ---
 
 <p align="center">
@@ -25,11 +25,9 @@ I started working on some basic equations to get the desired result for all the 
 
 let
 
-x<sub>1</sub> = partial width of the previous view = partial width of the next view
-
-x<sub>2</sub> = distance between two pages = pageMargin
-
-w<sub>p</sub> = width of the page
+x<sub>1</sub> = partial width of the previous view = partial width of the next view<br/>
+x<sub>2</sub> = distance between two pages = pageMargin<br/>
+w<sub>p</sub> = width of the page<br/>
 
 W = width of the screen
 
@@ -50,6 +48,8 @@ P<sub>v</sub> = x<sub>1</sub> + x<sub>2</sub>
 
 We can set x<sub>1</sub> and x<sub>2</sub> based on our requirements. With x<sub>1</sub> = 16dp and x<sub>2</sub> = 8dp, we get P<sub>v</sub> = 24dp. 
 
+Let's get some code here.
+
 {% highlight java %}
 
 	float density = getResources().getDisplayMetrics().density;
@@ -59,13 +59,15 @@ We can set x<sub>1</sub> and x<sub>2</sub> based on our requirements. With x<sub
 	int viewPagerPadding = cardPartialShowWidth + pageMargin;
 
 	viewPager.setPageMargin(pageMargin);
-    viewPager.setPadding(viewPagerPadding, 0, viewPagerPadding, 0);
+	viewPager.setPadding(viewPagerPadding, 0, viewPagerPadding, 0);
 
 {% endhighlight %}
 
 Well, this works now. We get the desired viewpager effect where we can see the preview and next views partially.
 
-// TODO Add image here
+<p align="center">
+	<img src="/assets/images/viewpager-cards-img1.png"/>
+</p>
 
 To make it like that dribbble design, we need to figure out a way where we can control the size and elevation of the view. I thought of using `PagerTransformer` as I know it would be the perfect tool to achieve the desired effect.
 
@@ -82,18 +84,22 @@ so basically, the position of the page at the left will be -1, the page at the r
 `transformPage` changes scale and elevation linearly based on the position. So it was really easy to derive the equations.
 
     baseElevation - Minimum elevation of the view
-    raisingElevation - Amount of elevation to be raised when the view is at center. elevation of view at center = baseElevation + raisingElevation
+    raisingElevation - Amount of elevation to be raised when the view is at center. 
+                       Elevation of view at center = baseElevation + raisingElevation
     smallerScale - Y scale of the view when it is at position 1 or -1
 
 So according to the equation,
 
     position = 0 -> elevation = baseElevation + raisingElevation, scale = 1
     position = 1 or -1 -> elevation = baseElevation, scale = smallerScale
-    position = 0.5 or -0.5 -> elevation = 0.5 * raisingElevation + baseElevation, scale = smallerScale/2 + 0.5
+    position = 0.5 or -0.5 -> elevation = 0.5 * raisingElevation + baseElevation, 
+                              scale = smallerScale/2 + 0.5
 
 This should work. Let's see. Well, it did not work correctly. It does show the scale effect but I found an issue. I have changed the scale so that error can be seen easily.
 
-// TODO Insert GIF here.
+<p align="center">
+	<img src="/assets/images/viewpager-cards-gif-1.gif"/>
+</p>
 
 As you have noticed, the max scale is achieved when the view reached at the left side of the screen (which aslo means the left side of the viewpgaer). So as it turns out the center page does not have position 0. This could be due to the padding and `setClipToPadding=false`. When I logged the position, it turns out to be 0.10810811 on Nexus 5.
 
@@ -106,14 +112,16 @@ For elevation,
     m = (baseElevation - raisingElevation)/(1-startOffset)
     c = (raisingElevation - baseElevation * startOffset)/(1-startOffset)
 
-    elevation = (baseElevation - raisingElevation)/(1-startOffset) * absPosition + (raisingElevation - baseElevation * startOffset)/(1-startOffset);
+    elevation = (baseElevation - raisingElevation)/(1-startOffset) * absPosition + 
+                (raisingElevation - baseElevation * startOffset)/(1-startOffset);
 
 For scale,
 	
 	m = (smallerScale - 1)/(1 - startOffset)
     c = (1 - smallerScale * startOffset)/(1 - startOffset)
 
-    scale = (smallerScale - 1)/(1 - startOffset) * absPosition + (1 - smallerScale * startOffset)/(1 - startOffset);
+    scale = (smallerScale - 1)/(1 - startOffset) * absPosition + 
+            (1 - smallerScale * startOffset)/(1 - startOffset);
 
 Well, that's a bit complicated. But it should work. But wait, we can do a horizontal right shift and we'll get the correct transformation equation.
 	
@@ -141,20 +149,26 @@ But since `clipToPadding` is false, it draws the child in W instead of W - 2P<su
 
 ViewPage draws first view at x = P<sub>v</sub>, and position 0 is at x = 0, so at x = P<sub>v</sub>, the position should be `left position/drawing width`, which is
 
-startOffset = P<sub>v</sub>/ (W - 2P<sub>v</sub>)
+startOffset = P<sub>v</sub> / (W - 2P<sub>v</sub>)
+
+Let's get some code here.
 
 {% highlight java %}
 
     Point screen = new Point();
     getWindowManager().getDefaultDisplay().getSize(screen);
-
     float startOffset = (float)(viewPagerPadding)/(float)(screen.x - 2*viewPagerPadding);
 
-    viewPager.setPageTransformer(false, new CardsPagerTransformer(baseElevation, raisingElevation,
-                smallerScale, startOffset));
+    viewPager.setPageTransformer(false, new CardsPagerTransformer(baseElevation, raisingElevation, smallerScale, startOffset));
 
 {% endhighlight %}
 
 Let's look at the results.
 
-// TODO add GIF here
+<p align="center">
+	<img src="/assets/images/viewpager-cards-gif-2.gif"/>
+</p>
+
+This looks good. Maybe a quadratic transformation might give better effects. But we could work with this. In the next post, I'll work with enter and exit transitions of the viewpager and views to get good UI effects.
+
+P.S. Working on this was quite refreshing. I'm looking forward to work on more UI elements.

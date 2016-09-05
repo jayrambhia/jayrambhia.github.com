@@ -44,4 +44,4 @@ Original                   |  Blurred
 :-------------------------:|:-------------------------:
 ![Original](/assets/images/android_blur_img3.png)  |  ![Blurred](/assets/images/android_blur_img2.png)
 
-P.S. A blogpost coming up about the cards viewpager in the image.
+P.S. A blogpost coming up about the cards viewpager in the image. It's up. Check it out - [ViewPager Cards](/blog/android-viewpager-cards-1).
