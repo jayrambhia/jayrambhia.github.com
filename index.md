@@ -7,15 +7,6 @@ I am an Android Developer and an open source enthusiast. I currently work at [El
 
 I am an active freelancer so if you want to get in touch, <a href="mailto:jayrambhia777@gmail.com">say Hi!</a>.
 
-<!--
-Events
-{% for post in site.posts limit:5 %}
-{% if post.category == "Event"%}
-- **[{{ post.title }}]({{ post.url }})**
-{% endif %}
-{% endfor %}
--->
-
 ### Articles
 {% increment posts %}
 {% for post in site.posts %}
@@ -25,6 +16,7 @@ Events
 	{% endif %}
 	{% if posts == 5 %}
 		{% break %}
+	{% endif %}		
 
 {% endfor %}
 
@@ -38,6 +30,7 @@ Events
 	{% endif %}
 	{% if notes == 4 %}
 		{% break %}
+	{% endif %}		
 
 {% endfor %}
 
@@ -50,7 +43,8 @@ Events
 	{% endif %}
 	{% if projects == 3 %}
 		{% break %}
+	{% endif %}			
 
 {% endfor %}
-<!-- - **[Lenx](http://lenxapp.com/)**
-- **[Waeo](http://getwaeo.com/)** -->
+
+<br/>
