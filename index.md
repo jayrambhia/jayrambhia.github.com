@@ -8,11 +8,11 @@ I am an Android Developer and an open source enthusiast. I currently work at [El
 I am an active freelancer so if you want to get in touch, <a href="mailto:jayrambhia777@gmail.com">say Hi!</a>.
 
 ### Articles
-{% increment posts %}
+{% assign posts = 0 %}
 {% for post in site.posts %}
 	{% if post.category == "Blog"%}
 - **[{{ post.title }}]({{ post.url }})**<!-- -->
-		{% increment posts %}
+		{% assign posts = posts | plus: 1 %}
 	{% endif %}
 	{% if posts == 5 %}
 		{% break %}
@@ -28,18 +28,18 @@ I am an active freelancer so if you want to get in touch, <a href="mailto:jayram
 - **[{{ post.title }}]({{ post.url }})**
 		{% assign notes = notes | plus: 1 %}
 	{% endif %}
-	{% if notes == 4 %}
+	{% if notes == 3 %}
 		{% break %}
 	{% endif %}		
 
 {% endfor %}
 
 ### Projects
-{% increment projects %}
+{% assign projects = 0 %}
 {% for post in site.posts %}
 	{% if post.category == "Project"%}
 - **[{{ post.title }}]({{ post.url }})**
-		{% increment projects %}
+		{% assign projects = projects | plus: 1 %}
 	{% endif %}
 	{% if projects == 3 %}
 		{% break %}
