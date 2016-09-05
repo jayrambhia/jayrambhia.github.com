@@ -28,12 +28,9 @@ let
 x<sub>1</sub> = partial width of the previous view = partial width of the next view<br/>
 x<sub>2</sub> = distance between two pages = pageMargin<br/>
 w<sub>p</sub> = width of the page<br/>
+W = width of the screen<br/>
+P<sub>v</sub> = viewpager left padding = viewpager right padding<br/>
 
-W = width of the screen
-
-P<sub>v</sub> = viewpager left padding = viewpager right padding
-
-<br/>
 With simple width comparison we get,
 
 2x<sub>1</sub> + 2x<sub>2</sub> + w<sub>p</sub> = W
@@ -44,8 +41,7 @@ w<sub>p</sub> = W - 2P<sub>v</sub>
 
 Which gets us,
 
-P<sub>v</sub> = x<sub>1</sub> + x<sub>2</sub>
-
+P<sub>v</sub> = x<sub>1</sub> + x<sub>2</sub><br/>
 We can set x<sub>1</sub> and x<sub>2</sub> based on our requirements. With x<sub>1</sub> = 16dp and x<sub>2</sub> = 8dp, we get P<sub>v</sub> = 24dp. 
 
 Let's get some code here.
@@ -66,7 +62,7 @@ Let's get some code here.
 Well, this works now. We get the desired viewpager effect where we can see the preview and next views partially.
 
 <p align="center">
-	<img src="/assets/images/viewpager-cards-img1.png"/>
+	<img src="/assets/images/viewpager-cards-img-1.png"/>
 </p>
 
 To make it like that dribbble design, we need to figure out a way where we can control the size and elevation of the view. I thought of using `PagerTransformer` as I know it would be the perfect tool to achieve the desired effect.
@@ -141,13 +137,10 @@ Well, that's a bit complicated. But it should work. But wait, we can do a horizo
 
 Let's calculate the offset. 
 
-ViewPager width = screen width = W
-
-Width in which viewpager would draw the child = width - left padding - right padding = W - 2P<sub>v</sub>
-
-But since `clipToPadding` is false, it draws the child in W instead of W - 2P<sub>v</sub>. This doesn't affect the position of the page as it relative to the left of the viewpager.
-
-ViewPage draws first view at x = P<sub>v</sub>, and position 0 is at x = 0, so at x = P<sub>v</sub>, the position should be `left position/drawing width`, which is
+ViewPager width = screen width = W <br/>
+Width in which viewpager would draw the child = width - left padding - right padding = W - 2P<sub>v</sub><br/>
+But since `clipToPadding` is false, it draws the child in W instead of W - 2P<sub>v</sub>. This doesn't affect the position of the page as it relative to the left of the viewpager. <br/>
+ViewPage draws first view at x = P<sub>v</sub>, and position 0 is at x = 0, so at x = P<sub>v</sub>, the position should be `left position/drawing width`, which is<br/>
 
 startOffset = P<sub>v</sub> / (W - 2P<sub>v</sub>)
 
