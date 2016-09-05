@@ -17,25 +17,40 @@ Events
 -->
 
 ### Articles
-{% for post in site.posts limit:5 %}
-{% if post.category == "Blog"%}
+{% increment posts %}
+{% for post in site.posts %}
+	{% if post.category == "Blog"%}
 - **[{{ post.title }}]({{ post.url }})**<!-- -->
-{% endif %}
+		{% increment posts %}
+	{% endif %}
+	{% if posts == 5 %}
+		{% break %}
+
 {% endfor %}
 
 
 ### Notes
-{% for post in site.posts limit:5 %}
-{% if post.category == "Notes"%}
+{% increment notes %}
+{% for post in site.posts %}
+	{% if post.category == "Notes"%}
 - **[{{ post.title }}]({{ post.url }})**
-{% endif %}
+		{% increment notes %}
+	{% endif %}
+	{% if notes == 4 %}
+		{% break %}
+
 {% endfor %}
 
 ### Projects
-{% for post in site.posts limit:5 %}
-{% if post.category == "Project"%}
+{% increment projects %}
+{% for post in site.posts %}
+	{% if post.category == "Project"%}
 - **[{{ post.title }}]({{ post.url }})**
-{% endif %}
+		{% increment projects %}
+	{% endif %}
+	{% if projects == 3 %}
+		{% break %}
+
 {% endfor %}
 <!-- - **[Lenx](http://lenxapp.com/)**
 - **[Waeo](http://getwaeo.com/)** -->
