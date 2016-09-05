@@ -22,11 +22,11 @@ I am an active freelancer so if you want to get in touch, <a href="mailto:jayram
 
 
 ### Notes
-{% increment notes %}
+{% assign notes = 0 %}
 {% for post in site.posts %}
 	{% if post.category == "Notes"%}
 - **[{{ post.title }}]({{ post.url }})**
-		{% increment notes %}
+		{% assign notes = notes | plus: 1 %}
 	{% endif %}
 	{% if notes == 4 %}
 		{% break %}
