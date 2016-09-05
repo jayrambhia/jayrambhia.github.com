@@ -31,16 +31,13 @@ w<sub>p</sub> = width of the page<br/>
 W = width of the screen<br/>
 P<sub>v</sub> = viewpager left padding = viewpager right padding<br/>
 
-With simple width comparison we get,
-
+With simple width comparison we get,<br/>
 2x<sub>1</sub> + 2x<sub>2</sub> + w<sub>p</sub> = W
 
-To get the desired effect we need set to left and right padding to the viewpager and `clipToPadding` as false,
-
+To get the desired effect we need set to left and right padding to the viewpager and `clipToPadding` as false,<br/>
 w<sub>p</sub> = W - 2P<sub>v</sub>
 
-Which gets us,
-
+Which gets us,<br/>
 P<sub>v</sub> = x<sub>1</sub> + x<sub>2</sub><br/>
 We can set x<sub>1</sub> and x<sub>2</sub> based on our requirements. With x<sub>1</sub> = 16dp and x<sub>2</sub> = 8dp, we get P<sub>v</sub> = 24dp. 
 
