@@ -5,8 +5,8 @@ comments: true
 image:
  twitter: /assets/images/android_blur_img1.png
  facebook : /assets/images/android_blur_img1.png
- height:270
- width:180
+ height: 270
+ width: 180
 date: 2016-09-02 23:00:00
 layout: post
 slug: android-viewpager-cards-1
