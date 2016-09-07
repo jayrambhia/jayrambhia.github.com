@@ -2,11 +2,15 @@ permalink: /:categories/:title
 markdown: kramdown
 exclude: ['Rakefile', 'CNAME', 'sass/', 'script/', 'README.md']
 
+gems:
+  - jekyll-seo-tag
+
 url: http://jayrambhia.com
 
 name: "Jay Rambhia"
 tagline: "Don't Panic!"
-description: "Notes and codes of a paranoid android"
+title: "Jay Rambhia's Blog"
+description: "Jay Rambhia's website about Android, Computer Vision, Python, Programming and other stuff"
 about: "I'm <strong>Jay Rambhia</strong>, solving problems one build at a time"
 author:
  name: "Jay Rambhia"
