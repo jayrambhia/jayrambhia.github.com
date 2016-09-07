@@ -10,7 +10,7 @@ image:
 date: 2016-09-02 23:00:00
 layout: post
 slug: android-viewpager-cards-1
-title: ViewPager cards inspired by "ViewPager class inspired by Duolingo"
+title: ViewPager cards inspired by "ViewPager cards inspired by Duolingo"
 description: Meaninful UI and transitions with Android ViewPager (inspired by Duolingo)
 ---
 
