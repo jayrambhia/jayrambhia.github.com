@@ -49,7 +49,7 @@ To generate HomeComponent, we require a HomeComponent Spec which would look some
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a HomeComponentSpec.java %}
 
-Litho will generate HomeComponent class which you can use. If you notice, we are using `@Prop String hint`. **`@Prop`** comes from React where you can pass some properties to components. We do not require this property, but we are going to use it anyway. We take this property and set it as EditText's hint.
+Litho will generate HomeComponent class which you can use. If you notice, we are using `@Prop String hint`. **`@Prop`** comes from React where you can pass some properties to components. We do not require this property, but we are going to use it anyway. We take this property and set it as EditText's hint. We need to stack the views horizontally, so we'll use `Column` as it stacks the views horizontally. We can add views with `child` method.
 
 Note: EditText is a litho's widget. It is **to be confused** with Android's EditText because litho's EditText renders Android's EditText.
 
@@ -68,3 +68,22 @@ Since we are going to show a gif, let's name it GifItemViewComponent. We will ne
 Now, we need to add some dummy data so that we can see something on the screen. We need to update `HomeComponentSpec.getRecyclerComponent`.
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a HomeComponentSpec-Recycler.java %}
+
+`RecyclerBinder` is sort of a super RecyclerView Adapter which takes care of creating views. It's supposed to be highly optimised. RecyclerView Adapter recycles ViewHolders but RecyclerBinder recycles each view. It will recycle and use `Text`, `Image`, etc even for different components in the RecyclerView.
+
+`binder.insertItemAt(position, ComponentInfo)` is used to add Component at a specified position.
+
+Now, you'll see a list of huge "Hello World" on your screen. Let's try to change that and get more dynamic content. We can do this by sending title as a prop.
+
+{% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a GifItemViewSpec-1.java %}
+
+We also need to update our binder insert method, otherwise we'll get a runtime exception as we did not pass `@Prop String title` to GifItemView.
+
+{% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a HomeComponentSpec-Recycler-1.java %}
+
+Now, we have different data on the screen. But, how would we update it in case we get some different data? 
+
+### States
+Litho has something called `@State` where you can define and update the states of the component. But it's not so easy. There is some pre-defined APIs that are available and in `protected` scope so can't be called from outside. (eg. Activity). You could add a static methodin your Spec class which would trigger state update but it requires a `ComponentContext` and you could pass it from activitybut it would not work because it doesn't have any component bound to it. There aren't many (or any) example
+which would show how to update recyclerview's (adapter) data dynamically.
+
