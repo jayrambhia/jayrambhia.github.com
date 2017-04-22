@@ -3,8 +3,8 @@ category: Blog
 tag: Android
 comments: true
 image:
- twitter: /assets/images/android_blur_img1.png
- facebook : /assets/images/android_blur_img1.png
+ twitter: /assets/images/litho-demo-1.jpg
+ facebook : /assets/images/litho-demo-1.jpg
  height: 270
  width: 180
 date: 2017-04-22 23:00:00
@@ -48,3 +48,23 @@ As you can easily figure out, we would need one component to hold EditText and R
 To generate HomeComponent, we require a HomeComponent Spec which would look something like this.
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a HomeComponentSpec.java %}
+
+Litho will generate HomeComponent class which you can use. If you notice, we are using `@Prop String hint`. **`@Prop`** comes from React where you can pass some properties to components. We do not require this property, but we are going to use it anyway. We take this property and set it as EditText's hint.
+
+Note: EditText is a litho's widget. It is **to be confused** with Android's EditText because litho's EditText renders Android's EditText.
+
+To display HomeComponent on the screen, we will modify `MainActivity`.
+
+{% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a MainActivity.java %}
+
+If you run the app now, you'll just see an EditText at the top. We have not added any data/views to the RecyclerView component. So Let's add some data.
+
+### GifItemViewComponent
+As we discussed, all the views are components. Each item in the RecyclerView will also be a component. We need to make a component for that.
+Since we are going to show a gif, let's name it GifItemViewComponent. We will need to write a Component Spec. Here, we are just going to show a simple title.
+
+{% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a GifItemViewSpec.java %}
+
+Now, we need to add some dummy data so that we can see something on the screen. We need to update `HomeComponentSpec.getRecyclerComponent`.
+
+{% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a HomeComponentSpec-Recycler.java %}
