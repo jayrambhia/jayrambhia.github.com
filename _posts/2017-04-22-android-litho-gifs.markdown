@@ -35,3 +35,16 @@ MountSpec is if you want to customize a lot of things. We'll talk about it later
 Less talk, more code!
 
 Let's just dive into it.
+
+# GIF search engine App
+It's just a simple one screen - no navigation (yet) app to search GIFs from [Giphy](http://giphy.com/). It's a glorified search engine. I have used Retrofit to fetch data and Glide to load gifs, but I won't be discussing it in this post.
+
+Since it's a simple app, all we need is an `EditText` and a `RecyclerView`. Conventionally, we would use a `LinearLayout` with vertical orientation and add an EditText and a RecyclerView in XML. But we're going to talk Litho and bit of React. In Recat, these things are considered components. So Let's start there.
+
+## Components
+As you can easily figure out, we would need one component to hold EditText and RecyclerView. Let's call it `HomeComponent`.
+
+### HomeComponent
+To generate HomeComponent, we require a HomeComponent Spec which would look something like this.
+
+{% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a HomeComponentSpec.java %}
