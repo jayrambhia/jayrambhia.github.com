@@ -128,9 +128,39 @@ Let's update **GifItemViewSpec**
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a GifItemViewSpec-2.java %}
 
-We have updated GifItemViewSpec from `LayoutSpec` to `MountSpec` so that we can draw an image. **`@onMeasure`** is called when the layout needs to be measured. If you don't provide this method, it may not draw the view as width and height will be 0. **`@onCreateMountContente`** is called when the view is mounted and needs to be rendered. You can not pass any `@Prop` in this method. Since we removed `@Prop String title`, you will need to update some code. I'll also update the binder so that it shows a grid of 3 columns.
+We have updated GifItemViewSpec from `LayoutSpec` to `MountSpec` so that we can draw an image. **`@onMeasure`** is called when the layout needs to be measured. If you don't provide this method, it may not draw the view as width and height will be 0. **`@onCreateMountContente`** is called when the view is going to mount and needs the content which is going to be rendered. You can not pass any `@Prop` in this method. Since we removed `@Prop String title`, you will need to update some code. I'll also update the binder so that it shows a grid of 3 columns.
 
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a MainActivity-grid.java %}
 
+Now, you'll see something like this.
+
+![Litho Giphy Demo](/assets/images/litho-demo-2.jpg)
+
+So now we can use `ImageView` and if we can use ImageView, we can also use Glide or Piccasso or any other image loading library to display images. So let's start!
+
+### Boilerplate
+I am using `Retrofit` to fetch data from Giphy search API and loading it in the RecyclerView. I am going to skip that part. We also don't want to make API calls for every characeter that user enters so to make things easy I have kept a limit of 6 letters - because **Batman**.
+
+So here's how things will look.
+
+**GifItem** is the model class which we will pass as a `prop` to `GifItemView`.
+
+{% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a GifItem.java %}
+
+We need to update `GifItemViewSpec` so that it will use Glide to load the GIF.
+
+{% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a GifItemViewSpec-3.java %}
+
+**`@onMount`** is called when the view is mounted. We should call Glide here. In `onMount` method we get ComponentContext and the value which we returned in `@onCreateMountContent` so we'll have access to the ImageView. We pass `GifItem` as a prop in this method.
+
+In **MainActivity** after hooking everything together, we'll use `OnQueryUpdateListener` to get data and call API using Retrofit and once we get the data, we will hook the data to binder.
+
+{% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a MainActivity-2.java %}
+
+`GifProvider` takes care of initializing retrofit and when `search(String query)` is called, it will make an API request and return `List<GifItem>` in `ResponseListener` callback. We could have used RxJava but it seemed out of scope for this demo.
+
+I think everything is in place and if you search for batman now, you should get this!
+
+![Litho Giphy Demo](/assets/images/litho-demo-1.jpg)
 
