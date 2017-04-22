@@ -7,7 +7,7 @@ image:
  facebook : /assets/images/litho-demo-1.jpg
  height: 270
  width: 180
-date: 2017-04-22 23:00:00
+date: 2017-04-22 22:00:00
 layout: post
 slug: android-litho-gifs
 title: Android GIF search engine with Litho
@@ -108,3 +108,29 @@ We have passed `@Prop OnQueryUpdateListener listener` in `onQueryChanged`. Litho
 We will update **MainActivity** and pass listener prop to HomeComponent.
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a MainActivity-query.java %}
+
+To summarize,
+
+	1. We can listen to EditText updates.
+	2. We can update data dynamically.
+
+And there's only one (major) part remaining. **Showing Gifs**!
+
+### Image
+I think this was the most difficult part of this project. Litho provides `Image` widget but it's not as flexible as `ImageView`. You can't use `setBitmap` or hook it directly into Glide. It just takes a drawable. So it would be super difficult to keep track of downloaded bitmaps and have state in the component and update it, oh and did I tell you that there isn't a direct easy way to update states from outside? So I started digging into litho's sample code and they have used Fresco with some other
+library. It should not be that difficult to display an image, right?
+
+But then I noticed that they have used **`@MountSpec`** which is basically used for custom views and drawables. So I started looking for some docs and examples but the only one they have of ColorDrawable is super easy and it's difficult to figure out the lifecycle and how things are working.
+
+[MountSpec doc](http://fblitho.com/docs/mount-specs). After reading through the fine print, I realized that I can return a View or a Drawable in `@onCreateMountContent`. As the name suggests, you create a content to display. So anyway, after couple of hours, I finally got it right. Let's just start small.
+
+Let's update **GifItemViewSpec**
+
+{% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a GifItemViewSpec-2.java %}
+
+We have updated GifItemViewSpec from `LayoutSpec` to `MountSpec` so that we can draw an image. **`@onMeasure`** is called when the layout needs to be measured. If you don't provide this method, it may not draw the view as width and height will be 0. **`@onCreateMountContente`** is called when the view is mounted and needs to be rendered. You can not pass any `@Prop` in this method. Since we removed `@Prop String title`, you will need to update some code. I'll also update the binder so that it shows a grid of 3 columns.
+
+
+{% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a MainActivity-grid.java %}
+
+
