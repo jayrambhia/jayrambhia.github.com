@@ -87,3 +87,12 @@ Now, we have different data on the screen. But, how would we update it in case w
 Litho has something called `@State` where you can define and update the states of the component. But it's not so easy. There is some pre-defined APIs that are available and in `protected` scope so can't be called from outside. (eg. Activity). You could add a static methodin your Spec class which would trigger state update but it requires a `ComponentContext` and you could pass it from activitybut it would not work because it doesn't have any component bound to it. There aren't many (or any) example
 which would show how to update recyclerview's (adapter) data dynamically.
 
+After a lot of trial and erros, I figured out a better way to do it. Since we use `RecyclerBinder` to add/remove components, we just need access to that. So I decided to pass binder as a prop.
+
+{% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a HomeComponentSpec-1.java %}
+
+We'll update MainActivity to load data after 2 seconds.
+
+{% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a MainActivity-1.java %}
+
+If we can do this, it means that we can update the data from an API response.
