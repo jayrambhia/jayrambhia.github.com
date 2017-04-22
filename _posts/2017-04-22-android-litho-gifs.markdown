@@ -25,12 +25,12 @@ I am not going to talk about what Litho or React is. Well, as the website says L
 
 Since Litho seems to be inspired from React, it uses `Components` and you can make a great UI with adding bunch of components and those components are reusable! Facebook has spent a lot of time and resources in making Litho efficient. It wants to be so efficient that it generates most of its own code. As a end user, you can not create a Component (You can but it would not be efficent). You write a `ComponentSpec` and Litho will generate all the code for you. Have you used Dagger 2? Yes, it's that amount of generated code so I guess method count is going to go sky high! There are two types of CompoentSpec.
 
- 1. LayoutSpec
- 2. MountSpec
+	1. LayoutSpec
+	2. MountSpec
 
 MountSpec is if you want to customize a lot of things. We'll talk about it later. LayoutSpec - quoting from the docs,
 
-> A layout spec is the logical equivalent of a composite view on Android. It simply groups existing components together in an immutable layout tree.
+	A layout spec is the logical equivalent of a composite view on Android. It simply groups existing components together in an immutable layout tree.
 
 Less talk, more code!
 
