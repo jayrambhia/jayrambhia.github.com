@@ -164,3 +164,13 @@ I think everything is in place and if you search for batman now, you should get 
 
 ![Litho Giphy Demo](/assets/images/litho-demo-1.jpg)
 
+There are some optimizations that you can do. Instead of calling `Glide.with(context)` in GifItemViewSpec, you can pass `Glide.RequestManager` as a prop.
+
+So your GIF search engine powered by Litho (and Giphy) is ready! I'll explore more about states, good practices, and other awesome features in upcoming posts.
+
+It's fun to work with Litho. The API is quite easy but there is some learning curve and if you want customize it or have some weird states, you're in for a roll.
+
+Here's the [GitHub Repository](https://github.com/jayrambhia/LithoGifSearch).
+
+P.S. I do not (yet) fully understand Litho, States, Yoga, Flexbox so feel free to suggest updates and best practices.
+
