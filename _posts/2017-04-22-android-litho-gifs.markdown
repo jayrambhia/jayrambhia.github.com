@@ -99,4 +99,12 @@ We'll update **MainActivity** to load data after 2 seconds.
 If we can do this, it means that we can update the data from an API response.
 
 ### Query
+We have established that, we can update data dynamically. The next part is to listen to changes in the EditText. For this we'll use an interface and pass an implementation as a prop. We need to listen to EditText updates so we will create an interface `onQueryUpdateListener` and pass it as a prop to HomeComponent. It has an `@OnEvent(TextChangedEvent.class)` method which when hooked to `EditText.textChangedEventHandler()`, it will start giving us updates.
 
+{% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a HomeComponentSpec-2.java %}
+
+We have passed `@Prop OnQueryUpdateListener listener` in `onQueryChanged`. Litho will detect this and add it as a prop.
+
+We will update **MainActivity** and pass listener prop to HomeComponent.
+
+{% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a MainActivity-query.java %}
