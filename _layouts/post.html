@@ -12,7 +12,10 @@ layout: base
         <script type="text/javascript" src="http://www.reddit.com/static/button/button1.js"></script>
       </div>
       {% if page.tags %}
+        <meta name="keywords_present" content="yes" />
         <meta name="keywords" content="{{ page.tags | join: ', ' | escape }}" />
+      {% else %}
+        <meta name="keywords_present" content="no" />  
       {% endif %}  
       {% seo %}
 	</header><!-- post-header -->
