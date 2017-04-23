@@ -12,6 +12,7 @@ layout: post
 slug: android-viewpager-cards-2
 title: ViewPager Animations
 description: Meaninful UI and animations with Android ViewPager
+keywords: [android, android development, androiddev, dev, viewpager, cards, card, ui, duolingo, animation, transitions]
 ---
 
 Meaningful transitions and animations makes the UI more elegant. Now, I'm no UI expert but I can say when I like a thing better than the other. Well, this post is about that. Adding animations is good but adding intuitive animations is better. In the previous post, I talked about view position in ViewPager - [ViewPager cards inspired by "ViewPager class inspired by Duolingo"](/blog/android-viewpager-cards-1).

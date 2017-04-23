@@ -11,13 +11,7 @@ layout: base
         <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
         <script type="text/javascript" src="http://www.reddit.com/static/button/button1.js"></script>
       </div>
-      {% if page.keywords %}
-        <meta name="keywords_present" content="yes" />
-        <meta name="keywords_test" content="{{ page.keywords }}" />
-        <meta name="keywords" content="{{ page.keywords | join: ', ' | escape }}" />
-      {% else %}
-        <meta name="keywords_present" content="no" />  
-      {% endif %}  
+      
       {% seo %}
 	</header><!-- post-header -->
 	<div>

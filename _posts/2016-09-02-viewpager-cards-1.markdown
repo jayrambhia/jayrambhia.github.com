@@ -12,6 +12,7 @@ layout: post
 slug: android-viewpager-cards-1
 title: ViewPager cards inspired by "ViewPager cards inspired by Duolingo"
 description: Meaninful UI and transitions with Android ViewPager (inspired by Duolingo)
+keywords: [android, android development, androiddev, dev, viewpager, cards, card, ui, duolingo, animation, transitions, blur, bitmap]
 ---
 
 <p align="center">
