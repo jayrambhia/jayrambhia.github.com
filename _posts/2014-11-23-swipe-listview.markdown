@@ -6,6 +6,7 @@ date: 2014-11-23 14:00:00
 layout: post
 slug: swipe-listview
 title: Inbox Style Swipe ListView
+keywords: [android development, android music player, google inbox ui, android ui, android animations, recyclerview swipe items, listview swipe items]
 ---
 
 Google's Inbox application has a really nice ListView where user could swipe right to mark the email done and swipe left to snooze the notification. I implemented something very similar to that using `ListView` and `ArrayAdapter`.

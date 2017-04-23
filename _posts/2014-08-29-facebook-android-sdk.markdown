@@ -6,6 +6,7 @@ date: 2014-08-29 16:00:00
 layout: post
 slug: facebook-android-sdk
 title: Facebook Android SDK
+keywords: [android development, facebook android sdk tutorial]
 ---
 
 Every app needs user data and facebook and twitter are the most convinient and used social networks to get the user data from. In our app, we have given the facility for the user to sign up and log in using their facebook or twitter credentials.

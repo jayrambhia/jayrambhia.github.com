@@ -6,6 +6,7 @@ date: 2014-01-24 16:00:00
 layout: post
 slug: toast-messages
 title: Working with Toast Messages
+keywords: [android development, android tutorial, customize toast messages]
 ---
 
 I was working on an android application where I required some notification kind of thing. I was looking into popups but it didn't really work out. Then I stumbled on to [_Toast Messages_](http://developer.android.com/guide/topics/ui/notifiers/toasts.html).

@@ -6,6 +6,7 @@ date: 2014-08-19 16:00:00
 layout: post
 slug: android-custom-listview
 title: Custom ListView in Android
+keywords: [android development, android custom listview, music player tutorial, android playlist]
 ---
 
 An application must have a good looking UI and to get that we implemented our own custom layout to the listview to show songs in a playlist. Android provides [ListView](http://developer.android.com/guide/topics/ui/layout/listview.html) and various adapters which can be attached to it. For our purpose, we are using [ArrayAdapter](http://developer.android.com/reference/android/widget/ArrayAdapter.html).

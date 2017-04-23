@@ -6,6 +6,7 @@ date: 2016-05-25 15:30:00
 layout: post
 slug: rxjava-debounce
 title: A Note About RxJava Debounce Operator
+keywords: [rxjava with android, use rxjava debounce, android development, android tutorial, learn rxjava]
 ---
 
 RxJava has myriad operators that we can use to make our code simpler and our lives easier. I'm very insistent when it comes to `EditText` validations that we should not start validation process as soon as the user starts entering the text. I like to give the user a bit of time to think about what they want to enter. My strategy has always been that - as soon as the user stops typing, wait for 800 milliseconds, and start the validation or request calls. One useful point to note about this is that if your app is making a network call (for search results, etc) and the user changes the query, it should cancel that call and fire another call based on some parameters. I used to do this using `Handler.postDelayed()` and `Handler.removeCallback()`. It was really tideous to do all this.

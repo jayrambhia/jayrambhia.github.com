@@ -6,6 +6,7 @@ date: 2015-02-24 15:00:00
 layout: post
 slug: keep-checklist
 title: Google Keep Style Checklist
+keywords: [android development, android notes app, google keep, android todo list]
 ---
 
 I have been working on a Notes application for quite some time now. One of the essential notes are checklists. Google Keep has really nice implementation of checklist note. So taking inspiration from the layout, I tried making my own checklist.

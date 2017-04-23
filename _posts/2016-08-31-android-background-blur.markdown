@@ -6,6 +6,7 @@ date: 2016-08-31 23:00:00
 layout: post
 slug: android-background-blur
 title: Background Blur in Android
+keywords: [blur in android, blur bitmap, android development, android tutorial]
 ---
 
 <p align="center">

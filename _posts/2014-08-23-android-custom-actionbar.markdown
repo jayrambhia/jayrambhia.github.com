@@ -6,6 +6,7 @@ date: 2014-08-23 14:00:00
 layout: post
 slug: android-custom-actionbar
 title: Custom Actionbar Layout in Android
+keywords: [android development, android actionbar tutorial, sherlock actionbar, android toolbar, android custom layout]
 ---
 
 [ActionBar](http://developer.android.com/guide/topics/ui/actionbar.html) is a very important part of Android. We can use it for our advantage. We needed certain customization in the actionbar and to do it easily we just made a desirable layout and changed the style of the actionbar.

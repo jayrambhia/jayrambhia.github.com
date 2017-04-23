@@ -6,6 +6,7 @@ date: 2014-08-08 18:00:00
 layout: post
 slug: android-wireless-connection-1
 title: Connect Two Android Devices over WiFi using Network Service Disocvery
+keywords: [android development, android p2p tutorial, android wifi socket, socket programming, lan networking in android, android nsd tutorial, android bonjour, network service discovery]
 ---
 
 We have started working on another Android app which lets user stream music on another Android device wirelessly. I'll keep adding posts as the app progresses. This is the first part of the series. This is a completely new territory for me as I have never worked with sockets, networks and in general most of the android. So there might be some issues, but we'll keep refining till we find the best way.

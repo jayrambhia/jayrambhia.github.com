@@ -6,6 +6,7 @@ date: 2014-05-02 19:00:00
 layout: post
 slug: android-camerapreview-threads
 title: Android CameraPreview with PreviewCallback and Processing Frames using Threads
+keywords: [android development, android camera app, android camera tutorial, android camera preview, surfaceview for camera, preview callback in camera]
 ---
 
 Recently, I have started working with Android extensively. It hasn't been easy. I had to figure out a lot of stuff and that too simultaneously. How UI works, how threads run, how to process frames, etc. In [my previous post](/blog/android-camerapreview-opencv), I have shown how to process each frame **onPreviewFrame** callback. In this post, I am going to write about using asynchronous threads to do image processing so that workload of ui thread reduces.

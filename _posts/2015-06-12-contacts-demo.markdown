@@ -6,6 +6,7 @@ date: 2015-06-12 17:00:00
 layout: post
 slug: contacts-demo
 title: Dialer App with New Design Library
+keywords: [android development, recyclerview adapter, android design library, material design, android dialer, android recyclerview tutorial, android coordinatorlayout]
 ---
 
 Android just released a new [Design Support Library](http://android-developers.blogspot.com.es/2015/05/android-design-support-library.html) which is very useful to create beautiful designs and animations (with older version compatibility) and that too without writing much boilerplate code.

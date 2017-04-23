@@ -6,6 +6,7 @@ date: 2014-08-11 15:00:00
 layout: post
 slug: android-wireless-connection-2
 title: Transfer data from Client to Server using Sockets
+keywords: [android development, android p2p tutorial, android wifi socket, socket programming, lan networking in android]
 ---
 
 In the previous post - [Connect Two Android Devices over WiFi using Network Service Disocvery](/blog/android-wireless-connection-1), we showed how we used `Network Service Discovery` to connect two android devices over WiFi. In this post, we are going to show how we used this to our advantage to connect and send data to the server client.

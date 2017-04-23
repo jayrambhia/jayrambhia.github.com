@@ -6,6 +6,7 @@ date: 2014-05-28 15:00:00
 layout: post
 slug: transparent-actionbar
 title: Make Action Bar Transparent
+keywords: [android development, android actionbar tutorial, sherlock actionbar, android toolbar, android custom layout, transparent toolbar]
 ---
 
 I have been working on an app which produces long exposure effect. As of now, we are almost ready with the free version of the app. For this, I got some feedback from some of the users. One of them said that we should make the action bar transparent and since it's a camera app, it'd look great if it's interface looked similar to that of Google Camera app. We are nowhere near that app, but we thought of giving it a try. Plus, making the Action Bar transparent gives more space for the camera preview.

@@ -6,6 +6,7 @@ date: 2014-04-16 17:00:00
 layout: post
 slug: ffmpeg-opencv-android
 title: FFmpeg with OpenCV on Android
+keywords: [android development, android camera app, android ffmpeg tutorial, opencv with ffmpeg, android ffmpeg video, android native programming, opencv C++ with android, video editing with android, create videos with ffmpeg]
 ---
 
 I am currently working on android application which takes a video file and processes each frame to create a long exposure effect. If you have worked with OpenCV on Android, you'd be aware of the face that OpenCV does not support FFmpeg on android yet. To do this one needs to manually build FFmpeg for android.

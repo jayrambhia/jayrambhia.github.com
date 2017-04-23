@@ -6,6 +6,7 @@ date: 2014-04-22 15:00:00
 layout: post
 slug: beginning-d3-js
 title: Beginning D3.js
+keywords: [javascript development, javascript dom ui, animations with d3, fancy charts with d3, awesome graphs with d3js]
 ---
 
 A friend was working on a project for data visualization using **D3.js** and I decided to help. I didn't know much about javascript and d3. I still don't, but I learned few things on my way. I wouldn't bore you with details explaining how d3.js works as there are a lot of better sites for that. I made few different types of charts using d3.js and kind of made my own library. It has chain syntax facility and also it's pretty easy to use. One can update the parameters easily. I'd put it on GitHub once I finish scrubbing it up.

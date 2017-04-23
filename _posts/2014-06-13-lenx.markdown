@@ -6,6 +6,7 @@ date: 2014-06-13 13:00:00
 layout: post
 slug: lenx
 title: LenX - Long Exposure Photography for Android
+keywords: [android development, android camera app, lenx, long exposure photos with android, opencv for android, use jni in android, use opencv c++ with android, opencv camera for android, android indie apps]
 ---
 
 So, finally, after 2 months of grappling with Android development and studying optimization of image processing on phones & photography concepts, me & my friends have finally bought our idea to fruition. 

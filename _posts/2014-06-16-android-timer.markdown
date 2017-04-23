@@ -6,6 +6,7 @@ date: 2014-06-16 16:00:00
 layout: post
 slug: android-timer
 title: Timer Utility for Android
+keywords: [android development, android basic tutorial, android handler for timer]
 ---
 
 We launched LenX last week and got a lot of feedback. One of them was to include a timer utility to set the exposure time. I looked up a bit and found out that the best way to do this was to use `Handler` and create a separate thread.

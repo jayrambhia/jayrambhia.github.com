@@ -6,6 +6,7 @@ date: 2015-03-01 15:00:00
 layout: post
 slug: ormlite-demo
 title: ORMLite with Android
+keywords: [android development, android ormlite, android database sqlite, greendao, android sqlite tutorial, notes app]
 ---
 
 I am working on application which requires a database. Android supports SQLite and we have to make do with it. Writing database queries can create a lot of boilerplate code and can be really difficult to debug. I was looking for some sort of **ORM** library for android. I came around few of them. One of them was `GreenDAO`. It seemed very promising but I couldn't manage to get it working after spending couple of days. I decided to give **[ORMLite](http://ormlite.com/docs/android)** a shot. The library is very stable and uses annotations. It was really easy to implement everything so I decided to stick with it.

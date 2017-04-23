@@ -6,6 +6,7 @@ date: 2015-01-16 13:00:00
 layout: post
 slug: eventbus-demo
 title: EventBus Demo
+keywords: [android development, android eventbus tutorial, greenrobot eventbus, eventbus 101]
 ---
 
 I have started working on a new application and for this I was looking for ways to communicate between Service and Activity. I found out about **[EventBus](https://github.com/greenrobot/EventBus)**. Eventbus is really easy to use and can be used to communicate between any Objects. EventBus communication happens by posting parcelable classes around. I will not beat around the bush much and jump in the vague details.

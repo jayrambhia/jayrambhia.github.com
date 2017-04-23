@@ -6,6 +6,7 @@ date: 2014-08-15 15:00:00
 layout: post
 slug: android-audio-cursor
 title: Get Metadata of Audio files using Cursor in Android
+keywords: [android development, android media player, android content resolver, android artist data, music player tutorial, android playlist]
 ---
 
 We are building a music app and as you would have guessed we would require all the audio metadata. At first, we tried using Android's Intent but it would let us select only one audio file at a time. Also, there was a setback if the user had disabled the default music player and other player did not listen to this intent. So we tried to look up for other ways to obtain metadata of all the audio files. We first used [MediaMetaDataRetriever](http://developer.android.com/reference/android/media/MediaMetadataRetriever.html) but it would give null String for some of the audio objects.

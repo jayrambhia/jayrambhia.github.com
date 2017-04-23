@@ -6,6 +6,7 @@ date: 2014-01-24 13:00:00
 layout: post
 slug: ndk-android-opencv
 title: Using C++ OpenCV code with Android
+keywords: [android development, android camera app, android native programming, opencv C++ with android, opencv camera app, android ndk, android opencv ndk]
 ---
 
 It's been five months since I have written a blog post. I was not too busy to write it, but just enjoying my last semester at the campus. I'm currently pursuing my thesis at Tesseract Imaging and have been working with Android OpenCV for some time. Although I don't know much about it, I know enough to do my work. I'm going to write about how to use Native Development Kit (NDK) to use C++ OpenCV code with Android. I keep having issues with my Linux distro and have to change it often so I have to reconfigure the whole Eclipse Android settings.

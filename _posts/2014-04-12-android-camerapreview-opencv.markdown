@@ -6,6 +6,7 @@ date: 2014-04-12 19:00:00
 layout: post
 slug: android-camerapreview-opencv
 title: Using OpenCV with Android CameraPreview
+keywords: [android development, android camera app, android native programming, opencv C++ with android, opencv camera app]
 ---
 
 I have been working on an android application for some time now. It's basically about getting long exposure shots. With not much experience with Android, I just started working with OpenCV's CamerBridgeViewBase. Everything was working fine. The only issue was that it was horribly slow. I hardly ever got more than 9 fps. I once tried OpenCV static linking in order to avoid downloading OpenCV's Android Manager, the results got pathrtically slower. I never even got 3 fps. I use a Nexus 4. I posted this issue on Stackoverflow as well as OpenCV's forum and yet haven't got any reply.

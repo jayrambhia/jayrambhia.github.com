@@ -6,6 +6,7 @@ date: 2014-03-22 13:00:00
 layout: post
 slug: android-opencv-facedetection
 title: Face Detection using OpenCV Haarcascades in Android
+keywords: [android development, android camera app, android native programming, opencv C++ with android, opencv camera app, android camera detect faces, face detection with opencv, haar cascades in android]
 ---
 
 I was working on this app which required face detection and pose estimation. I was already using Native code for some other processes (edge detection, etc) so I figured I'd use Haarcascades in native code only. It was a bit of hassle to configure how to send xml file to JNI or whether it would load the cascade once I pass the filename to the native code.

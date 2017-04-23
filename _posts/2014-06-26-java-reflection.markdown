@@ -6,6 +6,7 @@ date: 2014-06-26 17:00:00
 layout: post
 slug: java-reflection
 title: java.lang.reflect.Method for Callback methods
+keywords: [android development, java basic tutorial, use reflections in android]
 ---
 
 I keep looking for ways to do things right. For calling some function of my activity, I'd pass activity to that class and call that particular method. I did not feel right doing this and I wanted to make my class more generic so I started looking for better approaches. I found this approach, where I can pass any function as `reflect.Method` and invoke it in that class. This seemed perfect, but as it turns out this also has some issues of its own.

@@ -6,6 +6,7 @@ date: 2014-06-02 14:00:00
 layout: post
 slug: android-touchfocus
 title: Touch to Focus Android Camera
+keywords: [android development, android camera app, android camera sdk, focus android camera, android indie apps]
 ---
 
 I have been working on LenX for few weeks now, and as it is a camera app, it was necessary to add some type of focus. We decided to add touch based focus. Wherever user touches the screen, Android camera would try to focus in that area.

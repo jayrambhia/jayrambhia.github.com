@@ -6,6 +6,7 @@ date: 2014-03-15 16:00:00
 layout: post
 slug: NDK-Logs
 title: Adding Logs in JNI Code
+keywords: [android development, android camera app, android native programming, opencv C++ with android, opencv camera app, debugging jni]
 ---
 
 I am working with NDK and Android so sometimes I need to debug the native code to see if it's working properly or not. I wanted something similar to Android's `Log` function.

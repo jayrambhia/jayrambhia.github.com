@@ -6,6 +6,7 @@ date: 2014-04-13 18:30:00
 layout: post
 slug: static-linking-opencv
 title: Static Linking of OpenCV with Android
+keywords: [android development, android camera app, android native programming, opencv C++ with android, speed up opencv, link opencv to android]
 ---
 
 I have been working on this android application for long exposure shots and want to put it on Google Play Store. Since I have included OpenCV, the application needs OpenCV Manager to run. Now, this can be demotivating for the users to download another app to run my app. So I looked around and there's a way to do the static linking of OpenCV modules. And, it's pretty easy too.

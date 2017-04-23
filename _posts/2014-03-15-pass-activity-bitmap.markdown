@@ -6,6 +6,7 @@ date: 2014-03-15 17:00:00
 layout: post
 slug: pass-activity-bitmap
 title: Pass Bitmap Data Between Activities in Android
+keywords: [android development, android bitmap tutorial, pass bitmap to another activity, android bitmap in bundle, android camera bitmap]
 ---
 
 I was making an application where I chose image file using browser intent and process it using OpenCV NDK. I decided to keep a different Activity for the OpenCV part and hence I had to pass the bitmap data from my main Activity to the OpenCV part activity. I had written an application before where I starting one intent from another activity. But I did not know how to pass arguments to the new activity. I looked up on Google and found out how to call another activity and then how to pass required data.

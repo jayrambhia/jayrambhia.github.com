@@ -6,6 +6,7 @@ date: 2015-12-04 02:00:00
 layout: post
 slug: rxjava-subscribers
 title: A Note About RxJava and its Subscriber
+keywords: [rxjava with android, use rxjava debounce, android development, android tutorial, learn rxjava, rxjava best practices, rxjava subscriber]
 ---
 
 Wow, I almost forgot about this part of my blog. I am writing a note after over a year. I could have written a post about it, but I was tinkering with RxJava and found something interesting and made sort of a theory which I am not sure is correct or not. I am not going to explain what Observers and Subscribers do in RxJava. Anyway, here it goes.

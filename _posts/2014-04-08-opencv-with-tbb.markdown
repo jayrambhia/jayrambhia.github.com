@@ -6,6 +6,7 @@ date: 2014-04-08 19:00:00
 layout: post
 slug: opencv-with-tbb
 title: Multithreading in OpenCV using TBB
+keywords: [speed up opencv with tbb, opencv multithreading, mutlithreading with tbb, opencv in C++]
 ---
 
 I was working on a small algorithm and it took a while to do the complete processing so I thought of using POSIX threads for multithreading where I failed horribly. I spent some good amount of time on it, but realized maybe it needed a bit more. I knew that OpenCV has TBB support. I started to look for small examples which would help me learn how to use OpenCV's TBB API. Examples were really hard to find, but thankfully, I found this post on OpenCV Forum - [How To Use parallel_for](http://answers.opencv.org/question/3730/how-to-use-parallel_for/).

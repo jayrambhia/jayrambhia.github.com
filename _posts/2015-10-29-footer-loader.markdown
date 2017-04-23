@@ -6,6 +6,7 @@ date: 2015-10-29 01:00:00
 layout: post
 slug: footer-loader
 title: Footer Loader for infinite scrolling
+keywords: [android development, recyclerview adapter, android infinite scrolling, recyclerview footer, android recyclerview tutorial]
 ---
 
 I have been laying low for a while and have been pretty busy with my new workplace. I have started wokring at [Elanic](http://elanic.in/) and it's been a fun ride. I am just starting small before I go writing big posts again. This is a pretty easy concept and every developer should know these little tricks.

@@ -6,6 +6,7 @@ date: 2015-11-11 16:00:00
 layout: post
 slug: instagram-cropper
 title: Instagram like Image Cropper
+keywords: [android image cropping, android development, android library, instagram cropper, android crop bitmap]
 ---
 
 Instagram recently released a new feature which allows users to upload non-square images. They implemented a new cropper for that which crops the image if it fits in the square. It also has an option where users can use rectangle images with appropriate cropping. It's really a handy feature to have.

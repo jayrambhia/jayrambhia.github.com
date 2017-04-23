@@ -6,6 +6,7 @@ date: 2014-05-12 17:00:00
 layout: post
 slug: android-facedetection
 title: Face Detection using Android Camera Preview
+keywords: [android development, android camera app, face detection in camera, detect faces with android, face detection tutorial]
 ---
 
 I have been working on making a perfect Camera Preview interface with burst capability, touch focus, face detection, frame processing, pinch zoom and whatever that I could think of.
