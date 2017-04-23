@@ -10,11 +10,17 @@
 <!--   <title>{% if page.slug == "home" %}{{ site.tagline }}{% else %}{{ page.title }}{% endif %} &mdash; {{ site.name }}</title> -->
   <meta name="author" content="Jay Rambhia">
 <!--   <meta name="description" content="Notes, codes, and ramblings of a paranoid android"> -->
-  <meta name="keywords" content="computer vision, python opencv, tracking, keypoints, simplecv, opencv, android, fenchtose, tesseract, stereovision, visualization, paranoid, native, rxjava, android mvp, cropper, viewpager, recyclerview, ormlite, eventbus, actionbar, android camera, lenx, long exposure, jni, bitmap, slic, hough transform, open source, multithreading, litho, react, androiddev, android development">
+  <!-- <meta name="keywords" content="computer vision, python opencv, tracking, keypoints, simplecv, opencv, android, fenchtose, tesseract, stereovision, visualization, paranoid, native, rxjava, android mvp, cropper, viewpager, recyclerview, ormlite, eventbus, actionbar, android camera, lenx, long exposure, jni, bitmap, slic, hough transform, open source, multithreading, litho, react, androiddev, android development"> -->
   <meta name="viewport" content="width=device-width">
   <!-- stylesheets -->
   <link rel="stylesheet" href="/assets/styles/css/style.min.css">
-  {% seo %}
+  {% if page.keywords %}
+        <meta name="keywords_present" content="yes" />
+        <meta name="keywords_test" content="{{ page.keywords }}" />
+        <meta name="keywords" content="{{ page.keywords | join: ', ' | escape }}" />
+  {% else %}
+        <meta name="keywords_present" content="no" />  
+  {% endif %}  
 </head>
 <body>
 <!--[if lt IE 7]>
