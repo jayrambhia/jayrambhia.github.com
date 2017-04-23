@@ -6,6 +6,7 @@ date: 2012-07-11 16:20:51
 layout: post
 slug: face-tracking-with-camshift-using-opencvsimplecv
 title: Face Tracking with CAMShift
+keywords: [learn opencv, open source computer vision, face tracking with opencv, track faces with opencv, google summer of code]
 ---
 
 **CAMShift** stands for **C**ontinuously **A**daptive **M**ean Shift. It is the basis for the **face-tracking** algorithm in OpenCV. It combines the basic **Mean Shift** algorithm with an adaptive region-sizing step. The kernel is a simple step function applied to a skin-probability map. The skin probability of each image pixel is based on color using a method called **histogram backprojection**. Color is represented as Hue from the HSV color model.

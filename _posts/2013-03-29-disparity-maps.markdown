@@ -6,6 +6,7 @@ date: 2013-03-29 03:00:00
 layout: post
 slug: disparity-mpas
 title: 'Disparity Map'
+keywords: [learn opencv, disparity, find disparity map opencv, opencv find depth, stereo camera disparity]
 ---
 
 As I had mentioned in earlier posts that I was working on Stereo Images, disparity and depth images, I will elaborate about disparity maps and show how to compute it using OpenCV.

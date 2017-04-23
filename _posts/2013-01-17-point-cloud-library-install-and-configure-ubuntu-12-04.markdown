@@ -6,6 +6,7 @@ date: 2013-01-17 02:35:12
 layout: post
 slug: point-cloud-library-install-and-configure-ubuntu-12-04
 title: Point Cloud Library - Install and Configure - Ubuntu 12.04
+keywords: [learn opencv, pcl with opencv, 3d graphics with pcl, point cloud library 3d]
 ---
 
 A **Point Cloud** is a set of vertices in a three-dimensional coordinate system. As OpenCV is used to work with two dimensional objects(images), PCL is used to work with three dimensional objects(3D space). Vertices usually represent X, Y and Z coordinates of the external surface of an object.

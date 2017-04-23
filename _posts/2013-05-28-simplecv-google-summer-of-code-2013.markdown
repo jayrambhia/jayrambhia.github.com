@@ -6,6 +6,7 @@ date: 2013-05-28 16:23:58
 layout: post
 slug: simplecv-google-summer-of-code-2013
 title: SimpleCV - Google Summer of Code 2013
+keywords: [simplecv gsoc, gosc 2013, Google Summer of Code, Open Source, crack gsoc, open source computer vision, learn simplecv]
 ---
 
 I had proposed a project for SimpleCV in this year's Google Summer of Code and it has been accepted. This year my project is concentrated on improving SimpleCV's core functionalities and adding support for shape matching and detection which is one of the most important purposes of Machine Vision in industrial automation.

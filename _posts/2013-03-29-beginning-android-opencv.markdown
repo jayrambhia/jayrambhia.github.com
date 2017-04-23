@@ -6,6 +6,7 @@ date: 2013-03-29 01:00:00
 layout: post
 slug: beginning-android-opencv
 title: 'Beginning Android OpenCV'
+keywords: [android development, android camera app, android native programming, opencv C++ with android, opencv camera app, android ndk, android opencv ndk]
 ---
 
 Many people who are trying to search for Android Opencv stumble upon my blog due to the name Paranoid Android. I had decided that I would never make an android appliaction as I hate Java, but desperate times require desparate measures, and so I installed Android OpenCV and created a small application.

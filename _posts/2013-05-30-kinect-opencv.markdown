@@ -6,6 +6,7 @@ date: 2013-05-30 21:00:00
 layout: post
 slug: kinect-opencv
 title: Kinect with OpenCV using Freenect
+keywords: [opencv tutorial, detect fingertips with kinect, kinect with opencv, opencv detect fingers, computer vision tutorial]
 ---
 I recently got a Kinect to work on at my sumemr internship at [Ducere Technologies](http://duceretech.com/). Having heard so much about OpenNI, I tried installing it on my Ubuntu 12.04 LTS 64 bit machine. It took some time to configure, build and install it. I got help from few blogs. I managed to install it somehow. Connected the kinect and fired up the demo program and ran into troubles. I was getting following error.
 

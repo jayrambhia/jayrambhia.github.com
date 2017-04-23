@@ -6,6 +6,7 @@ date: 2013-04-17 21:00:00
 layout: post
 slug: opencv-android-image
 title: Using Android SDK Camera with OpenCV
+keywords: [android development, android camera app, android native programming, opencv C++ with android, opencv camera app, android ndk, android opencv ndk]
 ---
 
 So I'm currently working on HTC Evo V 4G and was desparately trying to obtain images from both the camera. One thing was sure that I couldn't use OpenCV's Java Camera or Native Camera (it doesn't even work with ICS). I decided to use Android SDK Camera. I tried posting question on stackoverflow and OpenCV forum, but couldn't find any proper solutions. I tried taking pieces of code from wherever I could and wrote something, but it wouldn't work. I also found a perfectly working code but it was giving me Static Linkage Errors. It meant the OpenCV manager couldn't be loaded in the application. I had done everything step by step but it wasn't working.

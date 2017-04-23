@@ -6,6 +6,7 @@ date: 2013-06-15 15:30:58
 layout: post
 slug: fingertips-kinect
 title: Fingertips detection using Kinect
+keywords: [opencv tutorial, detect fingertips with kinect, kinect with opencv, opencv detect fingers, computer vision tutorial]
 ---
 
 In my previous **[post]({% post_url 2013-05-30-kinect-opencv %})**, I have shown how to use Kinect with OpenCV using Freenect library.Siddharth and I have been working on Kinect for gesture recognition and so far we are able to detect fingertips using contours and hull.

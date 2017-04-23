@@ -6,6 +6,7 @@ date: 2012-07-11 14:54:20
 layout: post
 slug: sobel-operator
 title: Sobel Operator
+keywords: [learn opencv, open source computer vision, sobel operator, image processing with opencv, google summer of code]
 ---
 
 The **Sobel Operator** is used in Image Processing to get the edges in the image. It is a **Discrete Differentiation Operator** which computes an approximation of the gradient of the image intensity function.The Sobel operator is based on convolving the image with a small, separable, and integer valued filter in horizontal and vertical direction and is therefore relatively inexpensive in terms of computations.

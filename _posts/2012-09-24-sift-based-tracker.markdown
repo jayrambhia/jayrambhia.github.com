@@ -6,6 +6,7 @@ date: 2012-09-24 02:07:12
 layout: post
 slug: sift-based-tracker
 title: SIFT based Tracker
+keywords: [learn opencv, opencv sift, find features with sift, template matching with sift, opencv template matching]
 ---
 
 **Scale-invariant feature transform** (or SIFT) is an algorithm in computer vision to detect and describe local features in images. The algorithm was published by David Lowe in 1999.SIFT is a method to detect distinct, invariant image feature points, which easily can be matched between images to perform tasks such as object detection and recognition, or to compute geometrical transformation between images.

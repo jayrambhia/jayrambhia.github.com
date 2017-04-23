@@ -6,6 +6,7 @@ date: 2013-02-24 03:00:00
 layout: post
 slug: hough-transform
 title: 'Hough Transform'
+keywords: [learn opencv, what is hough transform, hough transform with opencv, find lines in opencv, find shapes in opencv, find circles in opencv, open source computer vision]
 ---
 
 Let's say you take a snapshot of a window. You used Canny/Soble edge detector and found a nice boundary of the window and you want to figure out representation of the window's edge, size, etc. How would you do it? Right now it's just some 200 odd pixels in near vicinity and representing the shape of a line.

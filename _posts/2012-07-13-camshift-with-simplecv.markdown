@@ -6,6 +6,7 @@ date: 2012-07-13 01:11:04
 layout: post
 slug: camshift-with-simplecv
 title: CAMShift with SimpleCV
+keywords: [learn opencv, open source computer vision, camshift tracking, track balls with opencv, google summer of code]
 ---
 
 GSoC 2012 Mid-Term evaluations are over and I passed. As usual we had a meeting on Wednesday 11:30 am EST on IRC where I and Kat discussed the tracking scenario of SimpleCV and how to implement different tracking algorithms with efficiency. She advised me that the tracking object should live in FeatureSet so that the tracked path can be stored in Features. So, it looks like this

@@ -6,6 +6,7 @@ date: 2012-08-08 23:22:09
 layout: post
 slug: lucas-kanade-tracker
 title: Lucas Kanade Tracker
+keywords: [learn opencv, open source computer vision, lucas kanade tracker opencv, track cars with opencv, google summer of code]
 ---
 
 I am working on a tracking algorithm based on **Lucas-Kanade** Method using **Optical Flow**. The Lucas–Kanade method is a widely used differential method for optical flow estimation developed by Bruce D. Lucas and Takeo Kanade. It assumes that the flow is essentially constant in a local neighbourhood of the pixel under consideration, and solves the basic optical flow equations for all the pixels in that neighbourhood, by the least squares criterion.

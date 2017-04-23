@@ -6,6 +6,7 @@ date: 2013-02-24 15:00:00
 layout: post
 slug: probabilistic-hough-transform
 title: 'Probabilistic Hough Transform'
+keywords: [learn opencv, what is hough transform, hough transform with opencv, find lines in opencv, find shapes in opencv, find circles in opencv, open source computer vision]
 ---
 
 In the [previous post](/blog/hough-transform) we discussed Hough Transform and how to implement it to find lines. To get better accuracy we need to compromise on the computing front. It takes a lot of computation power to iterate over all the points and add vote. To reduce this computation, researchers came up with some probabilistic techniques which would increase the computing speed without losing much accuracy.

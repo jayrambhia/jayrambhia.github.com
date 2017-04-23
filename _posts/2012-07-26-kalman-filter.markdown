@@ -6,6 +6,7 @@ date: 2012-07-26 19:28:20
 layout: post
 slug: kalman-filter
 title: Kalman Filter
+keywords: [learn opencv, open source computer vision, kalman filter opencv, tracking with kalman filter, google summer of code]
 ---
 
 Kalman Filter is a set of mathematical equations that provides an efficient computational (recursive) means to estimate the state of a process, in a way that minimizes the mean of the squared error. It uses a series of measurements observed over time, containing noise (random variations) and other inaccuracies, and produces estimates of unknown variables that tend to be more precise than those that would be based on a single measurement alone.The filter is named for [Rudolf (Rudy) E. Kálmán](http://en.wikipedia.org/wiki/Rudolf_E._K%C3%A1lm%C3%A1n), one of the primary developers of its theory.

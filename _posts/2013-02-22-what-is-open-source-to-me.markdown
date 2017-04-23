@@ -6,6 +6,7 @@ date: 2013-02-22 00:20:25
 layout: post
 slug: what-is-open-source-to-me
 title: 'What is Open Source To Me?'
+keywords: [learn open source, how to contribute to open source, google summer of code, open source computer vision]
 ---
 
 What is Open Source To Me?

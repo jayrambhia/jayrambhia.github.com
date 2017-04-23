@@ -6,6 +6,7 @@ date: 2013-05-05 17:00:00
 layout: post
 slug: opencv-python-book-review
 title: Review of OpenCV Computer Vision with Python
+keywords: [learn opencv, learn opencv python, book review, packtpub opencv python]
 ---
 ![OpenCV Computer Vision with Python Book](/assets/images/opencv-book-review-1.jpg)
 

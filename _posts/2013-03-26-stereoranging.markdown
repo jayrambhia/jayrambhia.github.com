@@ -6,6 +6,7 @@ date: 2013-03-26 15:00:00
 layout: post
 slug: stereoranging
 title: 'Stereo Ranging'
+keywords: [learn opencv, what is stereo rangin, stereo randing with opencv, find real distance]
 ---
 
 Recently, I have been working on Stereoscopy, disparity and depth maps, and my primary objective being getting depth, height of the object. In a nutshell, I am working on obtaining 3 dimensional data from the scene. As I was a bit swamped with all the work, I didn't get time to write about it. I will describe and elaborate more on stereoscopy in upcoming posts.

@@ -6,6 +6,7 @@ date: 2013-03-30 09:00:00
 layout: post
 slug: stereo-calibration
 title: Stereo Calibration
+keywords: [learn opencv, stereo cameras, stereo calibration with opencv, depth processing, calibrate camera opencv]
 ---
 
 Whenever working with stereoscopy, it is a necessity to calibrate the cameras and get the required intrinsic and extrinsic parameters.
