@@ -11,6 +11,9 @@ layout: base
         <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
         <script type="text/javascript" src="http://www.reddit.com/static/button/button1.js"></script>
       </div>
+      {% if page.tags %}
+        <meta name="keywords" content="{{ page.tags | join: ', ' | escape }}" />
+      {% endif %}  
       {% seo %}
 	</header><!-- post-header -->
 	<div>
