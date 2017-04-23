@@ -4,7 +4,7 @@ tag: Travel
 comments: true
 date: 2011-03-15 04:06:17
 layout: post
-slug: a-visit-to-zuarinagar
+slug: a-visit-to-zuarinagar/
 title: A visit to Zuarinagar...
 ---
 

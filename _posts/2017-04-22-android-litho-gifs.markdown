@@ -12,7 +12,7 @@ layout: post
 slug: android-litho-gifs
 title: Android GIF search engine with Litho
 description: Build an android GIF search engine with Litho by engine and giphy
-tags: [android, android development, androiddev, dev, litho, react, ui, gif, gifs, search, engine, facebook, open source, recyclerview, props, states]
+keywords: [android, android development, androiddev, dev, litho, react, ui, gif, gifs, search, engine, facebook, open source, recyclerview, props, states]
 ---
 
 I recently tried my hands with [React](https://facebook.github.io/react/) - A Javascript library for building user interfaces. I started following this amazing tutorial - 
