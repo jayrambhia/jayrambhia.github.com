@@ -13,6 +13,7 @@ layout: base
       </div>
       {% if page.tags %}
         <meta name="keywords_present" content="yes" />
+        <meta name="keywords_test" content="{{ page.tags }}" />
         <meta name="keywords" content="{{ page.tags | join: ', ' | escape }}" />
       {% else %}
         <meta name="keywords_present" content="no" />  
