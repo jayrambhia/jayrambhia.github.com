@@ -60,7 +60,7 @@ If you reopen the app and search for batman again, you would not have any liked 
 
 {% gist jayrambhia/43aa40a26e9fc514e09681833e4c6c7c GifItemViewSpec-1.java %}
 
-Here we can have optional prop with **`@Prop(optional = true)`. If a prop is optional, we need not pass it all the time. Here's the complete code - [GifItemViewSpec](https://github.com/jayrambhia/LithoGifSearch/blob/v2/app/src/main/java/com/fenchtose/lithogifsearch/components/GifItemViewSpec.java).
+Here we can have optional prop with **`@Prop(optional = true)`**. If a prop is optional, we need not pass it all the time. Here's the complete code - [GifItemViewSpec](https://github.com/jayrambhia/LithoGifSearch/blob/v2/app/src/main/java/com/fenchtose/lithogifsearch/components/GifItemViewSpec.java).
 
 To save our data, we can use SharedPreferences.
 
