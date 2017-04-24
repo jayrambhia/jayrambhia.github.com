@@ -176,7 +176,7 @@ You can find current code here - [LithoGifDemo - v1](https://github.com/jayrambh
 
 You can find the latest code (keeps updating) here - [LithoGifDemo](https://github.com/jayrambhia/LithoGifSearch)
 
-In the next post - [Managing State in Litho](/posts/android-litho-state), we will see how we can implement state in Litho!
+In the next post - [Managing State in Litho](/blog/android-litho-state), we will see how we can implement state in Litho!
 
 P.S. I do not (yet) fully understand Litho, State, Yoga, Flexbox so feel free to suggest updates and best practices.
 
