@@ -12,7 +12,7 @@ layout: post
 slug: android-litho-gifs
 title: Android GIF search engine with Litho
 description: Build an android GIF search engine with Litho by engine and giphy
-keywords: [android, android development, androiddev, dev, litho, react, ui, gif, gifs, search, engine, facebook, open source, recyclerview, props, states]
+keywords: [android, android development, androiddev, dev, litho, react, ui, gif, gifs, search, engine, facebook, open source, recyclerview, props, state]
 ---
 
 I recently tried my hands with [React](https://facebook.github.io/react/) - A Javascript library for building user interfaces. I started following this amazing tutorial - 
@@ -84,8 +84,8 @@ We also need to update our binder insert method, otherwise we'll get a runtime e
 
 Now, we have different data on the screen. But, how would we update it in case we get some different data? 
 
-### States
-Litho has something called `@State` where you can define and update the states of the component. But it's not so easy. There is some pre-defined APIs that are available and in `protected` scope so can't be called from outside. (eg. Activity). You could add a static methodin your Spec class which would trigger state update but it requires a `ComponentContext` and you could pass it from activitybut it would not work because it doesn't have any component bound to it. There aren't many (or any) example
+### state
+Litho has something called `@State` where you can define and update the state of the component. But it's not so easy. There is some pre-defined APIs that are available and in `protected` scope so can't be called from outside. (eg. Activity). You could add a static methodin your Spec class which would trigger state update but it requires a `ComponentContext` and you could pass it from activitybut it would not work because it doesn't have any component bound to it. There aren't many (or any) example
 which would show how to update recyclerview's (adapter) data dynamically.
 
 ### Dynamic Updates
@@ -118,7 +118,7 @@ To summarize,
 And there's only one (major) part remaining. **Showing Gifs**!
 
 ### Image
-I think this was the most difficult part of this project. Litho provides `Image` widget but it's not as flexible as `ImageView`. You can't use `setBitmap` or hook it directly into Glide. It just takes a drawable. So it would be super difficult to keep track of downloaded bitmaps and have state in the component and update it, oh and did I tell you that there isn't a direct easy way to update states from outside? So I started digging into litho's sample code and they have used Fresco with some other
+I think this was the most difficult part of this project. Litho provides `Image` widget but it's not as flexible as `ImageView`. You can't use `setBitmap` or hook it directly into Glide. It just takes a drawable. So it would be super difficult to keep track of downloaded bitmaps and have state in the component and update it, oh and did I tell you that there isn't a direct easy way to update state from outside? So I started digging into litho's sample code and they have used Fresco with some other
 library. It should not be that difficult to display an image, right?
 
 But then I noticed that they have used **`@MountSpec`** which is basically used for custom views and drawables. So I started looking for some docs and examples but the only one they have of ColorDrawable is super easy and it's difficult to figure out the lifecycle and how things are working.
@@ -167,11 +167,16 @@ I think everything is in place and if you search for batman now, you should get 
 
 There are some optimizations that you can do. Instead of calling `Glide.with(context)` in GifItemViewSpec, you can pass `Glide.RequestManager` as a prop.
 
-So your GIF search engine powered by Litho (and Giphy) is ready! I'll explore more about states, good practices, and other awesome features in upcoming posts.
+So your GIF search engine powered by Litho (and Giphy) is ready! I'll explore more about state, good practices, and other awesome features in upcoming posts.
 
-It's fun to work with Litho. The API is quite easy but there is some learning curve and if you want customize it or have some weird states, you're in for a roll.
+It's fun to work with Litho. The API is quite easy but there is some learning curve and if you want customize it or have some weird state, you're in for a roll.
 
-Here's the [GitHub Repository](https://github.com/jayrambhia/LithoGifSearch).
+## Code
+You can find current code here - [LithoGifDemo - v1](https://github.com/jayrambhia/LithoGifSearch/tree/v1)
 
-P.S. I do not (yet) fully understand Litho, States, Yoga, Flexbox so feel free to suggest updates and best practices.
+You can find the latest code (keeps updating) here - [LithoGifDemo](https://github.com/jayrambhia/LithoGifSearch)
+
+In the next post - [Managing State in Litho](/posts/android-litho-state), we will see how we can implement state in Litho!
+
+P.S. I do not (yet) fully understand Litho, State, Yoga, Flexbox so feel free to suggest updates and best practices.
 
