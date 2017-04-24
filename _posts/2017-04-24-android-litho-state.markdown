@@ -33,6 +33,8 @@ We need to update how our component is going to be laid out. I'm changing previo
 
 {% gist jayrambhia/43aa40a26e9fc514e09681833e4c6c7c GifItemViewSpec.java %}
 
+You can find **`GifImageViewSpec`** here - [GifImageViewSpec](https://github.com/jayrambhia/LithoGifSearch/blob/v2/app/src/main/java/com/fenchtose/lithogifsearch/components/GifImageViewSpec.java).
+
 Yoga (Flexbox) doesn't work exactly like Android. To put the favorite button on top right corner, we need to use **`.positionType(YogaPositionType.ABSOLUTE)`** in combination with **`.alignSelf(YogaAlign.FLEX_END)`**. The first property gets us FrameLayout behavior and the second one makes it `layout_gravity=end`.
 
 As you can see, **`isLiked`** is a state which would affect the drawable of the button.
@@ -55,6 +57,23 @@ If you run it now, look for batman GIFs and hit button on some of the images, th
 We can see that we can have immutable properties and still work very effectively with Litho. This is one of the main advantage of unidrecitonal data flow. 
 
 If you reopen the app and search for batman again, you would not have any liked GIFs. To fix that you can have a shared preferences which stores id of the gif as key and boolean as value. And every time you get new data, you can set `isLiked` by looking up values in shared preferences. Once you have your shared preferences or any other db set up, you can use an interface and pass it as a `@Prop` to GifItemView component and call the interface method in your `onEvent(ClickEvent.class)` method.
+
+{% gist jayrambhia/43aa40a26e9fc514e09681833e4c6c7c GifItemViewSpec-1.java %}
+
+Here we can have optional prop with **`@Prop(optional = true)`. If a prop is optional, we need not pass it all the time. Here's the complete code - [GifItemViewSpec](https://github.com/jayrambhia/LithoGifSearch/blob/v2/app/src/main/java/com/fenchtose/lithogifsearch/components/GifItemViewSpec.java).
+
+To save our data, we can use SharedPreferences.
+
+{% gist jayrambhia/43aa40a26e9fc514e09681833e4c6c7c PreferenceLikeStore.java %}
+
+`PreferenceLikeStore` implements `LikeStore` a basic interface. You can skip on the interface if you want. Here, we can remove gif id from shared preferences if it is unliked.
+You can find complete code here - [LikeStore](https://github.com/jayrambhia/LithoGifSearch/blob/v2/app/src/main/java/com/fenchtose/lithogifsearch/models/db/LikeStore.java) and [PreferenceLikeStore](https://github.com/jayrambhia/LithoGifSearch/blob/v2/app/src/main/java/com/fenchtose/lithogifsearch/models/db/PreferenceLikeStore.java).
+
+We need to update **`MainActivity`** in order to have the callback.
+
+{% gist jayrambhia/43aa40a26e9fc514e09681833e4c6c7c MainActivity-1.java %}
+
+As I had mentioned in the previous post, `GifProvider` class uses Retrofit to call API and provide `List<GifItem>`. Here, we are going to modify it a bit and pass `PrefernceLikeStore` to set whether the gif was liked by the user or not. You can find the code here - [GifProvider](https://github.com/jayrambhia/LithoGifSearch/blob/v2/app/src/main/java/com/fenchtose/lithogifsearch/models/api/GifProvider.java) and [MainActivity](https://github.com/jayrambhia/LithoGifSearch/blob/v2/app/src/main/java/com/fenchtose/lithogifsearch/MainActivity.java).
 
 ## Code
 You can find current code here - [LithoGifDemo - v2](https://github.com/jayrambhia/LithoGifSearch/tree/v2)
