@@ -58,7 +58,7 @@ We created another event handler `@OnEvent(ClickEvent.class) onViewClicked` to h
 {% gist jayrambhia/cecafd7daf1bf6fc0a528c16ae2dddc6 MainActivity.java %}
 code - [MainActivity](https://github.com/jayrambhia/LithoGifSearch/blob/v4-navigation/app/src/main/java/com/fenchtose/lithogifsearch/MainActivity.java)
 
-**`LithoView.setComponent()` methods updates the component in the view and creates a new component tree. This is similar to FragmentTransactions to replace one fragment with another but much simpler. When the user presses back, we check if `isFullScreen` true or not. If it's true, we set HomeComponent to the root and change `isFullScreen` to false.
+**`LithoView.setComponent()`** methods updates the component in the view and creates a new component tree. This is similar to FragmentTransactions to replace one fragment with another but much simpler. When the user presses back, we check if `isFullScreen` true or not. If it's true, we set HomeComponent to the root and change `isFullScreen` to false.
 
 If you noticed, we are setting **`.key(gif.getId())`** to FullScreenComponent. This is very important. Litho differentiates within same types of components based on this key. If we do not provide different keys for different GIF items, it will reuse the same component and `@OnCreateInitialState` is never invoked and the user will see the GIF is liked even though the user did not like the GIF but opened a GIF (the first GIF that was opened in the session) which they had liked.
 
