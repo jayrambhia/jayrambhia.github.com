@@ -80,6 +80,12 @@ You can find current code here - [LithoGifDemo - v2](https://github.com/jayrambh
 
 You can find the latest code (keeps updating) here - [LithoGifDemo](https://github.com/jayrambhia/LithoGifSearch)
 
-In the next post, we will see how we can implement navigation with Litho!
+In the next post, we will see how we can implement **[navigation with Litho](/blog/android-litho-navigation)**!
 
 P.S. Working with **State** is a bit more complicated than it seems but I have explored some ways using which we can synchronize states.
+
+## Series
+
+ 1. [Android GIF search engine with Litho](/blog/android-litho-gifs)
+ 2. Managing State in Litho
+ 3. [Navigation with Litho](/blog/android-litho-navigation)

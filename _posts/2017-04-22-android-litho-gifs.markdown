@@ -180,3 +180,8 @@ In the next post - [Managing State in Litho](/blog/android-litho-state), we will
 
 P.S. I do not (yet) fully understand Litho, State, Yoga, Flexbox so feel free to suggest updates and best practices.
 
+## Series
+
+ 1. Android GIF search engine with Litho
+ 2. [Managing State in Litho](/blog/android-litho-state)
+ 3. [Navigation with Litho](/blog/android-litho-navigation)
