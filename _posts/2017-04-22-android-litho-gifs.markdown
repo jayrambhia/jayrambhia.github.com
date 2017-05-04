@@ -94,7 +94,8 @@ Note: EditText is a litho's widget. It is **to be confused** with Android's Edit
 To display HomeComponent on the screen, we will modify `MainActivity`. Litho provdes a builder pattern to create a component so that if we change some parameters, we don't have to update the constructor again and again. It also helps when we have a lot of props. Litho is quite smart and it generates code based on the variable/parameter name. We have added **~@Prop String hint`** so it will create a builder method `hint(String hint)` and we can pass the value using it.
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a MainActivity.java %}
-
+<br/>
+<br/>
 ### What is ComponentContext?
 ComponentContext is a context subclass used by Litho internally to keep track of a lot of things including components.
 
@@ -111,7 +112,8 @@ Since we are going to show a gif, let's name it GifItemViewComponent. We will wr
 Now, we need to add some dummy data so that we can see something on the screen. We need to update `HomeComponentSpec.getRecyclerComponent`.
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a HomeComponentSpec-Recycler.java %}
-
+<br/>
+<br/>
 ### What is RecyclerBinder?
 
 `RecyclerBinder` is sort of a super RecyclerView Adapter which takes care of creating views. It's supposed to be highly optimised. RecyclerView Adapter recycles ViewHolders but RecyclerBinder recycles each view (component to be correct) based on the type. If we have two different components for different items in Recycler as Component1 and Component2. Text (child) component of Component1 may be recycled and used in Component2. Litho would take care of correctly measureing and redering the recycled components.
@@ -122,7 +124,8 @@ We don't have to write boilerplate code for RecyclerBinder like we do for Recycl
 
 ### What is ComponentInfo?
 ComponentInfo keeps the component and necessary information regarding how to render the component. It even takes care of `span size` and `isSticky`. It is so difficult to have a sticky item in a RecyclerView but Litho does it all under the hood and gives us simple APIs.
-
+<br/>
+<br/>
 We have added some data to RecyclerBinder and let's see what it renders on the screen when we run the app. No surprises! It renders exactly 20 items which display **Hello World**, Let's add more items and see how the scrolling works. No issues at all! It uses RecyclerView under the hood but with super optimizations.
 
 Static content is nice, but we want to know how easy or difficult it would be to have some dynamic content. One easy way to add dynamic content would be to add a `@Prop` to our component and pass diffreent values for different items.
@@ -133,33 +136,95 @@ We should update our `Recycler.insertItemAt` method. We have defined `@Prop Stri
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a HomeComponentSpec-Recycler-1.java %}
 
-Now, we have different data on the screen. But, how would we update it in case we get some different data? 
+Let's hit that run button again. Yes, we see different data for different items even after scrolling. RecyclerBinder is recycling the views correctly as we don't see any data repetitions. Let's add some more data and scroll it like crazy. Data is not jumbled up so we can safely assume that Litho's RecyclerBinder is going to work just as well if not better as RecyclerView.Adatper.
 
-### state
-Litho has something called `@State` where you can define and update the state of the component. But it's not so easy. There is some pre-defined APIs that are available and in `protected` scope so can't be called from outside. (eg. Activity). You could add a static methodin your Spec class which would trigger state update but it requires a `ComponentContext` and you could pass it from activitybut it would not work because it doesn't have any component bound to it. There aren't many (or any) example
-which would show how to update recyclerview's (adapter) data dynamically.
+We know that Litho can handle dynamic data well. But is the data really dynamic? We usually have a lot of APIs and we populate the data based on the response and update the adapter. Let's find out if we can do that with RecyclerBinder or not. We can call some API to give us some data so that we can feed it to the RecyclerBinder but that would mean a lot of boilerplate. There's an easy way to replicate the behavior. We'll use a `Handler` and feed data via a `Runnable` which we call using `Handler.postDelayed`. We also need access to RecyclerBinder so let's modify our HomeComponent and add the Handler in MainActivity. Since we need access to RecyclerBinder, we will create an instance in MainActivity and pass it to HomeComponent as a **Prop**.
 
 ### Dynamic Updates
 After a lot of trial and erros, I figured out a better way to do it. Since we use `RecyclerBinder` to add/remove components, we just need access to that. So I decided to pass binder as a prop.
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a HomeComponentSpec-1.java %}
 
-We'll update **MainActivity** to load data after 2 seconds.
+<br/>
+Let's change our MainActivity to create an instance of RecyclerBinder to pass it to HomeComponent and add a Handler to feed data to the binder after some time.
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a MainActivity-1.java %}
 
-If we can do this, it means that we can update the data from an API response.
+Let's run the app and see if this works or not. It does. That's great news because now we know that we can also feed the response of API to the recyclerview. But, how would we update the data if the API is called again or user calls refresh. RecylerBinder provides following methods.
 
-### Query
-We have established that, we can update data dynamically. The next part is to listen to changes in the EditText. For this we'll use an interface and pass an implementation as a prop. We need to listen to EditText updates so we will create an interface `onQueryUpdateListener` and pass it as a prop to HomeComponent. It has an `@OnEvent(TextChangedEvent.class)` method which when hooked to `EditText.textChangedEventHandler()`, it will start giving us updates.
+ - removeItemAt(int position)
+ - removeRangeAt(int position, int count)
+
+We can remove particular or all the items and insert new items.
+
+<br/>
+<br/>
+
+We have established that we can update the data dynamically. We will start working on the part - Listen to updates in the EditText value.
+
+## Getting EditText Value in Litho
+
+EditText that we are using is a Litho Component and it does not have the verbose `onTextChangeListener(TextWatcher watcher)` method. For these things Litho relies heavily on its **`Event`** API.
+
+## What is Event in Litho?
+
+Litho provides a general purpose API to connect components through events. The components that are provided by Litho have all the necessary callbacks and events baked into it. We'll explore Event API in upcoming posts. EditText component builder has **`.textChangeEventHandler`** method which lets us pass an `EventHandler`. More about EventHandler in upcoming posts. Litho will generate an EventHandler for us if we want. To do that, we need to create a static method with annotation `OnEvent(TextChangeEvent.class)`. This annotation lets Litho know that we want an EventHandler for the given Event class. Another example of an Event class is - `ClickEvent`. If we dig in the source code and check out TextChangeEvent class, we'll see it's just a dumb class.
+
+{% highlight java %}
+@Event
+public class TextChangedEvent {
+  public String text;
+}
+{% endhighlight %}
+
+With `@Event` annotation, Litho will know that it's an Event class and it will generate some code for it. The field `String text` is to let Litho know that this event will carry some data and the variable name of the data.
+
+In our component class, this is show our @OnEvent method will look.
+
+{% highlight java %}
+@OnEvent(TextChangedEvent.class)
+static void onQueryChanged(ComponentContext c, @FromEvent String text) {
+
+}
+{% endhighlight %}
+
+It's so amazing. Everything is so interconnected by annotations. Based on this method, Litho will generate a method in our component - `static EventHandler onQueryChanged(ComponentContext c)`. It's like **What You See Is What You Get**. ComponentContext takes a piggy back ride and comes everywhere.
+<br/>
+
+Let's add a log statement to see if it even works or not.
+
+{% highlight java %}
+@LayoutSpec
+public class HomeComponentSpec {
+  ... some code here
+
+  private static Component<EditText> getEditTextComponent(ComponentContext c, String hint) {
+    return EditText.create(c)
+        .textSizeDip(16)
+        .hint(hint)
+        .textChangedEventHandler(HomeComponent.onQueryChanged(c))
+        .build();
+  }
+  
+  @OnEvent(TextChangedEvent.class)
+  static void onQueryChanged(ComponentContext c, @FromEvent String text) {
+    Log.d("TextChangedEvent", "Value: " + text);
+  }
+  
+} 
+{% endhighlight %}
+
+<br/>
+It does work. We get the correct value as soon as we update something in the EditText. We need to send this value to our MainActivity so that we can call some API. We'll do this via callback. We'll declare an interface, pass its implementation as a `@Prop` to HomeComponent and invoke in `onQueryChanged` method.
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a HomeComponentSpec-2.java %}
 
-We have passed `@Prop OnQueryUpdateListener listener` in `onQueryChanged`. Litho will detect this and add it as a prop.
-
-We will update **MainActivity** and pass listener prop to HomeComponent.
+<br/>
+Litho API is quite amazing. Even though we have passed our Prop in some different method, it will pick it up and add to the builder. We'll create an implementation of the callback interface and pass it to the builder.
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a MainActivity-query.java %}
+<br/>
+Let's run the app once again and see if what we just did works or not. It does because I have spent some time exploring litho and finding correct ways to do stuff.
 
 To summarize,
 
