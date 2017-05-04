@@ -46,7 +46,7 @@ Let's just dive into it.
 
 In your **build.gradle** file, include these things to add Litho as a dependency to your project.
 
-{% highlight java %}
+{% highlight groovy %}
 // Litho
 compile 'com.facebook.litho:litho-core:0.2.0'
 compile 'com.facebook.litho:litho-widget:0.2.0'
