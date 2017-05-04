@@ -80,26 +80,31 @@ It's just a simple one screen - no navigation (yet) app to search GIFs from [Gip
 Since it's a simple app, all we need is an `EditText` and a `RecyclerView`. Conventionally, we would use a `LinearLayout` with vertical orientation and add an EditText and a RecyclerView in XML. But we're going to talk Litho and bit of React. In Recat, these things are considered components. So Let's start there.
 
 ## Components
-As you can easily figure out, we would need one component to hold EditText and RecyclerView. Let's call it `HomeComponent`.
+We will start with one component to hold EditText and RecyclerView. Let's call it `HomeComponent`.
 
 ### HomeComponent
-To generate HomeComponent, we require a HomeComponent Spec which would look something like this.
+To generate HomeComponent, we require a HomeComponent Spec. We will create a class named `HomeComponentSpec` and annotate it with **@LayoutSpec**. This annotation lets Litho know that this is a component spec class and it needs to generate component from it. Litho doesn't know what to render. It expects `ComponentLayout` so we will create a static method which returns ComponentLayout annotated with `@OnCreateLayout`. ComponentLayout represents a component's compound layout state. Litho uses it to define the size and position of the component's mounted Views and Drawables. In simpler terms, it tells Litho what to draw and where to draw.
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a HomeComponentSpec.java %}
 
-Litho will generate HomeComponent class which you can use. If you notice, we are using `@Prop String hint`. **`@Prop`** comes from React where you can pass some properties to components. We do not require this property, but we are going to use it anyway. We take this property and set it as EditText's hint. We need to stack the views horizontally, so we'll use `Column` as it stacks the views horizontally. We can add views with `child` method.
+Litho will generate **HomeComponent** class which we will use. If you notice, we are using `@Prop String hint`. **`@Prop`** comes from React where you can pass some properties to components. For HomeComponent, it is not required to pass this prop as we can hardcode it. But for demonstration of how props work we are going to use it. We take this property and set it as EditText's hint. We need to stack the views horizontally, so we are using `Column` as it stacks the views horizontally. We can add views with `child` method.
 
 Note: EditText is a litho's widget. It is **to be confused** with Android's EditText because litho's EditText renders Android's EditText.
 
-To display HomeComponent on the screen, we will modify `MainActivity`.
+To display HomeComponent on the screen, we will modify `MainActivity`. Litho provdes a builder pattern to create a component so that if we change some parameters, we don't have to update the constructor again and again. It also helps when we have a lot of props. Litho is quite smart and it generates code based on the variable/parameter name. We have added **~@Prop String hint`** so it will create a builder method `hint(String hint)` and we can pass the value using it.
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a MainActivity.java %}
 
-If you run the app now, you'll just see an EditText at the top. We have not added any data/views to the RecyclerView component. So Let's add some data.
+### What is ComponentContext?
+ComponentContext is a context subclass used by Litho internally to keep track of a lot of things including components.
+
+If you run the app now, you'll just see an EditText at the top. We have not added any data/views to the RecyclerView component. Try chaning the hint prop by updating the value that we pass to the builder and run the app again. It's so much better than hardcoding it. What would happen if we do not pass hint prop to the component?
+
+The screen is empty and our aim is to show GIFs in a list or a grid. We will first add some dummy data to see how exactly things work with Litho and RecyclerView.
 
 ### GifItemViewComponent
 As we discussed, all the views are components. Each item in the RecyclerView will also be a component. We need to make a component for that.
-Since we are going to show a gif, let's name it GifItemViewComponent. We will need to write a Component Spec. Here, we are just going to show a simple title.
+Since we are going to show a gif, let's name it GifItemViewComponent. We will write write a Component Spec for it. Before jumping into images, let's try displaying a basic TextVeiw.
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a GifItemViewSpec.java %}
 
@@ -107,15 +112,24 @@ Now, we need to add some dummy data so that we can see something on the screen. 
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a HomeComponentSpec-Recycler.java %}
 
-`RecyclerBinder` is sort of a super RecyclerView Adapter which takes care of creating views. It's supposed to be highly optimised. RecyclerView Adapter recycles ViewHolders but RecyclerBinder recycles each view. It will recycle and use `Text`, `Image`, etc even for different components in the RecyclerView.
+### What is RecyclerBinder?
+
+`RecyclerBinder` is sort of a super RecyclerView Adapter which takes care of creating views. It's supposed to be highly optimised. RecyclerView Adapter recycles ViewHolders but RecyclerBinder recycles each view (component to be correct) based on the type. If we have two different components for different items in Recycler as Component1 and Component2. Text (child) component of Component1 may be recycled and used in Component2. Litho would take care of correctly measureing and redering the recycled components.
+
+We don't have to write boilerplate code for RecyclerBinder like we do for RecyclerView.Adapter. We don't need to have a specific dataset. 
 
 `binder.insertItemAt(position, ComponentInfo)` is used to add Component at a specified position.
 
-Now, you'll see a list of huge "Hello World" on your screen. Let's try to change that and get more dynamic content. We can do this by sending title as a prop.
+### What is ComponentInfo?
+ComponentInfo keeps the component and necessary information regarding how to render the component. It even takes care of `span size` and `isSticky`. It is so difficult to have a sticky item in a RecyclerView but Litho does it all under the hood and gives us simple APIs.
+
+We have added some data to RecyclerBinder and let's see what it renders on the screen when we run the app. No surprises! It renders exactly 20 items which display **Hello World**, Let's add more items and see how the scrolling works. No issues at all! It uses RecyclerView under the hood but with super optimizations.
+
+Static content is nice, but we want to know how easy or difficult it would be to have some dynamic content. One easy way to add dynamic content would be to add a `@Prop` to our component and pass diffreent values for different items.
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a GifItemViewSpec-1.java %}
 
-We also need to update our binder insert method, otherwise we'll get a runtime exception as we did not pass `@Prop String title` to GifItemView.
+We should update our `Recycler.insertItemAt` method. We have defined `@Prop String title` for our component and if we do not provide it via builder, Litho will throw a RuntimeException.
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a HomeComponentSpec-Recycler-1.java %}
 
