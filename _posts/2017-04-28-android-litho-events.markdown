@@ -3,8 +3,8 @@ category: Blog
 tag: Android
 comments: true
 image:
- twitter: /assets/images/litho-dmeo-1.jpg
- facebook : /assets/images/litho-dmeo-1.jpg
+ twitter: /assets/images/litho-demo-1.jpg
+ facebook : /assets/images/litho-demo-1.jpg
  height: 270
  width: 180
 date: 2017-04-28 16:00:00
