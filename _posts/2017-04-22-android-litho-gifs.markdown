@@ -10,8 +10,8 @@ image:
 date: 2017-04-22 22:00:00
 layout: post
 slug: android-litho-gifs
-title: Android GIF search engine with Litho
-description: Build an android GIF search engine with Litho by engine and giphy
+title: Build Android GIF search engine using Litho
+description: Litho tutorial to build a GIF search engine in Android using Giphy.
 keywords: [android, android development, androiddev, dev, litho, react, ui, gif, gifs, search, engine, facebook, open source, recyclerview, props, state]
 ---
 
@@ -19,12 +19,18 @@ I recently tried my hands with [React](https://facebook.github.io/react/) - A Ja
 [React 101](https://blog.tighten.co/react-101-building-a-gif-search-engine) by [Tighten](http://blog.tighten.co/). I had just finished building my first GIF search engine
 and Facebook open sourced [Litho](http://fblitho.com/) - A declarative UI framework for Android. Well, Litho takes a lot of inspiration from React. I had just started to get my hands dirty with React (and liked it), I thought I give Litho a try. So what should I do? GIF search engine for Android using Litho!
 
-![Litho Giphy Demo](/assets/images/litho-demo-1.jpg)
+![Basic android recyclerview using Litho](/assets/images/litho-demo-1.jpg)
+*GIF search engine with Litho - Android*
 
-# Litho
-I am not going to talk about what Litho or React is. Well, as the website says Litho is a declerative UI framework for Android. It uses [Yoga](https://facebook.github.io/yoga/) - cross-platform layout engine which uses Flexbox like styling. If you are not from a web development background, a lot of things are going to sound strage and yes, I also find it strage but then again I try to learn other things to know what good stuff they have. Flexbox is good and so seems Yoga. Before, proceeding further, I would suggest that you go through [Getting Started](http://fblitho.com/docs/getting-started) and [Tutorial](http://fblitho.com/docs/tutorial) of Litho.
+# Preface
 
-Since Litho seems to be inspired from React, it uses `Components` and you can make a great UI with adding bunch of components and those components are reusable! Facebook has spent a lot of time and resources in making Litho efficient. It wants to be so efficient that it generates most of its own code. As a end user, you can not create a Component (You can but it would not be efficent). You write a `ComponentSpec` and Litho will generate all the code for you. Have you used Dagger 2? Yes, it's that amount of generated code so I guess method count is going to go sky high! There are two types of CompoentSpec.
+This is a first post in the series - **Exploring Litho**. We will explore various apsects of Litho including LayoutSpec, MountSpec, Props and State, Navigation, Events, State synchronization between Litho components. In this post, we will see how to add dependency of Litho in your project's build.gradle file, followed by a brief introduction of Components and how we can use these components to build ourselves a GIF search engine.
+
+# Introduction to Litho by Facebook
+
+Litho is a declerative UI framework for Android. It uses [Yoga](https://facebook.github.io/yoga/) - cross-platform layout engine which uses Flexbox like styling. Before, proceeding further, I would suggest that you go through [Getting Started](http://fblitho.com/docs/getting-started) and [Tutorial](http://fblitho.com/docs/tutorial) of Litho.
+
+Since Litho seems to be inspired from React, it uses `Components` and you can make a great UI with adding bunch of components and those components are reusable! Facebook has spent a lot of time and resources in making Litho efficient. It wants to be so efficient that it generates most of its own code. As an end user, you can not create a Component (You can but it would not be efficent). You write a `ComponentSpec` and Litho will generate all the code for you. Have you used Dagger 2? Yes, it's that amount of generated code so I guess method count is going to go sky high! There are two types of CompoentSpec.
 
 	1. LayoutSpec
 	2. MountSpec
@@ -33,12 +39,43 @@ MountSpec is if you want to customize a lot of things. We'll talk about it later
 
 	A layout spec is the logical equivalent of a composite view on Android. It simply groups existing components together in an immutable layout tree.
 
-Less talk, more code!
 
 Let's just dive into it.
 
+# Adding Litho as Dependecy
+
+In your **build.gradle** file, include these things to add Litho as a dependency to your project.
+
+{% highlight java %}
+// Litho
+compile 'com.facebook.litho:litho-core:0.2.0'
+compile 'com.facebook.litho:litho-widget:0.2.0'
+provided 'com.facebook.litho:litho-annotations:0.2.0'
+
+annotationProcessor 'com.facebook.litho:litho-processor:0.2.0'
+
+// SoLoader
+compile 'com.facebook.soloader:soloader:0.2.0'
+{% endhighlight %}
+
+We need to initialize `SoLoader` to mke Litho work. We'll do this in our Application class. Let's create a class `MyApplication` which extends `Application`.
+
+{% highlight java %}
+public class MyApplication extends Application {
+	@Override
+	public void onCreate() {
+		super.onCreate();
+		SoLoader.init(this, false);
+	}
+}
+{% endhighlight %}
+
+Don't forget to add MyApplication class to `AndroidManifest`. Now, we are ready to work with Litho. Before diving into the code, let's ponder on what we are going to make and how Litho will help us build it.
+
 # GIF search engine App
-It's just a simple one screen - no navigation (yet) app to search GIFs from [Giphy](http://giphy.com/). It's a glorified search engine. I have used Retrofit to fetch data and Glide to load gifs, but I won't be discussing it in this post.
+It's just a simple one screen - no navigation (yet) app to search GIFs from [Giphy](http://giphy.com/). It's a glorified search engine. I have used Retrofit to fetch data and Glide to load gifs. We don't need to cover that in this series so you can just grab the code from Github repository.
+
+## Layout of a search engine
 
 Since it's a simple app, all we need is an `EditText` and a `RecyclerView`. Conventionally, we would use a `LinearLayout` with vertical orientation and add an EditText and a RecyclerView in XML. But we're going to talk Litho and bit of React. In Recat, these things are considered components. So Let's start there.
 
