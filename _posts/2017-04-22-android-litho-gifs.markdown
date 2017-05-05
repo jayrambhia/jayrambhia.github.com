@@ -273,6 +273,8 @@ Glide is a magical library which is quite convinient and easy to use. We just ne
 
  - We will create a static method annotated with `@OnMount`. This method will be called after `@OnCreateMountContent` and before the component is mounted to the host. This is where we should set a bitamp or a drawable to the ImageView. Litho will give us a reference to the value returned by `@OnCreateMountContent` method in `@OnMount` method as a parameter. We would call Glide to load image into the ImageView in this method.
 
+ - In `@OnMeasure`, we'll use `MeasureUtils.measureWithAspectRatio` and pass aspect ratio of 1 to get square images.
+
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a GifItemViewSpec-3.java %}
 <br/>
 ### More Boilerplate
