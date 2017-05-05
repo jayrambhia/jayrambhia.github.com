@@ -10,8 +10,8 @@ image:
 date: 2017-04-22 22:00:00
 layout: post
 slug: android-litho-gifs
-title: Build Android GIF search engine using Litho
-description: Litho tutorial to build a GIF search engine in Android using Giphy.
+title: Build Android GIF search engine using Litho by Facebook
+description: Litho (by Facebook) tutorial to build a GIF search engine in Android using Giphy.
 keywords: [android, android development, androiddev, dev, litho, react, ui, gif, gifs, search, engine, facebook, open source, recyclerview, props, state]
 ---
 
@@ -225,67 +225,77 @@ Litho API is quite amazing. Even though we have passed our Prop in some differen
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a MainActivity-query.java %}
 <br/>
 Let's run the app once again and see if what we just did works or not. It does because I have spent some time exploring litho and finding correct ways to do stuff.
+<br/>
+Step by step we have tested and integrated small things to make our GIF search engine. The last thing remaining is - **Showing GIFs**. Conventionally, we would just use `ImageView` and load GIFs using `Glide`. Let's see what component Litho provides for ImageView.
 
-To summarize,
+### Image Component in Litho
+Litho provides `Image` component for us to use but it's not as flexible as `ImageView`. It doesn't have `setBitmap` method. We can convert Bitmap to a Drawable and set it but loading GIFs is asynchronous task and how would we set it in the Image component? Props are immutable and State is really difficult to manage outside the component. Even Glide doesn't support `Image`. After looking into Litho's samples, they have used Image component with `Fresco`. We don't want to be tied down with a particular library. If we can use Glide, we can modify the component a bit to use Piccasso or any other image loading library. It's about time we made our custom component. To create a custom component and customize how and what it renders, we'll use **`@MountSpec`**.
 
-	1. We can listen to EditText updates.
-	2. We can update data dynamically.
+### What is MountSpec?
+A mount spec defines a component which can render itself. So if we ever want to create something that needs customizing or not provided by Litho, we should create a mount spec.
 
-And there's only one (major) part remaining. **Showing Gifs**!
+### How to use MountSpec to create an ImageView component?
 
-### Image
-I think this was the most difficult part of this project. Litho provides `Image` widget but it's not as flexible as `ImageView`. You can't use `setBitmap` or hook it directly into Glide. It just takes a drawable. So it would be super difficult to keep track of downloaded bitmaps and have state in the component and update it, oh and did I tell you that there isn't a direct easy way to update state from outside? So I started digging into litho's sample code and they have used Fresco with some other
-library. It should not be that difficult to display an image, right?
+ - To create a mount spec, we need to annotate the class with `@MountSpec`.
+ - In a layout spec, it is necessary for us to define a method with `@OnCreateLayout` annotation. Similarly, in mount spec, we must define a method annotated with **`@OnCreateMountContent`**. This method will be called before the component is mounted on the host. This is where we'll prepare/initialize the item that we want to render. We may return `View` or `Drawable` in this method. Litho will render the value that we return in this method. Here, we want to render an ImageView so we will create a new instance of ImageView and return it.
+ - We will also create a static method annotated with `@OnMeasure`. This method will be called during layout calculation. Sometimes if the component doesn't need layout calculation, this method will not be called. We will use `MeasureUtils.measureWithDesiredPx()` method provided by Litho. We'll pass fixed width and height for each component. This method updates `Size size` parameter which Litho uses for layout calculation.
 
-But then I noticed that they have used **`@MountSpec`** which is basically used for custom views and drawables. So I started looking for some docs and examples but the only one they have of ColorDrawable is super easy and it's difficult to figure out the lifecycle and how things are working.
+You can find in-depth docs about MountSpec [here](http://fblitho.com/docs/mount-specs).
 
-[MountSpec doc](http://fblitho.com/docs/mount-specs). After reading through the fine print, I realized that I can return a View or a Drawable in `@onCreateMountContent`. As the name suggests, you create a content to display. So anyway, after couple of hours, I finally got it right. Let's just start small.
-
-Let's update **GifItemViewSpec**
+To test if the ImageView will render correctly, we'll just set a static drawable to it. If that works, it should also work for Bitmaps.
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a GifItemViewSpec-2.java %}
 
-We have updated GifItemViewSpec from `LayoutSpec` to `MountSpec` so that we can draw an image. **`@onMeasure`** is called when the layout needs to be measured. If you don't provide this method, it may not draw the view as width and height will be 0. **`@onCreateMountContente`** is called when the view is going to mount and needs the content which is going to be rendered. You can not pass any `@Prop` in this method. Since we removed `@Prop String title`, you will need to update some code. I'll also update the binder so that it shows a grid of 3 columns.
+We have updated GifItemViewSpec from `LayoutSpec` to `MountSpec` and updated bunch of methods. The component does no longer require `@Prop String title` so we would need to update MainActivity as Litho would remove `.title(String title)` method from the builder on code generation.
 
+Let's also update the RecylerBinder to show grids of 3 columns.
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a MainActivity-grid.java %}
 
-Now, you'll see something like this.
+Let's hit that run button again and see what we get. It is as expected. We see a grid of 3 columns with android icons everywhere!
 
-![Litho Giphy Demo](/assets/images/litho-demo-2.jpg)
+![Litho custom ImageView component using MountSpec](/assets/images/litho-demo-2.jpg)
+*ImageView component using Litho MountSpec*
 
-So now we can use `ImageView` and if we can use ImageView, we can also use Glide or Piccasso or any other image loading library to display images. So let's start!
+We are sure that we can use `ImageView` and this deduces that we can also use Glide, Piccasso or any other image loading and caching library with Litho. Let's start working on the final part to make ourselves a GIF search engine.
 
 ### Boilerplate
-I am using `Retrofit` to fetch data from Giphy search API and loading it in the RecyclerView. I am going to skip that part. We also don't want to make API calls for every characeter that user enters so to make things easy I have kept a limit of 6 letters - because **Batman**.
-
-So here's how things will look.
-
-**GifItem** is the model class which we will pass as a `prop` to `GifItemView`.
+We'll use `Retrofit` to fetch data from Giphy search API and feed it to the RecyclerBinder. Nobody likes writing boilerplate code so here's the `model` part of this app - [models](https://github.com/jayrambhia/LithoGifSearch/tree/v1/app/src/main/java/com/fenchtose/lithogifsearch/models).
+<br/>
+Let's create a POJO to hold GIF data - GitItem. 
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a GifItem.java %}
+<br/>
+We'll pass an instance of GifItem as a prop to GifItemView so that it can access the url of the GIF.
 
-We need to update `GifItemViewSpec` so that it will use Glide to load the GIF.
+### Use Glide with ImageView component in Litho
+Glide is a magical library which is quite convinient and easy to use. We just need to call `Glide.with(context).load(url).into(imageview)`.
+
+ - We will create a static method annotated with `@OnMount`. This method will be called after `@OnCreateMountContent` and before the component is mounted to the host. This is where we should set a bitamp or a drawable to the ImageView. Litho will give us a reference to the value returned by `@OnCreateMountContent` method in `@OnMount` method as a parameter. We would call Glide to load image into the ImageView in this method.
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a GifItemViewSpec-3.java %}
-
-**`@onMount`** is called when the view is mounted. We should call Glide here. In `onMount` method we get ComponentContext and the value which we returned in `@onCreateMountContent` so we'll have access to the ImageView. We pass `GifItem` as a prop in this method.
-
-In **MainActivity** after hooking everything together, we'll use `OnQueryUpdateListener` to get data and call API using Retrofit and once we get the data, we will hook the data to binder.
+<br/>
+### More Boilerplate
+Let's update our MainActivity call API and feed data to RecylerBinder. We'll use `OnQueryUpdateListener` to get data and call API using Retrofit and once we get the data, we will feed it to the binder. We also don't want to make API calls for every characeter that user enters so to make things easy, let's keep a limit of 6 letters - because **Batman**.
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a MainActivity-2.java %}
 
 `GifProvider` takes care of initializing retrofit and when `search(String query)` is called, it will make an API request and return `List<GifItem>` in `ResponseListener` callback. We could have used RxJava but it seemed out of scope for this demo.
 
-I think everything is in place and if you search for batman now, you should get this!
+### Final Run
+Let's run the app one more time and search for batman. If it did not work, please make sure that you have added Internet permission in your AndroidManifest file.
 
-![Litho Giphy Demo](/assets/images/litho-demo-1.jpg)
+![GIF Search Engine using Android with Litho by Facebook](/assets/images/litho-demo-1.jpg)*Custom Litho ImageView component to display GIFs with Glide*
 
-There are some optimizations that you can do. Instead of calling `Glide.with(context)` in GifItemViewSpec, you can pass `Glide.RequestManager` as a prop.
+There are some optimizations that we can do. Instead of calling `Glide.with(context)` in GifItemViewSpec, we can pass `Glide.RequestManager` as a prop.
 
-So your GIF search engine powered by Litho (and Giphy) is ready! I'll explore more about state, good practices, and other awesome features in upcoming posts.
+So our GIF search engine powered by Litho (and Giphy) is ready! We'll explore more about state, good practices, and other awesome features in upcoming posts.
 
-It's fun to work with Litho. The API is quite easy but there is some learning curve and if you want customize it or have some weird state, you're in for a roll.
+## Conclusion about Litho
+Litho by Facebook is new, dynamic and powerful. It is definitely interesting. Facebook uses Litho in their production app for news feed so it is production ready and baked with all the necessary things. There's still more to explore about Litho.
+
+## Be Social
+If you liked this post or found it helpful, please spread the word!
 
 ## Code
 You can find current code here - [LithoGifDemo - v1](https://github.com/jayrambhia/LithoGifSearch/tree/v1)
