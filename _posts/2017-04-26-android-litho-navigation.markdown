@@ -85,3 +85,4 @@ P.S. Litho docs are very short, informative but vague and you tend to miss some 
  2. [Managing State in Litho](/blog/android-litho-state)
  3. Navigation with Litho
  4. [Events with Litho](/blog/android-litho-events)
+ 5. [Synchronzing state between different components](/blog/android-litho-sync) 

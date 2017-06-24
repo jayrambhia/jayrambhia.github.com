@@ -90,3 +90,4 @@ P.S. Working with **State** is a bit more complicated than it seems but I have e
  2. Managing State in Litho
  3. [Navigation with Litho](/blog/android-litho-navigation)
  4. [Events with Litho](/blog/android-litho-events)
+ 5. [Synchronzing state between different components](/blog/android-litho-sync) 
