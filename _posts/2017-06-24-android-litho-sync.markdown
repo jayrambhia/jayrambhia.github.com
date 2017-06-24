@@ -10,7 +10,7 @@ image:
 date: 2017-06-24 16:00:00
 layout: post
 slug: android-litho-sync
-title: Synchronzing state between different components in Litho
+title: Synchronizing state between different components in Litho
 description: Use events to synchronize state between different components in Litho, Propogate state changes in Litho
 keywords: [android, android development, androiddev, dev, litho, react, ui, gif, gifs, search, engine, facebook, open source, recyclerview with Litho, props in Litho, state in Litho, events with Litho, custom events in Litho, propogate state changes in Litho, synchronize state in Litho]
 ---
@@ -121,4 +121,4 @@ P.S. My experience with Litho has been amazing. It has great potential and if we
  2. [Managing State in Litho](/blog/android-litho-state)
  3. [Navigation with Litho](/blog/android-litho-navigation)
  4. [Events with Litho](/blog/android-litho-events)
- 5. Synchronzing state between different components
+ 5. Synchronizing state between different components

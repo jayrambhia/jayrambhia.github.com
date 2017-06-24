@@ -91,5 +91,5 @@ P.S. Litho is a bit complicated to understand but it does solve a lot of issues 
  2. [Managing State in Litho](/blog/android-litho-state)
  3. [Navigation with Litho](/blog/android-litho-navigation)
  4. Events with Litho
- 5. [Synchronzing state between different components](/blog/android-litho-sync)
+ 5. [Synchronizing state between different components](/blog/android-litho-sync)
 
