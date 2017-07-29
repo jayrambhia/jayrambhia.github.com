@@ -7,11 +7,11 @@ cover: false
 <header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
     <nav class="main-nav overlay clearfix">
             {% if page.logo %}
-                <a class="blog-logo" href="{{ site.baseurl }}">
+                <a class="blog-logo" href="{{ site.url }}">
                     <img src="{{ page.logo }}" alt="Blog Logo" />
                 </a>
             {% endif %}
-        <a class="back-button icon-arrow-left" href="{{ site.baseurl }}">Home</a>
+        <a class="back-button icon-arrow-left" href="{{ site.url }}">Home</a>
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
