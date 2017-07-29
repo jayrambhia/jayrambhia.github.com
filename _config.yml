@@ -6,7 +6,7 @@ permalink: /:categories/:title
 markdown: kramdown
 exclude: ['Rakefile', 'CNAME', 'sass/', 'script/', 'README.md']
 logo: false
-paginate: 15
+paginate: 5
 baseurl: /
 domain_name: 'http://jayrambhia.com'
 google_analytics: 'UA-38672256-1'

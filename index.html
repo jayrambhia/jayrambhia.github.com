@@ -3,6 +3,7 @@ layout: default
 title: Home
 cover: false
 about: 'about-me/'
+archive: 'archive/'
 ---
 
 <header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
@@ -20,10 +21,12 @@ about: 'about-me/'
             <h2 class="page-description">
                 {% if site.description %} {{ site.description }}. {% endif %}
                 {% if page.about %} <a href='{{ site.baseurl }}{{ page.about }}'> About me </a> {% endif %}
-            </h2>
-            <div align="center">
+                <br/><br/>
+                <p> Looking for more posts? Check out <a href='{{ site.baseurl }}{{ page.archive }}'>Archives</a>.</p>
+                <div align="center">
                 <a class="github-button" href="https://github.com/jayrambhia" aria-label="Follow @jayrambhia on GitHub" data-size="large">Follow</a>
             </div>
+            </h2>
         </div>
     </div>
     <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
@@ -81,5 +84,33 @@ about: 'about-me/'
     {% endfor %}
 
     {% include pagination.html %}
+    <article class="post">
+
+        <footer class="post-footer">
+            <!-- If we want to display author's name and bio -->
+            {% if site.author %}
+                <figure class="author-image">
+                    <a class="img" href="{{ site.baseurl }}{{ page.about }}" style="background-image: url(/assets/images/profile.jpg)">
+                    <span class="hidden">{{site.author}}'s Picture</span></a>
+                </figure>
+                <section class="author">
+                    <!-- Author Name -->
+                    <h4> {{ site.author }} </h4>
+                    <!-- Author Bio -->
+                    <p>
+                        Android Developer at Booking.com<br/>Fixing problems one bug at a time! Also, the views expressed here are mine and not my employers.
+                        <span style="display: inline;">
+                        <a href="https://twitter.com/jayrambhia" class="twitter-follow-button" data-show-count="false">Follow @jayrambhia</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <a class="github-button" href="https://github.com/jayrambhia" aria-label="Follow @jayrambhia on GitHub" data-size="small">Follow @jayrambhia<script async src="https://buttons.github.io/buttons.js"></script></a>
+                        </span>
+                    </p>
+                </section>
+            {% endif %}
+
+            <!-- Share links section -->
+            {% include share.html %}
+
+        </footer>
+    </article>
 
 </main>
