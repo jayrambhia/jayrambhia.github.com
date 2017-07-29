@@ -4,20 +4,15 @@ title: About Me
 slug: about-me
 ---
 
-## Hey!
+### Hey!
 
 I am an Android Developer!
 
-## What do I like to do?
+### What do I like to do?
 
 I love to code. I was an active developer of [SimpleCV](http://simplecv.org/). I like to bring projects into reality and make it user friendly. You can fork my work on [GitHub](https://github.com/jayrambhia). Apart from that, I love to play Ultimate frisbee.
 
-## How to Contact Me
+### How to Contact Me
 
 You can <a href="http://twitter.com/jayrambhia">follow me on Twitter</a>
 
-## That's me
-
-<div class="islet">
-  <img class="img--center img--small" src="/assets/images/grav2.jpg" height="512" width="512" />
-</div>
