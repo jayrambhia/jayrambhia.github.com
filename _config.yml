@@ -4,6 +4,7 @@ exclude: ['Rakefile', 'CNAME', 'sass/', 'script/', 'README.md']
 
 gems:
   - jekyll-seo-tag
+  - jekyll-gist
 
 url: http://jayrambhia.com
 
