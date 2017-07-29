@@ -1,0 +1,37 @@
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
+
+.xaxis path,
+.xaxis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+.xaxis text {
+    display:none;
+}
+
+.slice text {
+    font-size: 16pt;
+    font-family: Arial;
+}
+.line {
+    fill: none;
+    stroke-width: 2.5px;
+}
+.legend {
+    padding: 5px;
+    font: 10px sans-serif;
+    background: yellow;
+    box-shadow: 2px 2px 1px #888;
+}
+            

@@ -1,0 +1,27 @@
+name: Jay Rambhia's Blog
+description: My blog about Android, Computer Vision, Python, Programming and other stuff
+meta_description: "Jay Rambhia's blog about android, computer vision, making apps, android development, fixing bugs and solving problems!"
+
+permalink: /:categories/:title
+markdown: kramdown
+exclude: ['Rakefile', 'CNAME', 'sass/', 'script/', 'README.md']
+logo: false
+paginate: 15
+baseurl: /
+domain_name: 'http://jayrambhia.com'
+google_analytics: 'UA-38672256-1'
+gems: [jekyll-paginate, jekyll-seo-tag, jekyll-gist]
+
+# Details for the RSS feed generator
+url: 'http://jayrambhia.com/'
+about: "I'm <strong>Jay Rambhia</strong>, solving problems one build at a time"
+tagline: "Don't Panic!"
+author: "Jay Rambhia"
+
+email: "jayrambhia777@gmail.com"
+github: "jayrambhia"
+twitter: "jayrambhia"
+facebook: "jay.rambhia"
+
+twitter:
+ username: jayrambhia
