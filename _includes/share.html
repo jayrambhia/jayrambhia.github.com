@@ -1,13 +1,17 @@
 <section class="share">
     {% if page.url == "/" %}
         <h4>Share this blog</h4>
+            <a class="icon-twitter" href="http://twitter.com/share?text=Checkout @jayrambhia's blog on Android&amp;url={{site.domain_name}}{{ page.url }}"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <span class="hidden">Twitter</span>
+            </a>
     {% else %}    
         <h4>Share this post</h4>
-    {% endif %}    
-    <a class="icon-twitter" href="http://twitter.com/share?text={{page.title}}&amp;url={{site.domain_name}}{{ page.url }}"
+            <a class="icon-twitter" href="http://twitter.com/share?text=Checkout - {{page.title}} by @jayrambhia&amp;url={{site.domain_name}}{{ page.url }}"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-        <span class="hidden">Twitter</span>
-    </a>
+            <span class="hidden">Twitter</span>
+            </a>
+    {% endif %}    
     <a class="icon-reddit" href="https://www.reddit.com/submit?url={{site.domain_name}}{{page.url}}" target="_blank">
         <span class="hidden">Reddit</span>
     </a>

@@ -11,6 +11,7 @@ baseurl: /
 domain_name: 'http://jayrambhia.com'
 google_analytics: 'UA-38672256-1'
 gems: [jekyll-paginate, jekyll-seo-tag, jekyll-gist]
+archives: 'archives/'
 
 # Details for the RSS feed generator
 url: 'http://jayrambhia.com'

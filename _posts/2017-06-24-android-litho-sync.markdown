@@ -13,6 +13,7 @@ slug: android-litho-sync
 title: Synchronizing state between different components in Litho
 description: Use events to synchronize state between different components in Litho, Propogate state changes in Litho
 keywords: [android, android development, androiddev, dev, litho, react, ui, gif, gifs, search, engine, facebook, open source, recyclerview with Litho, props in Litho, state in Litho, events with Litho, custom events in Litho, propogate state changes in Litho, synchronize state in Litho]
+category_tag: [Android, Litho]
 ---
 
 This is the fifth post in the series - Exploring Litho. In the first post - [Android GIF search engine with Litho](/blog/android-litho-gifs), we explored some key aspects of Litho - LayoutSpec, MountSpec, Use Glide to load images, Update RecyclerView data, etc. In the second post - [Managing State in Litho](/blog/android-litho-state), we dabbled around with state in Litho components. In the third post - [Navigation with Litho](/blog/android-litho-navigation), we used `LithoView` and components to navigate instead of an Acitivity or a Fragment. If you're not familiar with Litho, I would suggest you to go through the previous posts. We explored Events and how to use them to propogate changes in the fourth post - [Using Events in Litho](/blog/android-litho-events).
