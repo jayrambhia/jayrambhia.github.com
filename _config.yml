@@ -1,4 +1,5 @@
 name: Jay Rambhia's Blog
+title: Jay Rambhia's Blog
 description: My blog about Android, Computer Vision, Python, Programming and other stuff
 meta_description: "Jay Rambhia's blog about android, computer vision, making apps, android development, fixing bugs and solving problems!"
 
@@ -17,12 +18,13 @@ archives: 'archives/'
 url: 'http://jayrambhia.com'
 about: "I'm <strong>Jay Rambhia</strong>, solving problems one build at a time"
 tagline: "Don't Panic!"
-author: "Jay Rambhia"
+k_author: "Jay Rambhia"
 
-email: "jayrambhia777@gmail.com"
-github: "jayrambhia"
-twitter: "jayrambhia"
-facebook: "jay.rambhia"
+author:
+  email: "jayrambhia777@gmail.com"
+  github: "jayrambhia"
+  twitter: jayrambhia
+  facebook: "jay.rambhia"
 
 twitter:
- username: jayrambhia
+  username: jayrambhia  

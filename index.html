@@ -50,9 +50,9 @@ about: 'about-me/'
             {{ post.excerpt }} <a class="read-more" href="{{ post.url }}">&raquo;</a>
         </section>
         <footer class="post-meta">
-            {% if site.author %}
+            {% if site.k_author %}
                 <img class="author-thumb" src="/assets/images/profile.jpg" alt="Author's profile picture" nopin="nopin" />
-                {{ site.author }}
+                {{ site.k_author }}
             {% endif %}
             {% if post.tags.size > 0 %} 
                 {{ post.tags | array_to_sentence_string | prepend: 'on ' }} 
@@ -87,14 +87,14 @@ about: 'about-me/'
 
         <footer class="post-footer">
             <!-- If we want to display author's name and bio -->
-            {% if site.author %}
+            {% if site.k_author %}
                 <figure class="author-image">
                     <a class="img" href="{{ site.url }}/{{ page.about }}" style="background-image: url(/assets/images/profile.jpg)">
-                    <span class="hidden">{{site.author}}'s Picture</span></a>
+                    <span class="hidden">{{site.k_author}}'s Picture</span></a>
                 </figure>
                 <section class="author">
                     <!-- Author Name -->
-                    <h4> {{ site.author }} </h4>
+                    <h4> {{ site.k_author }} </h4>
                     <!-- Author Bio -->
                     <p>
                         Android Developer at Booking.com<br/>Fixing problems one bug at a time! Also, the views expressed here are mine and not my employers.
