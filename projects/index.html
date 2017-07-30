@@ -1,0 +1,88 @@
+---
+layout: default
+title: Projects
+slug: projects
+---
+
+<header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
+    <nav class="main-nav overlay clearfix">
+            {% if page.logo %}
+                <a class="blog-logo" href="{{ site.url }}">
+                    <img src="{{ page.logo }}" alt="Blog Logo" />
+                </a>
+            {% endif %}
+        <a class="back-button icon-arrow-left" href="{{ site.url }}/{{ site.archives }}">Archives</a>
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">Projects</h1>
+            <h2 class="page-description">
+                My apps and open source projects
+            </h2>
+        </div>
+    </div>
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+</header>
+
+<main id="content" class="content" role="main">
+
+    {% assign count = 0 %}
+    {% for post in site.posts %}
+        {% if post.category == "Project" %}
+        {% if count < 10 %}
+
+            <article class="post">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                </header>
+                <section class="post-excerpt">
+                    {{ post.excerpt }} <a class="read-more" href="{{ post.url }}">&raquo;</a>
+                </section>
+                <footer class="post-meta">
+                    {% if site.k_author %}
+                        <img class="author-thumb" src="/assets/images/profile.jpg" alt="Author's profile picture" nopin="nopin" />
+                        {{ site.k_author }}
+                    {% endif %}
+                    {% if post.tags.size > 0 %} 
+                        {{ post.tags | array_to_sentence_string | prepend: 'on ' }} 
+                    {% endif %}
+                    <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
+                        {{ post.date | date_to_string }}
+                    </time> 
+                </footer>
+            </article>
+        {% elsif count == 10 %}
+            <article class="post">
+                <header class="post-header">
+                    <h2 class="post-title">Older posts</h2>
+                </header>
+                <section class="post-excerpt">
+                    <br/>
+                    <br/>
+                    <ul>
+                        <li>
+                            <a href="{{ post.url }}">{{ post.title }}</a>
+                            <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
+                                {{ post.date | date_to_string }}
+                            </time> 
+                        </li>
+        {% else %}
+            <li>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+                <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
+                    {{ post.date | date_to_string }}
+                </time> 
+            </li>                       
+        {% endif %}
+
+        {% assign count = count | plus: 1 %}
+        {% endif %}
+
+    {% endfor %}    
+
+    {% if count >= 10 %}
+                </ul>
+            </section>
+        </article>
+    {% endif %}            
+</main>
