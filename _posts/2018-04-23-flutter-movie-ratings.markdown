@@ -21,6 +21,9 @@ Flutter is an open source android app completely written in [Kotlin](https://kot
 <img src="https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/playstore_logo.png" width="240px"/>
 </p>
 
+:-----------------:-----------------:
+![screenshot 1](https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/f1.png)| ![screenshot 2](https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/f2.png)
+
 ### What's Flutter?
 
 Flutter uses [Android's accessibility services](https://developer.android.com/reference/android/accessibilityservice/AccessibilityService.html) to read the titles of the movies and TV shows from Netflix app. Once the title is obtained, the app would send a query to the [open movie database](http://www.omdbapi.com/) to get the movie ratings and show it in floating window over the app.
