@@ -21,9 +21,10 @@ Flutter is an open source android app completely written in [Kotlin](https://kot
 	<img src="https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/playstore_logo.png" width="240px"/>
 </p>
 
-<p align="center" style="display: inline-block;">
-	<img src="https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/f1.png" style="height:240px;">
-	<img src="https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/f2.png" style="height:240px;">
+<p align="center">
+	<img src="https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/f1.png" style="height:240px;float:left;"/>
+	<img src="https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/f2.png" style="height:240px;float:left;"/>
+	<br style="clear: both;"/>
 </p>
 
 ### What's Flutter?
