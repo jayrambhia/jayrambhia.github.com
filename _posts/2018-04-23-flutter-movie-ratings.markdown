@@ -3,8 +3,8 @@ category: Project
 tag: Android
 comments: true
 image:
- twitter: https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/playstore_logo.png
- facebook : https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/playstore_logo.png
+ twitter: https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/f1.png
+ facebook : https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/f2.png
  height: 270
  width: 180
 date: 2018-04-23 22:00:00
@@ -18,9 +18,12 @@ keywords: [android app, open source, kotlin app, android kotlin, clean architect
 Flutter is an open source android app completely written in [Kotlin](https://kotlinlang.org/). The idea behind Flutter comes from a necessity. I would spend a lot of time on Netflix just find a good movie to watch. It was difficult to find a good movie because Netflix would show its own ratings which are not at all reliable and more often than not I would end up watching a bad movie. I wanted something which would show me the IMDb rating of the movie on Netflix. I didn't find anything that would work on Android so I thought of writing my own app and named it Flutter.
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/playstore_logo.png" width="240px"/>
-<img src="https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/f1.png" style="height:160px;">
-<img src="https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/f2.png" style="height:160px;">
+	<img src="https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/playstore_logo.png" width="240px"/>
+</p>
+
+<p align="center" style="display: inline-block;">
+	<img src="https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/f1.png" style="height:240px;">
+	<img src="https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/f2.png" style="height:240px;">
 </p>
 
 ### What's Flutter?
