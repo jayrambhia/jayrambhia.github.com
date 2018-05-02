@@ -125,7 +125,7 @@ We override method `getApplicableElements` and return `TextView` because we just
 
 We have our Issue, Detecor and Implementation ready. We just need to register the issue and update gradle build script to include the registry class.
 
-{% hightlight java %}
+{% highlight java %}
 public class CustomLintRegistry extends IssueRegistry {
 
 	@NotNull
