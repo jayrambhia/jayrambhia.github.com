@@ -142,11 +142,11 @@ We have our Issue, Detecor and Implementation ready. We just need to register th
 {% highlight java %}
 public class CustomLintRegistry extends IssueRegistry {
 
-	@NotNull
-	@Override
-	public List<Issue> getIssues() {
-		return Arrays.asList(TextViewStyleDetector.TextAppearanceIssue.ISSUE);
-	}
+  @NotNull
+  @Override
+  public List<Issue> getIssues() {
+    return Arrays.asList(TextViewStyleDetector.TextAppearanceIssue.ISSUE);
+  }
 }
 {% endhighlight %}
 
