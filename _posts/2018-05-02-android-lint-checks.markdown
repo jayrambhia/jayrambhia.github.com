@@ -11,6 +11,8 @@ keywords: [android, android development, androiddev, dev, lint, kotlin, android 
 category_tag: [Android, Lint]
 ---
 
+Android build system provides a lot of tools to optimize the code, find potential issues, improve performance, etc. One of the tool it supports is Lint. Lint is a tool which analyzes the source code and flags potential bugs and errors during the build, and Android Studio even uses Lint to show those bugs and errors in the editor.
+
 From wikipedia,
 
  > A linter or lint refers to tools that analyze source code to flag programming errors, bugs, stylistic errors, and suspicious constructs.
@@ -54,24 +56,33 @@ Once we have added lint as dependency, we can easily proceed forward with writin
 
 {% highlight java %}
 class TextAppearanceIssue {
-    private static final String ID = "MissingTextAppearance";
-    private static final String DESCRIPTION = "textAppearance attribute is missing";
-    private static final String EXPLANATION = "We should use textAppearance to style a TextView in order to provide consistent design";
-    private static final Category CATEGORY = Category.TYPOGRAPHY;
-    private static final int PRIORITY = 4;
-    private static final Severity SEVERITY = Severity.WARNING;
+  private static final String ID = "MissingTextAppearance";
+  private static final String DESCRIPTION = "textAppearance attribute is missing";
+  private static final String EXPLANATION = "We should use textAppearance to style a TextView in order to provide consistent design";
+  private static final Category CATEGORY = Category.TYPOGRAPHY;
+  private static final int PRIORITY = 4;
+  private static final Severity SEVERITY = Severity.WARNING;
 
-    public static final Issue ISSUE = Issue.create(ID, DESCRIPTION, EXPLANATION, CATEGORY, PRIORITY, SEVERITY,
-            new Implementation(TextViewStyleDetector.class, Scope.RESOURCE_FILE_SCOPE));
+  public static final Issue ISSUE = Issue.create(
+    ID, 
+    DESCRIPTION, 
+    EXPLANATION, 
+    CATEGORY, 
+    PRIORITY, 
+    SEVERITY,
+    new Implementation(
+      TextViewStyleDetector.class, 
+      Scope.RESOURCE_FILE_SCOPE)
+  );
 }
 {% endhighlight %}
 
- - Id: Id of the issue. This should be unique and is displayed in the report. You use this same id if you want to ingore a lint check.
- - Description: Brief description of the issue.
- - Explanation: Describe the issue in details and propose possible solutions.
- - Category: This defines the category of the issue. There are many categories provided in lint tools such as `TYPOGRAPHY`, `CORRECTNESS`, etc. You should choose the correct category based on your issue.
- - Priority: Define priority of the issue on a scale of 0 to 10.
- - Severity: Define severity of the issue. eg. `WARNING`, `ERROR`, `FATAL`, etc. 
+ - **Id**: Id of the issue. This should be unique and is displayed in the report. You use this same id if you want to ingore a lint check.
+ - **Description**: Brief description of the issue.
+ - **Explanation**: Describe the issue in details and propose possible solutions.
+ - **Category**: This defines the category of the issue. There are many categories provided in lint tools such as `TYPOGRAPHY`, `CORRECTNESS`, etc. You should choose the correct category based on your issue.
+ - **Priority**: Define priority of the issue on a scale of 0 to 10.
+ - **Severity**: Define severity of the issue. eg. `WARNING`, `ERROR`, `FATAL`, etc. 
 
 ### Implementation
 
@@ -84,34 +95,37 @@ We need to write detection logic for lint to detect the issue.
 {% highlight java %}
 public class TextViewStyleDetector extends ResourceXmlDetector {
 
-    private static final String SCHEMA = "http://schemas.android.com/apk/res/android";
-    private static final String TEXT_APPEARANCE = "textAppearance";
-    private static final String TEXTVIEW = "TextView";
+  private static final String SCHEMA = "http://schemas.android.com/apk/res/android";
+  private static final String TEXT_APPEARANCE = "textAppearance";
+  private static final String TEXTVIEW = "TextView";
 
-    @Nullable
-    @Override
-    public Collection<String> getApplicableElements() {
-        return Collections.singletonList(TEXTVIEW);
-    }
+  @Nullable
+  @Override
+  public Collection<String> getApplicableElements() {
+    return Collections.singletonList(TEXTVIEW);
+  }
 
-    @Override
-    public void visitElement(XmlContext context, Element element) {
-        if (!element.hasAttributeNS(SCHEMA, TEXT_APPEARANCE)) {
-            context.report(TextAppearanceIssue.ISSUE, context.getLocation(element), TextAppearanceIssue.EXPLANATION);
-        }
+  @Override
+  public void visitElement(XmlContext context, Element element) {
+    if (!element.hasAttributeNS(SCHEMA, TEXT_APPEARANCE)) {
+        context.report(
+          TextAppearanceIssue.ISSUE, 
+          context.getLocation(element), 
+          TextAppearanceIssue.EXPLANATION);
     }
+  }
 }
 {% endhighlight %}
 
 Android lint provides some scanning APIs to be used for detectors.
 
- - UastScanner: Java + Kotlin files
- - ClassScanner: Bytecode
- - BinaryResourceScanner: Binary resources
- - ResourceFolderScanner: Resource folders
- - XmlScanner: Xml files
- - GradleScanner: Gradle files
- - OtherFileScanner: Other files in projects
+ - **UastScanner**: Java + Kotlin files
+ - **ClassScanner**: Bytecode
+ - **BinaryResourceScanner**: Binary resources
+ - **ResourceFolderScanner**: Resource folders
+ - **XmlScanner**: Xml files
+ - **GradleScanner**: Gradle files
+ - **OtherFileScanner**: Other files in projects
 
 Here, we extend `ResourceXmlDetector` which implements `XmlScanner` to scan Xml files and get Xml dom elements to perform checks on.
 
