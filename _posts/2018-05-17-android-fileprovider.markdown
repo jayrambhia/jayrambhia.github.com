@@ -11,13 +11,13 @@ keywords: [android, android development, androiddev, dev, kotlin, android permis
 category_tag: [Android, FileProvider]
 ---
 
-Android has been using permissions since its beginning but never really enforced the correct usage until Marshmallow and developeers took advantage of it and went rampant. Since Marshmallow (API 23, Android 6.0), android ecosystem introduced permission requests and now we have to ask user to explicitly provide permissions which is really good in the sense of privacy for the users, but adds a lot of work for developers and provides kind of bad user experience.
+Android has been using permissions since its beginning but never really enforced the correct usage until Marshmallow and developers took advantage of it and went rampant. Since Marshmallow (API 23, Android 6.0), android ecosystem introduced permission requests and now we have to ask user to explicitly provide permissions which is really good in the sense of privacy for the users, but adds a lot of work for developers and provides kind of bad user experience.
 
-This article has a bit of clickbait title and does not focus on any hacks but leverages Android's ecosystem to show how an app can read, write and share files without requiring `READ_EXTERNAL_STORAGE` and `WRITE_EXTERNAL_STORAGE`. Each app in Android runs in its own system, like a sandbox. These sandboxes are not connected from one another which provides security. Now, to work with other apps, Android system has provided certain tools and one of them is **FileProvider**. FileProvider is a special subclass of `ContentProvider` that facilitates secure file sharing with other apps by creating `content://` uri. We will come back to this later.
+This article has a bit of a clickbait title and does not focus on any hacks but leverages Android's ecosystem to show how an app can read, write and share files without requiring `READ_EXTERNAL_STORAGE` and `WRITE_EXTERNAL_STORAGE`. Each app in Android runs in its own system, like a sandbox. These sandboxes are not connected from one another which provides security. Now, to work with other apps, Android system has provided certain tools and one of them is **FileProvider**. FileProvider is a special subclass of `ContentProvider` that facilitates secure file sharing with other apps by creating `content://` uri. We will come back to this later.
 
-TODO: some stuff here like a seguway 
+**Note**: This post is not intended towards Read/Write heavy files such as a photo gallery or a music player. If your app occasionally write a file, eg. export some file or save an image once in a while, you may find this interesting.
 
-**Note**: This post is not intended towards Read/Write heavy files such as a photo gallery or a music player. If your app occassionally write a file, eg. export some file or save an image once in a while, you may find this interesting.
+Let’s begin by checking what different methods and storage options we have to create a file.
 
 # Create a file
 
@@ -62,7 +62,7 @@ val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
 startActivityForResult(intent, requestCode)	 
 {% endhighlight %}
 
-This intent will trigger Storage Access Framework and the user will see a document browser prmopting user to save the file. Once user saves the file, the app gets callback with uri of the file. `mimeType` will depend on what type of file you're going to write. eg. `txt/plain` for a text file, `image/png` for a png image, `applicatio/pdf` for a PDF, etc.
+This intent will trigger Storage Access Framework and the user will see a document browser prompting user to save the file. Once user saves the file, the app gets callback with uri of the file. `mimeType` will depend on what type of file you're going to write. eg. `txt/plain` for a text file, `image/png` for a png image, `application/pdf` for a PDF, etc.
 
 {% highlight kotlin %}
 override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -99,7 +99,7 @@ That's it! You have created a file in external storage and written to it without
 
 # Read a file
 
-To reaa a file from external storage, your app needs to have `READ_EXTERNAL_STORAGE` permission (or `WRITE_EXTERNAL_STORAGE` permission). But we can leverage Storage Access Framework, other apps (gallery, file explorer, etc) to let user a pick a file that they want to use. Reading from internal storage or cache directory does not require any system permissions.
+To read a file from external storage, your app needs to have `READ_EXTERNAL_STORAGE` permission (or `WRITE_EXTERNAL_STORAGE` permission). But we can leverage Storage Access Framework, other apps (gallery, file explorer, etc) to let user a pick a file that they want to use. Reading from internal storage or cache directory does not require any system permissions.
 
 ## Reading from external storage
 
@@ -111,7 +111,7 @@ val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
 startActivityForResult(Intent.createChooser(intent, "Select file via"), requestCode)
 {% endhighlight %}
 
-mimeType is based on what type of file you want user to select. eg. `txt/plain` for a text file, `image/png` for a png image, `applicatio/pdf` for a PDF, etc. This intent will trigger an application (or an app chooser) using which user can pick a file. This will return your app an uri generated from FileProvider and your app gets temporary access to read the file.
+mimeType is based on what type of file you want user to select. eg. `txt/plain` for a text file, `image/png` for a png image, `application/pdf` for a PDF, etc. This intent will trigger an application (or an app chooser) using which user can pick a file. This will return your app an uri generated from FileProvider and your app gets temporary access to read the file.
 
 {% highlight kotlin %}
 override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -143,7 +143,7 @@ So yes, if you have an app which seldom reads from external storage, you may use
 
 # Share a file
 
-Sharing some information from the app has become one of the most basic requirments and users want to share a lot of things with their friends, eg. a note, an image, something that they drew, etc. To improve secuirty and also to make sure that other apps with which the content is being shared with has the correct permissions, Android introduced **FileProvider**. As mentioned above, FileProvider is a special subclass of `ContentProvider` that facilitates secure file sharing with other apps by creating `content://` uri.
+Sharing some information from the app has become one of the most basic requirements and users want to share a lot of things with their friends, eg. a note, an image, something that they drew, etc. To improve security and also to make sure that other apps with which the content is being shared with has the correct permissions, Android introduced **FileProvider**. As mentioned above, FileProvider is a special subclass of `ContentProvider` that facilitates secure file sharing with other apps by creating `content://` uri.
 
 Above we used other apps to create and read files from external storage. This is only possible because of FileProvider. Android does not allow sharing `file://` uri and will immediately throw **FileUriExposedExceptio** which will crash the app. So when an app wants to share a file with other apps, the app creates a content uri using FileProvider, grants temporary read or write access to the other app (via intent) so that the other apps can have access to the file regardless if they have READ/WRITE permission or not.
 
@@ -196,9 +196,9 @@ Create a folder named `xml` in your app's `res` directory and create a file name
 
 `name` provides path segment to uri which increases security as this value hides the name of the subdirectory that your app is sharing. `path` provides subdirectory that you are sharing. `path` value has to be a subdirectory. You can not share a file by its file name or using wildcards.
 
-There are different tags avaialable for different tpyes of storage. 
+There are different tags available for different types of storage. 
 
- - `<files-path>` is for intenral storage subdirectory.
+ - `<files-path>` is for internal storage subdirectory.
  - `<external-path>` is for external storage subdirectory.
  - `<cache-path>` is for cache storage subdirectory.
 
@@ -210,7 +210,7 @@ Once this setup is done, we are ready to share files with other apps.
 
 {% highlight kotlin %}
 val uri = FileProvider.getUriForFile(context, "${BuildConfig.APPLICATION_ID}.provider", file)
-# The authority must match the authority declated in the manifest.
+# The authority must match the authority declared in the manifest.
 
 val intent = Intent(Intent.ACTION_SEND)
 	.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
@@ -233,6 +233,4 @@ FileProvider is a really great concept and it works so well. You can request lon
 
 # Epilogue
 
-I was adding support for offline export and import of data in my app - **[Flutter: Instant Movie Ratings](https://github.com/jayrambhia/MovieRatings)** (written in Kotlin, not Flutter), I added permission to manifest, did whole shbang of asking permissions to write files. I really don't like permissions so I google-fu'ed and found out about Storage Access Framework, DocumentProvider, FileProvider and re-did the whole import/export functionality and removed the permissions. The app request permission just for internet access.
-
-
+I was adding support for offline export and import of data in my app - **[Flutter: Instant Movie Ratings](https://github.com/jayrambhia/MovieRatings)** (written in Kotlin, not Flutter), I added permission to manifest, did the whole shebang of asking permissions to write files. I really don't like permissions so I google-fu'ed and found out about Storage Access Framework, DocumentProvider, FileProvider and re-did the whole import/export functionality and removed the permissions. The app request permission just for internet access.
