@@ -54,7 +54,7 @@ val file = File(context.cacheDir, name)
 Now, coming to the most important part. We can write to external storage without asking for `WRITE_EXTERNAL_STORAGE` permission. Android 4.4 (API 19) introduced `Storage Access Framework` (SAF) which makes it simple for users to browse and open documents, images, and other files across all of their their preferred document storage providers. We'll use SAF to create a new file and write to it.
 
 {% highlight kotlin %}
-val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+val intent = Intent(Intent.ACTION_CREATE_DOCUMENT)
 	.addCategory(Intent.CATEGORY_OPENABLE)
 	.setType(mimeType)
 	.putExtra(Intent.EXTRA_TITLE, filename)
