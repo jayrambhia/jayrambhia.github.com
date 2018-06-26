@@ -193,6 +193,11 @@ And your new custom lint rule will be used to check for issues.
 
 Writing custom Lint rules for Android is super easy now and you should definitely write some of your own rules to avoid potential issues and especially to keep high code quality in a big team.
 
+## Series
+
+ 1. Get started with Android Lint - custom lint rules
+ 2. [Android Lint Deepdive - advanced custom lint rules](/blog/android-lint-ref)
+
 
 
 
