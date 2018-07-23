@@ -13,13 +13,13 @@ category_tag: [Android, Kotlin, Redux]
 
 I'm sure you must have heard about Redux architecture from your front end colleagues and friends and maybe from someone who is an app developer. [Redux](https://redux.js.org/) is a very popular framework for a predictable state container for Javascript apps. It has become quite ubiquitous in its usage with [React](https://github.com/reduxjs/react-redux) to develop scalable web apps. Redux is inspired from [Flux](https://facebook.github.io/flux/) architecture which emphasizes on single directional data flow. Redux takes some good parts from Flux - store, actions, dispatcher, single directional data flow and improves upon it to.
 
-# Redux Concepts
+## Redux Concepts
 
 The Redux architecture is not very complicated but it has a steep learning curve especially for Java programmers. Redux focuses more on functional programming with some reactive elements as compared to run of the mill Java apps which are more object oriented. Redux is also different from architectures such as MVP, MVC or MVVM as `View` is a significant part of these architectures and sometimes heavily tied. eg. `view.showLoading()`, etc. Where as Redux does not know and does not care about `View`.
 
 Let's go over the components that make Redux. I'll explain some details with an example of an app where users can search for a movie.
 
-## State
+### State
 
 State in Redux describes your app's state at any given time. State is an immutable object which holds the information about the 'current state' of the app. In Redux, state is immutable and can not be changed. To update the state, a copy or a new object must be created. Based on the requirements of your app, your state can have many `sub-state` or `child state`. Your state should be as small and flat as possible. If you have a deeply nested state, it can be very difficult to manage it. Let's look at an example.
 
@@ -32,7 +32,7 @@ Here, we have a data class `AppState` which represents the state of the whole ap
 
 `data class` in Kotlin are very helpful as they are immutable and easy to copy so it makes sense to use it for our app's state.
 
-## Action
+### Action
 
 In Redux, `Action` describes the change in the state. Usually, action has a name and some payload attached to it. But we can do without the name field. Here's an example.
 
@@ -50,7 +50,7 @@ data class LoadSearchResult(val movies: List<Movie>): Action
 
 So each of these actions will transform the state to a new one.
 
-## Reducer
+### Reducer
 
 Reducers are an integral part of the Redux architecture. As the name suggests, a Reducer reduces (changes) the current state to a new state (based on the given action). In Redux, reducers are pure functions and they should not have any side effects. A pure function will give the same output for the same inputs no matter how many times you run it or when you run it. A pure function should not have something like `time.getTime()` or `Random.getRandom()` because we can't predict the outcome in absolute values. Reducers should not have any side effects, eg. logging, making an api call, etc.
 
@@ -69,7 +69,7 @@ fun reduce(state: AppState, action: Action): AppState {
 
 This reducer will change the state for `ClearSearch`, `Search` and `LoadSearchResult` actions only. For other actions, it will simply return the state as is.
 
-## Store
+### Store
 
 Until now, `State`, `Action` and `Reducer` are just there and you may be wondering how are these things related and tied together to make it work. That's where `Store` comes in. Store is at the heart of Redux. The store has following responsibilities.
 
@@ -99,18 +99,18 @@ class AppStore(val initialState: AppState, val reducers: List<Reducer>): Store {
 
 This is a very crude definition of the Store and we will improve it later to make it less verbose and more *closed*. `Reducer` is just some class that I have put here. We would replace it with lambda function later.
 
-### How does the store bind it all together?
+#### How does the store bind it all together?
 
  - The store is created with a default state and a list of reducers.
  - A component (usually the view) dispatches an action by calling `Store.dispatch(action)`.
  - The store iterates through all the reducers and asks them to reduce the current state to a new state based on the dispatched action.
  - Once the state is reduced to a new state, it will notify all the listeners via `listener.onUpdate(state)` if the state has actually updated.
 
-### Where does the view come in the picture?
+#### Where does the view come in the picture?
 
 The view subscribes to the store for state updates. Every time the state is updated, the store will notify the view and give it the new state. The view will render itself based on the new state. When user performs some action, eg. enter a search query, it will dispatch an action to the store.
 
-### Summary?
+#### Summary?
 
 To summarize, when an action is dispatched, the store asks the reducers to reduce the current state to a new state based on the given action. The store then notifies all the listeners (views in our case) of the state change. Here's how the flow looks like!
 
@@ -118,7 +118,7 @@ To summarize, when an action is dispatched, the store asks the reducers to reduc
 	<img src="/assets/images/redux-flow-diagram.png"/>
 </p>
 
-### Some code maybe?
+#### Some code maybe?
 Here's some sample code that our movie search app will use on its search screen.
 
 {% highlight kotlin %}
@@ -165,25 +165,25 @@ class SearchFragment: Fragment {
 
 I hope the explanation has made some sense and you have a bit of a picture of different concepts of Redux. Let's go through the principles of Redux architecture.
 
-# Redux Principles
+## Redux Principles
 
 Redux is described via these three fundamental principles.
 
-## 1. Single source of truth.
+### 1. Single source of truth.
 
 The state of your whole application is stored in a single object (object tree) within a single store. It means that your app has only one store and one state object. Other states are stored in the app state object. A single state tree makes it easier to debug the application. The state of the application is single source of truth.
 
-## 2. State is read-only.
+### 2. State is read-only.
 
 The state is immutable and can only be changed via `dispatching` an action to the store. State immutability is very important as we know exactly which action updated the state. It also ensures that the views or the network calls can not change the state directly. All the changes are centralized via the store and happen one by one in an order which also helps us in avoiding race conditions.
 
-## 3. Changes are made with pure functions.
+### 3. Changes are made with pure functions.
 
 Reducers are pure functions that take the previous state and an action, and return the next state. Reducers are *stateless* in a sense that they do not care about the history. They will change State A to state B with given action X every time. There are no exceptions to this. This makes the reducers really easy to unit test.
 
 These 3 principles are very important and are core elements of the Redux architecture. Now, that you have learnt about Redux, let's see what are the reasons this could be beneficial in android application.
 
-# How does Redux help with developing an android application?
+### How does Redux help with developing an android application?
 
 Redux allows us to solve a lot of different potential problems.
 
