@@ -138,7 +138,30 @@ class AppStore(val initialState: AppState, val reducers: List<Reducer>, val midd
 
 This code is a bit tricky and involves recursion. We create first link of chain. When creating the first link of chain, it needs the next link, so it calls the recursive method to create the next link which in turn calls the function again to create the next link. Each link consists of `NextMiddleware` (weird name?) which has reference to a middleware. When we are out of middleware, we add `EndOfChain`. It does not require a next and it just returns the action as is. As you can see, the order of the middleware matters here.
 
-I hope this was helpful and you have more understanding of `Middleware` in Redux than before. In the next article, I will write about implementing the complete Redux architecture in Kotlin with higher order functions to make it look cool.
+## Redux flow with Middleware
+
+Let's go over the flow once again.
+
+ 1. `SearchScreen` dispatches `Search(query="batman")` action by calling `store.dispatch(action)`
+ 2. Store creates the chain of `Middleware` and calls the first link of the chain.
+ 3. The first chain is a Logger. It logs the action that it receives and calls the next link of the chain with the same action.
+ 4. The next link is `SearchApiMiddleware`. It receives `Search(query="batman")` action. It makes an API call in the background and returns `LoadingSearchResult` action.
+ 5. The previous link, ie. Logger, receives `LoadingSearchResult` action as return value from the second chain. It logs this new action and returns it.
+ 6. The store gets `LoadingSearchResult` action. It passes this action to the reducers.
+ 7. `SearchScreenReducer` reduces `SearchState` to `SearchState.copy(loading = true)` and returns it.
+ 8. No other reducer further changes the state.
+ 9. The store gets a new state and it notifies all the listener.
+ 10. `SearchScreen` being one of the active listeners, receives the new state and decides to show a loading spinner.
+ 11. Meanwhile, the api returns a response in 200 ms. The Api.search() method having a reference to the store, dispatches `SearchResultLoaded(movies)` action.
+ 12. The store creates a chain of the middleware and calls the first chain.
+ 13. None of the middlewares update the action and return it as is.
+ 14. The store gets `SearchResultLoaded` action and it calls the reducers. `SearchScreenReducer` updates the SearchState to `SearchState.copy(loading = false, movies=action.movies)` and returns the new state. No other reducer updates the state.
+ 15. The store gets a new state and it notifies all the listener.
+ 16. `SearchScreen` receives the update. It hides the loading spinner and show the list of movies.
+
+ Check out this really helpful video by Shazam's tech team which explains how a middleware works - [Middleware demo](https://www.youtube.com/watch?v=ORGEI9slOhM). Also, here's the article where I found the video - [Android.apply{ Redux }](https://blog.shazam.com/android-apply-redux-2ad0f7355e0).
+
+ I hope this was helpful and you have more understanding of `Middleware` in Redux than before. In the next article, I will write about implementing the complete Redux architecture in Kotlin with higher order functions to make it look cool.
 
 ## Redux architecture series
 
