@@ -41,12 +41,12 @@ interface Action
 
 object ClearSearch: Action
 data class Search(val query: String): Action
-data class LoadSearchResult(val movies: List<Movie>): Action
+data class (val movies: List<Movie>): Action
 {% endhighlight %}
 
  - `ClearSearch` : This action describes that the query and search results should be cleared.
  - `Search` : This action describes that a search should be made based on the given query.
- - `LoadSearchResult` : This action describes that search result should be loaded to the state.
+ - `SearchResultLoaded` : This action describes that search result should be loaded to the state.
 
 So each of these actions will transform the state to a new one.
 
@@ -61,13 +61,13 @@ fun reduce(state: AppState, action: Action): AppState {
   return when(action) {
     is ClearSearch -> state.copy(searchState = SearchState(query = "", movies = listOf()))
     is Search -> state.copy(searchState = state.searchState.copy(query = action.query))
-    is LoadSearchResult -> state.copy(searchState = state.searchState.copy(movies = action.movies))
+    is SearchResultLoaded -> state.copy(searchState = state.searchState.copy(movies = action.movies))
     else -> state
   }
 }
 {% endhighlight %}
 
-This reducer will change the state for `ClearSearch`, `Search` and `LoadSearchResult` actions only. For other actions, it will simply return the state as is.
+This reducer will change the state for `ClearSearch`, `Search` and `SearchResultLoaded` actions only. For other actions, it will simply return the state as is.
 
 ### Store
 
@@ -93,11 +93,24 @@ interface StateChangeListener {
 }
 
 class AppStore(val initialState: AppState, val reducers: List<Reducer>): Store {
-  // We'll see the implementation later.
+  override fun dispatch(action: Action) {
+    val newState = applyReducers(action)
+    currentState = newState
+    // .. notify listeners of the state change.
+  }
+
+  private fun applyReducers(action: Action): State {
+    var state = currentState
+    for (reducer in reducers) {
+      state = reducer.reduce(state, action)
+    }
+
+    return state
+  }
 }
 {% endhighlight %}
 
-This is a very crude definition of the Store and we will improve it later to make it less verbose and more *closed*. `Reducer` is just some class that I have put here. We would replace it with lambda function later.
+This is a very crude definition of the Store and we will improve it later to make it less verbose and more *closed*. `Reducer` is just some class that I have put here. We would replace it with higher order function later to make it cleaner. According to this implementation, the order of the reducers matters.
 
 #### How does the store bind it all together?
 
@@ -210,3 +223,8 @@ Redux also creates some problems for us, but if we are disciplined in writing th
 There are more advantages and disadvantages of Redux architecture in an android app, but we will visit them in upcoming articles.
 
 You must be wondering about `API calls` or `Database calls` which happen on IO thread and are technically not pure functions. Yes, Redux has taken care of it. These are `Effects` or `Side Effects` and can be integrated with the Store via `Middleware`. I'll write more about `Middleware` in the next article. We'll also write our own implementation of Redux architecture.
+
+## Redux architecture series
+
+ 1. Introduction: Redux architecture for android apps
+ 2. [Middleware: Introduction and implementation](/blog/android-redux-middleware)
