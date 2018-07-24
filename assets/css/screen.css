@@ -479,7 +479,7 @@ margin on the iframe, cause it breaks stuff. */
     height: 60%;
     margin-bottom: 5rem;
     text-align: center;
-    background: #444 no-repeat center center;
+    background: #abc8c0 no-repeat center center;
     background-size: cover;
     overflow: hidden;
 }
