@@ -73,9 +73,7 @@ In Kotlin, `Type aliases` provide alternative names for existing types. If the t
 
 {% highlight kotlin %}
 interface Action
-
 typealias Reducer<State> = (State, Action) -> State
-
 typealias Subscription<State> = (State) -> Unit
 
 interface Store<State> {
@@ -97,51 +95,38 @@ interface Store<State> {
 
 Let's implement the store.
 
-{% highlight kotlin %}
-abstract class SimpleStore<Store>(
-  private val initialState: State,
-  private val reducers: List<Reducer<State>>): Store<State> {
-
-  private var state: State = initialState
-  private val subscriptions = arrayListOf<Subscription<State>>()
-
-  override fun getState() = state
-
-  override fun dispatch(action: Action) {
-    val new = applyReducers(state, action)
-    if (new == state) {
-      // No change in state
-      return
-    }
-
-    state = new
-    subscriptions.forEach { it(state) }
-  }
-
-  private fun applyReducers(current: State, action: Action): State {
-    var new = current
-    for (reducer in reducers) {
-      new = reducer(new, action)
-    }
-
-    return new
-  }
-
-  override fun subscribe(subscription: Subscription<State>) {
-    subscriptions.add(subscription)
-    // notify subscription of the current state
-    subscription(state)
-  }
-
-  override fun unsubscribe(subscription: Subscription<State>) {
-    subscriptions.remove(subscription)
-  }
-}
-{% endhighlight %}
-
 {% gist jayrambhia/45f88628444952bacd674b24d0605bda reduxstore1.kt %}
 
 #### Breakdown
 
  - `SimpleStore` is an abstract class which takes generic `State`. To initialize a new instance, we pass an initial state and a list of reducers.
- -
+ - When a subscription subscribes to the store, we add it to the list of subscriptions and notify it of the current state.
+ - When an action is dispatched to the store, the store reduces the current state with the help of reducers and notifies all the subscriptions if there's a change in the state.
+
+#### Example
+
+Let's see an example of how our Redux architecture is going to work. For this example, I have chosen to go with an app that searches for movies. It has a `SearchFragment` where user can enter a query in the edit text and press a button to begin the search. While, the search is ongoing, the screen will show a spinner and disable the search button. Once the results are available, the screen will hide the spinner and show the list of movies. To keep it simple, we are not going to focus on errors at the moment.
+
+Let's define a state for the search fragment. The actions associated with it and a reducer.
+
+{% gist jayrambhia/45f88628444952bacd674b24d0605bda searchreducer1.kt %}
+
+ - `SearchState` consists of `loading` - whether the app is loading results or not, `query` - query that the user entered, `movies` - list of movies when the results are loaded.
+ - We define some actions related to our search screen.
+
+  - `ClearSearch` - action is dispatched when user clicks on the clear button.
+  - `Search` - action is dispatched when user clicks on the search button. The action has `query` as the payload.
+  - `LoadingSearch` - action is dispatched when the api starts loading results. This action will be dispatched by middleware, we'll implement it later.
+  - `SearchResultsLoaded` - action is dispatched when the api returns results. It has payload of list of movies.
+
+ - `reduceSearchState` is our reducer function associated with this state and the screen. You may have multiple reducers for one state. Typically, we would write a reducer for that state, eg. `SearchState`. But here, we have written it for `AppState` which is main state tree object and it contains `SearchState`.
+
+As you can see, the reducer is not at all tied with the view and it's so much easier to write unit tests since it does not even depend on anything Android related.
+
+Let's move on to our View and write a render function.
+
+{% gist jayrambhia/45f88628444952bacd674b24d0605bda searchfragment1.kt %}
+
+ - We subscribe to the store in `onViewCreated` and unsubscribe in `onDestroyView`.
+ - `render` method takes the state and updates the view.
+ - The view sends appropriate actions when user performs some action.
