@@ -5,12 +5,21 @@ comments: true
 date: 2018-07-24 16:00:00
 layout: post
 slug: android-redux-middleware
+image:
+  twitter: https://raw.githubusercontent.com/reduxjs/redux/master/logo/apple-touch-icon.png
+  facebook: https://raw.githubusercontent.com/reduxjs/redux/master/logo/apple-touch-icon.png
+  height: 240
+  width: 240
 title: Middleware in Redux architecture for android application
-description: Learn about the famous Redux architecture and write a new android app using Redux architecture in Kotlin. This article focuses on concept of the middleware and how it works.
+description: Are you having a hard time figuring out how middleware works in Redux architecture? This articles goes in-depth of Redux and explains what exactly a middleware is and how it is used in Redux. The article also helps you write your own middleware for Redux in Kotlin for your android apps.
 keywords: [android, android development, androiddev, dev, redux, kotlin, redux architecture, immutable state, redux clean architecture, write your own redux, redux data flow, redux middleware android, builds, pure functions, reactive functional android, redux reducers, redux store in kotlin, redux middleware, redux middleware for network calls, middleware in android redux, redux middleware chain]
 category_tag: [Android, Kotlin, Redux]
 ---
 In the previous article, I wrote about Redux architecture and how it can be used in an android app - **[Redux architecture for android apps](/blog/android-redux-intro)**. At the end of the article, I briefly talked about `Middleware`. I found Middleware to be the most confusing part about the Redux architecture and none of the posts about Redux architecture talk about much about it so it's quite difficult to wrap your mind around it.
+
+<p align="center">
+  <img alt="redux logo" title="Redux logo" src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo-title-dark.png"/>
+</p>
 
 ## What is Middleware?
 
@@ -23,7 +32,7 @@ This definition still seems very vague. From the redux website, **A middleware p
 From my understanding, a middleware or a list of middleware, changes the action that is dispatched to the store, before it reaches the reducers. Have a look at the flow diagram that I have made.
 
 <p align="center">
-	<img src="/assets/images/redux-flow-middleware-diagram.png"/>
+	<img alt="redux flow with middleware" title="Redux unidirectional flow with Middleware" src="/assets/images/redux-flow-middleware-diagram.png"/>
 </p>
 
 ## What happens inside the store with the middleware?

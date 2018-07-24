@@ -4,14 +4,23 @@ tag: Android
 comments: true
 date: 2018-07-23 16:00:00
 layout: post
+image:
+  twitter: https://raw.githubusercontent.com/reduxjs/redux/master/logo/apple-touch-icon.png
+  facebook: https://raw.githubusercontent.com/reduxjs/redux/master/logo/apple-touch-icon.png
+  height: 240
+  width: 240
 slug: android-redux-intro
 title: Redux architecture for android apps
-description: Learn about the famous Redux architecture and write a new android app using Redux architecture in Kotlin.
+description: What is Redux architecture? Learn about Redux and how to use it in your android app. Update your MVP/MVVM architecture to Redux and have a bug free app. Learn about actions, reducers, state management and redux store in-depth and write your own Redux implementation in Kotlin.
 keywords: [android, android development, androiddev, dev, redux, kotlin, redux architecture, immutable state, redux clean architecture, write your own redux, redux data flow, redux middleware android, builds, pure functions, reactive functional android, redux reducers, redux store in kotlin]
 category_tag: [Android, Kotlin, Redux]
 ---
 
-I'm sure you must have heard about Redux architecture from your front end colleagues and friends and maybe from someone who is an app developer. [Redux](https://redux.js.org/) is a very popular framework for a predictable state container for Javascript apps. It has become quite ubiquitous in its usage with [React](https://github.com/reduxjs/react-redux) to develop scalable web apps. Redux is inspired from [Flux](https://facebook.github.io/flux/) architecture which emphasizes on single directional data flow. Redux takes some good parts from Flux - store, actions, dispatcher, single directional data flow and improves upon it to.
+I'm sure you must have heard about Redux architecture from your front end colleagues and friends and maybe from someone who is an app developer. [Redux](https://redux.js.org/) is a very popular framework for a predictable state container for Javascript apps. It has become quite ubiquitous in its usage with [React](https://github.com/reduxjs/react-redux) to develop scalable web apps. Redux is inspired from [Flux](https://facebook.github.io/flux/) architecture which emphasizes on **unidirectional** data flow. Redux takes some good parts from Flux - store, actions, dispatcher, **unidirectional** data flow and improves upon it to.
+
+<p align="center">
+  <img alt="redux logo" title="Redux logo" src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo-title-dark.png"/>
+</p>
 
 ## Redux Concepts
 
@@ -128,7 +137,7 @@ The view subscribes to the store for state updates. Every time the state is upda
 To summarize, when an action is dispatched, the store asks the reducers to reduce the current state to a new state based on the given action. The store then notifies all the listeners (views in our case) of the state change. Here's how the flow looks like!
 
 <p align="center">
-	<img src="/assets/images/redux-flow-diagram.png"/>
+	<img alt="redux android flow" title="Redux unidirectional flow simplified" src="/assets/images/redux-flow-diagram.png"/>
 </p>
 
 #### Some code maybe?
