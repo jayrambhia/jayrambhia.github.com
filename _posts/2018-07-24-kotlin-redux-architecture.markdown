@@ -164,3 +164,28 @@ interface Store<State> {
 We have updated the definition of store and made it more restrictive. Let's modify the implementation.
 
 {% gist jayrambhia/45f88628444952bacd674b24d0605bda reduxstore2.kt %}
+
+With this new definition of the Redux store, we just need to update somethings in our View and render function. The rest of the code does not change.
+
+#### Update the View
+
+`Store.dispatch(action)` method is no longer accessible, but the store sends `Dispatch` function reference when it sends updates regarding the state. So let's update our render function to have a reference of `Dispatch`.
+
+{% gist jayrambhia/45f88628444952bacd674b24d0605bda searchfragment2.kt %}
+
+ - The fragment keeps a reference to `Dispatch` and uses it to dispatch actions. It chucks away the reference in `onDestroyView()`.
+ - The fragment invokes `Unsubscribe` in `onDestroyView` lifecycle method to stop getting events from the store.
+
+### Summary
+
+We have a working implementation of Redux architecture. If you see the implementation of `Store`, it's very simple and tiny. That is why I like this architecture. It may seem complex at first, but actually it's really easy once you get your head around it.
+
+If we revisit the flow, the view subscribes to the store for the state updates. The view dispatches actions to the store. The store sends the action and the current state to the reducer. The reducer updates the state if necessary. Once the store receives the updated state, it notifies the view of the update.
+
+We are still missing a crucial component in this implementation - `Middleware`. Without middleware, we could not make network calls, log some stuff, or do anything on the background thread. We'll modify our implementation of the store to include Middleware and write an example of a middleware which makes an api call to get the search results.
+
+## Redux architecture series
+
+ 1. [Introduction: Redux architecture for android apps](/blog/android-redux-intro)
+ 2. [Middleware: Introduction and implementation](/blog/android-redux-middleware)
+ 3. Write your own Redux implementation in Kotlin
