@@ -649,7 +649,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .main-nav.overlay a:hover {
-    color: #222;
+    color: #eee;
     border-color: #fff;
     background: #fff;
     transition: all 0.1s ease;
