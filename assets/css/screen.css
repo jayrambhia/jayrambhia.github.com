@@ -643,13 +643,24 @@ margin on the iframe, cause it breaks stuff. */
     color: #fff;
 }
 
+.main-page-link a {
+  color: #fff;
+}
+
+.main-page-link a:hover {
+  color: #ddd;
+  border-color: #fff;
+  background: #fff;
+  transition: all 0.1s ease;
+}
+
 .main-nav.overlay .back-button,
 .main-nav.overlay .subscribe-button {
     border-color: rgba(255,255,255,0.6);
 }
 
 .main-nav.overlay a:hover {
-    color: #eee;
+    color: #222;
     border-color: #fff;
     background: #fff;
     transition: all 0.1s ease;
