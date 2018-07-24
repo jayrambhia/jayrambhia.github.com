@@ -112,16 +112,20 @@ Let's define a state for the search fragment. The actions associated with it and
 {% gist jayrambhia/45f88628444952bacd674b24d0605bda searchreducer1.kt %}
 
  - `SearchState` consists of `loading` - whether the app is loading results or not, `query` - query that the user entered, `movies` - list of movies when the results are loaded.
- - We define some actions related to our search screen.
-
-  - `ClearSearch` - action is dispatched when user clicks on the clear button.
-  - `Search` - action is dispatched when user clicks on the search button. The action has `query` as the payload.
-  - `LoadingSearch` - action is dispatched when the api starts loading results. This action will be dispatched by middleware, we'll implement it later.
-  - `SearchResultsLoaded` - action is dispatched when the api returns results. It has payload of list of movies.
-
+ - `ClearSearch` - action is dispatched when user clicks on the clear button.
+ - `Search` - action is dispatched when user clicks on the search button. The action has `query` as the payload.
+ - `LoadingSearch` - action is dispatched when the api starts loading results. This action will be dispatched by middleware, we'll implement it later.
+ - `SearchResultsLoaded` - action is dispatched when the api returns results. It has payload of list of movies.
  - `reduceSearchState` is our reducer function associated with this state and the screen. You may have multiple reducers for one state. Typically, we would write a reducer for that state, eg. `SearchState`. But here, we have written it for `AppState` which is main state tree object and it contains `SearchState`.
 
 As you can see, the reducer is not at all tied with the view and it's so much easier to write unit tests since it does not even depend on anything Android related.
+
+Let's define our store which we will use in the app. There should be only one instance of the store so we are going to use a singleton.
+
+{% gist jayrambhia/45f88628444952bacd674b24d0605bda appstore1.kt %}
+
+ - `AppState` is our state tree object which contains the whole state of the app.
+ - We create a new class `AppStore` which works with `AppState`. We provide an initial state and a list of reducers. We include `reduceSearchState` reducer in the list.
 
 Let's move on to our View and write a render function.
 
@@ -130,3 +134,33 @@ Let's move on to our View and write a render function.
  - We subscribe to the store in `onViewCreated` and unsubscribe in `onDestroyView`.
  - `render` method takes the state and updates the view.
  - The view sends appropriate actions when user performs some action.
+
+We just created an implementation of **Redux architecture** in Kotlin. It's not complete, but we are getting there. Let's make it look more like Javascript? I never know if this is a good idea or not.
+
+### Make the store more _closed_
+
+Any piece of code can access `Store.instance` and dispatch some action or get the current state to update something else. This breaks the unidirectional flow of Redux. It would become difficult for debugging so it's better that we restrict the access to the store and its properties.
+
+ - `Dispatch`: We want our store be a bit more restrictive and don't want it to be accessed from some corner of the app. Let's define Dispatch. It's a higher order function passed by the store to its subscribers.
+ - `Unsubscribe`: Similarly, we do not want some other part of the code to call `unsubscribe()` to some other subscriber.
+ - We also restrict the code to access the state. If some component wants to access the state, it can subscribe to the store.
+
+{% highlight kotlin %}
+typealias Dispatch: = (Action) -> Unit
+typealias Subscription<State> = (State, Dispatch) -> Unit
+typealias Unsubscribe = () -> Unit
+
+interface Store<State> {
+  fun subscribe(subscription: Subscription<State>): Unsubscribe
+}
+{% endhighlight %}
+
+ - We updated the definition of `Subscription`. The method now takes `Dispatch` as a parameter which the store will pass to its subscribers.
+ - When the view wants to unsubscribe from the store, it can just call `Unsubscribe()` or `Unsubscribe.invoke()`.
+ - To dispatch an action, the component can now use `Dispatch(action)` or `Dispatch.invoke(action)`.
+
+### Implement the new store
+
+We have updated the definition of store and made it more restrictive. Let's modify the implementation.
+
+{% gist jayrambhia/45f88628444952bacd674b24d0605bda reduxstore2.kt %}
