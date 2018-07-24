@@ -139,7 +139,9 @@ abstract class SimpleStore<Store>(
 }
 {% endhighlight %}
 
+{% gist jayrambhia/45f88628444952bacd674b24d0605bda reduxstore1.kt %}
+
 #### Breakdown
 
  - `SimpleStore` is an abstract class which takes generic `State`. To initialize a new instance, we pass an initial state and a list of reducers.
- - 
+ -
