@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Home
-cover: https://unsplash.it/1500/500?random&blur
+cover: https://unsplash.it/1280/480?random&blur
 about: 'about-me/'
 ---
 
@@ -44,7 +44,7 @@ about: 'about-me/'
 
     <article class="post">
         <header class="post-header">
-            <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
         </header>
         <section class="post-excerpt">
             {{ post.excerpt }} <a class="read-more" href="{{ post.url }}">&raquo;</a>
@@ -54,12 +54,12 @@ about: 'about-me/'
                 <img class="author-thumb" src="/assets/images/profile.jpg" alt="Author's profile picture" nopin="nopin" />
                 {{ site.k_author }}
             {% endif %}
-            {% if post.tags.size > 0 %} 
-                {{ post.tags | array_to_sentence_string | prepend: 'on ' }} 
+            {% if post.tags.size > 0 %}
+                {{ post.tags | array_to_sentence_string | prepend: 'on ' }}
             {% endif %}
             <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
                 {{ post.date | date_to_string }}
-            </time> 
+            </time>
         </footer>
     </article>
 
