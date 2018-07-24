@@ -11,7 +11,7 @@ paginate: 12
 baseurl: /
 domain_name: 'http://jayrambhia.com'
 google_analytics: 'UA-38672256-1'
-gems: [jekyll-paginate, jekyll-seo-tag, jekyll-gist]
+gems: [jekyll-paginate, jekyll-seo-tag, jekyll-gist, jekyll-sitemap]
 archives: 'archives/'
 
 # Details for the RSS feed generator
@@ -27,4 +27,4 @@ author:
   facebook: "jay.rambhia"
 
 twitter:
-  username: jayrambhia  
+  username: jayrambhia
