@@ -14,6 +14,7 @@ title: Write your own Redux implementation in Kotlin
 description: Do you want to learn how Redux works? There's no better way than implementing your own Redux architecture. This is a must read guide to write Redux implementation in Kotlin for your android apps. The article covers intricate details of redux store, dispatcher, reducers and middleware.
 keywords: [android, android development, androiddev, dev, redux, kotlin, redux architecture, immutable state, redux clean architecture, write your own redux, redux data flow, redux middleware android, builds, pure functions, reactive functional android, redux reducers, redux store in kotlin, redux middleware, redux middleware for network calls, middleware in android redux, redux middleware chain]
 category_tag: [Android, Kotlin, Redux]
+series: redux-android
 ---
 
 In the previous articles, I talked about **[Redux architecture](/blog/android-redux-intro)** and the **[Role of middleware in Redux](/blog/android-redux-middleware)**. There's no better way to learn something than implementing it yourself. We are going to write a very lightweight implementation of Redux architecture in Kotlin which can be used for our android app.
