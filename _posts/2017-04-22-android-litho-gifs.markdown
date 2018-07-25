@@ -13,9 +13,11 @@ slug: android-litho-gifs
 title: Build Android GIF search engine using Litho by Facebook
 description: Litho (by Facebook) tutorial to build a GIF search engine in Android using Giphy.
 keywords: [android, android development, androiddev, dev, litho, react, ui, gif, gifs, search, engine, facebook, open source, recyclerview, props, state]
+series: litho-android
+series_description: This article explores basics of Litho and explains how to use `Component`, `LayoutSpec` and `MountSpec`. We are going to implement a GIF search engine powered by Giphy to explore how `RecylerBinder` is used to show a list of items. We are going to hack Litho to make it compatible with Glide in order to load the GIFs.
 ---
 
-I recently tried my hands with [React](https://facebook.github.io/react/) - A Javascript library for building user interfaces. I started following this amazing tutorial - 
+I recently tried my hands with [React](https://facebook.github.io/react/) - A Javascript library for building user interfaces. I started following this amazing tutorial -
 [React 101](https://blog.tighten.co/react-101-building-a-gif-search-engine) by [Tighten](http://blog.tighten.co/). I had just finished building my first GIF search engine
 and Facebook open sourced [Litho](http://fblitho.com/) - A declarative UI framework for Android. Well, Litho takes a lot of inspiration from React. I had just started to get my hands dirty with React (and liked it), I thought I give Litho a try. So what should I do? GIF search engine for Android using Litho!
 
@@ -118,7 +120,7 @@ Now, we need to add some dummy data so that we can see something on the screen. 
 
 `RecyclerBinder` is sort of a super RecyclerView Adapter which takes care of creating views. It's supposed to be highly optimised. RecyclerView Adapter recycles ViewHolders but RecyclerBinder recycles each view (component to be correct) based on the type. If we have two different components for different items in Recycler as Component1 and Component2. Text (child) component of Component1 may be recycled and used in Component2. Litho would take care of correctly measureing and redering the recycled components.
 
-We don't have to write boilerplate code for RecyclerBinder like we do for RecyclerView.Adapter. We don't need to have a specific dataset. 
+We don't have to write boilerplate code for RecyclerBinder like we do for RecyclerView.Adapter. We don't need to have a specific dataset.
 
 `binder.insertItemAt(position, ComponentInfo)` is used to add Component at a specified position.
 
@@ -205,13 +207,13 @@ public class HomeComponentSpec {
         .textChangedEventHandler(HomeComponent.onQueryChanged(c))
         .build();
   }
-  
+
   @OnEvent(TextChangedEvent.class)
   static void onQueryChanged(ComponentContext c, @FromEvent String text) {
     Log.d("TextChangedEvent", "Value: " + text);
   }
-  
-} 
+
+}
 {% endhighlight %}
 
 <br/>
@@ -262,7 +264,7 @@ We are sure that we can use `ImageView` and this deduces that we can also use Gl
 ### Boilerplate
 We'll use `Retrofit` to fetch data from Giphy search API and feed it to the RecyclerBinder. Nobody likes writing boilerplate code so here's the `model` part of this app - [models](https://github.com/jayrambhia/LithoGifSearch/tree/v1/app/src/main/java/com/fenchtose/lithogifsearch/models).
 <br/>
-Let's create a POJO to hold GIF data - GitItem. 
+Let's create a POJO to hold GIF data - GitItem.
 
 {% gist jayrambhia/cd0e65e1b24f45d2bb05a790e812468a GifItem.java %}
 <br/>
@@ -314,4 +316,4 @@ P.S. I do not (yet) fully understand Litho, State, Yoga, Flexbox so feel free to
  2. [Managing State in Litho](/blog/android-litho-state)
  3. [Navigation with Litho](/blog/android-litho-navigation)
  4. [Events with Litho](/blog/android-litho-events)
- 5. [Synchronizing state between different components](/blog/android-litho-sync) 
+ 5. [Synchronizing state between different components](/blog/android-litho-sync)

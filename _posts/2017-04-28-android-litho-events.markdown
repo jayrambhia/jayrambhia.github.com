@@ -13,6 +13,8 @@ slug: android-litho-events
 title: Using Events in Litho
 description: Use events to send component updates in Litho instead of callbacks
 keywords: [android, android development, androiddev, dev, litho, react, ui, gif, gifs, search, engine, facebook, open source, recyclerview with Litho, props in Litho, state in Litho, events with Litho, custom events in Litho]
+series: litho-android
+series_description: Events in Litho are very powerful so in this article we are going to explore Litho Events and use them to update components instead of the callbacks. We will send the events using `EventDispatcher` and grok Litho.
 ---
 
 This is the fourth post in the series - Exploring Litho. In the first post - [Android GIF search engine with Litho](/blog/android-litho-gifs), we explored some key aspects of Litho - LayoutSpec, MountSpec, Use Glide to load images, Update RecyclerView data, etc. In the second post - [Managing State in Litho](/blog/android-litho-state), we dabbled around with state in Litho components. In the third post - [Navigation with Litho](/blog/android-litho-navigation), we used `LithoView` and components to navigate instead of an Acitivity or a Fragment. If you're not familiar with Litho, I would suggest you to go through the previous posts.
@@ -92,4 +94,3 @@ P.S. Litho is a bit complicated to understand but it does solve a lot of issues 
  3. [Navigation with Litho](/blog/android-litho-navigation)
  4. Events with Litho
  5. [Synchronizing state between different components](/blog/android-litho-sync)
-

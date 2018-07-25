@@ -13,11 +13,13 @@ slug: android-litho-navigation
 title: Navigation with Litho
 description: Navigate to different screens and components with Litho - Android
 keywords: [android, android development, androiddev, dev, litho, react, ui, gif, gifs, search, engine, facebook, open source, recyclerview with Litho, props in Litho, state in Litho, navigation with Litho]
+series: litho-android
+series_description: Making a simple screen for demo is usually easy but integrating navigation in another framework is always an ardent task for any android developer. In this article we are going to open the GIF in full screen and explore possible navigation methods.
 ---
 
 This is the third post in series of exploring Litho. In the first post - [Android GIF search engine with Litho](/blog/android-litho-gifs), we explored some key aspects of Litho - LayoutSpec, MountSpec, Use Glide to load images, Update RecyclerView data, etc. In the second post - [Managing State in Litho](/blog/android-litho-state), we dabbled around with state in Litho components. If you're not familiar with Litho, I would suggest you to go through the previous posts.
 
-In this brief post, we will see how we can easily navigate using Litho. In our main component - HomeComponent, we display a grid of GIFs. Now, we will create another component - FullScreenComponent to display the GIF in full screen mode. For navigation, we'll use Litho components instead of different acitivites or fragments.
+In this brief post, we will see how we can easily navigate using Litho. In our main component - HomeComponent, we display a grid of GIFs. Now, we will create another component - FullScreenComponent to display the GIF in full screen mode. For navigation, we'll use Litho components instead of different activities or fragments.
 
 # LithoView
 As you would have seen the first post, we create a view - `LithoView` and set it as the content of our MainActivity. LithoView is a special `ViewGroup` tailored to handle `Component` and `ComponentTree`. We can easily switch components of this view and we are going to use this property for navigation. When the user clicks on a GIF, we will create a new FullScreenComponent and set it in our root (LithoView) and when the user pressed back, we will catch it in `onBackPressed` and update root with the HomeComponent.
@@ -85,4 +87,4 @@ P.S. Litho docs are very short, informative but vague and you tend to miss some 
  2. [Managing State in Litho](/blog/android-litho-state)
  3. Navigation with Litho
  4. [Events with Litho](/blog/android-litho-events)
- 5. [Synchronizing state between different components](/blog/android-litho-sync) 
+ 5. [Synchronizing state between different components](/blog/android-litho-sync)

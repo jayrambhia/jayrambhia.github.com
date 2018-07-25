@@ -11,13 +11,15 @@ image:
   height: 240
   width: 240
 title: Litho - Facebook's declarative UI framework
-description: Explore Facebook's brilliant UI framework through the journey of making an android app to search GIFs. Build your own app with Litho as we analyze Litho and learn about its State, Navigation, Events and synchronization.
+description: Explore Facebook's brilliant UI framework through the journey of making an android app to search GIFs. Build your own app with Litho as we analyze Litho and learn about its Components, State, Navigation, Events and synchronization.
 keywords: [android app development, facebook litho, android litho, declarative ui for android, synchronize state and events]
-series_excerpt: Explore Facebook's brilliant UI framework through the journey of making an android app to search GIFs. Build your own app with Litho as we analyze Litho and learn about its State, Navigation, Events and synchronization.
+series_excerpt: Explore Facebook's brilliant UI framework through the journey of making an android app to search GIFs. Build your own app with Litho as we analyze Litho and learn about its Components, State, Navigation, Events and synchronization.
 series_cover:
   title: Litho - Facebook's declarative UI framework
   alt: litho facebook
   image: /assets/images/litho-cover.png
+hidden: true
+identifier: litho-android
 ---
 
-Explore Facebook's brilliant UI framework through the journey of making an android app to search GIFs. Build your own app with Litho as we analyze Litho and learn about its State, Navigation, Events and synchronization.
+**[Litho](http://fblitho.com/)** is an open source declarative UI framework for Android developed by Facebook. Facebook developed Litho to improve their android app's performance on the feed timeline page. We are going to explore every basic details of the framework in this 5 articles series by building a GIF search engine in Android.

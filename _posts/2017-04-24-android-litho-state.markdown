@@ -13,6 +13,8 @@ slug: android-litho-state
 title: Managing State in Litho
 description: Update and manage state of components in litho - android
 keywords: [android, android development, androiddev, dev, litho, react, ui, gif, gifs, search, engine, facebook, open source, recyclerview, props, state]
+series: litho-android
+series_description: This is a very important _chapter_ in this series. We explore the immutable states in Litho and how to properly update them. We will power through some of the boilerplate code to implement like button for our GIFs.
 ---
 
 This is the second post in series of exploring Litho. In the first post - [Android GIF search engine with Litho](/blog/android-litho-gifs), we explored some key aspects of Litho - LayoutSpec, MountSpec, Use Glide to load images, Update RecyclerView data, etc. If you're not familiar with Litho, I would suggest you to go through the first post.
@@ -54,7 +56,7 @@ If you run it now, look for batman GIFs and hit button on some of the images, th
 ![litho-state-gif](/assets/images/litho-state-demo.gif)
 
 ## Boilerplate
-We can see that we can have immutable properties and still work very effectively with Litho. This is one of the main advantage of unidrecitonal data flow. 
+We can see that we can have immutable properties and still work very effectively with Litho. This is one of the main advantage of unidrecitonal data flow.
 
 If you reopen the app and search for batman again, you would not have any liked GIFs. To fix that you can have a shared preferences which stores id of the gif as key and boolean as value. And every time you get new data, you can set `isLiked` by looking up values in shared preferences. Once you have your shared preferences or any other db set up, you can use an interface and pass it as a `@Prop` to GifItemView component and call the interface method in your `onEvent(ClickEvent.class)` method.
 
@@ -90,4 +92,4 @@ P.S. Working with **State** is a bit more complicated than it seems but I have e
  2. Managing State in Litho
  3. [Navigation with Litho](/blog/android-litho-navigation)
  4. [Events with Litho](/blog/android-litho-events)
- 5. [Synchronizing state between different components](/blog/android-litho-sync) 
+ 5. [Synchronizing state between different components](/blog/android-litho-sync)

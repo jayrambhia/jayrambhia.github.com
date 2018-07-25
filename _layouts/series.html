@@ -24,19 +24,20 @@ post_class: post-template
       </p>
       <br/>
       {{ content }}
-      <h3> Articles </h3>
+      <h2> Articles </h2>
+      <br/>
       <ol type="1">
       {% for post in site.posts reversed %}
       {% if post.series == page.identifier %}
       <article>
         <header class="post-header">
-          <li><h4 class="post-title-small"><a href="{{ post.url }}">{{ post.title }}</a></h3></li>
+          <h4 class="post-title-small"><li><a href="{{ post.url }}">{{ post.title }}</a></li></h3>
         </header>
-        <br/>
         <section class="post-excerpt">
           {{ post.series_description }}
         </section>
       </article>
+      <br/>
       {% endif %}
       {% endfor %}
     </ol>
