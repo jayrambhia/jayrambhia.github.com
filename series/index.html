@@ -32,7 +32,10 @@ cover: /assets/images/android-banner-1.png
         <h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
       </header>
       <section class="post-excerpt">
-        {{ post.series_excerpt }} <a class="read-more" href="{{ post.url }}">Explore</a>
+        <p align="center">
+          <img alt="{{ post.series_cover.alt }}" title="{{ post.series_cover.title }}" src="{{ post.series_cover.image }}" />
+        </p>
+        {{ post.series_excerpt }}&nbsp;<a href="{{ post.url }}">Explore</a>
       </section>
     </article>
   {% endif %}
