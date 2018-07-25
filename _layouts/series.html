@@ -25,13 +25,23 @@ post_class: post-template
       <br/>
       {{ content }}
       <h3> Articles </h3>
-      <ol type="1">
-        {% for post in site.posts %}
+      {% for post in site.posts reversed %}
+      <article>
+        <header class="post-header">
+          <h4 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        </header>
+        <section class="post-excerpt">
+          {{ post.series_description }}
+        </section>
+      </article>
+      {% endfor %}
+      <!-- <ol type="1">
+        {% for post in site.posts reversed %}
           {% if post.series == page.identifier %}
           <li><a href="{{ post.url }}">{{ post.title }}</a></li>
           {% endif %}
         {% endfor %}
-      </ol>
+      </ol> -->
     </section>
     <footer class="post-footer">
         <!-- If we want to display author's name and bio -->

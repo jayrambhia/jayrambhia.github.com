@@ -15,6 +15,7 @@ description: What is Redux architecture? Learn about Redux and how to use it in 
 keywords: [android, android development, androiddev, dev, redux, kotlin, redux architecture, immutable state, redux clean architecture, write your own redux, redux data flow, redux middleware android, builds, pure functions, reactive functional android, redux reducers, redux store in kotlin]
 category_tag: [Android, Kotlin, Redux]
 series: redux-android
+series_description: The article introduces you to the Redux architecture and explains the intricate details of components and principles used in Redux.
 ---
 
 I'm sure you must have heard about Redux architecture from your front end colleagues and friends and maybe from someone who is an app developer. [Redux](https://redux.js.org/) is a very popular framework for a predictable state container for Javascript apps. It has become quite ubiquitous in its usage with [React](https://github.com/reduxjs/react-redux) to develop scalable web apps. Redux is inspired from [Flux](https://facebook.github.io/flux/) architecture which emphasizes on **unidirectional** data flow. Redux takes some good parts from Flux - store, actions, dispatcher, **unidirectional** data flow and improves upon it to.
