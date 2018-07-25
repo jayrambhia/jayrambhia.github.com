@@ -41,9 +41,12 @@ cover: false
     		<li>
     			<a href="{{ site.url }}/notes">Notes</a>
     		</li>
-            <li>
-                <a href="{{ site.url }}/projects">Projects</a>
-            </li>
+        <li>
+            <a href="{{ site.url }}/projects">Projects</a>
+        </li>
+        <li>
+            <a href="{{ site.url }}/series">Article Series</a>
+        </li>
     	</ul>
     </section>
 </article>    
