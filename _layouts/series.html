@@ -17,49 +17,49 @@ post_class: post-template
       <h1 class="post-title">{{ page.title }}</h1>
     </header>
     <br/>
-  </article>
 
-  <section class="post-content">
-    <p align="center">
-      <img alt="{{ post.series_cover.alt }}" title="{{ post.series_cover.title }}" src="{{ post.series_cover.image }}" />
-    </p>
-    <br/>
-    <h3> Articles </h3>
-    {{ page.series_excerpt }}
-    <ul>
-      {% for post in site.posts %}
-        {% if post.series == page.identifier %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    <section class="post-content">
+      <p align="center">
+        <img alt="{{ page.series_cover.alt }}" title="{{ page.series_cover.title }}" src="{{ page.series_cover.image }}" />
+      </p>
+      <br/>
+      {{ content }}
+      <h3> Articles </h3>
+      <ol type="1">
+        {% for post in site.posts %}
+          {% if post.series == page.identifier %}
+          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </section>
+    <footer class="post-footer">
+        <!-- If we want to display author's name and bio -->
+        {% if site.k_author %}
+            <figure class="author-image">
+                <a class="img" href="{{ site.url }}" style="background-image: url(/assets/images/profile.jpg)">
+                <span class="hidden">{{site.k_author}}'s Picture</span></a>
+            </figure>
+            <section class="author">
+                <!-- Author Name -->
+                <h4> {{ site.k_author }} </h4>
+                <!-- Author Bio -->
+                <p>
+                    Android Developer at Booking.com<br/>Fixing problems one bug at a time! Also, the views expressed here are mine and not my employers.<br/>
+                    Check out my latest app - <b><a href="https://play.google.com/store/apps/details?id=com.fenchtose.flutter&referrer=utm_source%3Dwebsite_footer">Flutter - Instant movie ratings</a></b> which shows movie ratings on-demand when browsing Netflix and other streaming apps.
+                    <a href="https://twitter.com/jayrambhia" class="twitter-follow-button" data-show-count="false">Follow @jayrambhia</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <a class="github-button" href="https://github.com/jayrambhia" aria-label="Follow @jayrambhia on GitHub" data-size="small">Follow @jayrambhia<script async src="https://buttons.github.io/buttons.js"></script></a>
+                </p>
+
+            </section>
         {% endif %}
-      {% endfor %}
-    </ul>
-  </section>
-  <footer class="post-footer">
-      <!-- If we want to display author's name and bio -->
-      {% if site.k_author %}
-          <figure class="author-image">
-              <a class="img" href="{{ site.url }}" style="background-image: url(/assets/images/profile.jpg)">
-              <span class="hidden">{{site.k_author}}'s Picture</span></a>
-          </figure>
-          <section class="author">
-              <!-- Author Name -->
-              <h4> {{ site.k_author }} </h4>
-              <!-- Author Bio -->
-              <p>
-                  Android Developer at Booking.com<br/>Fixing problems one bug at a time! Also, the views expressed here are mine and not my employers.<br/>
-                  Check out my latest app - <b><a href="https://play.google.com/store/apps/details?id=com.fenchtose.flutter&referrer=utm_source%3Dwebsite_footer">Flutter - Instant movie ratings</a></b> which shows movie ratings on-demand when browsing Netflix and other streaming apps.
-                  <a href="https://twitter.com/jayrambhia" class="twitter-follow-button" data-show-count="false">Follow @jayrambhia</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                  <a class="github-button" href="https://github.com/jayrambhia" aria-label="Follow @jayrambhia on GitHub" data-size="small">Follow @jayrambhia<script async src="https://buttons.github.io/buttons.js"></script></a>
-              </p>
 
-          </section>
-      {% endif %}
+        <!-- Share links section -->
+        {% include share.html %}
 
-      <!-- Share links section -->
-      {% include share.html %}
+        <!-- Disqus comments -->
+        {% include disqus.html %}
 
-      <!-- Disqus comments -->
-      {% include disqus.html %}
-
-  </footer>
+    </footer>
+  </article>
 </main>
