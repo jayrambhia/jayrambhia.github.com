@@ -6,7 +6,7 @@ date: 2018-05-17 16:00:00
 layout: post
 slug: android-fileprovider-ecosystem
 title: How to get away with READ/WRITE permissions on Android
-description: Use fileprovider and the android ecosystem to create/edit/share files without asking users for Read and Write permissions.
+description: Use FileProvider and the android ecosystem to create/edit/share files without asking users for Read and Write permissions.
 keywords: [android, android development, androiddev, dev, kotlin, android permissions, read_external_storage, write_external_storage, fileprovider, android ecosystem, read file, write file, share file, share image, save file]
 category_tag: [Android, FileProvider]
 ---
@@ -177,7 +177,7 @@ In your app's `AndroidManifest` declare a provider.
 </manifest>  
 {% endhighlight %}
 
-`android:authorities` attributes to a URI authority based on a domain you control; for example, if you control the domain mydomain.com you should use the authority com.mydomain.fileprovider. Or you can just set it based on your app id. If you use `${applicationId}`, during the build, gradle will replace it with your actual app id, so if you have different build variants and flavors, this would avoid conflict of having multiple apps with same authority. 
+`android:authorities` attributes to a URI authority based on a domain you control; for example, if you control the domain mydomain.com you should use the authority com.mydomain.fileprovider. Or you can just set it based on your app id. If you use `${applicationId}`, during the build, gradle will replace it with your actual app id, so if you have different build variants and flavors, this would avoid conflict of having multiple apps with same authority.
 
 Keep `android:exported` attribute as false as the FileProvider does not need to be public. Set the android:grantUriPermissions attribute to true, to allow you to grant temporary access to files.
 
@@ -196,7 +196,7 @@ Create a folder named `xml` in your app's `res` directory and create a file name
 
 `name` provides path segment to uri which increases security as this value hides the name of the subdirectory that your app is sharing. `path` provides subdirectory that you are sharing. `path` value has to be a subdirectory. You can not share a file by its file name or using wildcards.
 
-There are different tags available for different types of storage. 
+There are different tags available for different types of storage.
 
  - `<files-path>` is for internal storage subdirectory.
  - `<external-path>` is for external storage subdirectory.
@@ -218,7 +218,7 @@ val intent = Intent(Intent.ACTION_SEND)
 	.putExtra(Intent.EXTRA_TITLE, filename) // If necessary
 	.setType(mimeType)
 
-startActivity(Intent.createChooser(intent, "Share via"))	
+startActivity(Intent.createChooser(intent, "Share via"))
 {% endhighlight %}
 
 So, yeah. You have shared your file securely with other app and the other app has temporary access to your file via content uri.

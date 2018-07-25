@@ -6,7 +6,7 @@ date: 2018-05-02 16:00:00
 layout: post
 slug: android-lint
 title: Get started with Android Lint - Custom Lint Rules
-description: Use Android Lint tool to write custom lint rules to detect and prevnet potential issues and bugs
+description: Use Android Lint tool to write custom lint rules to detect and prevent potential issues and bugs
 keywords: [android, android development, androiddev, dev, lint, kotlin, android studio, lint custom rule, lint xml resource, custom lint, how to write custom lint rule, gradle, builds, continuous integration]
 category_tag: [Android, Lint]
 ---
@@ -64,14 +64,14 @@ class TextAppearanceIssue {
   private static final Severity SEVERITY = Severity.WARNING;
 
   public static final Issue ISSUE = Issue.create(
-    ID, 
-    DESCRIPTION, 
-    EXPLANATION, 
-    CATEGORY, 
-    PRIORITY, 
+    ID,
+    DESCRIPTION,
+    EXPLANATION,
+    CATEGORY,
+    PRIORITY,
     SEVERITY,
     new Implementation(
-      TextViewStyleDetector.class, 
+      TextViewStyleDetector.class,
       Scope.RESOURCE_FILE_SCOPE)
   );
 }
@@ -82,7 +82,7 @@ class TextAppearanceIssue {
  - **Explanation**: Describe the issue in details and propose possible solutions.
  - **Category**: This defines the category of the issue. There are many categories provided in lint tools such as `TYPOGRAPHY`, `CORRECTNESS`, etc. You should choose the correct category based on your issue.
  - **Priority**: Define priority of the issue on a scale of 0 to 10.
- - **Severity**: Define severity of the issue. eg. `WARNING`, `ERROR`, `FATAL`, etc. 
+ - **Severity**: Define severity of the issue. eg. `WARNING`, `ERROR`, `FATAL`, etc.
 
 ### Implementation
 
@@ -109,8 +109,8 @@ public class TextViewStyleDetector extends ResourceXmlDetector {
   public void visitElement(XmlContext context, Element element) {
     if (!element.hasAttributeNS(SCHEMA, TEXT_APPEARANCE)) {
         context.report(
-          TextAppearanceIssue.ISSUE, 
-          context.getLocation(element), 
+          TextAppearanceIssue.ISSUE,
+          context.getLocation(element),
           TextAppearanceIssue.EXPLANATION);
     }
   }
@@ -197,11 +197,3 @@ Writing custom Lint rules for Android is super easy now and you should definitel
 
  1. Get started with Android Lint - custom lint rules
  2. [Android Lint Deepdive - advanced custom lint rules](/blog/android-lint-ref)
-
-
-
-
-
-
- 
-

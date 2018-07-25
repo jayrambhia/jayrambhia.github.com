@@ -11,7 +11,7 @@ date: 2017-06-24 16:00:00
 layout: post
 slug: android-litho-sync
 title: Synchronizing state between different components in Litho
-description: Use events to synchronize state between different components in Litho, Propogate state changes in Litho
+description: Use events to synchronize state between different components in Litho, Propagate state changes in Litho
 keywords: [android, android development, androiddev, dev, litho, react, ui, gif, gifs, search, engine, facebook, open source, recyclerview with Litho, props in Litho, state in Litho, events with Litho, custom events in Litho, propogate state changes in Litho, synchronize state in Litho]
 category_tag: [Android, Litho]
 ---

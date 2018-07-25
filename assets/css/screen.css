@@ -913,6 +913,11 @@ body:not(.post-template) .post-title {
     margin: 0 -13%;
 }
 
+.post-content .half-img {
+  max-width: 75%;
+  margin: 0 -13%;
+}
+
 /* The author credit area after the post */
 .post-footer {
     position: relative;
