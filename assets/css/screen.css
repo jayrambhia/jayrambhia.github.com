@@ -1103,7 +1103,7 @@ body:not(.post-template) .post-title {
 
 .author-profile {
     padding: 0 15px 5rem 15px;
-    border-bottom: #EBF2F6 1px solid;
+    border-bottom: #EBF2F6 3px solid;
     text-align: center;
 }
 
