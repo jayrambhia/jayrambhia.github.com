@@ -1,0 +1,40 @@
+---
+layout: default
+title: Series
+cover: /assets/images/android-banner-1.png
+---
+
+<header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
+    <nav class="main-nav overlay clearfix">
+            {% if page.logo %}
+                <a class="blog-logo" href="{{ site.url }}">
+                    <img src="{{ page.logo }}" alt="Blog Logo" />
+                </a>
+            {% endif %}
+        <a class="back-button icon-arrow-left" href="{{ site.url }}/{{ site.archives }}">Archives</a>
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">Series</h1>
+            <h2 class="page-description">
+                Find my explorations and adventures in Android here!
+            </h2>
+        </div>
+    </div>
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+</header>
+
+<main id="content" class="content" role="main">
+{% for post in site.posts %}
+  {% if post.category == "Series" %}
+    <article class="post">
+      <header class="post-header">
+        <h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      </header>
+      <section class="post-excerpt">
+        {{ post.series_excerpt }} <a class="read-more" href="{{ post.url }}">Explore</a>
+      </section>
+    </article>
+  {% endif %}
+{% endfor %}
+</main>
