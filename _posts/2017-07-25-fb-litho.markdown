@@ -3,7 +3,7 @@ category: Series
 tag: Android
 comments: true
 date: 2017-07-25 12:00:00
-layout: post
+layout: series
 slug: android-fb-litho
 image:
   twitter: https://fblitho.com/static/logo.png

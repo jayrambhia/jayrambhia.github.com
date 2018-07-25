@@ -13,6 +13,7 @@ domain_name: 'https://jayrambhia.com'
 google_analytics: 'UA-38672256-1'
 gems: [jekyll-paginate, jekyll-seo-tag, jekyll-gist, jekyll-sitemap]
 archives: 'archives/'
+series: 'series/'
 
 # Details for the RSS feed generator
 url: 'https://jayrambhia.com'

@@ -3,7 +3,7 @@ category: Series
 tag: Android
 comments: true
 date: 2018-07-25 23:00:00
-layout: post
+layout: series
 slug: android-redux-architecture
 image:
   twitter: https://raw.githubusercontent.com/reduxjs/redux/master/logo/apple-touch-icon.png
