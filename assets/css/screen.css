@@ -766,6 +766,14 @@ body:not(.post-template) .post-title {
     text-decoration: none;
 }
 
+body:not(.post-template) .post-title-small {
+    font-size: 2.8rem;
+}
+
+.post-title-small a {
+  text-decoration: none;
+}
+
 .post-excerpt p {
     margin: 0;
     font-size: 0.9em;
