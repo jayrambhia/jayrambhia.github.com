@@ -876,6 +876,10 @@ body:not(.post-template) .post-title-small {
     margin-bottom: 0;
 }
 
+.post-template .post-title-small {
+    margin-bottom: 0;
+}
+
 .post-template .post-meta {
     margin: 0;
 }
@@ -1407,6 +1411,10 @@ body:not(.post-template) .post-title-small {
         font-size: 3.2rem;
     }
 
+    body:not(.post-template) .post-title-small {
+        font-size: 2.4rem;
+    }
+
     hr {
         margin: 2.4em 0;
     }
@@ -1639,6 +1647,10 @@ body:not(.post-template) .post-title-small {
     }
 
     body:not(.post-template) .post-title {
+        font-size: 2.5rem;
+    }
+
+    body:not(.post-template) .post-title-small {
         font-size: 2.5rem;
     }
 
