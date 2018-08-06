@@ -179,3 +179,4 @@ Let's go over the flow once again.
  1. [Introduction: Redux architecture for android apps](/blog/android-redux-intro)
  2. Middleware: Introduction and implementation
  3. [Write your own Redux implementation in Kotlin](/blog/kotlin-redux-architecture)
+ 4. [Add Middleware to your Redux implementation](/blog/kotlin-redux-middleware)
