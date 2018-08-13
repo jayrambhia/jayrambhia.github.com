@@ -10,12 +10,12 @@ image:
   height: 620
   width: 480
 slug: battleship-kotlin
-title: Create the Battleship game in Kotlin
+title: Battleship game in Kotlin
 description: Build your own Battleship game in Kotlin with immutable data structures and explore kotlin operators and overloading. This article focuses on getting the right building blocks to create the Battleship game.
 keywords: [android, android development, androiddev, dev, redux, kotlin, redux architecture, battleship, battleship game, battleship android app, battleship in kotlin, redux store in kotlin, kotlin operator overloading]
 category_tag: [Android, Kotlin, Redux]
 series: redux-android
-series_description: Use Redux for something a little more complex than a notes app. Create the **Battleship game** in Kotlin using your own Redux implementation. This article focuses on getting the right building blocks for the game.
+series_description: Use Redux for something a little more complex than a notes app. Write the Battleship game in Kotlin using your own Redux implementation. This article focuses on getting the right building blocks for the game.
 ---
 
 **Battleship** is a game of two players which is played on grids on which each players fleet of ships are marked. Players take turns to take _shots_ at the other player's ships. The objective of the game is destroy the opponent's fleet. Read more on [Wikipedia](https://en.wikipedia.org/wiki/Battleship_(game)). Building this game is also a very famous design interview question.
