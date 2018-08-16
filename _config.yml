@@ -16,7 +16,7 @@ archives: 'archives/'
 series: 'series/'
 
 # Details for the RSS feed generator
-url: 'https://jayrambhia.com'
+#url: 'https://jayrambhia.com'
 about: "I'm <strong>Jay Rambhia</strong>, solving problems one build at a time"
 tagline: "Don't Panic!"
 k_author: "Jay Rambhia"
