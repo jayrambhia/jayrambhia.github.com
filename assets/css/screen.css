@@ -736,7 +736,7 @@ margin on the iframe, cause it breaks stuff. */
     padding-bottom: 4rem;
     border-bottom: #EBF2F6 3px solid;
     word-break: break-word;
-    hyphens: auto;
+    hyphens: none;
 }
 
 /* Add a little circle in the middle of the border-bottom on our .post
@@ -1779,6 +1779,72 @@ body:not(.post-template) .post-title-small {
 /* Add some padding inside the card container */
 .card_container {
     padding: 4px 16px 16px 16px;
+}
+
+.post_bottom_share_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 24px;
+}
+
+.read_next_card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 8px;
+  padding: 16px;
+  background: rgba(183, 60, 105, 1.0);
+}
+
+.read_next_card_wrapper {
+  display: grid;
+  grid-template-columns: 80% 1fr;
+  grid-gap: 16px;
+  align-items: center;
+}
+
+.read_next_content {
+  color: #fafafa;
+  margin-bottom:0px;
+  font-size:16px;
+  line-height:1.6;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+
+@media (max-width: 850px) {
+  .read_next_card_wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .read_next_content {
+    color: #fafafa;
+    margin-bottom:16px;
+    margin-top: 8px;
+    font-size:16px;
+    line-height:1.6;
+    overflow-wrap: break-word;
+    hyphens: none;
+  }
+}
+
+.read_next_button {
+    color: rgba(183, 60, 105, 1.0);
+    padding: 8px;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.read_next_button:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 /* ==========================================================================

@@ -49,9 +49,30 @@ post_class: post-template
 
         <section class="post-content">
             {{content}}
+            {% assign next_post = false %}
+            {% for post in site.posts reversed %}
+              {% if next_post %}
+                <div class="read_next_card">
+                  <div class="read_next_card_wrapper">
+                    <div>
+                      <h4 style="color: #fafafa;">{{ post.title }}</h4>
+                      <p class="read_next_content">{{ post.description }}</p>
+                    </div>
+                    <div class="read_next_button" onclick="location.href='{{ post.url }}';" style="cursor: pointer;">
+                      <b>Read next</b>
+                    </div>
+                  </div>
+                </div>
+                {% assign next_post = false %}
+                {% break %}
+              {% endif %}
+              {% if post.url == page.url %}
+                {% assign next_post = true %}
+              {% endif %}
+            {% endfor %}
         </section>
 
-        {% if page.archive %}
+        <!-- {% if page.archive %}
         <section class="archive">
             <h5>Archive</h5>
             <ul>
@@ -60,7 +81,7 @@ post_class: post-template
                 {% endfor %}
             </ul>
         </section>
-        {% endif %}
+        {% endif %} -->
 
         <footer class="post-footer">
             <!-- If we want to display author's name and bio -->
@@ -76,9 +97,18 @@ post_class: post-template
                     <p>
                         Android Developer at Booking.com<br/>Fixing problems one bug at a time! Also, the views expressed here are mine and not my employers.<br/>
                         Check out my latest app - <b><a href="https://play.google.com/store/apps/details?id=com.fenchtose.flutter&referrer=utm_source%3Dwebsite_footer">Flutter - Instant movie ratings</a></b> which shows movie ratings on-demand when browsing Netflix and other streaming apps.
-                        <a href="https://twitter.com/jayrambhia" class="twitter-follow-button" data-show-count="false">Follow @jayrambhia</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        <a class="github-button" href="https://github.com/jayrambhia" aria-label="Follow @jayrambhia on GitHub" data-size="small">Follow @jayrambhia<script async src="https://buttons.github.io/buttons.js"></script></a>
                     </p>
+
+                    <div class="post_bottom_share_container">
+                      <div align="center">
+                        <a href="https://twitter.com/jayrambhia" class="twitter-follow-button" data-show-count="false">Follow @jayrambhia</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                      </div>
+                      <div align="center" style="margin-top:20px;">
+                        <div>
+                          <a class="github-button" href="https://github.com/jayrambhia" aria-label="Follow @jayrambhia on GitHub" data-size="small">Follow @jayrambhia<script async src="https://buttons.github.io/buttons.js"></script></a>
+                        </div>
+                      </div>
+                    </div>
 
                 </section>
             {% endif %}
