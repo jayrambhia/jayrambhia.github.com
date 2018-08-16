@@ -18,7 +18,7 @@ about: 'about-me/'
         <div class="main-header-content inner">
             <h1 class="page-title">{{ site.name }}</h1>
             <h2 class="page-description">
-                {% if site.description %} {{ site.description }}. {% endif %}
+                {% if site.description %} {{ site.description }} {% endif %}
                 {% if page.about %} <a class="main-page-link" href='{{ site.url }}/{{ page.about }}'> About me</a> {% endif %}
                 <br/><br/>
                 <p> Looking for something specific? Check out <a href='{{ site.url }}/{{ site.archives }}'>Archives</a>.</p>
