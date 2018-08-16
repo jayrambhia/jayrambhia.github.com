@@ -34,7 +34,7 @@ about: 'about-me/'
 
 
 <main id="content" class="content" role="main">
-
+  {% if page.url == "/" %}
   <article class="post">
     <header class="post-header" style="margin-bottom: 36px;">
       <h2 class="post-title">Featured article series</h2>
@@ -56,6 +56,7 @@ about: 'about-me/'
 
     </section>
   </article>
+  {% endif %}
 
 
     <div class="extra-pagination inner">
@@ -67,7 +68,7 @@ about: 'about-me/'
     {% for post in paginator.posts %}
 
     <article class="post">
-      {% if first_post %}
+      {% if first_post and page.url == "/" %}
         <header class="post-header" style="margin-bottom: 24px;">
           <h2 class="post-title">Articles</h2>
         </header>
@@ -80,12 +81,8 @@ about: 'about-me/'
             {{ post.excerpt }} <a class="read-more" href="{{ post.url }}">&raquo;</a>
         </section>
         <footer class="post-meta">
-            {% if site.k_author %}
-                <img class="author-thumb" src="/assets/images/profile.jpg" alt="Author's profile picture" nopin="nopin" />
-                {{ site.k_author }}
-            {% endif %}
             {% if post.tags.size > 0 %}
-                {{ post.tags | array_to_sentence_string | prepend: 'on ' }}
+                Posted {{ post.tags | array_to_sentence_string | prepend: 'in ' }}
             {% endif %}
             <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
                 {{ post.date | date_to_string }}

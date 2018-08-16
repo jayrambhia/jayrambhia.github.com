@@ -28,7 +28,16 @@ cover: /assets/images/android-banner-1.png
 {% for post in site.posts %}
   {% if post.category == "Series" %}
     <article class="post">
-      <header class="post-header">
+      <h3 class="post-title">{{ post.title }}</h3>
+        <div class="card" onclick="location.href='{{ post.url }}';" style="cursor: pointer;">
+          <img alt="{{ post.series_cover.alt }}" title="{{ post.series_cover.title }}" src="{{ post.series_cover.image }}" style="width:100%;"/>
+          <section class="post-content">
+            <div class="card_container" style="margin-top:24px;">
+              <p>{{ post.series_excerpt }}</p>
+            </div>
+          </section
+        </div>
+      <!-- <header class="post-header">
         <h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
       </header>
       <section class="post-content">
@@ -36,7 +45,7 @@ cover: /assets/images/android-banner-1.png
           <img class="half-img" alt="{{ post.series_cover.alt }}" title="{{ post.series_cover.title }}" src="{{ post.series_cover.image }}" />
         </p>
         {{ post.series_excerpt }}&emsp;<b><a href="{{ post.url }}">Explore &raquo;</a></b>
-      </section>
+      </section> -->
     </article>
   {% endif %}
 {% endfor %}
