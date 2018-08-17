@@ -235,11 +235,72 @@ A horizontal ship has the same row for all the points and similarly, the vertica
 
 `horizontal.start.row in vertical.start.row...vertical.end.row` - 2 operators are used here. `in` which we have overloaded in `Point.contains()` and `..` which is the range operator.
 
-## Summary
+### Summary
 
 We require `Point`, `Direction`, `Ship`, and `Board` models to build our battleship game. Here's how the final version looks.
 
 {% gist jayrambhia/8260e059ec3c4e287acdedc3ebf322a7 BattleshipModels.kt %}
+<br/>
+<br/>
+## UI
+
+We have created our models and data classes. It's time to work on the UI so that we can see the game in action.
+
+**Disclaimer**: I'm not going to spend a lot of time in making amazing UI as it's not the focus of the series. The UI is going to be super ugly!
+
+We are going to use `RecyclerView` with `GridLayoutManager` to create the board. Each _grid_ of the board will be a `ViewHolder`. We shall use a custom view to draw some paint and dots which would represent ships and shots on the board.
+
+This is how it's going to turn out.
+
+<p align="center">
+  <img alt="battleship UI" title="Battleship Android UI" src="/assets/images/battleship_kotlin_ui.png"/>
+</p>
+
+Let's look at the components that are being used here.
+
+### Components
+
+ - **Cell**: UI model which maps `Board` to an individual `Grid`. After every update, we create new cells which represent grids of the board. For a board of size of 10 columns and 10 rows, we will have `10*10 => 100` cells.
+ - **SquareCell**: UI representation of the `Grid`. It extends `View` and binds with `Cell` to draw and display the data. It's a square view which draws the ship, hit and missed points on the canvas.
+ - **UiCellAdapter**: RecyclerView Adapter that we use to draw the board on the screen.
+
+Without going much in the details, here's the code which will render the game UI.
+
+{% gist jayrambhia/8260e059ec3c4e287acdedc3ebf322a7 BattleshipUi.kt %}
+<br/>
+### Converter
+
+We have the components for the UI ready, but we still need to convert `Board` to `List<Cell>`. We create a list with capacity of `width*height` and iterate over each point and create `Cell`.
+
+{% highlight kotlin %}
+private fun convert(board: Board): List<Cell> {
+    val cells = ArrayList<Cell>(board.width * board.height)
+      for (i in 0 until board.height) {
+        for (j in 0 until board.width) {
+          val point = Point(j, i)
+            cells.add(Cell(
+                  point = point,
+                  hasShip = board.ships.contains(point),
+                  direction = board.ships.getShipDirection(point),
+                  userHit = board.hits.contains(point),
+                  userMissed = board.misses.contains(point),
+                  opponentMissed = board.opponentMisses.contains(point),
+                  opponentHit = board.opponentHits.contains(point)
+            ))
+          }
+      }
+    return cells
+}
+{% endhighlight %}
+
+### Battleship in Action
+
+Let's write an Activity and configure some code so that we can play with it. We'll use a layout which has a RecyclerView. After creating the adapter, we would set up the boards. For this, we will _randomly_ place the ships on each boats. We will add a click listener on the grid so that you can take a _shot_ on the board.
+
+{% gist jayrambhia/8260e059ec3c4e287acdedc3ebf322a7 BattleshipActivity.kt %}
+
+<br/>
+I have quickly gone through the UI composing part as the article already has too much content. If you have any questions, feel free to leave a comment or get in touch with me.
 
 We are ready with our models and data structure. In the next article, we will use Redux architecture to implement the gameplay logic.
 
