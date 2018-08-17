@@ -51,7 +51,7 @@ post_class: post-template
             {{content}}
             {% assign next_post = false %}
             {% for post in site.posts reversed %}
-              {% if next_post %}
+              {% if next_post and post.category != "Series" and post.category != "Project" %}
                 <div class="read_next_card">
                   <div class="read_next_card_wrapper">
                     <div>

@@ -6,8 +6,8 @@ date: 2018-05-17 16:00:00
 layout: post
 slug: android-fileprovider-ecosystem
 title: How to get away with READ/WRITE permissions on Android
-description: Use FileProvider and the android ecosystem to create/edit/share files without asking users for Read and Write permissions.
-keywords: [android, android development, androiddev, dev, kotlin, android permissions, read_external_storage, write_external_storage, fileprovider, android ecosystem, read file, write file, share file, share image, save file]
+description: Use FileProvider and the android ecosystem to create/edit/share files without asking users for Read and Write permissions. Improve your app's user experience by skipping unnecessary permission request dialogs. We will use android's Storage Access Framework to open documents and images.
+keywords: [android, android development, androiddev,  android permissions, read_external_storage, write_external_storage, fileprovider, android ecosystem, read file, write file, share file, share image, save file]
 category_tag: [Android, FileProvider]
 ---
 

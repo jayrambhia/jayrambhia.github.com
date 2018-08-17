@@ -6,8 +6,8 @@ date: 2018-05-02 16:00:00
 layout: post
 slug: android-lint
 title: Get started with Android Lint - Custom Lint Rules
-description: Use Android Lint tool to write custom lint rules to detect and prevent potential issues and bugs
-keywords: [android, android development, androiddev, dev, lint, kotlin, android studio, lint custom rule, lint xml resource, custom lint, how to write custom lint rule, gradle, builds, continuous integration]
+description: Use Android Lint tool to write custom lint rules to detect and prevent potential issues and bugs. Write a basic rule to detect usage textAppearance in TextView in XML layouts and setup the lint module to run with gradle and Android Studio.
+keywords: [android, android development, lint, kotlin, android studio, lint custom rule, lint xml resource, custom lint, how to write custom lint rule, fix lint gradle, continuous integration]
 category_tag: [Android, Lint]
 ---
 

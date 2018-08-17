@@ -14,7 +14,7 @@ title: Managing State in Litho
 description: Update and manage state of components in litho - android
 keywords: [android, android development, androiddev, dev, litho, react, ui, gif, gifs, search, engine, facebook, open source, recyclerview, props, state]
 series: litho-android
-series_description: This is a very important _chapter_ in this series. We explore the immutable states in Litho and how to properly update them. We will power through some of the boilerplate code to implement like button for our GIFs.
+series_description: This is a very important article in this series. We explore the immutable states in Litho and how to properly update them. We will power through some of the boilerplate code to implement like button for our GIFs.
 ---
 
 This is the second post in series of exploring Litho. In the first post - [Android GIF search engine with Litho](/blog/android-litho-gifs), we explored some key aspects of Litho - LayoutSpec, MountSpec, Use Glide to load images, Update RecyclerView data, etc. If you're not familiar with Litho, I would suggest you to go through the first post.

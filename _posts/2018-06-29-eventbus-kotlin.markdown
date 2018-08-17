@@ -8,7 +8,7 @@ slug: eventbus-rxkotlin
 title: Eventbus in Kotlin with Rx
 keywords: [rxjava with android, rxjava for eventbus, android development, android tutorial, learn rxjava, rxjava best practices, rxjava subscriber, android eventbus kotlin, kotlin development, kotlin tutorial, kotlin anroid app]
 category_tag: [Kotlin, Eventbus]
-description: A note about writing Eventbus in Kotlin using Rx.
+description: EventBus is a design pattern which allows publish-subscribe style communication without requiring components to registering with each other. Write your own implementation of EventBus using Kotlin and Rx in just 10 lines of code.
 ---
 
 **EventBus** is a design pattern which allows publish-subscribe style communication without requiring components to registering with each other. Most of the android developers have used a library for `EventBus`. [EventBus by Greenrobot](https://github.com/greenrobot/EventBus) is a pretty famous library and widely used. It was quite impressive how you could send any object and the subuscriber would receive it without any hassles.
@@ -19,7 +19,7 @@ Kotlin has been on the rise since past couple of years, especially for android a
 class EventBus {
   companion object {
     val publisher: PublishSubject<Any> = PublishSubject.create()
-    
+
     inline fun <reified T> subscribe(): Observable<T> {
       return publisher.filter {
         it is T
@@ -27,7 +27,7 @@ class EventBus {
         it as T
       }
     }
-    
+
     fun post(event: Any) {
       publisher.onNext(event)
     }
@@ -43,20 +43,20 @@ data class SomeEvent(val text: String)
 // Where you want to subscribe for events
 class SomeActivity {
   private var disposable: Disposable? = null
-  
+
   override fun onResume() {
     super.onResume()
     // Register to recieve `SomeEvent`
-    disposable = 
+    disposable =
         EventBus.subscribe<SomeEvent>()
            // if you want to receive the event on main thread
           .observeOn(AndroidSchedulers.mainThread())
           .subscribe({
             Log.d(TAG, "event received: $it")
           })
-          
+
   }
-  
+
   override fun onPause() {
     super.onPause()
     // Unregister from EventBus

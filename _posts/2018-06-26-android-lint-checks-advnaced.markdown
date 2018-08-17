@@ -5,9 +5,9 @@ comments: true
 date: 2018-06-26 16:00:00
 layout: post
 slug: android-lint-ref
-title: Android Lint Deepdive - Advanced custom Lint rules
-description: Use Android Lint tool to write custom lint rules to detect and prevnet potential issues and bugs
-keywords: [android, android development, androiddev, dev, lint, kotlin, android studio, lint custom rule, lint xml resource, custom lint, how to write custom lint rule, gradle, builds, continuous integration, lint colors, lint reference]
+title: Android Lint Deep dive - Advanced custom Lint rules
+description: Improve your lint tooling by learning to write complex and helpful lint rules. Write a lint rule to detect usage of hardcoded colors, referencing colors to hardcoded colors using ResourceXmlDetector. Learn more about lint tool's lifecycle and use it to write better lint rules.
+keywords: [android, android development, androiddev, android studio, lint custom rule, lint xml resource, custom lint, how to write custom lint rule, gradle, builds, continuous integration, lint colors, lint reference]
 category_tag: [Android, Lint]
 ---
 
@@ -86,7 +86,7 @@ Let's write our lint detector.
 
 {%highlight java %}
 public class ColorDector extends ResourceXmlDetector {
-  
+
 }
 {% endhighlight %}
 
@@ -140,7 +140,7 @@ private List<Pair<Attr, Location>> colorUsages = new ArrayList<>();
 public void beforeCheckProject(Context context) {
   allowedColors.clear();
   colorUsages.clear();
-  
+
   // add predefined colors.
   predefinedColors.add("my_awesome_color");
   ...
@@ -248,6 +248,3 @@ Lint is a very effective tool for static analysis and can prevent a lot of poten
 
  1. [Get started with Android Lint - custom lint rules](/blog/android-lint)
  2. Android Lint Deepdive - advanced custom lint rules
-
-
-
