@@ -11,7 +11,7 @@ date: 2018-04-23 22:00:00
 layout: project
 slug: flutter-movie-ratings
 title: Flutter - An app to get movie ratings on-demand
-description: Flutter - Movie Ratings - An open source android app to get movie ratings on-demand. Flutter is 100% Kotlin with a clean architecture.
+description: Flutter - Movie Ratings is an open source android app to get movie ratings on-demand. Flutter is 100% Kotlin with a clean architecture. It uses OMDb and custom API to get movie ratings and displays it on the screen when you're browsing Netflix, Amazon Prime Video and other streaming apps. It also offers functionality to search movies and tv shows and create various collections.
 keywords: [android app, open source, kotlin app, android kotlin, clean architecture, movie ratings, netflix ratings, imdb, prime video, open movie database, accessibility services]
 ---
 

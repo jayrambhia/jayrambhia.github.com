@@ -6,6 +6,7 @@ date: 2014-06-13 13:00:00
 layout: project
 slug: lenx
 title: LenX - Long Exposure Photography for Android
+description: LenX is a camera app for Android which enables your phone camera to capture beautiful long exposure photos. It uses image processing - OpenCV and Renderscript to perform post processing to create the long exposure effect.
 keywords: [android development, android camera app, lenx, long exposure photos with android, opencv for android, use jni in android, use opencv c++ with android, opencv camera for android, android indie apps]
 ---
 

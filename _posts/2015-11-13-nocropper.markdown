@@ -6,7 +6,8 @@ date: 2015-11-13 16:00:00
 layout: project
 slug: nocropper-library
 title: NoCropper - Android Library for Cropping
-keywords: [android image cropping, android development, android library, instagram cropper, android crop bitmap]
+description: NoCropper is an open source image cropper for Android inspired by Instagram's image cropper. NoCropper is super easy to integrate and offers a great user experience by offering customizations. It's a cropper which crops square image and offers seamless user experience by pinch to zoom, pan and transition animations.
+keywords: [android image cropping, android development, android library, instagram cropper, android crop bitmap, crop image in android]
 ---
 
 Finally, after more than a year of working with Android, I'm releasing my first Open Source Library for Android. As the title says, the library is named  NoCropper. It's a lightweight library for cropping images. Since it doesn't use any special features of Android, it is compatible with 11+ version of android (it uses ValueAnimator).
