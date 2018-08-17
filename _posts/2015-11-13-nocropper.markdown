@@ -3,7 +3,7 @@ category: Project
 tag: Android
 comments: true
 date: 2015-11-13 16:00:00
-layout: post
+layout: project
 slug: nocropper-library
 title: NoCropper - Android Library for Cropping
 keywords: [android image cropping, android development, android library, instagram cropper, android crop bitmap]
@@ -56,25 +56,25 @@ Following repositories can be added
 ### Java
 
 {% highlight java %}
-    
+
     CropperImageView cropperView = (CropperView)findViewById(R.id.cropper_view);
-    
+
     // Set Bitmap
     cropperView.setImageBitmap(bitmap);
-    
+
     // Set Max and Min Cropping
     cropperView.setMaxZoom(1.5f);
     cropperView.setMinZoom(0.8f);
-    
+
     // set centerCrop
     cropperView.cropToCenter();
-    
+
     // Fit image to center
     cropperView.fitToCenter();
-    
+
     // Get Cropped Bitmap
     Bitmap croppedBitmap = cropperView.getCroppedBitmap();
-    
+
 {% endhighlight %}
 
 ### XML Layout
@@ -87,7 +87,7 @@ Following repositories can be added
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto">
-        
+
         <com.fenchtose.nocropper.CropperView
             android:background="#ff282828"
             android:id="@+id/cropper_view"
@@ -97,7 +97,7 @@ Following repositories can be added
             app:grid_thickness="0.8dp"
             app:grid_color="@color/colorAccent"
             app:padding_color="#ff282828"/>
-            
+
     </RelativeLayout>        
 
 {% endhighlight %}
@@ -106,4 +106,4 @@ Here's a **[sample](https://github.com/jayrambhia/CropperNoCropper/tree/master/s
 
 **Check GitHub for the latest version of the library**
 
-P.S. This is quite exciting for me. Here's a [blogpost](http://www.jayrambhia.com/blog/cropper/) about it.
+P.S. This is quite exciting for me. Here's a [blogpost](/blog/instagram-cropper/) about it.

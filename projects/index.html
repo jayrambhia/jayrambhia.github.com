@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Projects
+title: Apps and Open Source Projects by Jay Rambhia
 slug: projects
 ---
 
@@ -36,19 +36,15 @@ slug: projects
                     <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
                 </header>
                 <section class="post-excerpt">
-                    {{ post.excerpt }} <a class="read-more" href="{{ post.url }}">&raquo;</a>
+                    {{ post.description }} <a class="read-more" href="{{ post.url }}">&raquo;</a>
                 </section>
                 <footer class="post-meta">
-                    {% if site.k_author %}
-                        <img class="author-thumb" src="/assets/images/profile.jpg" alt="Author's profile picture" nopin="nopin" />
-                        {{ site.k_author }}
-                    {% endif %}
-                    {% if post.tags.size > 0 %} 
-                        {{ post.tags | array_to_sentence_string | prepend: 'on ' }} 
+                    {% if post.tags.size > 0 %}
+                        Posted {{ post.tags | array_to_sentence_string | prepend: 'in ' }}
                     {% endif %}
                     <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
                         {{ post.date | date_to_string }}
-                    </time> 
+                    </time>
                 </footer>
             </article>
         {% elsif count == 10 %}
@@ -64,25 +60,25 @@ slug: projects
                             <a href="{{ post.url }}">{{ post.title }}</a>
                             <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
                                 {{ post.date | date_to_string }}
-                            </time> 
+                            </time>
                         </li>
         {% else %}
             <li>
                 <a href="{{ post.url }}">{{ post.title }}</a>
                 <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
                     {{ post.date | date_to_string }}
-                </time> 
-            </li>                       
+                </time>
+            </li>
         {% endif %}
 
         {% assign count = count | plus: 1 %}
         {% endif %}
 
-    {% endfor %}    
+    {% endfor %}
 
     {% if count >= 10 %}
                 </ul>
             </section>
         </article>
-    {% endif %}            
+    {% endif %}
 </main>

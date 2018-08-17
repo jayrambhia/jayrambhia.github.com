@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Computer Vision Experiments
+title: My Computer Vision Experiments - Jay Rambhia
 cover: false
 ---
 
@@ -46,7 +46,7 @@ cover: false
 			{% if year != nyear or cyear != nyear %}
 				</ul>
 				</section>
-				</article>	
+				</article>
 				<article class="post">
 					<header class="post-header">
 				        <h2 class="post-title">{{ post.date | date: '%Y' }}</h2>

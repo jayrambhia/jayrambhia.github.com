@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Android Adventures
+title: Adventures of an android developer - Jay Rambhia
 cover: /assets/images/android-banner-1.png
 ---
 
@@ -45,7 +45,7 @@ cover: /assets/images/android-banner-1.png
 			{% if year != nyear or cyear != nyear %}
 				</ul>
 				</section>
-				</article>	
+				</article>
 				<article class="post">
 					<header class="post-header">
 				        <h2 class="post-title">{{ post.date | date: '%Y' }}</h2>

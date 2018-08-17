@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Blog
+title: Ramblings of an android developer - Jay Rambhia
 cover: https://unsplash.it/1500/500?random&blur
 slug: blog
 ---
@@ -46,12 +46,12 @@ slug: blog
                         <img class="author-thumb" src="/assets/images/profile.jpg" alt="Author's profile picture" nopin="nopin" />
                         {{ site.k_author }}
                     {% endif %}
-                    {% if post.tags.size > 0 %} 
-                        {{ post.tags | array_to_sentence_string | prepend: 'on ' }} 
+                    {% if post.tags.size > 0 %}
+                        {{ post.tags | array_to_sentence_string | prepend: 'on ' }}
                     {% endif %}
                     <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
                         {{ post.date | date_to_string }}
-                    </time> 
+                    </time>
                 </footer>
             </article>
         {% elsif count == 10 %}
@@ -67,27 +67,27 @@ slug: blog
                             <a href="{{ post.url }}">{{ post.title }}</a>
                             <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
                                 {{ post.date | date_to_string }}
-                            </time> 
+                            </time>
                         </li>
         {% else %}
             <li>
                 <a href="{{ post.url }}">{{ post.title }}</a>
                 <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
                     {{ post.date | date_to_string }}
-                </time> 
-            </li>                       
+                </time>
+            </li>
         {% endif %}
 
         {% assign count = count | plus: 1 %}
         {% endif %}
 
-    {% endfor %}    
+    {% endfor %}
 
     {% if count >= 10 %}
                 </ul>
             </section>
         </article>
-    {% endif %}            
+    {% endif %}
 
     <!-- Capser below -->
 <!--     <article class="{{post_class}}">
@@ -106,7 +106,7 @@ slug: blog
     </article> -->
     <!--  -->
 
-    
+
 
     <article class="post">
 

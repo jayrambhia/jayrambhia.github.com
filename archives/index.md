@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Archives
+title: Comprehensive archives of an android developer - Jay Rambhia
 cover: false
 ---
 

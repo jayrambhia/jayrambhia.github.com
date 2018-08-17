@@ -8,7 +8,7 @@ image:
  height: 270
  width: 180
 date: 2018-04-23 22:00:00
-layout: post
+layout: project
 slug: flutter-movie-ratings
 title: Flutter - An app to get movie ratings on-demand
 description: Flutter - Movie Ratings - An open source android app to get movie ratings on-demand. Flutter is 100% Kotlin with a clean architecture.

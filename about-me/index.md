@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About Me
+title: Jay Rambhia - Android Developer
 slug: about-me
 ---
 
@@ -15,4 +15,3 @@ I love to code. I was an active developer of [SimpleCV](http://simplecv.org/). I
 ### How to Contact Me
 
 You can <a href="http://twitter.com/jayrambhia">follow me on Twitter</a>
-

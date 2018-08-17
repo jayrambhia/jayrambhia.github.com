@@ -3,13 +3,13 @@ category: Project
 tag: Android
 comments: true
 date: 2014-06-13 13:00:00
-layout: post
+layout: project
 slug: lenx
 title: LenX - Long Exposure Photography for Android
 keywords: [android development, android camera app, lenx, long exposure photos with android, opencv for android, use jni in android, use opencv c++ with android, opencv camera for android, android indie apps]
 ---
 
-So, finally, after 2 months of grappling with Android development and studying optimization of image processing on phones & photography concepts, me & my friends have finally bought our idea to fruition. 
+So, finally, after 2 months of grappling with Android development and studying optimization of image processing on phones & photography concepts, me & my friends have finally bought our idea to fruition.
 
 Today we’ve released a new & improved version of our first Android app - LenX, on Google Play. LenX is a clean, simple interface to help you generate long exposure photography effects using your smartphone camera. You can use it for generating DSLR-like effects like a pro - and it’s as easy as shooting a video! In beta testing, we’ve seen it used for shooting quality motion blurs, light painting and even of water in motion. But the only limit to it is your creativity.
 
@@ -17,10 +17,10 @@ A lucid first-time user experience (FTUE) will guide you about using the app. We
 
 ![lenx](/assets/images/lenx-0.jpg)
 
-Having tested it extensively myself, here are some of my experiences to start you off on the right foot 
+Having tested it extensively myself, here are some of my experiences to start you off on the right foot
 
  - Keep Steady: I would suggest using a support to steady your hand while using LenX or securing your smartphone to a tripod, if you are indulgent enough to have one for your phone photography pursuits, for best results.
- - Be patient with it: The initial outputs are going to be blurry and might seem quantized rather than the continuous outputs from high-end cameras. It takes a little getting used to and being accommodative. 
+ - Be patient with it: The initial outputs are going to be blurry and might seem quantized rather than the continuous outputs from high-end cameras. It takes a little getting used to and being accommodative.
 
 Remember, this is your smartphone - even the oldest of the widely adopted ones are in their tweens and haven’t yet realized their full hardware potential. Like tweens, they too have messed up priorities and keep allocating processing power to banal background processes, giving you lower frame rate. And since Android is touchy about offering control on the shutter hardware, we have to process full frames - which slows it down further.
 
