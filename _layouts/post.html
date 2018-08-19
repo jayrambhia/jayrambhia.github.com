@@ -58,9 +58,15 @@ post_class: post-template
                       <h4 style="color: #fafafa;">{{ post.title }}</h4>
                       <p class="read_next_content">{{ post.description }}</p>
                     </div>
-                    <div class="read_next_button" onclick="location.href='{{ post.url }}';" style="cursor: pointer;">
+                    <div class="read_next_button" onclick="readMore('{{ post.url }}');" style="cursor: pointer;">
                       <b>Read next</b>
                     </div>
+                    <script>
+                      function readMore(url) {
+                        trackEvent('Article', 'tap', 'read next');
+                        window.location.href = url;
+                      }
+                    </script>
                   </div>
                 </div>
                 {% assign next_post = false %}
