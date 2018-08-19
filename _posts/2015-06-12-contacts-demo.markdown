@@ -6,6 +6,7 @@ date: 2015-06-12 17:00:00
 layout: post
 slug: contacts-demo
 title: Dialer App with New Design Library
+description: Android Lollipop has been a blast. It revolutionized the UI with material design. In this article, we will study the UX of the dialer app and replicate it with the help of CoordinatorLayout, AppBarLayout and CollapsingToolbar.
 keywords: [android development, recyclerview adapter, android design library, material design, android dialer, android recyclerview tutorial, android coordinatorlayout]
 ---
 
@@ -19,8 +20,8 @@ Android just released a new [Design Support Library](http://android-developers.b
  - Snackbar
  - Tabs
  - CoordinatorLayout
- 
-IMO, CoordinatorLayout is the best from all of these. 
+
+IMO, CoordinatorLayout is the best from all of these.
 
 ## What is CoordinatorLayout?
 
@@ -36,9 +37,9 @@ I was always fascinated by Lollipop's dialer app. It's collapsing toolbar with s
 
 ### Breakdown
 
-Studying the dialer app, I reached to following conclusions. 
+Studying the dialer app, I reached to following conclusions.
 
- - It uses Collapsing Toolbar. 
+ - It uses Collapsing Toolbar.
  - Search View is a child of Toolbar. Toolbar scrolls off the screen when recyclerview in the bottom fragment is scrolled up. It also has behavior of quick return, i.e. As soon as it detects downward scroll, it will scroll down completely.
  - Last dialed contact view is collapsed linearly with the scroll. It re-expands to its original height only when the scrolling view has reached its top.
 
@@ -49,7 +50,7 @@ Let's get started with the layout.
 {% gist jayrambhia/ab3029a9ece2be50ced4 activity_contacts_layout.xml %}
 
 
-#### CollapsingToolbarLayout : 
+#### CollapsingToolbarLayout :
 
 scrollFlags - `scroll`, `enterAlwaysCollapsed`, `enterAlwyas`
 
@@ -95,7 +96,7 @@ This is it. You don't have to do anything else. Just set your layout properly, a
 
  - Even if the RecyclerView is empty, views still scroll.
  - If ViewPager is not initialized with Fragments, weird things happen and TabLayout shows at the bottom.
- 
+
 Here's a cool Youtube demo that I have put.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DlVTRMte4qU" frameborder="0" allowfullscreen></iframe>
@@ -106,5 +107,3 @@ I have added some dumb and some meaningful code to it to show fragments, adapter
 
  - [CheeseSquare](https://github.com/chrisbanes/cheesesquare)
  - [AndroidTool](https://github.com/mortenjust/androidtool-mac) for Video and GIF.
-
-

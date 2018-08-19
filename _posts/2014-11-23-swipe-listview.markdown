@@ -6,7 +6,8 @@ date: 2014-11-23 14:00:00
 layout: post
 slug: swipe-listview
 title: Inbox Style Swipe ListView
-keywords: [android development, android music player, google inbox ui, android ui, android animations, recyclerview swipe items, listview swipe items]
+description: When Google Inbox was introduced, everyone loved the swipe interactions to archive/delete emails. We wanted to add the similar experience in our music player app so we replicated the implementation. Here's how to do it.
+keywords: [android development, android music player, google inbox ui, android ui, android animations, recyclerview swipe items, listview swipe items, user experience]
 ---
 
 Google's Inbox application has a really nice ListView where user could swipe right to mark the email done and swipe left to snooze the notification. I implemented something very similar to that using `ListView` and `ArrayAdapter`.
@@ -14,6 +15,10 @@ Google's Inbox application has a really nice ListView where user could swipe rig
 The method that I used here is quite simple. I created a RelativeLayout which would be used to display each item of the listview. This RelativeLayout has three different layouts. Top layout is the one that you would want to show. Each layers are stacked. The second layer shows delete option. Third layer shows share option.
 
 When the user swipes right, the second layer starts showing from the left. But when the user swipes left, it should show the third layer, so we need to make second layer invisible. That's about it. Just a simple trick.
+
+<p align="center">
+  <img alt="waeo swipe list items" title="Swipe List items in Android" src="/assets/images/swipelistview.jpg"/>
+</p>  
 
 ### Design Layout
 
@@ -43,7 +48,7 @@ When it receives `ACTION_DOWN` event, we will store the x co-ordinate of the tou
 
 One might wonder why I have added something like `requestDisallowInterceptTouchEvent` in this code. I had not added it before. It was just simple code - swipe and be done with it. But I faced a problem. There was no issue if I swiped it properly, but if my finger accidentally swiped the item in vertical direction, the ListView would intercept that touch event and take control of it. So `onTouchListener` would give `ACTION_CANCEL` as the event. [Here](http://stackoverflow.com/a/11961033/891373) is a good stackoverflow answer which explains why this happens.
 
-When `reqeustDisallowInterceptTouchEvent(true)` is called on the ListView, it doesn't intercept the vertical swipe gesture and the horizontal swipe works well. 
+When `reqeustDisallowInterceptTouchEvent(true)` is called on the ListView, it doesn't intercept the vertical swipe gesture and the horizontal swipe works well.
 <br/>
 <br/>Why have I used `MIN_LOCK_DISTANCE`?<br/>
 <br/>

@@ -6,6 +6,7 @@ date: 2015-11-11 16:00:00
 layout: post
 slug: instagram-cropper
 title: Instagram like Image Cropper
+description: NoCropper is an open source image cropper for Android inspired by Instagram's image cropper. NoCropper is super easy to integrate and offers a great user experience by offering customizations. It's a cropper which crops square image and offers seamless user experience by pinch to zoom, pan and transition animations.
 keywords: [android image cropping, android development, android library, instagram cropper, android crop bitmap]
 ---
 

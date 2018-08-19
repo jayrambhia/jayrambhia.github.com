@@ -6,7 +6,8 @@ date: 2016-05-25 23:00:00
 layout: post
 slug: rx-form-validations
 title: RxJava for Form Validations
-keywords: [rxjava with android, use rxjava debounce, android development, android tutorial, learn rxjava, rxjava best practices]
+description: Yes, RxJava has a steep learning curve, but you won't be able to master it unless you are ready to fail. Let's take one step beyond networking and understand various concepts and operators of RxJava by implementing validations for form with an amazing UX.
+keywords: [rxjava with android, use rxjava debounce, android development, android tutorial, learn rxjava, rxjava best practices, rxjava debounce, rxjava form validations, rxjava publish subject, combineLatest]
 ---
 
 Since I started learning about RxJava, I have always been fascinated about how it can be used to make my life easier, code more fun and readable. I have successfully implemented Volley with RxJava to implement REST API calls, most of the async loading (images, files, etc). My worst enemy is forms. Forms need real time validations and real time responses to make UX better. In this **[post](/notes/rxjava-debounce)**, I talk about my obsession about `EditText`. Here I am trying to solve it so that I can get some peace of mind.

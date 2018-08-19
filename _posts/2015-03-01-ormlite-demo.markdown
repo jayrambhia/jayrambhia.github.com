@@ -6,6 +6,7 @@ date: 2015-03-01 15:00:00
 layout: post
 slug: ormlite-demo
 title: ORMLite with Android
+description: ORMLite is one of the easiest ORMs for SQLite on Android. ORMLite from GreenDAO makes it easier to have a sqlite database in your android app. Creating tables, querying and joining, and even migrations are easy to write.
 keywords: [android development, android ormlite, android database sqlite, greendao, android sqlite tutorial, notes app]
 ---
 
@@ -21,7 +22,7 @@ To use ORMLite, you first need to create your model classes. A sample model clas
  - You can specify field name to be used in the table with `coulmnName`
  - `generatedId = true, allowGeneratedIdInsert = true` will generate Auto Incremental Ids.
  - To store dates, it is advised to use `java.util.Date` and not `java.sql.Date`. Also, it is advised to keep date with `DataType.DATE_LONG` so that you can sort data based on dates.
- 
+
 There isn't much more to this. This will be your table model.
 
 ### DatabaseHelper
@@ -39,30 +40,30 @@ Repository is the class which you use to query data from the database.
 {% highlight java %}
 
 public class NoteRepository {
- 
+
     private DatabaseHelper dbHelper;
     private Dao<Note, Integer> noteDao;
- 
+
     public NoteRepository(Context context) {
         DatabaseManager dbManager = new DatabaseManager();
         dbHelper = dbManager.getHelper(context);
         noteDao = dbHelper.getNoteDao();
     }
-    
+
     public int create(Note note) {
         return noteDao.create(note);
     }
-    
+
     public long getNumberOfNotes() {
         QueryBuilder<Note, Integer> qb = noteDao.queryBuilder();
         return qb.countOf();
     }
- 
+
     public List<Note> getRecentNotes(long limit) {
         QueryBuilder<Note, Integer> qb = noteDao.queryBuilder();
         qb.orderBy(Note.TIMESTAMP_FIELD, false);
         qb.limit(limit);
-        
+
         PreparedQuery<Note> preparedQuery = qb.prepare();
         return noteDao.query(preparedQuery);
 
@@ -78,10 +79,10 @@ public class NoteRepository {
     note.setTitle("Test note");
     note.setMessage("This is a test note");
     note.setCreated_ts(new Date());
-    
+
     NoteRepository noteRepository = new NoteRepositroy(context);
     noteReposiory.create(note);
-    
+
     Log.i(TAG, "note id: " + note.id);
 
 {% endhighlight %}

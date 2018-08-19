@@ -11,7 +11,7 @@ date: 2016-09-02 23:00:00
 layout: post
 slug: android-viewpager-cards-2
 title: ViewPager Animations
-description: Meaninful UI and animations with Android ViewPager
+description: Meaningful UI and animations with Android ViewPager - Let's make ViewPagers fun! After adding the transformations, let's add some animations to the ViewPager elements.
 keywords: [android, android development, androiddev, dev, viewpager, cards, card, ui, duolingo, animation, transitions]
 ---
 
@@ -31,9 +31,9 @@ With our helper methods, animation call is just one line code.
 
 Animate In                  |  Animate Out
 :-------------------------:|:-------------------------:
-![Animate In](/assets/images/viewpager-card2-gif1.gif)  |  ![Animate Out](/assets/images/viewpager-card2-gif2.gif)
+<img alt="viewpager animate in" title="Animate in ViewPager items" src="/assets/images/viewpager-card2-gif1.gif"/>  |  <img alt="viewpager animate out" title="Animate out ViewPager items" src="/assets/images/viewpager-card2-gif2.gif"/>
 
-Simple. Works well. But we can do better. 
+Simple. Works well. But we can do better.
 
 It would be better if we could animate each page differently so that it would look like second page came after the first page. To achieve this, we need those views. In my code, I have modified my `PagerAdapter` to store the views based on the index. I think you could simply do `ViewPager.getChildAt(0)` to get the first view. So once we get the first and second view, we can make the second view come in a bit late.
 
@@ -43,7 +43,7 @@ The same can be performed for animating out.
 
 Animate In                  |  Animate Out
 :-------------------------:|:-------------------------:
-![Animate In](/assets/images/viewpager-card2-gif3.gif)  |  ![Animate Out](/assets/images/viewpager-card2-gif4.gif)
+<img alt="viewpager animate in" title="Animate in ViewPager items" src="/assets/images/viewpager-card2-gif3.gif"/>  |  <img alt="viewpager animate out" title="Animate out ViewPager items" src="/assets/images/viewpager-card2-gif4.gif"/>
 
 I'm sure there are much better animations and transitions that we can implement. Well, this is just a start.
 

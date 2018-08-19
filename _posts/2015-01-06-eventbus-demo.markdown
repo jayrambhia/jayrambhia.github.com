@@ -6,6 +6,7 @@ date: 2015-01-16 13:00:00
 layout: post
 slug: eventbus-demo
 title: EventBus Demo
+description: EventBus is a design pattern which allows publish-subscribe style communication without requiring components to registering with each other. In this article, I explore EventBus and demonstrate how it can be used to communicate between activities and services in Android.
 keywords: [android development, android eventbus tutorial, greenrobot eventbus, eventbus 101]
 ---
 
@@ -20,7 +21,7 @@ Before I bagan, I jotted down few important things about EventBus.
  - If you want to receive some event, you need to register your class with EventBus.
  - If you have registered your class with EventBus, you must have a method `public void onEvent(SomeEventType event)` where SomeEventType is what you are expecting.
  - Unregister your class when not required.
- 
+
 ### Actiivty
 
 Get text from EditText and send to Service.

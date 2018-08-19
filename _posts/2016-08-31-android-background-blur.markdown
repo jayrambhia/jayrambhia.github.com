@@ -6,14 +6,19 @@ date: 2016-08-31 23:00:00
 layout: post
 slug: android-background-blur
 title: Background Blur in Android
-keywords: [blur in android, blur bitmap, android development, android tutorial]
+description: The background blur effect in iOS is breathtaking. I implemented the similar background blur effect using Renderscript in Android to have a really great user experience. Here's how you can do it too.
+keywords: [blur in android, blur bitmap, android development, android tutorial, ios blur effect in android, blur using renderscript]
 ---
 
 <p align="center">
-	<img src="/assets/images/android_blur_img1.png"/>
+	<img alt="android background blur" title="Blur Background using Renderscript in Android" src="/assets/images/android_blur_img1.png"/>
 </p>
 
-We have all seen the background blurring effects of iOS and have always wondered it does look great, it should be in Android also. I was wondering there could be an easier way to do this without actually blurring the image. Have you ever looked from blurred lens? You see blurry images. Well, that was it! I thought if I could get a good blurry black and white image and I could just use it as an overlay and reduce opacity, it would work. I looked for images of gaussian filters in fourier space. It looked ideal for this. It sort of gave the background some gradient and vignette effect but not the blur. Frosted glass! That's what was on the list next. Found a nice image and applied it as overlay with 70% opacity. The screen just looked dirty. No blur effect. I was wrong to begin with. Frosted glass and blurry lens product blurry images because they actually deflect light at different angles. So unless, there was some problem with my phone screen or glasses, this approach was not going to work.
+We have all seen the background blurring effects of iOS and have always wondered it does look great, it should be in Android also. I was wondering there could be an easier way to do this without actually blurring the image. Have you ever looked from blurred lens? You see blurry images. Well, that was it!
+
+I thought if I could get a good blurry black and white image and I could just use it as an overlay and reduce opacity, it would work. I looked for images of gaussian filters in fourier space. It looked ideal for this. It sort of gave the background some gradient and vignette effect but not the blur. Frosted glass! That's what was on the list next. Found a nice image and applied it as overlay with 70% opacity. The screen just looked dirty. No blur effect.
+
+I was wrong to begin with. Frosted glass and blurry lens product blurry images because they actually deflect light at different angles. So unless, there was some problem with my phone screen or glasses, this approach was not going to work.
 
 So what's next? Well, I could actually try blurring the background. What do I need?
 
