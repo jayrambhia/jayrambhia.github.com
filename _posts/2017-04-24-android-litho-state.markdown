@@ -43,7 +43,7 @@ As you can see, **`isLiked`** is a state which would affect the drawable of the 
 
 `@OnCreateInitialState` is only called once for a component. This is where we need to set our state. We are using `@Prop boolean initLiked` to set the state. This method will never be invoked for the same component throught its lifecycle. After the state is initialized, lifecycle will call other methods. We access this state in `onCreateLayout` to set the correct drawable to the button. To update the state, we need create `@OnUpdateState` method. Litho will generate the code for us and then we can call that method to update the state.
 
-We want to update the state of the button when the user clicks on it. We need to toggle `isLiked` and update the drawable. We need to add a `ClickEvent` which we will receive when the user clicks on the button. `@OnEvent(ClickEvent.class)` method will be invoked by the Click Handler. Litho internally does some magic to propogate events. I'll write about it in upcoming posts. We can get access to state and any props in event method.
+We want to update the state of the button when the user clicks on it. We need to toggle `isLiked` and update the drawable. We need to add a `ClickEvent` which we will receive when the user clicks on the button. `@OnEvent(ClickEvent.class)` method will be invoked by the Click Handler. Litho internally does some magic to propagate events. I'll write about it in upcoming posts. We can get access to state and any props in event method.
 
 Once we call `updateLikeButton` or `updateLikeButtonAsync`, Litho (magically) will call `@OnUpdateState` method and it will recreate the ComponentLayout and our drawable will be updated.
 

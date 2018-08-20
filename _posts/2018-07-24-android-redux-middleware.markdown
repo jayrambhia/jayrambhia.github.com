@@ -180,4 +180,5 @@ Let's go over the flow once again.
  2. Middleware: Introduction and implementation
  3. [Write your own Redux implementation in Kotlin](/blog/kotlin-redux-architecture)
  4. [Add Middleware to your Redux implementation](/blog/kotlin-redux-middleware)
- 5. [Build Battleship Game with Redux - Groundwork](/blog/battleship-kotlin) 
+ 5. [Build Battleship Game with Redux - Groundwork](/blog/battleship-kotlin)
+ 6. [Implement the Battleship gameplay with Redux](/blog/battleship-redux)

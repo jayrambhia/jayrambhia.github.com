@@ -12,13 +12,13 @@ layout: post
 slug: android-litho-sync
 title: Synchronizing state between different components in Litho
 description: Use events to synchronize state between different components in Litho, Propagate state changes in Litho
-keywords: [android, android development, androiddev, dev, litho, react, ui, gif, gifs, search, engine, facebook, open source, recyclerview with Litho, props in Litho, state in Litho, events with Litho, custom events in Litho, propogate state changes in Litho, synchronize state in Litho]
+keywords: [android, android development, androiddev, dev, litho, react, ui, gif, gifs, search, engine, facebook, open source, recyclerview with Litho, props in Litho, state in Litho, events with Litho, custom events in Litho, propagate state changes in Litho, synchronize state in Litho]
 category_tag: [Android, Litho]
 series: litho-android
 series_description: This is a wrap up of the series. We explore more about the state and hack how to synchronize states between two different components of Litho so that if we change something in component A, it also reflects in Component B.
 ---
 
-This is the fifth post in the series - Exploring Litho. In the first post - [Android GIF search engine with Litho](/blog/android-litho-gifs), we explored some key aspects of Litho - LayoutSpec, MountSpec, Use Glide to load images, Update RecyclerView data, etc. In the second post - [Managing State in Litho](/blog/android-litho-state), we dabbled around with state in Litho components. In the third post - [Navigation with Litho](/blog/android-litho-navigation), we used `LithoView` and components to navigate instead of an Acitivity or a Fragment. If you're not familiar with Litho, I would suggest you to go through the previous posts. We explored Events and how to use them to propogate changes in the fourth post - [Using Events in Litho](/blog/android-litho-events).
+This is the fifth post in the series - Exploring Litho. In the first post - [Android GIF search engine with Litho](/blog/android-litho-gifs), we explored some key aspects of Litho - LayoutSpec, MountSpec, Use Glide to load images, Update RecyclerView data, etc. In the second post - [Managing State in Litho](/blog/android-litho-state), we dabbled around with state in Litho components. In the third post - [Navigation with Litho](/blog/android-litho-navigation), we used `LithoView` and components to navigate instead of an Acitivity or a Fragment. If you're not familiar with Litho, I would suggest you to go through the previous posts. We explored Events and how to use them to propagate changes in the fourth post - [Using Events in Litho](/blog/android-litho-events).
 
 We are going to explore some ways using which we can synchronize and update component state. When we like a GIF in full screen and come back, we need to update the state of that component in RecyclerView. As we have seen in the previous posts, that updating a component's state from outside is not possible. So we somehow need to use the component to update its state. We are going to achieve this with the help of Events.
 
@@ -106,7 +106,7 @@ You can find complete code here - [MainActivity](https://github.com/jayrambhia/L
 
 Let's try it out! Yes, and it does work!
 
-We have also fixed the issue where if user opnes a big view from a smaller view and updates like, etc, we can easily propogate those changes back to the smaller component. Small things as these are really a great UX win!
+We have also fixed the issue where if user opnes a big view from a smaller view and updates like, etc, we can easily propagate those changes back to the smaller component. Small things as these are really a great UX win!
 
 ## Code
 

@@ -192,4 +192,5 @@ We are still missing a crucial component in this implementation - `Middleware`. 
  2. [Middleware: Introduction and implementation](/blog/android-redux-middleware)
  3. Write your own Redux implementation in Kotlin
  4. [Add Middleware to your Redux implementation](/blog/kotlin-redux-middleware)
- 5. [Build Battleship Game with Redux - Groundwork](/blog/battleship-kotlin) 
+ 5. [Build Battleship Game with Redux - Groundwork](/blog/battleship-kotlin)
+ 6. [Implement the Battleship gameplay with Redux](/blog/battleship-redux)

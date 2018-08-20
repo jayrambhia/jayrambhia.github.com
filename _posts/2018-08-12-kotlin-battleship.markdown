@@ -264,7 +264,7 @@ Let's look at the components that are being used here.
  - **SquareCell**: UI representation of the `Grid`. It extends `View` and binds with `Cell` to draw and display the data. It's a square view which draws the ship, hit and missed points on the canvas.
  - **UiCellAdapter**: RecyclerView Adapter that we use to draw the board on the screen.
 
-Without going much in the details, here's the code which will render the game UI.
+Without going much in the details, here's the code which will render the game UI. You can find the layout for ViewHolder here - [square_cell_itemview.xml](https://gist.github.com/jayrambhia/8260e059ec3c4e287acdedc3ebf322a7#file-square_cell_itemview-xml).
 
 {% gist jayrambhia/8260e059ec3c4e287acdedc3ebf322a7 BattleshipUi.kt %}
 <br/>
@@ -311,3 +311,4 @@ We are ready with our models and data structure. In the next article, we will us
  3. [Write your own Redux implementation in Kotlin](/blog/kotlin-redux-architecture)
  4. [Add Middleware to your Redux implementation](/blog/kotlin-redux-middleware)
  5. Build Battleship Game with Redux - Groundwork
+ 6. [Implement the Battleship gameplay with Redux](/blog/battleship-redux)
