@@ -1,0 +1,9 @@
+<script>
+function navBack(param, url) {
+  if (window.location.href.includes(param)) {
+    history.back();
+  } else {
+    window.location.href = url;
+  }
+}
+</script>

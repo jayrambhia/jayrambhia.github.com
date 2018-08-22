@@ -5,7 +5,7 @@ title: Comprehensive article series on android frameworks - Jay Rambhia
 
 <header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
     <nav class="main-nav overlay clearfix">
-        <a id="nav_back" class="back-button icon-arrow-left" onclick="onNavBack('{{ site.url }}/{{ site.archives }}')">Archives</a>
+        <a id="nav_back" class="back-button icon-arrow-left" onclick="navBack('series=1', '{{ site.url }}/{{ site.archives }}')">Archives</a>
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
@@ -20,13 +20,6 @@ title: Comprehensive article series on android frameworks - Jay Rambhia
     <script>
       if (window.location.href.includes("series=1")) {
         document.getElementById("nav_back").innerHTML = "Back to the series";
-      }
-      function onNavBack(url) {
-        if (window.location.href.includes("series=1")) {
-          window.history.back();
-        } else {
-          window.location.href=url;
-        }
       }
     </script>
 </header>

@@ -2,11 +2,12 @@
 layout: default
 title: Apps and Open Source Projects by Jay Rambhia
 slug: projects
+back_nav_param: project=1
 ---
 
 <header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
   <nav class="main-nav overlay clearfix">
-      <a id="nav_back" class="back-button icon-arrow-left" onclick="onNavBack('{{ site.url }}/{{ site.archives }}')">Archives</a>
+      <a id="nav_back" class="back-button icon-arrow-left" onclick="navBack('{{ page.back_nav_param }}', '{{ site.url }}/{{ site.archives }}')">Archives</a>
   </nav>
     </nav>
     <div class="vertical">
@@ -19,16 +20,9 @@ slug: projects
     </div>
     <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
     <script>
-      var param = "project=1";
+      var param = "{{ page.back_nav_param }}";
       if (window.location.href.includes(param)) {
         document.getElementById("nav_back").innerHTML = "Back to the project";
-      }
-      function onNavBack(url) {
-        if (window.location.href.includes(param)) {
-          window.history.back();
-        } else {
-          window.location.href=url;
-        }
       }
     </script>
 </header>
