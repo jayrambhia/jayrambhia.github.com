@@ -10,17 +10,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-      {% if page.keywords %}
+      {%- if page.keywords %}
         <meta name="keywords" content="{{ page.keywords | join: ', ' | escape }}" />
-      {% else %}
+      {%- else %}
         <meta name="keywords" content="computer vision, python opencv, tracking keypoints, open source simplecv, opencv with android, android app development, flutter movie ratings app, understanding rxjava in android, android mvp clean architecture, viewpager animations, android open source, redux architecture for android"/>
-      {% endif %}
-      {% if page.title %}
+      {%- endif %}
+      {%- if page.title %}
         <title>{{ page.title }}</title>
         {% seo title=false %}
-      {% else %}
+      {%- else %}
         {% seo %}
-      {% endif %}
+      {%- endif %}
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />

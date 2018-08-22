@@ -29,10 +29,10 @@ cover: false
 
 {% assign first = true %}
 {% assign cyear = "" %}
-{% for post in site.posts %}
-  {% if post.category == "Notes" %}
-    {% if first %}
-      {% assign first = false %}
+{%- for post in site.posts %}
+  {%- if post.category == "Notes" %}
+    {%- if first %}
+      {%- assign first = false %}
       {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
       <article class="post">
         <header class="post-header">
@@ -40,10 +40,10 @@ cover: false
           </header>
           <section class="post-excerpt">
             <ul>
-    {% else %}
+    {%- else %}
       {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
       {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-      {% if year != nyear or cyear != nyear %}
+      {%- if year != nyear or cyear != nyear %}
         </ul>
         </section>
         </article>  
@@ -53,14 +53,14 @@ cover: false
             </header>
             <section class="post-excerpt">
             <ul>
-      {% endif %}
-    {% endif %}
+      {%- endif %}
+    {%- endif %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a> on {{ post.tags }}
       </li>
       {% assign cyear = year %}
-  {% endif %}    
-{% endfor %}
+  {%- endif %}    
+{%- endfor %}
 </ul>
 </section>
 </article>

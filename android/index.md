@@ -3,14 +3,13 @@ layout: default
 title: Adventures of an android developer - Jay Rambhia
 cover: /assets/images/android-banner-1.png
 ---
-
 <header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
     <nav class="main-nav overlay clearfix">
-            {% if page.logo %}
+            {%- if page.logo %}
                 <a class="blog-logo" href="{{ site.url }}">
                     <img src="{{ page.logo }}" alt="Blog Logo" />
                 </a>
-            {% endif %}
+            {%- endif %}
         <a class="back-button icon-arrow-left" href="{{ site.url }}/{{ site.archives }}">Archives</a>
     </nav>
     <div class="vertical">
@@ -26,12 +25,12 @@ cover: /assets/images/android-banner-1.png
 
 <main id="content" class="content" role="main">
 
-{% assign first = true %}
-{% assign cyear = "" %}
-{% for post in site.posts %}
-	{% if post.tag == "Android" %}
-		{% if first %}
-			{% assign first = false %}
+{%- assign first = true %}
+{%- assign cyear = "" %}
+{%- for post in site.posts %}
+	{%- if post.tag == "Android" %}
+		{%- if first %}
+			{%- assign first = false %}
 			{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
 			<article class="post">
 				<header class="post-header">
@@ -39,10 +38,10 @@ cover: /assets/images/android-banner-1.png
     			</header>
     			<section class="post-excerpt">
     				<ul>
-		{% else %}
+		{%- else %}
 			{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
 			{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-			{% if year != nyear or cyear != nyear %}
+			{%- if year != nyear or cyear != nyear %}
 				</ul>
 				</section>
 				</article>
@@ -52,14 +51,14 @@ cover: /assets/images/android-banner-1.png
 				    </header>
 				    <section class="post-excerpt">
 				    <ul>
-			{% endif %}
-		{% endif %}
+			{%- endif %}
+		{%- endif %}
 		<li>
 	    <a href="{{ post.url }}">{{ post.title }}</a> in {{ post.category }}
 	    </li>
 	    {% assign cyear = year %}
-	{% endif %}    
-{% endfor %}
+	{%- endif %}    
+{%- endfor %}
 </ul>
 </section>
 </article>

@@ -26,11 +26,10 @@ slug: projects
 
 <main id="content" class="content" role="main">
 
-    {% assign count = 0 %}
-    {% for post in site.posts %}
-        {% if post.category == "Project" %}
-        {% if count < 10 %}
-
+    {%- assign count = 0 %}
+    {%- for post in site.posts %}
+        {%- if post.category == "Project" %}
+        {%- if count < 10 %}
             <article class="post">
                 <header class="post-header">
                     <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
@@ -39,15 +38,15 @@ slug: projects
                     {{ post.description }} <a class="read-more" href="{{ post.url }}">&raquo;</a>
                 </section>
                 <footer class="post-meta">
-                    {% if post.tags.size > 0 %}
+                    {%- if post.tags.size > 0 %}
                         Posted {{ post.tags | array_to_sentence_string | prepend: 'in ' }}
-                    {% endif %}
+                    {%- endif %}
                     <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
                         {{ post.date | date_to_string }}
                     </time>
                 </footer>
             </article>
-        {% elsif count == 10 %}
+        {%- elsif count == 10 %}
             <article class="post">
                 <header class="post-header">
                     <h2 class="post-title">Older posts</h2>
@@ -62,23 +61,23 @@ slug: projects
                                 {{ post.date | date_to_string }}
                             </time>
                         </li>
-        {% else %}
+        {%- else %}
             <li>
                 <a href="{{ post.url }}">{{ post.title }}</a>
                 <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
                     {{ post.date | date_to_string }}
                 </time>
             </li>
-        {% endif %}
+        {%- endif %}
 
         {% assign count = count | plus: 1 %}
-        {% endif %}
+        {%- endif %}
 
-    {% endfor %}
+    {%- endfor %}
 
-    {% if count >= 10 %}
+    {%- if count >= 10 %}
                 </ul>
             </section>
         </article>
-    {% endif %}
+    {%- endif %}
 </main>

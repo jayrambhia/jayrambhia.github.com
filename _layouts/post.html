@@ -12,46 +12,24 @@ post_class: post-template
 </header>
 
 <main class="content" role="main">
-
     <article class="post">
-
         <header class="post-header">
             <h1 class="post-title">{{ page.title }}</h1>
             <section class="post-meta">
                 <time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
-                {% if page.category_tag.size > 0 %}
+                {%- if page.category_tag.size > 0 %}
                     {{ page.category_tag | array_to_sentence_string | prepend: 'on ' }}
-                {% elsif page.tags.size > 0 %}
+                {%- elsif page.tags.size > 0 %}
                     {{ page.tags | array_to_sentence_string | prepend: 'on ' }}
-                {% endif %}
+                {%- endif %}
             </section>
             <br />
         </header>
-
-<!--         <header class="post-header">
-            <a id="blog-logo" href="{{site.url}}">
-                {% if site.logo %}
-                    <img src="{{site.logo}}" alt="{{ site.name }}" />
-                {% else %}
-                    <span class="blog-title">{{ site.name }}</span>
-                {%endif%}
-            </a>
-        </header> -->
-
-        <!-- <span class="post-meta">
-            <time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
-            {% if page.categories.size > 0 %}
-                {{ page.categories | array_to_sentence_string | prepend: 'on ' }}
-            {% endif %}
-        </span> -->
-
-        <!-- <h1 class="post-title">{{ page.title }}</h1> -->
-
         <section class="post-content">
             {{content}}
-            {% assign next_post = false %}
-            {% for post in site.posts reversed %}
-              {% if next_post and post.category != "Series" and post.category != "Project" %}
+            {%- assign next_post = false %}
+            {%- for post in site.posts reversed %}
+              {%- if next_post and post.category != "Series" and post.category != "Project" %}
                 <div class="read_next_card">
                   <div class="read_next_card_wrapper">
                     <div>
@@ -69,29 +47,17 @@ post_class: post-template
                     </script>
                   </div>
                 </div>
-                {% assign next_post = false %}
-                {% break %}
-              {% endif %}
-              {% if post.url == page.url %}
-                {% assign next_post = true %}
-              {% endif %}
-            {% endfor %}
+                {%- assign next_post = false %}
+                {%- break %}
+              {%- endif %}
+              {%- if post.url == page.url %}
+                {%- assign next_post = true %}
+              {%- endif %}
+            {%- endfor %}
         </section>
-
-        <!-- {% if page.archive %}
-        <section class="archive">
-            <h5>Archive</h5>
-            <ul>
-                {% for post in site.posts %}
-                    <li><span>{{ post.date | date_to_string }}</span>  <a href="{{ post.url }}">{{ post.title }}</a></li>
-                {% endfor %}
-            </ul>
-        </section>
-        {% endif %} -->
-
         <footer class="post-footer">
             <!-- If we want to display author's name and bio -->
-            {% if site.k_author %}
+            {%- if site.k_author %}
                 <figure class="author-image">
                     <a class="img" href="{{ site.url }}" style="background-image: url(/assets/images/profile.jpg)">
                     <span class="hidden">{{site.k_author}}'s Picture</span></a>
@@ -104,7 +70,6 @@ post_class: post-template
                         Android Developer at Booking.com<br/>Fixing problems one bug at a time! Also, the views expressed here are mine and not my employers.<br/>
                         Check out my latest app - <b><a href="https://play.google.com/store/apps/details?id=com.fenchtose.flutter&referrer=utm_source%3Dwebsite_footer">Flutter - Instant movie ratings</a></b> which shows movie ratings on-demand when browsing Netflix and other streaming apps.
                     </p>
-
                     <div class="post_bottom_share_container">
                       <div align="center">
                         <a href="https://twitter.com/jayrambhia" class="twitter-follow-button" data-show-count="false">Follow @jayrambhia</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -115,18 +80,12 @@ post_class: post-template
                         </div>
                       </div>
                     </div>
-
                 </section>
-            {% endif %}
-
+            {%- endif %}
             <!-- Share links section -->
             {% include share.html %}
-
             <!-- Disqus comments -->
             {% include disqus.html %}
-
         </footer>
-
     </article>
-
 </main>
