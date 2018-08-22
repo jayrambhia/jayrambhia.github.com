@@ -4,28 +4,24 @@ disqus: true
 archive: false
 post_class: post-template
 ---
-<header class="main-header post-head {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
-    <nav class="main-nav {% if page.cover %} overlay {% endif %} clearfix">
+<header class="main-header post-head {% if page.series_cover.image %}" style="background-image: url({{ page.series_cover.image }}) {%else%}no-cover{% endif %}">
+    <nav class="main-nav {% if page.series_cover.image %} overlay {% endif %} clearfix">
         <a class="back-button icon-arrow-left" href="{{ site.url }}">Home</a>
         <a class="subscribe-button" href="{{ site.url }}/{{ site.series }}">Series</a>
     </nav>
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 </header>
 
-<main class="content" role="main">
+<main id="content" class="content" role="main">
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">{{ page.title }}</h1>
     </header>
-    <br/>
 
     <section class="post-content">
-      <p align="center">
-        <img alt="{{ page.series_cover.alt }}" title="{{ page.series_cover.title }}" src="{{ page.series_cover.image }}" />
-      </p>
       <br/>
       {{ content }}
       <h2> Articles </h2>
-      <br/>
       <ol type="1">
       {% for post in site.posts reversed %}
       {% if post.series == page.identifier %}
