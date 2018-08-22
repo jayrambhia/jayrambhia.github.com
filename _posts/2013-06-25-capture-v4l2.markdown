@@ -56,6 +56,14 @@ static int xioctl(int fd, int request, void *arg)
 }
 {% endhighlight %}
 
+---------------
+
+### Similar articles
+{% include recommended_card.html url="/blog/kinect-opencv" title="Kinect with OpenCV" description="Setup the Kinect to work with OpenCV seamlessly. Use SimpleCV to see the depth map with Kinect." %}
+
+{% include recommended_card.html url="/blog/opencv-android-image" title="How to use Android camera with OpenCV" description="OpenCV for Android is very helpful. This article talks about how to use the Android camera SDK and bridge it with OpenCV so that you can retrieve and process the frames." %}
+--------------
+
 #### Step 3: Image Format
 V4L2 provides an easy interface to check the image formats and colorspace that your webcam supports and provide. `v4l2_format` sturcture is to be used to change image format.
 
@@ -84,7 +92,7 @@ struct v4l2_requestbuffers req = {0};
 req.count = 1;
 req.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
 req.memory = V4L2_MEMORY_MMAP;
- 
+
 if (-1 == xioctl(fd, VIDIOC_REQBUFS, &req))
 {
     perror("Requesting Buffer");
@@ -123,7 +131,7 @@ if(-1 == xioctl(fd, VIDIOC_STREAMON, &buf.type))
     perror("Start Capture");
     return 1;
 }
- 
+
 fd_set fds;
 FD_ZERO(&fds);
 FD_SET(fd, &fds);
@@ -135,7 +143,7 @@ if(-1 == r)
     perror("Waiting for Frame");
     return 1;
 }
- 
+
 if(-1 == xioctl(fd, VIDIOC_DQBUF, &buf))
 {
     perror("Retrieving Frame");

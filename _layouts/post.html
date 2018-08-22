@@ -37,23 +37,10 @@ post_class: post-template
             {%- assign next_post = false %}
             {%- for post in site.posts reversed %}
               {%- if next_post and post.category != "Series" and post.category != "Project" %}
-                <div class="read_next_card">
-                  <div class="read_next_card_wrapper">
-                    <div>
-                      <h4 style="color: #fafafa;">{{ post.title }}</h4>
-                      <p class="read_next_content">{{ post.description }}</p>
-                    </div>
-                    <div class="read_next_button" onclick="readMore('{{ post.url }}');" style="cursor: pointer;">
-                      <b>Read next</b>
-                    </div>
-                    <script>
-                      function readMore(url) {
-                        trackEvent('Article', 'tap', 'read next');
-                        window.location.href = url;
-                      }
-                    </script>
-                  </div>
-                </div>
+                {%- capture next_title %} {{ post.title }} {%- endcapture %}
+                {%- capture next_desc %} {{ post.description }} {%- endcapture %}
+                {%- capture next_url %} {{ post.url }} {%- endcapture %}
+                {% include read_next_card.html url=next_url title=next_title description=next_desc %}
                 {%- assign next_post = false %}
                 {%- break %}
               {%- endif %}

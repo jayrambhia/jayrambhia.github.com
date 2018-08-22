@@ -1,0 +1,19 @@
+<html>
+<div class="read_next_card">
+  <div class="read_next_card_wrapper">
+    <div>
+      <h4 style="color: #fafafa;">{{ include.title }}</h4>
+      <p class="read_next_content">{{ include.description }}</p>
+    </div>
+    <div class="read_next_button" onclick="readNext('{{ include.url }}');" style="cursor: pointer;">
+      <b>Read next</b>
+    </div>
+    <script>
+      function readNext(url) {
+        trackEvent('Article', 'tap', 'read next');
+        window.location.href = url;
+      }
+    </script>
+  </div>
+</div>
+</html>
