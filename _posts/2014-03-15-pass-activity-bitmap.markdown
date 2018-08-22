@@ -34,6 +34,12 @@ I was making an application where I chose image file using browser intent and pr
 
 [putExtra()](http://developer.android.com/reference/android/content/Intent.html#putExtra(java.lang.String, android.os.Bundle)) method is used to send extra data from one activity to another.
 
+--------------
+### Articles related to Bitmap
+{% include recommended_card.html url="/blog/android-fileprovider-ecosystem" title="Read/Write Bitmap to local storage" description="4 ways to save Bitmap to disk storage in Android. Follow the best practices and avoid Read/Writer permissions by leveraging Storage Access Framework." %}
+{% include recommended_card.html url="/blog/android-background-blur" title="How to blur a bitmap?" description="Use Renderscript to blur bitmaps with high performance. This article also talks about how to create a bitmap from the screen view and blur it to have amazing effects." %}
+---------------
+
 #### Extract Data In Other Activity
 
 {% highlight java %}
@@ -76,6 +82,6 @@ Now, it turns out that it's not possible to pass Bitmap as extended data. It nee
 
 [Detailed StackOverflow Answer](http://stackoverflow.com/questions/12908048/passing-bitmap-between-two-activities)
 
-Well, that's how I pass bitmap data between two activities. There are some better methods to do this such as passing fileURIs. 
+Well, that's how I pass bitmap data between two activities. There are some better methods to do this such as passing fileURIs.
 
 P.S. Working on Android now. Need to get better at layouts and designs.

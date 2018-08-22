@@ -14,7 +14,7 @@ In the previous post - [Connect Two Android Devices over WiFi using Network Serv
 We used the most basic thing that we found in the Android API - `Socket`. Socket class provides a client-side TCP socket. Socket binds destination IP Address and a port to local IP Address and a local port. Read more [here](http://developer.android.com/reference/java/net/Socket.html).
 
 ### How to Create Connection between Client and Server
- 
+
  - Using NSD Manager, Client device should get server/host IP Address.
  - Send data to server using Socket.
  - Client should send its IP Address to server/host for bi-directional communication.
@@ -34,7 +34,7 @@ String ipAddress = Formatter.formatIpAddress(
 {% endhighlight %}
 
 #### Connect to the Server and send IP Address using Socket
- 
+
  - Resolve the service and call a function to connect to the server.
  - Create a JSONObject with fields `request` and `ipAddress`.
  - Create a new thread using `AsyncTask` for the Socket connection so that UI Thread doesn't hang
@@ -42,7 +42,10 @@ String ipAddress = Formatter.formatIpAddress(
 
 {% gist jayrambhia/c2bcbdf8295fb0c90e99 ClientToServerConnection.java %}
 
-<br/>
+-------------
+### You may find this helpful
+{% include recommended_card.html url="/blog/android-wireless-connection-1" title="Connect devices using NSD" description="Use Network Service Discovery and Bonjour to connect devices over WiFi. This article will show you how to connect over WiFi and send files." %}
+-----------------
 
 ### Server Device
 
