@@ -5,12 +5,7 @@ title: Comprehensive article series on android frameworks - Jay Rambhia
 
 <header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
     <nav class="main-nav overlay clearfix">
-            {% if page.logo %}
-                <a class="blog-logo" href="{{ site.url }}">
-                    <img src="{{ page.logo }}" alt="Blog Logo" />
-                </a>
-            {% endif %}
-        <a class="back-button icon-arrow-left" href="{{ site.url }}/{{ site.archives }}">Archives</a>
+        <a id="nav_back" class="back-button icon-arrow-left" onclick="onNavBack('{{ site.url }}/{{ site.archives }}')">Archives</a>
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
@@ -21,6 +16,19 @@ title: Comprehensive article series on android frameworks - Jay Rambhia
         </div>
     </div>
     <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+
+    <script>
+      if (window.location.href.includes("series=1")) {
+        document.getElementById("nav_back").innerHTML = "Back to the series";
+      }
+      function onNavBack(url) {
+        if (window.location.href.includes("series=1")) {
+          window.history.back();
+        } else {
+          window.location.href=url;
+        }
+      }
+    </script>
 </header>
 
 <main id="content" class="content" role="main">

@@ -5,13 +5,9 @@ slug: projects
 ---
 
 <header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
-    <nav class="main-nav overlay clearfix">
-            {% if page.logo %}
-                <a class="blog-logo" href="{{ site.url }}">
-                    <img src="{{ page.logo }}" alt="Blog Logo" />
-                </a>
-            {% endif %}
-        <a class="back-button icon-arrow-left" href="{{ site.url }}/{{ site.archives }}">Archives</a>
+  <nav class="main-nav overlay clearfix">
+      <a id="nav_back" class="back-button icon-arrow-left" onclick="onNavBack('{{ site.url }}/{{ site.archives }}')">Archives</a>
+  </nav>
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
@@ -22,6 +18,19 @@ slug: projects
         </div>
     </div>
     <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+    <script>
+      var param = "project=1";
+      if (window.location.href.includes(param)) {
+        document.getElementById("nav_back").innerHTML = "Back to the project";
+      }
+      function onNavBack(url) {
+        if (window.location.href.includes(param)) {
+          window.history.back();
+        } else {
+          window.location.href=url;
+        }
+      }
+    </script>
 </header>
 
 <main id="content" class="content" role="main">
@@ -32,10 +41,10 @@ slug: projects
         {%- if count < 10 %}
             <article class="post">
                 <header class="post-header">
-                    <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                    <h2 class="post-title"><a href="{{ post.url }}?project=1">{{ post.title }}</a></h2>
                 </header>
                 <section class="post-excerpt">
-                    {{ post.description }} <a class="read-more" href="{{ post.url }}">&raquo;</a>
+                    {{ post.description }} <a class="read-more" href="{{ post.url }}?project=1">&raquo;</a>
                 </section>
                 <footer class="post-meta">
                     {%- if post.tags.size > 0 %}

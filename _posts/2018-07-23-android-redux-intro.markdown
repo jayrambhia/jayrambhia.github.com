@@ -15,6 +15,7 @@ description: What is Redux architecture? Learn about Redux and how to use it in 
 keywords: [android, android development, androiddev, dev, redux, kotlin, redux architecture, immutable state, redux clean architecture, write your own redux, redux data flow, redux middleware android, builds, pure functions, reactive functional android, redux reducers, redux store in kotlin]
 category_tag: [Android, Kotlin, Redux]
 series: redux-android
+series_title: Introduction to Redux architecture
 series_description: The article introduces you to the Redux architecture and explains the intricate details of components and principles used in Redux.
 ---
 

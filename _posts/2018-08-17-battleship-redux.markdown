@@ -15,6 +15,7 @@ description: Build your own Battleship game in Kotlin and write the gameplay usi
 keywords: [android, android development, androiddev, dev, redux, kotlin, redux architecture, immutable state, redux clean architecture, write your own redux, redux data flow, redux middleware android, builds, pure functions, reactive functional android, redux reducers, redux store in kotlin]
 category_tag: [Android, Kotlin, Redux]
 series: redux-android
+series_title: Implement the Battleship gameplay using Redux
 series_description: Building upon the battleship game written in Kotlin, we use Redux architecture to implement the gameplay and business logic. By the end, you'll have a basic working Battleship game written with Redux architecture.
 ---
 

@@ -15,6 +15,7 @@ description: Are you having a hard time figuring out how middleware works in Red
 keywords: [android, android development, androiddev, dev, redux, kotlin, redux architecture, immutable state, redux clean architecture, write your own redux, redux data flow, redux middleware android, builds, pure functions, reactive functional android, redux reducers, redux store in kotlin, redux middleware, redux middleware for network calls, middleware in android redux, redux middleware chain]
 category_tag: [Android, Kotlin, Redux]
 series: redux-android
+series_title: Middleware implementation in Redux
 series_description: You're almost there! Add middleware support in your Redux implementation and see how effortless android programming becomes.
 ---
 

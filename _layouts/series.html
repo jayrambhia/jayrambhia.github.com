@@ -7,7 +7,7 @@ post_class: post-template
 <header class="main-header post-head {% if page.series_cover.image %}" style="background-image: url({{ page.series_cover.image }}) {%else%}no-cover{% endif %}">
     <nav class="main-nav {% if page.series_cover.image %} overlay {% endif %} clearfix">
         <a class="back-button icon-arrow-left" href="{{ site.url }}">Home</a>
-        <a class="subscribe-button" href="{{ site.url }}/{{ site.series }}">Series</a>
+        <a class="subscribe-button" href="{{ site.url }}/{{ site.series }}?series=1">Series</a>
     </nav>
     <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 </header>
@@ -26,7 +26,11 @@ post_class: post-template
       {%- if post.series == page.identifier %}
       <article>
         <header class="post-header">
-          <h4 class="post-title-small"><li><a href="{{ post.url }}">{{ post.title }}</a></li></h3>
+          {%- if post.series_title %}
+            <h4 class="post-title-small"><li><a href="{{ post.url }}?series=1">{{ post.series_title }}</a></li></h3>
+          {%- else %}
+            <h4 class="post-title-small"><li><a href="{{ post.url }}?series=1">{{ post.title }}</a></li></h3>
+          {%- endif %}
         </header>
         <section class="post-excerpt">
           {{ post.series_description }}

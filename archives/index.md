@@ -6,12 +6,8 @@ cover: false
 
 <header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
     <nav class="main-nav overlay clearfix">
-            {%- if page.logo %}
-                <a class="blog-logo" href="{{ site.url }}">
-                    <img src="{{ page.logo }}" alt="Blog Logo" />
-                </a>
-            {%- endif %}
-        <a class="back-button icon-arrow-left" href="{{ site.url }}">Home</a>
+        <a id="back_home" class="back-button icon-arrow-left" href="{{ site.url }}">Home</a>
+        <a id="back_to_post" class="back-button icon-arrow-left" style="visibility:hidden;" onclick="history.back()">Back to post</a>
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
@@ -22,6 +18,14 @@ cover: false
         </div>
     </div>
     <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+
+    <script>
+      var url = window.location.href;
+      if (url.includes("from_post=1")) {
+        document.getElementById("back_home").style.display = "none";
+        document.getElementById("back_to_post").style.visibility = "visible";
+      }
+    </script>
 </header>
 
 

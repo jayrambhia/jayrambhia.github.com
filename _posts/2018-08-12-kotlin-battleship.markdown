@@ -15,6 +15,7 @@ description: Build your own Battleship game in Kotlin with immutable data struct
 keywords: [android, android development, androiddev, dev, redux, kotlin, redux architecture, battleship, battleship game, battleship android app, battleship in kotlin, redux store in kotlin, kotlin operator overloading]
 category_tag: [Android, Kotlin, Redux]
 series: redux-android
+series_title: Battleship (Game) with Redux - Setup
 series_description: Use Redux for something a little more complex than a notes app. Write the Battleship game in Kotlin using your own Redux implementation. This article focuses on getting the right building blocks for the game.
 ---
 
