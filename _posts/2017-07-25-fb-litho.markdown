@@ -18,6 +18,7 @@ series_cover:
   title: Litho - Facebook's declarative UI framework
   alt: litho facebook
   image: /assets/images/litho-cover.png
+  image_small: /assets/images/litho-cover-small.png
 hidden: true
 identifier: litho-android
 ---

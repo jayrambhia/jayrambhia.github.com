@@ -43,7 +43,7 @@ about: 'about-me/'
         {% for post in site.posts %}
           {% if post.category == "Series" %}
             <div class="card" onclick="location.href='{{ post.url }}';" style="cursor: pointer;">
-              <img alt="{{ post.series_cover.alt }}" title="{{ post.series_cover.title }}" src="{{ post.series_cover.image }}" style="width:100%"/>
+              <img alt="{{ post.series_cover.alt }}" title="{{ post.series_cover.title }}" src="{{ post.series_cover.image_small }}" style="width:100%"/>
               <div class="card_container">
                 <h4><b>{{ post.title }}</b></h4>
                 <p>{{ post.series_excerpt }}</p>

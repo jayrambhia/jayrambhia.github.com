@@ -23,8 +23,8 @@ post_class: post-template
       {{ content }}
       <h2> Articles </h2>
       <ol type="1">
-      {% for post in site.posts reversed %}
-      {% if post.series == page.identifier %}
+      {%- for post in site.posts reversed %}
+      {%- if post.series == page.identifier %}
       <article>
         <header class="post-header">
           <h4 class="post-title-small"><li><a href="{{ post.url }}">{{ post.title }}</a></li></h3>
@@ -34,20 +34,13 @@ post_class: post-template
         </section>
       </article>
       <br/>
-      {% endif %}
-      {% endfor %}
+      {%- endif %}
+      {%- endfor %}
     </ol>
-      <!-- <ol type="1">
-        {% for post in site.posts reversed %}
-          {% if post.series == page.identifier %}
-          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-          {% endif %}
-        {% endfor %}
-      </ol> -->
     </section>
     <footer class="post-footer">
         <!-- If we want to display author's name and bio -->
-        {% if site.k_author %}
+        {%- if site.k_author %}
             <figure class="author-image">
                 <a class="img" href="{{ site.url }}" style="background-image: url(/assets/images/profile.jpg)">
                 <span class="hidden">{{site.k_author}}'s Picture</span></a>
@@ -64,7 +57,7 @@ post_class: post-template
                 </p>
 
             </section>
-        {% endif %}
+        {%- endif %}
 
         <!-- Share links section -->
         {% include share.html %}
