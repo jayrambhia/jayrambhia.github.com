@@ -161,6 +161,6 @@ Execute the script. It will make all the files. select any output file and run i
 
 
 
-Your OpenCV 2.4.* is installed and libraries are properly linked. If you don't have much experience with OpenCV, I would suggest you to go through this post. [Beginning OpenCV](/blog/beginning-opencv/). It shows how to make a script so that you don't need to add everything while compiling opencv codes.
+Your OpenCV 2.4.* is installed and libraries are properly linked. If you don't have much experience with OpenCV, I would suggest you to go through this post. [Beginning OpenCV](/blog/beginning-opencv). It shows how to make a script so that you don't need to add everything while compiling opencv codes.
 
 P.S. My Python port of George Nebehay's OpenTLD Version is almost ready.

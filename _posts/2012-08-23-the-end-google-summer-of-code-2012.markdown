@@ -28,52 +28,52 @@ Coding period was a month away. Meanwhile, I started learning few things about C
 Here are the blog posts that I added during my summer.
 
 
-  * [Install OpenCV 2.3.1 and SimpleCV in Ubuntu 12.04 Precise Pangolin, Arch Linux](/blog/install-opencv-2-3-1-and-simplecv-in-ubuntu-12-04-precise-pangolin-arch-linux/)
+  * [Install OpenCV 2.3.1 and SimpleCV in Ubuntu 12.04 Precise Pangolin, Arch Linux](/blog/install-opencv-2-3-1-and-simplecv-in-ubuntu-12-04-precise-pangolin-arch-linux)
 
 
-  * [Beginning OpenCV](/blog/beginning-opencv/)
+  * [Beginning OpenCV](/blog/beginning-opencv)
 
 
-  * [Capture Images and Video from Camera in OpenCV 2.3.1](/blog/capture-images-and-video-from-camera-in-opencv-2-3-1/)
+  * [Capture Images and Video from Camera in OpenCV 2.3.1](/blog/capture-images-and-video-from-camera-in-opencv-2-3-1)
 
 
-  * [GSoC 2012 Package Arrived](/blog/gsoc-2012-package-arrived/)
+  * [GSoC 2012 Package Arrived](/blog/gsoc-2012-package-arrived)
 
 
-  * [OpenTLD – Georg Nebehay’s version of OpenTLD in OpenCV 2.3.1 and Towel Day](/blog/opentld-georg-nebehays-version-of-opentld-in-opencv-2-3-1-and-towel-day/)
+  * [OpenTLD – Georg Nebehay’s version of OpenTLD in OpenCV 2.3.1 and Towel Day](/blog/opentld-georg-nebehays-version-of-opentld-in-opencv-2-3-1-and-towel-day)
 
 
-  * [Median Flow Tracker using SimpleCV/OpenCV – GSoC week 1 and 2](/blog/median-flow-tracker-using-simplecvopencv-gsoc-week-1-and-2/)
+  * [Median Flow Tracker using SimpleCV/OpenCV – GSoC week 1 and 2](/blog/median-flow-tracker-using-simplecvopencv-gsoc-week-1-and-2)
 
 
-  * [Tracking in OpenTLD aka Predator](/blog/tracking-in-opentld-aka-predator/)
+  * [Tracking in OpenTLD aka Predator](/blog/tracking-in-opentld-aka-predator)
 
 
-  * [Install OpenCV 2.4.* in Ubuntu 12.04 Precise Pangolin](/blog/install-opencv-2-4-in-ubuntu-12-04-precise-pangolin/)
+  * [Install OpenCV 2.4.* in Ubuntu 12.04 Precise Pangolin](/blog/install-opencv-2-4-in-ubuntu-12-04-precise-pangolin)
 
 
-  * [Get data from Mat / cv::Mat in OpenCV](/blog/get-data-from-mat-cvmat-in-opencv/)
+  * [Get data from Mat / cv::Mat in OpenCV](/blog/get-data-from-mat-cvmat-in-opencv)
 
 
-  * [Configuring Boost::Python and Hello Boost](/blog/configuring-boostpython-and-hello-boost/)
+  * [Configuring Boost::Python and Hello Boost](/blog/configuring-boostpython-and-hello-boost)
 
 
-  * [Boost::Python with OpenCV](/blog/boostpython-with-opencv/)
+  * [Boost::Python with OpenCV](/blog/boostpython-with-opencv)
 
 
-  * [Sobel Operator](/blog/sobel-operator/)
+  * [Sobel Operator](/blog/sobel-operator)
 
 
-  * [Face Tracking with CAMShift using OpenCV/SimpleCV](/blog/face-tracking-with-camshift-using-opencvsimplecv/)
+  * [Face Tracking with CAMShift using OpenCV/SimpleCV](/blog/face-tracking-with-camshift-using-opencvsimplecv)
 
 
-  * [CAMShift with SimpleCV](/blog/camshift-with-simplecv/)
+  * [CAMShift with SimpleCV](/blog/camshift-with-simplecv)
 
 
-  * [Kalman Filter](/blog/kalman-filter/)
+  * [Kalman Filter](/blog/kalman-filter)
 
 
-  * [Lucas Kanade Tracker](/blog/lucas-kanade-tracker/)
+  * [Lucas Kanade Tracker](/blog/lucas-kanade-tracker)
 
 And here are few videos that I uploaded.
 **OpenTLD on Towel Day**

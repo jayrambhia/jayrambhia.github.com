@@ -16,7 +16,7 @@ So, moving on to OpenCV. After getting a good amount of exposure to OpenCV C++, 
 
 - [Install OpenCV 2.4 in Ubuntu 12.04 Precise Pangolin ](/blog/install-opencv-2-4-in-ubuntu-12-04-precise-pangolin/)
 
-- [Beginning OpenCV ](/blog/beginning-opencv/)
+- [Beginning OpenCV ](/blog/beginning-opencv)
 
 - [Capture Images and Video from Camera in OpenCV 2.3.1 ](/blog/capture-images-and-video-from-camera-in-opencv-2-3-1/)
 
@@ -25,13 +25,13 @@ Today, I found this question on stackoverflow http://stackoverflow.com/questions
 
   * **cvGetReal2D is slow**
 
-	
+
   * **IplImage is old. Stop using IplImage. Use cv::Mat (for C) or Mat (for C++)**
 
-	
+
   * **Install OpenCV 2.3.1 or higher. I would suggest OpenCV 2.4**
 
-	
+
   * **If you are using Visual Studio on Windows, please stop. Too much linking problems. Dual boot with a good Linux distro and install OpenCV.**
 
 
@@ -39,7 +39,7 @@ I wandered off again. Back to getting pixel values from Mat.
 
 Load Image as Mat and get it's data pointer.
 
-    
+
         Mat img = imread("filename.jpg",CV_LOAD_IMAGE_COLOR);
         unsigned char *input = (unsigned char*)(img.data);
 
@@ -52,8 +52,8 @@ Images in OpenCV are always stored in the format of BGR.
 **Getting Pixel Values**:
 Let's assume we have an image of size 512x512 pixels. Pixel in first row and first column will have some value (b00, g00, r00) and pixel in nth row and mth column will have value (bnm, gnm ,rnm).
 
-    
-    
+
+
         int i,j,r,g,b;
         for(int i = 0;i < img.rows ;i++){
     			for(int j = 0;j < img.cols ;j++){
@@ -75,7 +75,7 @@ To get pixel values of nth row and mth cloumn,
 
 So, to sum it all
 
-    
+
     #include<opencv2/highgui/highgui.hpp>
     #include<stdio.h>
     using namespace cv;
