@@ -2,10 +2,10 @@
 <div class="read_next_card">
   <div class="read_next_card_wrapper">
     <div>
-      <h4 style="color: #fafafa;">{{ include.title }}</h4>
-      <p class="read_next_content">{{ include.description }}</p>
+      <h4 style="color: #fafafa;">{{ include.post.title }}</h4>
+      <p class="read_next_content">{{ include.post.description }}</p>
     </div>
-    <div class="read_next_button" onclick="readNext('{{ include.url }}');" style="cursor: pointer;">
+    <div class="read_next_button" onclick="readNext('{{ include.post.url }}');" style="cursor: pointer;">
       <b>Read next</b>
     </div>
     <script>

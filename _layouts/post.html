@@ -37,10 +37,7 @@ post_class: post-template
             {%- assign next_post = false %}
             {%- for post in site.posts reversed %}
               {%- if next_post and post.category != "Series" and post.category != "Project" %}
-                {%- capture next_title %} {{ post.title }} {%- endcapture %}
-                {%- capture next_desc %} {{ post.description }} {%- endcapture %}
-                {%- capture next_url %} {{ post.url }} {%- endcapture %}
-                {% include read_next_card.html url=next_url title=next_title description=next_desc %}
+                {% include read_next_card.html post=post %}
                 {%- assign next_post = false %}
                 {%- break %}
               {%- endif %}
