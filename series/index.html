@@ -25,19 +25,11 @@ title: Comprehensive article series on android frameworks - Jay Rambhia
 </header>
 
 <main id="content" class="content" role="main">
+<div class="card_wrapper post">
 {%- for post in site.posts %}
   {%- if post.category == "Series" %}
-    <article class="post">
-      <h3 class="post-title">{{ post.title }}</h3>
-        <div class="card" onclick="location.href='{{ post.url }}';" style="cursor: pointer;">
-          <img alt="{{ post.series_cover.alt }}" title="{{ post.series_cover.title }}" src="{{ post.series_cover.image }}" style="width:100%;"/>
-          <section class="post-content">
-            <div class="card_container" style="margin-top:24px;">
-              <p>{{ post.series_excerpt }}</p>
-            </div>
-          </section
-        </div>
-    </article>
+        {% include series_card.html post=post %}
   {%- endif %}
 {%- endfor %}
+</div>
 </main>

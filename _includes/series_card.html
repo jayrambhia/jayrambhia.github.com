@@ -1,0 +1,11 @@
+<html>
+<div class="card" onclick="location.href='{{ include.post.url }}';" style="cursor: pointer;">
+  <img alt="{{ include.post.series_cover.alt }}" title="{{ include.post.series_cover.title }}" src="{{ include.post.series_cover.image }}" style="width:100%;"/>
+  <section class="post-content">
+    <div class="card_container" style="margin-top:24px;">
+      <h4 class="post-title-small">{{ include.post.title }}</h4>
+      <p>{{ include.post.series_excerpt }}</p>
+    </div>
+  </section>
+</div>
+</html>

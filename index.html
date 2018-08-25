@@ -40,15 +40,9 @@ about: 'about-me/'
     </header>
     <section class="post-excerpt">
       <div class="card_wrapper">
-        {% for post in site.posts %}
-          {% if post.category == "Series" %}
-            <div class="card" onclick="location.href='{{ post.url }}';" style="cursor: pointer;">
-              <img alt="{{ post.series_cover.alt }}" title="{{ post.series_cover.title }}" src="{{ post.series_cover.image_small }}" style="width:100%"/>
-              <div class="card_container">
-                <h4><b>{{ post.title }}</b></h4>
-                <p>{{ post.series_excerpt }}</p>
-              </div>
-            </div>
+        {%- for post in site.posts %}
+          {%- if post.category == "Series" and post.featured %}
+            {% include series_card.html post=post %}
           {% endif %}
         {% endfor %}
       </div>
