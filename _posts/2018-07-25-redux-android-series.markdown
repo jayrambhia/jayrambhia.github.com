@@ -21,6 +21,7 @@ series_cover:
   image_small: /assets/images/redux-logo-small.png
 identifier: redux-android
 hidden: true
+featured: true
 ---
 
 Learn the Redux architecture and implement the clean architecture it in your Android codebase. This series of posts explores the depth of Redux and guides you through implementing the architecture in Kotlin for your android app.

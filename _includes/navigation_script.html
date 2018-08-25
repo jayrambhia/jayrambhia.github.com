@@ -6,4 +6,10 @@ function navBack(param, url) {
     window.location.href = url;
   }
 }
+
+function trackAndNavigate(category, action, label, url) {
+  console.log(label)
+  trackEvent(category, action, label);
+  window.location.href = url;
+}
 </script>

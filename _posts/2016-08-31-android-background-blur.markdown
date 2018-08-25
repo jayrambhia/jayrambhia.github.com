@@ -8,6 +8,9 @@ slug: android-background-blur
 title: Background Blur in Android
 description: The background blur effect in iOS is breathtaking. I implemented the similar background blur effect using Renderscript in Android to have a really great user experience. Here's how you can do it too.
 keywords: [blur in android, blur bitmap, android development, android tutorial, ios blur effect in android, blur using renderscript]
+series: android-ui
+series_title: Background blur effect using Renderscript
+series_description: We have all seen the background blur effects in iOS and it illuminates the UI. In this article, I have written about how to achieve the similar effect in Android using Renderscript.
 ---
 
 <p align="center">

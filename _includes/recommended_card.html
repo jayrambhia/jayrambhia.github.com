@@ -5,15 +5,9 @@
       <h4 style="color: #fafafa;">{{ include.title }}</h4>
       <p class="read_next_content">{{ include.description }}</p>
     </div>
-    <div class="read_next_button" onclick="navigate('{{ include.url }}');" style="cursor: pointer;">
+    <div class="read_next_button" onclick="trackAndNavigate('Article', 'tap', 'recommended', '{{ include.url }}');" style="cursor: pointer;">
       <b>Read now</b>
     </div>
-    <script>
-      function navigate(url) {
-        trackEvent('Article', 'tap', 'recommended');
-        window.location.href = url;
-      }
-    </script>
   </div>
 </div>
 </html>

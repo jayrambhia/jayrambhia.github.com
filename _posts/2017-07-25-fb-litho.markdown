@@ -21,6 +21,7 @@ series_cover:
   image_small: /assets/images/litho-cover-small.png
 hidden: true
 identifier: litho-android
+featured: false
 ---
 
 **[Litho](http://fblitho.com/)** is an open source declarative UI framework for Android developed by Facebook. Facebook developed Litho to improve their android app's performance on the feed timeline page. We are going to explore every basic details of the framework in this 5 articles series by building a GIF search engine in Android.

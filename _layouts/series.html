@@ -18,11 +18,17 @@ post_class: post-template
       <h1 class="post-title">{{ page.title }}</h1>
     </header>
     <section class="post-content">
-      <br/>
       {{ content }}
-      <h2> Articles </h2>
+      <h3 class="post-title"> Articles </h3>
+      {%- if page.reversed == true %}
+        {%- assign posts = site.posts | reverse %}
+        Posts are ordered by <b>Recent</b>.
+      {%- else %}
+        {%- assign posts = site.posts %}
+      {%- endif %}
+      <br/>
       <ol type="1">
-      {%- for post in site.posts reversed %}
+      {%- for post in posts reversed %}
       {%- if post.series == page.identifier %}
       <article>
         <header class="post-header">

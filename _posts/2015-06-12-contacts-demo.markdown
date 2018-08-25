@@ -8,6 +8,9 @@ slug: contacts-demo
 title: Dialer App with New Design Library
 description: Android Lollipop has been a blast. It revolutionized the UI with material design. In this article, we will study the UX of the dialer app and replicate it with the help of CoordinatorLayout, AppBarLayout and CollapsingToolbar.
 keywords: [android development, recyclerview adapter, android design library, material design, android dialer, android recyclerview tutorial, android coordinatorlayout]
+series: android-ui
+series_title: Making a good dialer app UI
+series_description: Android Lollipop has been a blast. It revolutionized the UI with material design. In this article, we will study the UX of the dialer app and replicate it with the help of CoordinatorLayout, AppBarLayout and CollapsingToolbar.
 ---
 
 Android just released a new [Design Support Library](http://android-developers.blogspot.com.es/2015/05/android-design-support-library.html) which is very useful to create beautiful designs and animations (with older version compatibility) and that too without writing much boilerplate code.

@@ -8,6 +8,9 @@ slug: swipe-listview
 title: Inbox Style Swipe ListView
 description: When Google Inbox was introduced, everyone loved the swipe interactions to archive/delete emails. We wanted to add the similar experience in our music player app so we replicated the implementation. Here's how to do it.
 keywords: [android development, android music player, google inbox ui, android ui, android animations, recyclerview swipe items, listview swipe items, user experience]
+series: android-ui
+series_title: Inbox style swipe listview
+series_description: When Google Inbox was introduced, everyone loved the swipe interactions to archive/delete emails. We wanted to add the similar experience in our music player app so we replicated the implementation. Here's how to do it.
 ---
 
 Google's Inbox application has a really nice ListView where user could swipe right to mark the email done and swipe left to snooze the notification. I implemented something very similar to that using `ListView` and `ArrayAdapter`.

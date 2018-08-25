@@ -1843,6 +1843,20 @@ body:not(.post-template) .post-title-small {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
+.show_more_button {
+    color: white;
+    padding: 8px 16px 8px 16px;
+    text-align: center;
+    font-size: 18px;
+    margin: 8px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: rgba(183, 60, 105, 1.0);
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
 .read_next_button:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }

@@ -8,6 +8,9 @@ slug: keep-checklist
 title: Google Keep Style Checklist
 description: Google Keep is one of the most popular apps to keep notes, checklists among other things. The user experience in unparalleled. Here, I try to replicate the same user experience of adding things to do in a check list.
 keywords: [android development, android notes app, google keep, android todo list, android UI, Google keep checklist, android checklist]
+series: android-ui
+series_title: Google Keep Style Checklist
+series_description: Google Keep is one of the most popular apps to keep notes, checklists among other things. The user experience in unparalleled. Here, I try to replicate the same user experience of adding things to do in a check list.
 ---
 
 I have been working on a Notes application for quite some time now. One of the essential notes are checklists. Google Keep has really nice implementation of checklist note. So taking inspiration from the layout, I tried making my own checklist.

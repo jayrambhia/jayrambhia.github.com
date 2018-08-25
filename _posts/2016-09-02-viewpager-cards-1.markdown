@@ -12,7 +12,10 @@ layout: post
 slug: android-viewpager-cards-1
 title: ViewPager cards inspired by "ViewPager cards inspired by Duolingo"
 description: We work with ViewPagers all the time and the UI is quite boring. Let's get inspired and implement an eye-candy transition for the ViewPager. We'll implement meaningful UI and transitions with Android ViewPager (inspired by Duolingo) with some math and hack!
-keywords: [android, android development, androiddev, dev, viewpager, cards, card, ui, duolingo, animation, transitions, blur, bitmap]
+keywords: [android, android development, androiddev, dev, viewpager cards, android card, android ui, duolingo, viewpager animation, transitions, blur bitmap]
+series: android-ui
+series_title: Duolingo style ViewPager
+series_description: I replicated the animations and effects of <i>Duolingo</i>'s ViewPager. In this article, I talk about adding ViewPager transitions using Math and PagerTransformer. We animate and change the size of cards as the user scrolls horizontally.
 ---
 
 <p align="center">

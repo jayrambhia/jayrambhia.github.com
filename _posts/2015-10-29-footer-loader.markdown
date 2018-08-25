@@ -8,6 +8,9 @@ slug: footer-loader
 title: Footer Loader for infinite scrolling
 description: Pagination is the key to good user experience. It's empirical that we load a small amount of data and load more data as the user scrolls. In this article, we focus on implementing infinite pagination for RecyclerView.
 keywords: [android development, recyclerview adapter, android infinite scrolling, recyclerview footer, android recyclerview tutorial, infinite pagination, recyclerview pagination]
+series: android-ui
+series_title: Implement infinite scrolling in your app
+series_description: User experience is paramount when it comes to building great apps. One of the smaller UX improvements that you can do is adding infinite scrolling to your app so that users don't have to press a button to load more data.
 ---
 
 I have been laying low for a while and have been pretty busy with my new workplace. I have started wokring at [Elanic](http://elanic.in/) and it's been a fun ride. I am just starting small before I go writing big posts again. This is a pretty easy concept and every developer should know these little tricks.

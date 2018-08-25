@@ -46,8 +46,11 @@ about: 'about-me/'
           {% endif %}
         {% endfor %}
       </div>
-
     </section>
+    <br/>
+    <div style="text-align:center;">
+      <div class="show_more_button" onclick="trackAndNavigate('Home', 'tap', 'discover series', '{{ site.series }}');" style="display: inline-flex;padding: 8px 24px 8px 24px;"><b>Discover</b></div>
+    </div>
   </article>
   {% endif %}
 

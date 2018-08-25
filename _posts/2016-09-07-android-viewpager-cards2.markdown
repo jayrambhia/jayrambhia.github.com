@@ -11,8 +11,11 @@ date: 2016-09-02 23:00:00
 layout: post
 slug: android-viewpager-cards-2
 title: ViewPager Animations
-description: Meaningful UI and animations with Android ViewPager - Let's make ViewPagers fun! After adding the transformations, let's add some animations to the ViewPager elements.
-keywords: [android, android development, androiddev, dev, viewpager, cards, card, ui, duolingo, animation, transitions]
+description: Meaningful UI and animations with Android ViewPager - Let's make ViewPagers fun! After adding the transformations, let's add some animations to the ViewPager elements. These animations will make your app stand out in the crowd.
+keywords: [android, android development, androiddev, dev, viewpager cards, android card, android ui, duolingo, viewpager animation, transitions, blur bitmap]
+series: android-ui
+series_title: Animate your ViewPagers
+series_description: When it comes to animations, android apps are significantly behind the curve compared to iOS apps. Despite the great work from Google in the material design and animations, we don't see much animation in android apps. In this article, I show how adding meaningful animation to your ViewPager contents can make your app stand out.
 ---
 
 Meaningful transitions and animations makes the UI more elegant. Now, I'm no UI expert but I can say when I like a thing better than the other. Well, this post is about that. Adding animations is good but adding intuitive animations is better. In the previous post, I talked about view position in ViewPager - [ViewPager cards inspired by "ViewPager class inspired by Duolingo"](/blog/android-viewpager-cards-1).
