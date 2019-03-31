@@ -62,6 +62,9 @@ about: 'about-me/'
     {% assign first_post = true %}
 
     {% for post in paginator.posts %}
+    {% if post.hidden == true %}
+        {% continue %}
+    {% endif %}
 
     <article class="post">
       {% if first_post and page.url == "/" %}

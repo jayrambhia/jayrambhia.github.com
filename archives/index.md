@@ -58,36 +58,37 @@ cover: false
 {%- assign first = true %}
 {%- assign cyear = "" %}
 {%- for post in site.posts %}
-  {%- if post.hidden != false %}
+    {% if post.hidden == true %}
+        {% continue %}
+    {% endif %}
     {%- if first %}
-		  {%- assign first = false %}
-		  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-		  <article class="post">
-			   <header class="post-header">
-				     <h2 class="post-title">{{ post.date | date: '%Y' }}</h2>
-			   </header>
-			   <section class="post-excerpt">
-				   <ul>
-	  {%- else %}
-		      {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-		      {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-		      {%- if year != nyear or cyear != nyear %}
-			      </ul>
-			    </section>
-			  </article>
-			  <article class="post">
-				  <header class="post-header">
-			        <h2 class="post-title">{{ post.date | date: '%Y' }}</h2>
-			    </header>
-			    <section class="post-excerpt">
-			      <ul>
-		     {%- endif %}
-	  {%- endif %}    
+    	  {%- assign first = false %}
+    	  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+    	  <article class="post">
+    		   <header class="post-header">
+    			     <h2 class="post-title">{{ post.date | date: '%Y' }}</h2>
+    		   </header>
+    		   <section class="post-excerpt">
+    			   <ul>
+      {%- else %}
+    	      {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+    	      {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+    	      {%- if year != nyear or cyear != nyear %}
+    		      </ul>
+    		    </section>
+    		  </article>
+    		  <article class="post">
+    			  <header class="post-header">
+    		        <h2 class="post-title">{{ post.date | date: '%Y' }}</h2>
+    		    </header>
+    		    <section class="post-excerpt">
+    		      <ul>
+    	     {%- endif %}
+      {%- endif %}    
     <li>
         <a href="{{ post.url }}">{{ post.title }}</a> in {{ post.category }}
     </li>
     {%- assign cyear = year %}
-  {%- endif %}
 {%- endfor %}
 </ul>
 </section>
