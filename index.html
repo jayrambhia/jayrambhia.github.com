@@ -36,6 +36,17 @@ about: 'about-me/'
   {% if page.url == "/" %}
   <article class="post">
     <header class="post-header" style="margin-bottom: 36px;">
+        <h2 class="post-title">My apps on Play Store</h2>
+    </header>
+    <section class="post-excerpt">
+        <div class="card_wrapper">
+            {% include app_card.html title="RefLog (Beta)" description="Timeline to track your work! Difficult to remember what you did last week? Let’s create a timeline." url="https://play.google.com/store/apps/details?id=com.fenchtose.reflog&utm_source=website_home&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" image_small="/assets/images/reflog-legacy-icon.png" %}
+            {% include app_card.html title="Flutter - Instant movie ratings" description="Instant movie and tv show ratings when using video streaming apps." url="https://play.google.com/store/apps/details?id=com.fenchtose.flutter&utm_source=website_home&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" image_small="https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/playstore_logo.png" %}
+        </div>
+    </section>
+  </article>
+  <article class="post">
+    <header class="post-header" style="margin-bottom: 36px;">
       <h2 class="post-title">Featured article series</h2>
     </header>
     <section class="post-excerpt">
