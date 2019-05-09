@@ -36,7 +36,7 @@ post_class: post-template
             {{content}}
             {%- assign next_post = false %}
             {%- for post in site.posts reversed %}
-              {%- if next_post and post.category != "Series" and post.category != "Project" %}
+              {%- if next_post and post.category == "Series" and post.category != "Project" and post.category != "privacy-policy" %}
                 {% include read_next_card.html post=post %}
                 {%- assign next_post = false %}
                 {%- break %}
