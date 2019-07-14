@@ -33,7 +33,10 @@ Here's the [GitHub Repo](https://github.com/jayrambhia/CropperNoCropper)
 Just add the following dependency in your `build.gradle` file.
 
     dependencies {
-        compile 'com.fenchtose.nocropper:nocropper:0.1.3'
+        implementation 'com.fenchtose.nocropper:nocropper:0.3.0'
+        // This page may be outdated as the library keeps updating.
+        // implementation 'com.fenchtose.nocropper:nocropper:+'
+        // We don't recommend this. It's better to check the latest version on the Github.
     }
 
 Following repositories can be added
