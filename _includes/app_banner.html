@@ -1,0 +1,14 @@
+<html>
+<div class="card" onclick="location.href='{{ include.url }}';" style="cursor: pointer; display:flex; flex-wrap:wrap; align-items: flex-start; margin-bottom: 48px;">
+    <div style="display: flex; flex-shrink: 0; flex-grow: 1; flex-basis: 20%; align-items: center; justify-content: center;">
+        <img alt="{{ include.title }}" title="{{ include.title }}" src="{{ include.image_small }}" style="width:128px; height: 128px; margin-top:24px;"/>
+    </div>
+  <div style="flex-grow: 1; flex-basis: 80%;">
+    <div style="margin-left:12px; margin-top:24px; margin-right:24px; margin-bottom:0px; display: flex; flex-direction: column;">
+      <h4 class="post-title-small" style="margin-left: 12px;">{{ include.title }}</h4>
+      <p style="margin-left: 12px; margin-bottom: 8px;">{{ include.description }}</p>
+      <a href='{{ include.url }}'><img alt='Get it on Google Play' style="width:200px;" src='https://play.google.com/intl/en/badges/images/generic/en_badge_web_generic.png'/></a>
+    </div>
+</div>
+</div>
+</html>
