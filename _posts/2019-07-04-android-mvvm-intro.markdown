@@ -12,7 +12,7 @@ image:
 slug: android-mvvm-intro
 title: Introduction to MVVM architecture in Android
 description: Learn about best practices of MVVM architecture in Android. Implement a bug-free unidirectional architecture for your app.
-keywords: [android, android development, androiddev, mvvm architecture, immutable state, live data, pure functions, reactive functional android, redux reducers, mvvm in kotlin]
+keywords: [android mvvm architecture, immutable state, live data mvvm, android pure functions, reactive functional android, redux reducers, mvvm in kotlin]
 category_tag: [Android, Kotlin, MVVM]
 ---
 

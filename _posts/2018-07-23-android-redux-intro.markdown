@@ -12,7 +12,7 @@ image:
 slug: android-redux-intro
 title: Redux architecture for android apps
 description: What is Redux architecture? Learn about Redux and how to use it in your android app. Update your MVP/MVVM architecture to Redux and have a bug free app. Learn about actions, reducers, state management and redux store in-depth and write your own Redux implementation in Kotlin.
-keywords: [android, android development, androiddev, dev, redux, kotlin, redux architecture, immutable state, redux clean architecture, write your own redux, redux data flow, redux middleware android, builds, pure functions, reactive functional android, redux reducers, redux store in kotlin]
+keywords: [android redux, redux in kotlin, redux architecture, immutable state, redux clean architecture, write your own redux, redux data flow, redux middleware android, builds, pure functions, reactive functional android, redux reducers, redux store in kotlin]
 category_tag: [Android, Kotlin, Redux]
 series: redux-android
 series_title: Introduction to Redux architecture

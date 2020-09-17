@@ -12,7 +12,7 @@ image:
   width: 240
 title: Add Middleware to your Redux architecture implementation
 description: Are you having a hard time figuring out how middleware works in Redux architecture? This article talks about adding middleware to your Redux implementation. This is the missing piece for having a great Redux implementation.
-keywords: [android, android development, androiddev, dev, redux, kotlin, redux architecture, immutable state, redux clean architecture, write your own redux, redux data flow, redux middleware android, builds, pure functions, reactive functional android, redux reducers, redux store in kotlin, redux middleware, redux middleware for network calls, middleware in android redux, redux middleware chain]
+keywords: [android redux, kotlin redux, redux architecture, immutable state, redux clean architecture, write your own redux, redux data flow, redux middleware android, builds, pure functions, reactive functional android, redux reducers, redux store in kotlin, redux middleware, redux middleware for network calls, middleware in android redux, redux middleware chain]
 category_tag: [Android, Kotlin, Redux]
 series: redux-android
 series_title: Middleware implementation in Redux

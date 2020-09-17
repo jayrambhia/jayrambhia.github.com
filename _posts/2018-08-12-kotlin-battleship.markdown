@@ -12,7 +12,7 @@ image:
 slug: battleship-kotlin
 title: Battleship game in Kotlin
 description: Build your own Battleship game in Kotlin with immutable data structures and explore kotlin operators and overloading. This article focuses on getting the right building blocks to create the Battleship game.
-keywords: [android, android development, androiddev, dev, redux, kotlin, redux architecture, battleship, battleship game, battleship android app, battleship in kotlin, redux store in kotlin, kotlin operator overloading]
+keywords: [redux in android, kotlin redux, redux architecture, battleship, battleship game, battleship android app, battleship in kotlin, redux store in kotlin, kotlin operator overloading]
 category_tag: [Android, Kotlin, Redux]
 series: redux-android
 series_title: Battleship (Game) with Redux - Setup

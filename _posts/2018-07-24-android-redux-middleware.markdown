@@ -12,7 +12,7 @@ image:
   width: 240
 title: Middleware in Redux architecture for android application
 description: Are you having a hard time figuring out how middleware works in Redux architecture? This articles goes in-depth of Redux and explains what exactly a middleware is and how it is used in Redux. The article also helps you write your own middleware for Redux in Kotlin for your android apps.
-keywords: [android, android development, androiddev, dev, redux, kotlin, redux architecture, immutable state, redux clean architecture, write your own redux, redux data flow, redux middleware android, builds, pure functions, reactive functional android, redux reducers, redux store in kotlin, redux middleware, redux middleware for network calls, middleware in android redux, redux middleware chain]
+keywords: [android redux, redux in kotlin, redux architecture, immutable state, redux clean architecture, write your own redux, redux data flow, redux middleware android, builds, pure functions, reactive functional android, redux reducers, redux store in kotlin, redux middleware, redux middleware for network calls, middleware in android redux, redux middleware chain]
 category_tag: [Android, Kotlin, Redux]
 series: redux-android
 series_title: Understanding Redux Middleware

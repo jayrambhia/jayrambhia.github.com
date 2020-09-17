@@ -7,7 +7,7 @@ layout: post
 slug: android-lint-ref
 title: Android Lint Deep dive - Advanced custom Lint rules
 description: Improve your lint tooling by learning to write complex and helpful lint rules. Write a lint rule to detect usage of hardcoded colors, referencing colors to hardcoded colors using ResourceXmlDetector. Learn more about lint tool's lifecycle and use it to write better lint rules.
-keywords: [android, android development, androiddev, android studio, lint custom rule, lint xml resource, custom lint, how to write custom lint rule, gradle, builds, continuous integration, lint colors, lint reference]
+keywords: [android studio lint warning, lint custom rule, lint xml resource, custom lint in android, how to write custom lint rule, android lint reference]
 category_tag: [Android, Lint]
 ---
 

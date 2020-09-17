@@ -6,7 +6,7 @@ date: 2018-06-29 14:00:00
 layout: post
 slug: eventbus-rxkotlin
 title: Eventbus in Kotlin with Rx
-keywords: [rxjava with android, rxjava for eventbus, android development, android tutorial, learn rxjava, rxjava best practices, rxjava subscriber, android eventbus kotlin, kotlin development, kotlin tutorial, kotlin anroid app]
+keywords: [rxjava with android, rxjava for eventbus, learn rxjava, rxjava best practices, rxjava subscriber, android eventbus kotlin, kotlin development, kotlin tutorial, kotlin anroid app]
 category_tag: [Kotlin, Eventbus]
 description: EventBus is a design pattern which allows publish-subscribe style communication without requiring components to registering with each other. Write your own implementation of EventBus using Kotlin and Rx in just 10 lines of code.
 ---
