@@ -20,7 +20,7 @@ post_class: post-template
 <main class="content" role="main">
 
     <article class="post" style="margin-top: 0px;">
-        {% include app_banner.html title="Taskito - Calendar based to-do list" description="Task management app to help you organize day to day tasks and achieve long term goals." url="https://play.google.com/store/apps/details?id=com.fenchtose.reflog&utm_source=personal_website_post&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" image_small="/assets/images/taskito_website_logo.png" %}
+        {% include app_banner.html title="I'm Building Taskito" description="Taskito offers simple and intuitive tools to organize your daily tasks. It combines features of project management software with productivity and time management tools. Try it out now!" url="https://play.google.com/store/apps/details?id=com.fenchtose.reflog&utm_source=personal_website_post&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" image_small="/assets/images/taskito_website_logo.png" %}
 
         <header class="post-header">
             <h1 class="post-title">{{ page.title }}</h1>
@@ -49,35 +49,7 @@ post_class: post-template
             {%- endfor %}
         </section>
         <footer class="post-footer">
-            <!-- If we want to display author's name and bio -->
-            {%- if site.k_author %}
-                <figure class="author-image">
-                    <a class="img" href="{{ site.url }}" style="background-image: url(/assets/images/profile.jpg)">
-                    <span class="hidden">{{site.k_author}}'s Picture</span></a>
-                </figure>
-                <section class="author">
-                    <!-- Author Name -->
-                    <h4> {{ site.k_author }} </h4>
-                    <!-- Author Bio -->
-                    <p>
-                        Android Developer at Booking.com<br/>Fixing problems one bug at a time! Also, the views expressed here are mine and not my employers.<br/>
-                        Check out my latest app - <b><a href="https://play.google.com/store/apps/details?id=com.fenchtose.flutter&referrer=utm_source%3Dpersonal_website_footer">Flutter - Instant movie ratings</a></b> which shows movie ratings on-demand when browsing Netflix and other streaming apps.<br/>
-                        I have started working on another app - <b><a href="https://play.google.com/store/apps/details?id=com.fenchtose.reflog&referrer=utm_source%3Dpersonal_website_footer">Taskito - Calendar based to-do list</a></b>. I would love to get your feedback.
-                    </p>
-                    <div class="post_bottom_share_container">
-                      <div align="center">
-                        <a href="https://twitter.com/jayrambhia" class="twitter-follow-button" data-show-count="false">Follow @jayrambhia</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                      </div>
-                      <div align="center" style="margin-top:20px;">
-                        <div>
-                          <a class="github-button" href="https://github.com/jayrambhia" aria-label="Follow @jayrambhia on GitHub" data-size="small">Follow @jayrambhia<script async src="https://buttons.github.io/buttons.js"></script></a>
-                        </div>
-                      </div>
-                    </div>
-                </section>
-            {%- endif %}
-            <!-- Share links section -->
-            {% include share.html %}
+            {% include footer.html %}
             <!-- Disqus comments -->
             {% include disqus.html %}
         </footer>

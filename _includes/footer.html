@@ -1,0 +1,26 @@
+{%- if site.k_author %}
+    <figure class="author-image">
+        <a class="img" href="{{ site.url }}" style="background-image: url(/assets/images/profile.jpg)">
+        <span class="hidden">{{site.k_author}}'s Picture</span></a>
+    </figure>
+    <section class="author">
+        <!-- Author Name -->
+        <h4> {{ site.k_author }} </h4>
+        <!-- Author Bio -->
+        <p>
+            Senior Android Developer at Booking.com // Building <a href="https://taskito.io">Taskito</a><br/>Fixing problems one bug at a time! Also, the views expressed here are mine and not my employers.<br/>
+        </p>
+        <div class="post_bottom_share_container">
+          <div align="center">
+            <a href="https://twitter.com/jayrambhia" class="twitter-follow-button" data-show-count="false">Follow @jayrambhia</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+          <div align="center" style="margin-top:20px;">
+            <div>
+              <a class="github-button" href="https://github.com/jayrambhia" aria-label="Follow @jayrambhia on GitHub" data-size="small">Follow @jayrambhia<script async src="https://buttons.github.io/buttons.js"></script></a>
+            </div>
+          </div>
+        </div>
+    </section>
+{%- endif %}
+<!-- Share links section -->
+{% include share.html %}

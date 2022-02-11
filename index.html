@@ -40,7 +40,7 @@ about: 'about-me/'
     </header>
     <section class="post-excerpt">
         <div class="card_wrapper">
-            {% include app_card.html title="Taskito - Calendar based to-do list app" description="Task management app to help you organize day to day tasks and achieve long term goals." url="https://play.google.com/store/apps/details?id=com.fenchtose.reflog&utm_source=personal_website_home&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" image_small="/assets/images/taskito_website_logo.png" %}
+            {% include app_card.html title="Taskito - To-Do List & Planner" description="Task management app to help you organize day to day tasks and achieve long term goals." url="https://play.google.com/store/apps/details?id=com.fenchtose.reflog&utm_source=personal_website_home&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" image_small="/assets/images/taskito_website_logo.png" %}
             {% include app_card.html title="Flutter - Instant movie ratings" description="Get movie and tv show ratings instantly when browsing Netflix." url="https://github.com/jayrambhia/MovieRatings" image_small="https://raw.githubusercontent.com/jayrambhia/MovieRatings/master/screenshots/playstore_logo.png" %}
         </div>
     </section>
@@ -124,28 +124,7 @@ about: 'about-me/'
 
         <footer class="post-footer">
             <!-- If we want to display author's name and bio -->
-            {% if site.k_author %}
-                <figure class="author-image">
-                    <a class="img" href="{{ site.url }}/{{ page.about }}" style="background-image: url(/assets/images/profile.jpg)">
-                    <span class="hidden">{{site.k_author}}'s Picture</span></a>
-                </figure>
-                <section class="author">
-                    <!-- Author Name -->
-                    <h4> {{ site.k_author }} </h4>
-                    <!-- Author Bio -->
-                    <p>
-                        Android Developer at Booking.com<br/>Fixing problems one bug at a time! Also, the views expressed here are mine and not my employers.
-                        <span style="display: inline;">
-                        <a href="https://twitter.com/jayrambhia" class="twitter-follow-button" data-show-count="false">Follow @jayrambhia</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        <a class="github-button" href="https://github.com/jayrambhia" aria-label="Follow @jayrambhia on GitHub" data-size="small">Follow @jayrambhia<script async src="https://buttons.github.io/buttons.js"></script></a>
-                        </span>
-                    </p>
-                </section>
-            {% endif %}
-
-            <!-- Share links section -->
-            {% include share.html %}
-
+            {% include footer.html %}
         </footer>
     </article>
 
