@@ -4,7 +4,7 @@ disqus: false
 archive: false
 post_class: post-template
 ---
-<header class="main-header post-head {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
+<header class="main-header post-head {% if page.cover %}" style="background-image: url({{ page.cover }}) {% else %} no-cover {% endif %}">
     <nav class="main-nav {% if page.cover %} overlay {% endif %} clearfix">
         <a id="back_home" class="back-button icon-arrow-left" onclick="navBack('series=1','{{ site.url }}')">Home</a>
         <a class="subscribe-button" href="{{ site.url }}/{{ site.archives }}?from_post=1">Archives</a>
@@ -20,7 +20,15 @@ post_class: post-template
 <main class="content" role="main">
 
     <article class="post" style="margin-top: 0px;">
-        {% include app_banner.html title="I'm Building Taskito" description="Taskito offers simple and intuitive tools to organize your daily tasks. It combines features of project management software with productivity and time management tools. Try it out now!" url="https://play.google.com/store/apps/details?id=com.fenchtose.reflog&utm_source=personal_website_post&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" image_small="/assets/images/taskito_website_logo.png" %}
+        {% 
+            include app_banner.html 
+            title="I'm Building Taskito" 
+            description="Taskito offers simple and intuitive tools to organize your daily tasks and to-do list. It combines features of project management software with productivity and time management tools. Try it out now!"
+            url="https://taskito.io/download"
+            playstore-url="https://play.google.com/store/apps/details?id=com.fenchtose.reflog&utm_source=personal_website_post&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+            appstore-url="https://apps.apple.com/us/app/taskito-to-do-list-planner/id6471266496?itsct=apps_box_badge&itscg=30200"
+            image_small="/assets/images/taskito_website_logo.png" 
+            %}
 
         <header class="post-header">
             <h1 class="post-title">{{ page.title }}</h1>

@@ -7,7 +7,15 @@
     <div style="margin-left:12px; margin-top:24px; margin-right:24px; margin-bottom:0px; display: flex; flex-direction: column;">
       <h5 style="margin-left: 12px;">{{ include.title }}</h5>
       <p class="post-meta" style="margin-left: 12px; margin-top:4px; margin-bottom:4px;">{{ include.description }}</p>
-      <a href='{{ include.url }}'><img alt='Get it on Google Play' style="width:160px;" src='https://play.google.com/intl/en/badges/images/generic/en_badge_web_generic.png'/></a>
+      <div style="display: flex; flex-direction: row; align-content: center; align-items: center;">
+        {% if include.playstore-url %}
+          <a href='{{ include.playstore-url }}'><img alt='Get it on Google Play' style="width:160px;" src='https://play.google.com/intl/en/badges/images/generic/en_badge_web_generic.png'/></a>
+        {% endif %}
+        {% if include.appstore-url %}
+          <a href='{{ include.appstore-url }}'><img alt='Download on the App Store' style="width:132px;" src='https://apple-resources.s3.amazonaws.com/media-badges/download-on-the-app-store/black/en-us.svg'/></a>
+        {% endif %}
+      </div>
+      
     </div>
 </div>
 </div>
